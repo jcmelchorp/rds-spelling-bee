@@ -8,12 +8,13 @@ import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingServ
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes), 
     provideFirebaseApp(() => initializeApp(environment.firebaseOptions)),
-    { provide: FIREBASE_OPTIONS, useValue: environment.firebaseOptions },
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebaseOptions }, provideAnimationsAsync(),
     //provideAuth(() => getAuth()), 
     //provideAnalytics(() => getAnalytics()), 
     //ScreenTrackingService, UserTrackingService, 
