@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { WordlistsComponent } from './features/wordlists/wordlists.component';
+import { WordlistsComponent } from './features/editor/wordlists/wordlists.component';
 
 @Component({
   selector: 'app-root',

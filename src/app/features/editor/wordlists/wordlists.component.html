@@ -1,0 +1,20 @@
+<!-- <app-wordlist></app-wordlist> -->
+<div>
+  <label>Nivel: </label>
+  <input type="text" [(ngModel)]="wordlist.level" />
+<button [disabled]="!wordlist.level" (click)="submit()">Add +</button>
+
+</div>
+
+@for (wordlist of wordlists$ | async; track $index) {
+  <div>Nivel: <span [innerText]="wordlist.level"></span></div>
+  <div>ID: <span [innerText]="wordlist.id"></span></div>
+  <div>Creado: <span [innerText]="wordlist.createdTime | date: 'fullDate'"></span></div>
+  <ul>
+    @for (word of wordlist.words;track word) {
+    <li>{{word}}</li>
+    }
+    
+
+  </ul>
+}

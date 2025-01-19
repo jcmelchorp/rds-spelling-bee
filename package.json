@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy"
+    "deploy": "ng deploy",
+    "clean": "rm -rf ./node_modules yarn.lock package-lock.json"
+
   },
   "private": true,
   "dependencies": {

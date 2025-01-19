@@ -96,11 +96,8 @@
           }
         },
         "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {
-            "version": 2,
-            "browserTarget": "rds-spelling-bee:build:production"
-          }
+        "builder": "@angular/fire:deploy",
+        "options": {} 
         }
       }
     }

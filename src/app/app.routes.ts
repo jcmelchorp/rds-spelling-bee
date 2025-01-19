@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { WordlistsComponent } from './features/wordlists/wordlists.component';
+import { WordlistsComponent } from './features/editor/wordlists/wordlists.component';
 
 export const routes: Routes = [
     {

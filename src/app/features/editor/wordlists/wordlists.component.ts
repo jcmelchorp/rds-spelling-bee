@@ -1,24 +1,35 @@
 import { Component, inject } from "@angular/core";
 import { WordlistsService } from "./wordlists.service";
-import { Grades, Wordlist } from "./wordlist.model";
+import { Grades, Wordlist } from "../wordlist.model";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { take } from "rxjs";
+import { from, map, switchMap, take } from "rxjs";
+import { WordlistComponent } from "../wordlist/wordlist.component";
 
 @Component({
     selector: 'app-wordlists',
     standalone: true,
-    imports: [CommonModule, ReactiveFormsModule, FormsModule],
+    imports: [CommonModule, ReactiveFormsModule, FormsModule, WordlistComponent],
     templateUrl: './wordlists.component.html',
   })
   export class WordlistsComponent {
-    wordlist: Wordlist = { id:'', words:[], createdTime: Date.now() };
+    wordlist: Wordlist = { words:[], createdTime: Date.now() };
     private readonly wordlistService = inject(WordlistsService);
-  
+  newWord:string='';
     wordlists$ = this.wordlistService.getSnapshotChanges((ref) =>
-      ref.orderBy('createdTime', 'desc')
+      ref.orderBy('level', 'desc')
     );
   
+    addWord(id:string) {
+            this.wordlists$.pipe(
+              map(wordlists=> {
+                let wl=wordlists.find(wordlist=>wordlist.id===id);
+                wl?.words?.push(this.newWord);
+                this.updateWordlist(wl!);
+              }),
+              take(1),
+            );
+    }
     async submit() {
       this.wordlistService
         .add(this.wordlist)
