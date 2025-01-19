@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "rds-spelling-bee": {
+      "hosting": {
+        "rds-spelling-bee": [
+          "rds-spelling-bee"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "rds-spelling-bee"
+  }
+}
