@@ -1,20 +1,35 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, Subject, of } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  private isDark!: boolean;
-  _darkTheme = new Subject<boolean>();
-  isDarkTheme = this._darkTheme.asObservable();
-
-
-  setDarkTheme(isDarkTheme: boolean): void {
-    this._darkTheme.next(isDarkTheme);
-  }
-  toggleDarkTheme(isDark: boolean): Observable<boolean> {
-    this._darkTheme.next(!isDark);
-    return of(!isDark)
+  private _themeDark: BehaviorSubject<boolean>;
+  public isThemeDark: Observable<boolean>;
+  constructor() {
+    this._themeDark = new BehaviorSubject(localStorage.getItem("dark") == 'true');
+    this.isThemeDark = this._themeDark.asObservable();
+    this.setDarkTheme(this._themeDark.value);
   }
 
+  public toggleDarkTheme(): void {
+    this.setDarkTheme(!this._themeDark.value);
+  }
+
+  setDarkTheme(isThemeDark: boolean) {
+
+    this._themeDark.next(isThemeDark);
+
+    if (isThemeDark == true) {
+      console.log('Dark Used');
+      document.body.className = 'dark-theme';
+      localStorage.setItem('dark', 'true');
+    }
+    else {
+     console.log('Light Used');
+      document.body.className = 'light-theme';
+      localStorage.setItem('dark', 'false');
+    }
+
+  }
 }

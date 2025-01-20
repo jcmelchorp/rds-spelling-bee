@@ -29,7 +29,7 @@ export class HeaderComponent {
     public isDarkTheme!: boolean;
     hide: boolean = false;
     constructor() {
-        this.isDarkTheme$ = this.themeService.isDarkTheme.pipe(map((isDark: boolean) => this.isDarkTheme = isDark));
+        this.isDarkTheme$ = this.themeService.isThemeDark.pipe(map((isDark: boolean) => this.isDarkTheme = isDark));
     }
 
     showModal: boolean = false;
@@ -40,7 +40,7 @@ export class HeaderComponent {
 
     toggleDarkTheme(isDarkTheme: boolean) {
         // console.log(isDarkTheme)
-        this.themeService.toggleDarkTheme(isDarkTheme);
+        this.themeService.toggleDarkTheme();
     }
     toggleSidenavLeft($event: any) {
         this.layoutService.toggleSidenavLeft.emit($event);

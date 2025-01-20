@@ -1,3 +1,8 @@
+.fx-head {
+  display: flex;
+      flex-flow: row;
+      justify-content: space-around;
+}
 .mat-toolbar {
     min-height: 53px !important;
     max-height: max-content;

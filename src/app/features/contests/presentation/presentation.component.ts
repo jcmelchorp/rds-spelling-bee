@@ -3,11 +3,12 @@ import { WordDialogComponent } from '../word-dialog/word-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { WordListComponent } from '../word-list/word-list.component';
 import { RouterOutlet } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-presentation',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,MatButtonModule],
   templateUrl: './presentation.component.html',
   styleUrls: ['./presentation.component.scss']
   

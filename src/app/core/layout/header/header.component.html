@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar >
     @if (isHandset) {
       <button
         type="button"
@@ -9,8 +9,8 @@
       </button>
     }
       <a routerLink="/"><img src="/assets/images/rds-bee-logo-transparent.png" height="45px" /></a>
-      <span style="margin-left: 15px;" [innerText]="'RDS Spelling Bee'"> </span> 
-      <div >
+      <div class="fx-head">
+      <div>RDS Spelling Bee</div> 
         <mat-icon  [matTooltip]="(isDarkTheme$|async)?'Modo oscuro':'Modo claro'" type="button"
         aria-label="Alternar tema" mat-icon-button
         (click)="toggleDarkTheme(isDarkTheme)">{{(isDarkTheme$|async)?'nightlight':'light_mode'}}</mat-icon>
