@@ -1,0 +1,9 @@
+<mat-icon mat-dialog-close>close</mat-icon><h4 mat-dialog-title> The word is...</h4>
+<mat-dialog-content>
+    <h1 style="text-align: center;"><mat-icon type="button" mat-icon-button (click)="repeatWord()">record_voice_over</mat-icon></h1>
+    <app-show-word [text]="data.input"></app-show-word>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-raised-button (click)="repeatWord()" cdkFocusInitial>Repeat</button>
+</mat-dialog-actions>

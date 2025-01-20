@@ -5,11 +5,18 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { from, map, switchMap, take } from "rxjs";
 import { WordlistComponent } from "../wordlist/wordlist.component";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { RouterLink } from "@angular/router";
+import { MatGridListModule } from "@angular/material/grid-list";
+
 
 @Component({
     selector: 'app-wordlists',
     standalone: true,
-    imports: [CommonModule, ReactiveFormsModule, FormsModule, WordlistComponent],
+    imports: [CommonModule, RouterLink ,ReactiveFormsModule, FormsModule,MatCardModule,MatButtonModule,MatIconModule,MatFormFieldModule,MatGridListModule],
     templateUrl: './wordlists.component.html',
   })
   export class WordlistsComponent {

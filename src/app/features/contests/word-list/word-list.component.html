@@ -1,0 +1,9 @@
+@if ((wordlist$!| async)) {
+<h1>Words <span>from {{(wordlist$ |async)?.level}}</span>
+at {{(wordlist$ |async)?.createdTime | date: 'fullDate'}}</h1>
+<ul>
+    @for (word of (wordlist$!|async)!.words;track $index) {
+    <li>{{word}}</li>
+    }
+</ul>
+}

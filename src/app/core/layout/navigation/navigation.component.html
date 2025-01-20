@@ -2,26 +2,19 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === true">
-    <mat-toolbar>Menu</mat-toolbar>
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>RDS Spelling Bee</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/editor" routerLinkActive="router-link-active" >Listas</a>
       <a mat-list-item routerLink="/contest" routerLinkActive="router-link-active">Concurso</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <!-- @if (isHandset$ | async) { -->
-        <button
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="drawer.toggle()">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-      <!-- } -->
-      <span>rds-spelling-bee</span>
-    </mat-toolbar>
+    <app-header [isHandset]="(isHandset$|async)">
+      @if (loading) {
+      <mat-progress-bar class="progress-bar" name="progressBar" mode="query" color="primary"></mat-progress-bar>
+      }
+    </app-header>
 <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
