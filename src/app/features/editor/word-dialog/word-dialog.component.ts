@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, Inject, model } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { ShowWordComponent } from '../show-word/show-word.component';
+import { ShowWordComponent } from '../../presentation/show-word/show-word.component';
 
 @Component({
   

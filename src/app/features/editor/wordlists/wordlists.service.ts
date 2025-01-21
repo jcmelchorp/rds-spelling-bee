@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Wordlist } from '../wordlist.model';
+import { Wordlist } from '../wordlist/wordlist.model';
 import { FireStoreService } from '../../../core/services/firestore.service';
 
 @Injectable({ providedIn: 'root' })

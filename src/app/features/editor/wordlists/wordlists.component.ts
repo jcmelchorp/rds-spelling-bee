@@ -1,7 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { WordlistsService } from "./wordlists.service";
-import { Grades, Wordlist } from "../wordlist.model";
-import { CommonModule } from "@angular/common";
+import { Grades, Wordlist } from "../wordlist/wordlist.model";
+import { CommonModule, JsonPipe, NgFor, NgForOf } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { from, map, switchMap, take } from "rxjs";
 import { WordlistComponent } from "../wordlist/wordlist.component";
@@ -16,7 +16,7 @@ import { MatGridListModule } from "@angular/material/grid-list";
 @Component({
     selector: 'app-wordlists',
     standalone: true,
-    imports: [CommonModule, RouterLink ,ReactiveFormsModule, FormsModule,MatCardModule,MatButtonModule,MatIconModule,MatFormFieldModule,MatGridListModule],
+    imports: [JsonPipe,CommonModule, RouterLink ,ReactiveFormsModule, FormsModule,MatCardModule,MatButtonModule,MatIconModule,MatFormFieldModule,NgForOf],
     templateUrl: './wordlists.component.html',
   })
   export class WordlistsComponent {
@@ -27,16 +27,7 @@ import { MatGridListModule } from "@angular/material/grid-list";
       ref.orderBy('level', 'desc')
     );
   
-    addWord(id:string) {
-            this.wordlists$.pipe(
-              map(wordlists=> {
-                let wl=wordlists.find(wordlist=>wordlist.id===id);
-                wl?.words?.push(this.newWord);
-                this.updateWordlist(wl!);
-              }),
-              take(1),
-            );
-    }
+   
     async submit() {
       this.wordlistService
         .add(this.wordlist)

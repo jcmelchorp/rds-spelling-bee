@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { AngularFirestore, QueryFn } from '@angular/fire/compat/firestore';
 import { from, map, Observable, of } from 'rxjs';
-import { Wordlist } from '../../features/editor/wordlist.model';
+import { Wordlist } from '../../features/editor/wordlist/wordlist.model';
 import { collection, doc, getDoc, query, where } from '@angular/fire/firestore';
 
 @Injectable({
