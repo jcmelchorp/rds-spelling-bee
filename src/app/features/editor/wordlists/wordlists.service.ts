@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Wordlist } from '../wordlist/wordlist.model';
-import { FireStoreService } from '../../../core/services/firestore.service';
+import { FirebaseService } from '../../../core/services/firebase.service';
 
 @Injectable({ providedIn: 'root' })
-export class WordlistsService extends FireStoreService<Wordlist> {
+export class WordlistsService extends FirebaseService<Wordlist> {
   constructor() {
     super('wordlists');
   }

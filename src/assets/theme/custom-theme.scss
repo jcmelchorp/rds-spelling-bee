@@ -65,3 +65,98 @@ $light-theme: mat.define-light-theme(
   // margin-bottom: -1vh !important;
   height: 15px !important;
 }
+
+//fxLayout="column"
+.column-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+//fxLayout="row"
+.row-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+//fxLayout="row wrap"
+.flex-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+//fxFlex="100%"
+.flex-item-100 {
+  flex: 1 1 100%;
+}
+
+//fxFlex="calc(50% - 10px)"
+.flex-item-calc-50 {
+  flex: 1;
+  width: calc(50% - 10px);
+}
+
+//fxFlex="nogrow"
+.flex-item-nogrow {
+  flex-grow: 0;
+}
+
+//fxLayoutAlign="space-between"
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+//fxLayoutAlign="space-between center"
+.center-space-between {
+  display: flex;
+  justify-content:  center;
+  align-items: space-between;
+}
+//fxLayoutAlign="start stretch"
+.start-stretch {
+  display: flex;
+  justify-content: stretch;
+  align-items: start;
+}
+
+//fxLayoutAlign="center space-between"
+.space-between-center {
+  display: flex;
+  justify-content:  space-between;
+  align-items: center;
+}
+
+//fxLayoutAlign="space-between stretch"
+.space-between-stretch {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+//fxLayoutAlign="center center"
+.center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//fxLayoutGap="10px"
+.flex-gap {
+  display: flex;
+  gap: 10px;
+}
+
+// //fxLayout.gt-xs
+// @media (min-width: 480px) {
+//   .your-setting {
+//     ...
+//   }
+// }
+
+// //fxLayout.lt-sm
+// @media (max-width: 600px) {
+//   .your-setting {
+//     ...
+//   }
+// }

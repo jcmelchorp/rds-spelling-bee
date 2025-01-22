@@ -32,7 +32,7 @@ export class PresentationComponent  {
    //Add 'implements OnInit' to the class.
    this.wordlist$ =this.route.paramMap.pipe(
      tap(params=>console.log(params.get('id'))),
-     mergeMap(params => this.wordlistsService.getSnapshotChanges().pipe(
+     mergeMap(params => this.wordlistsService.list().pipe(
        map(wordlists=>wordlists[wordlists.findIndex(w=>w.id===params.get('id'))])
      )
      )

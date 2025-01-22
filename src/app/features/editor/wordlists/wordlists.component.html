@@ -14,7 +14,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title><span [innerText]="wordlist.level"></span></mat-card-title>
-        <mat-card-subtitle> <span [innerText]="wordlist.createdTime | date: 'fullDate'"></span></mat-card-subtitle>
+        <mat-card-subtitle> <span [innerText]="wordlist.timestamp | date: 'fullDate'"></span></mat-card-subtitle>
       </mat-card-header>
       <mat-card-content style="text-align:end">
         @if (wordlist.words!.length>=1) {

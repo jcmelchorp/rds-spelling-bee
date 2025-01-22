@@ -1,18 +1,13 @@
-     <form [formGroup]="filterValues">
-        <mat-form-field appearance="outline">
+        <mat-form-field>
             <mat-label>Grado</mat-label>
-            <mat-select formControlName="levelKey">
-                <mat-option *ngFor="let key of levelKeys" [value]="key">
-                    {{key }}
-                </mat-option>
-                <!-- <mat-option [value]="''">Todas</mat-option> -->
-                <!-- @for (key of levelKeys; track $index) {
-                <mat-option [value]="key">
-                </mat-option>
-                } -->
+            <mat-select [formControl]="gradeControl">
+                @for (level of levels; track level) {
+                    <mat-option [value]="level">{{level}}</mat-option>
+                  }
             </mat-select>
-            <mat-icon matSuffix>public</mat-icon>
+            @if (gradeControl.hasError('required')) {
+                <mat-error>No has seleccionado nada aun.</mat-error>
+              }
+            <mat-icon matSuffix>supervisor_account</mat-icon>
         </mat-form-field>
-    </form>
-    <app-wordlist [object]="(wordlist$|async)!">
-    </app-wordlist>
+    <app-wordlist *ngIf="(wordlist$|async)!" [object]="(wordlist$|async)!"></app-wordlist>

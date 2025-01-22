@@ -1,16 +1,17 @@
-<mat-toolbar >
-    @if (isHandset) {
+<mat-toolbar>
+  <mat-toolbar-row class="row-layout space-between-center" >
+    <div class="row-layout center-center">
       <button
         type="button"
-        aria-label="Toggle sidenav"
+        aria-label="Mostrar menú"
         mat-icon-button
         (click)="toggleSidenavLeft($event)">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-    }
       <a routerLink="/"><img src="/assets/images/rds-bee-logo-transparent.png" height="45px" /></a>
-      <div class="box">
-      <div>RDS Spelling Bee</div> 
+      <div>RDS Spelling Bee</div>
+    </div> 
+      <div >
         <mat-icon  [matTooltip]="(isDarkTheme$|async)?'Modo oscuro':'Modo claro'" type="button"
         aria-label="Alternar tema" mat-icon-button
         (click)="toggleDarkTheme(isDarkTheme)">{{(isDarkTheme$|async)?'nightlight':'light_mode'}}</mat-icon>
@@ -19,6 +20,6 @@
       <mat-icon  matTooltip="Pantalla completa" type="button" mat-icon-button
         onclick="var el = document.querySelector('body'); el.requestFullscreen();">fullscreen</mat-icon> 
       </div>
-     
+  </mat-toolbar-row>
   </mat-toolbar>
   <ng-content #progressBar></ng-content>

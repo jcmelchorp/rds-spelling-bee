@@ -1,6 +1,6 @@
 import { LiveAnnouncer } from "@angular/cdk/a11y";
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Input, Output, SimpleChanges, ViewChild } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { merge, of, startWith, switchMap } from "rxjs";
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
@@ -10,13 +10,16 @@ import { Word, Wordlist } from "./wordlist.model";
 import { MatOptionModule } from "@angular/material/core";
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
+
 @Component({
     selector: 'app-wordlist',
     standalone: true,
     imports: [CommonModule, ReactiveFormsModule, FormsModule, MatTableModule, MatOptionModule, MatIconModule, MatPaginatorModule, RouterLink],
     templateUrl: './wordlist.component.html',
+    styleUrl: './wordlist.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
   })
-  export class WordlistComponent {
+  export class WordlistComponent implements OnInit, OnChanges,AfterViewInit {
     @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChild(MatSort)
@@ -32,12 +35,16 @@ import { RouterLink } from "@angular/router";
   displayedColumns = ['label'];
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     this.dataSource = new MatTableDataSource();
+  }
 
+  
+  ngOnInit(): void {
+    this.dataSource.data= this.object.words!;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['object'].currentValue) {
-      this.dataSource = new MatTableDataSource(changes['object'].currentValue.words);
+      this.dataSource.data = changes['object'].currentValue.words;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
 
@@ -47,18 +54,11 @@ import { RouterLink } from "@angular/router";
       this.isLoading = false;
     }
   }
-  ngOnInit(): void {
-    if (this.object) this.dataSource = new MatTableDataSource(this.object.words);
 
-    // this.dataSource.filter = this.selectedCountry
-    // this.linkListToPaginator();
-
-    // this.dataSource = new IptvListDataSource(this.iptvDtoService);
-    // this.linkListToPaginator();
-  }
   ngAfterViewInit(): void {
-
     // console.log(this.dataSource);
+    // if (this.object.words) this.dataSource.data= this.object.words!;
+
     this.table.dataSource = this.dataSource;
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;

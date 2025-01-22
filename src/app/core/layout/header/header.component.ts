@@ -3,7 +3,7 @@ import { map, Observable } from "rxjs";
 import { LayoutService } from "../../services/layout.service";
 import { ThemeService } from "../../services/theme.service";
 import { SubscriptionService } from "../../services/subscription.service";
-import { MatIcon, MatIconModule } from "@angular/material/icon";
+import {  MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { RouterLink } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
@@ -16,7 +16,7 @@ import { AsyncPipe } from "@angular/common";
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
     standalone: true,
-    imports: [MatIconModule, MatToolbarModule,RouterLink,MatButtonModule, MatTooltipModule,AsyncPipe ],
+    imports: [AsyncPipe,MatIconModule, MatToolbarModule,RouterLink,MatButtonModule, MatTooltipModule,AsyncPipe ],
     encapsulation: ViewEncapsulation.None
 
 })
