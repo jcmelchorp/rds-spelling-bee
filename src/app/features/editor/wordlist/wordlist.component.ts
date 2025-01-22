@@ -25,20 +25,19 @@ import { RouterLink } from "@angular/router";
   table!: MatTable<Word>;
   @Input({ required: true }) object!: Wordlist;
   @Output() onIptvEmit = new EventEmitter<Word>();
-  dataSource: MatTableDataSource<Word>=new MatTableDataSource();
+  dataSource!: MatTableDataSource<Word>;
   defaultElevation = 2;
   raisedElevation = 4;
   isLoading = false;
   displayedColumns = ['label'];
   constructor(private _liveAnnouncer: LiveAnnouncer) {
-    
+    this.dataSource = new MatTableDataSource();
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['object'].currentValue) {
       this.dataSource = new MatTableDataSource(changes['object'].currentValue.words);
-
-      // this.table.dataSource = this.dataSource;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
 
@@ -49,8 +48,8 @@ import { RouterLink } from "@angular/router";
     }
   }
   ngOnInit(): void {
+    if (this.object) this.dataSource = new MatTableDataSource(this.object.words);
 
-    console.log(this.object);
     // this.dataSource.filter = this.selectedCountry
     // this.linkListToPaginator();
 
@@ -58,7 +57,6 @@ import { RouterLink } from "@angular/router";
     // this.linkListToPaginator();
   }
   ngAfterViewInit(): void {
-    this.dataSource.data = this.object.words as Word[];
 
     // console.log(this.dataSource);
     this.table.dataSource = this.dataSource;

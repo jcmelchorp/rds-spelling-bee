@@ -19,7 +19,6 @@
       <mat-card-content style="text-align:end">
         @if (wordlist.words!.length>=1) {
         {{wordlist.words!.length}} {{(wordlist.words!.length===0)?'':'palabra'}}{{(wordlist.words!.length<=1)?'':'s'}}.
-        {{wordlist.words |json}}
           } </mat-card-content>
           <mat-card-actions>
             <button mat-raised-button [routerLink]="['/editor', wordlist.id]">Editar</button>

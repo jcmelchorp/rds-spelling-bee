@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { AngularFirestore, QueryFn } from '@angular/fire/compat/firestore';
-import { from, map, Observable, of } from 'rxjs';
+import { BehaviorSubject, from, map, Observable, of, tap } from 'rxjs';
 import { Wordlist } from '../../features/editor/wordlist/wordlist.model';
 import { collection, doc, getDoc, query, where } from '@angular/fire/firestore';
 
@@ -10,16 +10,20 @@ import { collection, doc, getDoc, query, where } from '@angular/fire/firestore';
 export abstract class FireStoreService<T extends { id?: string }> {
   protected readonly firestore = inject(AngularFirestore);
   protected readonly collectionName: string;
-
   constructor(collection: string) {
+    
     this.collectionName = collection;
   }
 
+ 
+
   collection(queryFn?: QueryFn) {
+    
     return this.firestore.collection<T>(this.collectionName, queryFn);
   }
 
   getSnapshotChanges(queryFn?: QueryFn) {
+    
     return this.firestore
       .collection<T>(this.collectionName, queryFn)
       .snapshotChanges()
@@ -34,6 +38,7 @@ export abstract class FireStoreService<T extends { id?: string }> {
   }
 
    async getById(id: string) {
+    
     // const docQuery= query(collection(this.firestore.firestore,this.collectionName,id), where("id","==",id))
     const docRef = doc(this.firestore.firestore,this.collectionName,id);
     const docSnap = await getDoc(docRef);
@@ -51,10 +56,12 @@ export abstract class FireStoreService<T extends { id?: string }> {
   }
 
   add(data: T) {
+    
     return from(this.firestore.collection<T>(this.collectionName).add(data));
   }
 
   update(data: T) {
+    
     return from(
       this.firestore
         .collection<T>(this.collectionName)
@@ -64,6 +71,7 @@ export abstract class FireStoreService<T extends { id?: string }> {
   }
 
   delete(data: T) {
+    
     return from(
       this.firestore.collection<T>(this.collectionName).doc(data.id).delete()
     );

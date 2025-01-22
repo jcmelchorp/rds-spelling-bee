@@ -2,11 +2,12 @@
 //@import "@angular/material/theming";
 
 @include mat.core();
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto&family=Fredoka+One&family=Fredoka&family=Love+Ya+Like+A+Sister&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&family=Miltonian&family=Modak&display=swap");
 
 $typography-config: mat.define-typography-config(
   $font-family: '"Fredoka", "Londrina Sketch", sans-serif',
 );
+
 
 //$typography-config: mat.define-typography-config();
  @include mat.typography-hierarchy($typography-config); // 👈 Added
@@ -52,3 +53,15 @@ $light-theme: mat.define-light-theme(
   @include mat.button-color($light-theme);
 }
 @include mat.all-component-colors($light-theme);
+
+
+.mat-mdc-form-field-infix {
+  padding-top: 20px !important;
+ // height: 10px !important;
+
+}
+.mat-mdc-floating-label {
+ // margin-top: -1vh !important;
+  // margin-bottom: -1vh !important;
+  height: 15px !important;
+}

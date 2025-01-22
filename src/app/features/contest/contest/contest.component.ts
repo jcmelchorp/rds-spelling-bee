@@ -1,64 +1,79 @@
 import { Component, inject, OnInit } from "@angular/core";
-import { map, mergeMap, Observable, Subscription, switchMap, tap } from "rxjs";
+import { BehaviorSubject, concat, map, merge, mergeAll, mergeMap, Observable, Subscription, switchAll, switchMap, tap } from "rxjs";
 import { Grades, Wordlist } from "../../editor/wordlist/wordlist.model";
-import { MatFormField, MatLabel } from "@angular/material/form-field";
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatFormField, MatFormFieldModule, MatLabel } from "@angular/material/form-field";
+import { FormBuilder, FormControl, FormControlName, FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { WordlistsService } from "../../editor/wordlists/wordlists.service";
 import { MatIcon, MatIconModule } from "@angular/material/icon";
 import { MatCommonModule, MatOptionModule } from "@angular/material/core";
 import { WordlistComponent } from "../../editor/wordlist/wordlist.component";
-import { AsyncPipe, JsonPipe } from "@angular/common";
+import { AsyncPipe, JsonPipe, NgFor, NgIf, NgIfContext } from "@angular/common";
 import { MatTableDataSource } from "@angular/material/table";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { NgxSpinner, NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
+import { MatSelectModule } from "@angular/material/select";
 
 @Component({
     templateUrl: './contest.component.html',
     styleUrl: './contest.component.scss',
     standalone: true,
     imports: [
-        WordlistComponent,
         AsyncPipe,
-        JsonPipe,
         FormsModule,
         ReactiveFormsModule,
         MatIconModule,
         MatOptionModule,
-        MatFormField,
-        MatLabel
+        MatLabel,
+        NgxSpinnerModule,
+        WordlistComponent,
+        NgFor,
+        NgIf,
+        MatFormFieldModule,
+        MatSelectModule
     ]
 })
 
 export class ContestComponent implements OnInit {
     private readonly wordlistService = inject(WordlistsService);
+    private readonly spinner: NgxSpinnerService =inject(NgxSpinnerService);
     dataSource!: MatTableDataSource<Wordlist>;
 
     wordlists$!: Observable<Wordlist[]>;
     wordlist$!: Observable<Wordlist>;
     wordlist!: Wordlist;
-    isLoading$!: Observable<boolean>;
-    isLoaded$!: Observable<boolean>;
+    
     levelKeys = Object.keys(Grades);
     levels = Grades;
     // subscription!: Subscription;
-    // filterValues: FormGroup;
-    
-
-
+    filterValues: FormGroup;
+    isLoading$: Observable<boolean>=new Observable<boolean>();
+    isLoaded$!: Observable<boolean>;
+    public loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
+    public isLoading(state: boolean): void { this.loading.next(state) }
+    public get levelKey(): string {
+        return this.filterValues.get('levelKey')!.value;
+    }
     constructor(
         private fb: FormBuilder,
     ) {
+        
         // Init form
-        // this.filterValues = this.fb.group({
-        //     levelKey: new FormControl('SEC1'),
-        // });
-        // this.filterValues.patchValue({ levelKey: 'SEC1' });
-       this.wordlist$= this.wordlistService.getSnapshotChanges((ref) =>
+        this.filterValues = this.fb.group({
+            levelKey: new FormControl(''),
+        });
+        this.filterValues.patchValue({ levelKey: 'SEC1' });
+
+        this.wordlist$ = this.wordlistService.getSnapshotChanges((ref) =>
             ref.orderBy('level', 'desc')
         ).pipe(
             map(wordlists => {
-                let wl= wordlists.find(wl => wl.level === 'SEC1');
+                let wl = wordlists.find(wl => wl.level === 'SEC1');
                 // this.dataSource = new MatTableDataSource([wl]);
                 console.log(wl)
-return wl?wl:{};
+                return wl ? wl : {};
+            }),
+            tap(()=>{
+
             })
         );
     }
@@ -84,18 +99,16 @@ return wl?wl:{};
                 map((wordlists) => wordlists.filter((wl) => wl.level === grade).pop())
             );
     }
-    
+
     notify(wordId: string) {
         console.log(wordId)
         // this.wordlist$ = this.selectWordlist(wordId);
     }
 
+
+
     
 
-    // get levelKey(): string {
-    //     return this.filterValues.get('levelKey')!.value;
-    // }
-    
     // get subdivisions(): string[] {
     //   return this.filterValues.get('subdivisions').value;
     // }
@@ -157,7 +170,7 @@ return wl?wl:{};
     //   }
     //   console.log("final statesvalue", this.states.value);
     // }
-  
+
 
 
 
