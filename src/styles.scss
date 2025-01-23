@@ -6,3 +6,28 @@ body {
   padding: 0;
   height: 100hv;
 }
+.view-title {
+  color: $bg-main;
+  font-weight: 400;
+  font-size:3.5em;
+  font-family: "fredoka one", cursive;
+  text-shadow: -3px -2px 1px $text-shadow-color;
+  max-width: 1200px;
+
+}
+.view-subtitle {
+  font-weight: 400;
+  color: $brown-color;
+  font-family: "Comfortaa";
+  font-size:1.8em;
+  max-width: 1200px;
+}
+
+@media (max-width: 1200px) {
+.view-title {
+  font-size: calc(0.5em + 4vw);
+}
+  .view-subtitle {
+  font-size: calc(0.4em + 2vw);
+}
+  }

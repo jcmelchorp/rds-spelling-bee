@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -12,6 +12,8 @@ import { map, shareReplay } from 'rxjs/operators';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { LayoutService } from '../../services/layout.service';
 import { HeaderComponent } from "../header/header.component";
+import { MatMenuModule } from '@angular/material/menu';
+import { Menu } from '../../models/menu.model';
 
 @Component({
   templateUrl: './navigation.component.html',
@@ -21,6 +23,7 @@ import { HeaderComponent } from "../header/header.component";
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
+    MatMenuModule,
     MatListModule,
     MatIconModule,
     MatProgressBarModule,
@@ -29,12 +32,48 @@ import { HeaderComponent } from "../header/header.component";
     RouterLink,
     RouterLinkActive,
     HeaderComponent
-]
+],
+changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class NavigationComponent {
   private layoutService = inject(LayoutService);
   private router=inject(Router);
   loading = false;
+  opened = true;
+
+  toggle(): void {
+    this.opened = !this.opened;
+  }
+
+
+  menu: Menu = [
+    {
+      title: 'Home',
+      icon: 'home',
+      link: '/home',
+      color: '#ff7f0e',
+    },
+    {
+      title: 'Statistics',
+      icon: 'bar_chart',
+      color: '#ff7f0e',
+      subMenu: [
+        {
+          title: 'Sales',
+          icon: 'money',
+          link: '/sales',
+          color: '#ff7f0e',
+        },
+        {
+          title: 'Customers',
+          icon: 'people',
+          color: '#ff7f0e',
+          link: '/customers',
+        },
+      ],
+    },
+  ];
   isHandset$: Observable<boolean> = this.layoutService.isHandset$;
   constructor() {
     this.router.events.subscribe(event => this.navigationInterceptor(event as RouterEvent));

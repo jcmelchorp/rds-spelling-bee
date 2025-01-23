@@ -10,11 +10,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-header [isHandset]="(isHandset$|async)">
-      @if (loading) {
-      <mat-progress-bar class="progress-bar" name="progressBar" mode="query" color="primary"></mat-progress-bar>
-      }
-    </app-header>
+    <app-header (menuToggled)="toggle()" [isHandset]="(isHandset$|async)">  </app-header>
 <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

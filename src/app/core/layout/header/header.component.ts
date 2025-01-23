@@ -1,4 +1,4 @@
-import { Component, inject, Input, ViewEncapsulation } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject, Input, ViewEncapsulation } from "@angular/core";
 import { map, Observable } from "rxjs";
 import { LayoutService } from "../../services/layout.service";
 import { ThemeService } from "../../services/theme.service";
@@ -17,7 +17,9 @@ import { AsyncPipe } from "@angular/common";
     styleUrl: './header.component.scss',
     standalone: true,
     imports: [AsyncPipe,MatIconModule, MatToolbarModule,RouterLink,MatButtonModule, MatTooltipModule,AsyncPipe ],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    
 
 })
 export class HeaderComponent {
