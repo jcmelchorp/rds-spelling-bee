@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { bounceInLeftOnEnterAnimation, hueRotateAnimation, jelloAnimation, rubberBandAnimation } from 'angular-animations';
 import { MaterialElevationDirective } from '../../../shared/directives/material-elevation.directive';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ import { MaterialElevationDirective } from '../../../shared/directives/material-
   standalone: true,
   imports: [
     AsyncPipe,
+    RouterLink,
     MatGridListModule,
     MatMenuModule,
     MatIconModule,
@@ -55,18 +57,18 @@ export class HomeComponent {
     map(({ matches }) => {
       if (matches) {
         return [
-          { title: 'Spelling Bee Contest', subtitle:'2025', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 },
-          { title: 'Card 2', subtitle:'', image:'', cols: 1, rows: 1 },
-          { title: 'Card 3', subtitle:'', image:'', cols: 1, rows: 1 },
-          { title: 'Card 4', subtitle:'', image:'', cols: 1, rows: 1 }
+          { route: 'contest', title: 'Spelling Bee Contest', subtitle:'2025', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 },
+          { route:'editor',   title: 'Vocabulario', subtitle:'Listas de palabras por grado', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 },
+          { route:'results',  title: 'Resultados', subtitle:'', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 },
+          // { title: 'Card 4', subtitle:'', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 }
         ];
       }
 
       return [
-        { title: 'Spelling Bee Contest', subtitle:'2025', image:'/assets/images/rds-bee-logo-transparent.png',  cols: 2, rows: 1 },
-        { title: 'Card 2', subtitle:'', image:'', cols: 1, rows: 1 },
-          { title: 'Card 3', subtitle:'', image:'', cols: 1, rows: 2 },
-          { title: 'Card 4', subtitle:'', image:'', cols: 1, rows: 1 }
+        { route: 'contest', title: 'Spelling Bee Contest', subtitle:'2025', image:'/assets/images/rds-bee-logo-transparent.png',  cols: 2, rows: 1 },
+        { route:'editor',   title: 'Vocabulario', subtitle:'Listas de palabras por grado', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 },
+        { route:'results',  title: 'Resultados', subtitle:'Ganadores del Spelling Bee Contest 2025', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 2 },
+        //   { title: 'Card 4', subtitle:'', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 }
       ];
     })
   );

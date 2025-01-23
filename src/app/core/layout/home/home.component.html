@@ -2,20 +2,24 @@
   <h1 class="mat-h1">Novedades</h1>
   <mat-grid-list cols="2" rowHeight="350px">
     @for (card of cards | async; track card) {
-      <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
-        <mat-card class="dashboard-card"  appMaterialElevation [raisedElevation]="raisedElevation"
+    <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card" appMaterialElevation [raisedElevation]="raisedElevation"
         [defaultElevation]="defaultElevation">
-          <mat-card-header>
-            <mat-card-title  class="dashboard-card-center" [@rubberBand]="animationState">
-              <span class="view-title">{{card.title}}</span>
-            </mat-card-title>
-            <mat-card-subtitle  class="dashboard-card-center"><span class="view-subtitle">{{card.subtitle}}</span></mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content class="dashboard-card-center">
-            <img mat-card-lg-image [src]="card.image" />
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
+        <mat-card-header>
+          <mat-card-title class="dashboard-card-center" [@rubberBand]="animationState">
+            <span class="view-title">{{card.title}}</span>
+          </mat-card-title>
+          <mat-card-subtitle class="dashboard-card-center"><span
+              class="view-subtitle">{{card.subtitle}}</span></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-center">
+          <img mat-card-md-image [src]="card.image" />
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button [routerLink]="['/',card.route]">Ir al {{card.title.toLowerCase()}}</button>
+        </mat-card-actions >
+      </mat-card>
+    </mat-grid-tile>
     }
   </mat-grid-list>
 </div>
