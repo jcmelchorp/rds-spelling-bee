@@ -1,13 +1,10 @@
-<mat-toolbar>
-  <mat-toolbar-row class="row-layout space-between-center" >
-    <div class="row-layout center-center">
-      <button
-        type="button"
-        aria-label="Mostrar menú"
-        mat-icon-button
-        (click)="toggleSidenavLeft($event)">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+<mat-toolbar  [ngClass]="hide ? 'hideToolbar' : 'showToolbar'" class="hideShowToolbar">
+  <mat-toolbar-row class="space-between-center" >
+    <div class="row-layout center-center" fxLayoutGap="5px">
+      <button  type="button" aria-label="mostrar menu" mat-icon-button
+      (click)="toggleSidenavLeft($event)">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
       <a routerLink="/"><img src="/assets/images/rds-bee-logo-transparent.png" height="45px" /></a>
       <div>RDS Spelling Bee</div>
     </div> 

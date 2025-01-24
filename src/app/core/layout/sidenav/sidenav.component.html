@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #leftSidenav class="sidenav d-print-none" [fixedInViewport]=false
+    [attr.role]="isHandset ? 'dialog' : 'navigation'" [@onSideNavChange]="sideNavState ? 'open' : 'close'"
+    [mode]="isHandset ? 'over':'side'" [opened]="isHandset === false">
+    <div role="navigation" class="column-layout space-between fx-flex-fill">
+      <mat-nav-list >
+        <mat-list-item [routerLink]="['/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+          <mat-icon class="blue" matListItemIcon >home</mat-icon>
+          <span matListItemTitle  [@animateText]="linkText ? 'show' : 'hide'">&nbsp; Inicio</span>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['contest']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+          <mat-icon class="blue" matListItemIcon >workspace_premium</mat-icon>
+          <span matListItemTitle  [@animateText]="linkText ? 'show' : 'hide'">&nbsp; Concurso</span>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['editor']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+          <mat-icon class="blue" matListItemIcon>auto_stories</mat-icon>
+          <span matListItemTitle [@animateText]="linkText ? 'show' : 'hide'">&nbsp; Vocabulario</span>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list >
+        <mat-accordion>
+          <mat-expansion-panel [class.mat-elevation-z0]="true" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false" hideToggle="panelOpenState">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon class="blue">admin_panel_settings</mat-icon>
+                <span [@animateText]="linkText ? 'show' : 'hide'">&nbsp; Usuarios</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ng-template matExpansionPanelContent>
+              <mat-nav-list dense>
+                <mat-list-item [routerLink]="['u']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+                  <mat-icon class="blue" matListItemIcon>people_alt</mat-icon>
+                  <span matListItemTitle [@animateText]="linkText ? 'show' : 'hide'">Escuela</span>
+                </mat-list-item>
+                <mat-list-item [routerLink]="['admin']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+                  <mat-icon class="blue" matListItemIcon>domain</mat-icon>
+                  <span matListItemTitle [@animateText]="linkText ? 'show' : 'hide'">Google</span>
+                </mat-list-item>
+              </mat-nav-list>
+            </ng-template>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-list-item (click)="onSidenavToggle()">
+          <mat-icon style="font-size: x-large;" class="blue" matListItemIcon> {{sideNavState ? 'compress' : 'start'}}</mat-icon>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content [@onMainContentChange]="(onSideNavChange && !isHandset) ? 'open': 'close'">
+    <app-main-component ></app-main-component>
+    <app-footer class="sticky-bottom"></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

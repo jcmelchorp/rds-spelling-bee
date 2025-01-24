@@ -4,30 +4,91 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100hv;
+  height: 100vh;
+
 }
 .view-title {
   color: $bg-main;
   font-weight: 400;
-  font-size:3.5em;
+  font-size: 3.5em;
   font-family: "fredoka one", cursive;
   text-shadow: -3px -2px 1px $text-shadow-color;
   max-width: 1200px;
-
 }
 .view-subtitle {
   font-weight: 400;
   color: $brown-color;
   font-family: "Comfortaa";
-  font-size:1.8em;
+  font-size: 1.8em;
   max-width: 1200px;
 }
 
+.display-4-responsive {
+  color: $rds-logo-color;
+  font-size: calc(1rem + 3vw);
+  font-weight: 100;
+}
+.h4-responsive {
+  margin-top: -20px;
+  font-size: calc(0.5rem + 1.5vw);
+  font-weight: 400;
+}
+.h2-responsive {
+  margin-top: -35px;
+  font-size: calc(0.5rem + 1.2vw);
+  font-weight: 100;
+}
+.h1-responsive {
+  margin-bottom: -5px;
+  font-family: "poiret one";
+  color: black;
+  font-size: calc(1rem + 2vw);
+}
+.h5-responsive {
+  margin-top: 0px;
+  font-size: calc(0.4rem + 1.2vw);
+  font-weight: 100;
+}
+.img-container {
+  margin-top: 10px;
+  width: 15%;
+  height: auto;
+  position: static;
+  right: 0;
+  top: 0;
+}
+.rds-icon {
+  color: $rds-logo-color;
+}
+.card-title {
+  font-family: "Fredoka One";
+  color: $rds-logo-color;
+}
+.color-rds {
+  color: $rds-logo-color;
+}
+.google-card-name {
+  font-family: "Fedoka";
+}
+
 @media (max-width: 1200px) {
-.view-title {
-  font-size: calc(0.5em + 4vw);
-}
-  .view-subtitle {
-  font-size: calc(0.4em + 2vw);
-}
+  .view-title {
+    font-size: calc(0.5em + 4vw);
   }
+  .view-subtitle {
+    font-size: calc(0.4em + 2vw);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* class to avoid text selection*/
+.no-copy {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}

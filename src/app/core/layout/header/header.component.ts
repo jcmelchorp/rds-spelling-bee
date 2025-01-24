@@ -8,7 +8,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { RouterLink } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { AsyncPipe } from "@angular/common";
+import { AsyncPipe, NgClass } from "@angular/common";
+import { FlexLayoutModule } from "ngx-flexible-layout";
 
 
 @Component({
@@ -16,7 +17,7 @@ import { AsyncPipe } from "@angular/common";
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
     standalone: true,
-    imports: [AsyncPipe,MatIconModule, MatToolbarModule,RouterLink,MatButtonModule, MatTooltipModule,AsyncPipe ],
+    imports: [AsyncPipe,MatIconModule, NgClass ,MatToolbarModule,RouterLink,MatButtonModule, MatTooltipModule,AsyncPipe,FlexLayoutModule ],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     

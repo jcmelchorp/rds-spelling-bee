@@ -16,7 +16,7 @@
           <img mat-card-md-image [src]="card.image" />
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-raised-button [routerLink]="['/',card.route]">Ir al {{card.title.toLowerCase()}}</button>
+          <button mat-raised-button color="warn" [routerLink]="['/',card.route]">Ir al {{card.title.toLowerCase()}}</button>
         </mat-card-actions >
       </mat-card>
     </mat-grid-tile>

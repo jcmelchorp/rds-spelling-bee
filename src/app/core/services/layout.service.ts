@@ -7,9 +7,9 @@ import { map, shareReplay } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class LayoutService {
+  public breakpointObserver = inject(BreakpointObserver);
   @ViewChild('mat-toolbar') matToolbar!: MatToolbar;
   public toggleSidenavLeft: EventEmitter<any> = new EventEmitter();
-  public breakpointObserver = inject(BreakpointObserver);
   public sideNavState$: Subject<boolean> = new Subject();
   private _sideState: any = 'open';
   prevScrollpos;
@@ -39,6 +39,7 @@ export class LayoutService {
     this._sideState = state;
   }
 
+  
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     const currentScrollPos = window.pageYOffset;
@@ -50,3 +51,10 @@ export class LayoutService {
     this.prevScrollpos = currentScrollPos;
   }
 }
+
+
+ 
+
+ 
+
+ 

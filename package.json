@@ -25,6 +25,7 @@
     "@angular/router": "^17.3.10",
     "angular-animations": "^0.11.0",
     "firebase": "^10.14.1",
+    "ngx-flexible-layout": "^17.0.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

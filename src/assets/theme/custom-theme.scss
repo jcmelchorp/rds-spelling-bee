@@ -1,6 +1,6 @@
 @use "@angular/material" as mat;
 //@import "@angular/material/theming";
-
+$enable-negative-margins: true;
 @include mat.core();
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto&family=Fredoka+One&family=Fredoka&family=Love+Ya+Like+A+Sister&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&family=Miltonian&family=Modak&display=swap");
 
@@ -8,12 +8,8 @@ $typography-config: mat.define-typography-config(
   $font-family: '"Fredoka", "Comfortaa", sans-serif',
 );
 
-
 //$typography-config: mat.define-typography-config();
- @include mat.typography-hierarchy($typography-config); // 👈 Added
-
-
-  
+@include mat.typography-hierarchy($typography-config); // 👈 Added
 
 // Define a dark theme
 $dark-theme: mat.define-dark-theme(
@@ -25,7 +21,7 @@ $dark-theme: mat.define-dark-theme(
     //Only include `typography` and `density` in the default dark theme.
     typography: $typography-config,
     //mat.define-typography-config($font-family: "Londrina Sketch"),
-     density: 0
+    density: 0,
   )
 );
 
@@ -35,7 +31,7 @@ $light-theme: mat.define-light-theme(
     color: (
       primary: mat.define-palette(mat.$indigo-palette),
       accent: mat.define-palette(mat.$pink-palette),
-    )
+    ),
   )
 );
 
@@ -55,13 +51,40 @@ $light-theme: mat.define-light-theme(
 @include mat.all-component-colors($light-theme);
 
 
+.mdc-list-item--with-leading-icon .mdc-list-item__start.blue { 
+  color: #0060a0;
+}   
+
+
+// Handle buttons appropriately, with respect to line-height
+.mat-raised-button,
+.mat-stroked-button,
+.mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 0.65em;
+  min-width: 3em;
+  line-height: 36.4px;
+}
+
+.mat-standard-chip {
+  padding: 0.5em 0.85em;
+  min-height: 2.5em;
+}
+
+.material-icons {
+  font-size: 26px;
+  font-family: "Material Icons Outlined", "Material Icons";
+  .mat-badge-content {
+    font-family: "Fredoka";
+  }
+}
+
 .mat-mdc-form-field-infix {
   padding-top: 20px !important;
- // height: 10px !important;
-
+  // height: 10px !important;
 }
 .mat-mdc-floating-label {
- // margin-top: -1vh !important;
+  // margin-top: -1vh !important;
   // margin-bottom: -1vh !important;
   height: 15px !important;
 }
@@ -101,6 +124,13 @@ $light-theme: mat.define-light-theme(
 .flex-item-nogrow {
   flex-grow: 0;
 }
+.fx-flex-fill {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
 
 //fxLayoutAlign="space-between"
 .space-between {
@@ -111,7 +141,7 @@ $light-theme: mat.define-light-theme(
 //fxLayoutAlign="space-between center"
 .center-space-between {
   display: flex;
-  justify-content:  center;
+  justify-content: center;
   align-items: space-between;
 }
 //fxLayoutAlign="start stretch"
@@ -124,7 +154,7 @@ $light-theme: mat.define-light-theme(
 //fxLayoutAlign="center space-between"
 .space-between-center {
   display: flex;
-  justify-content:  space-between;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -160,3 +190,13 @@ $light-theme: mat.define-light-theme(
 //     ...
 //   }
 // }
+
+.text-wrap-right {
+  float: right;
+  margin: 5px;
+}
+
+.text-wrap-left {
+  float: left;
+  margin: 5px;
+}

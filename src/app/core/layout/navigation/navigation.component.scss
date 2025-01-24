@@ -1,13 +1,11 @@
-.sidenav-container {
-  height: 100%;
+.fix-top {
+  // background-color: transparent !important;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.sidenav {
-  width: 200px;
+.progress-bar {
+  position: fixed;
+  top: 50px;
 }
-
-.sidenav .mat-toolbar {
-  background: inherit;
-}
-
-

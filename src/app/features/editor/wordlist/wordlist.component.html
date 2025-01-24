@@ -1,4 +1,6 @@
 <div *ngIf="dataSource.data" class="column-layout start-stretch">
+  <div class="flex-item-100">
+  </div>
   <table appMaterialElevation mat-table #table [dataSource]="dataSource" aria-label="word for contest" matSort>
 
       <ng-container matColumnDef="label">
@@ -7,6 +9,7 @@
               {{dataSource!.data.length}} {{(dataSource!.data.length===0)?'':'palabra'}}{{(dataSource!.data.length<=1)?'':'s'}}
                 } 
             para {{(object ? object.level! : 'concurso')}}
+            <button mat-raised-button color="accent" (click)="startContest(dataSource.data)">Start</button>
         </th>
         <td class="row-wrap space-between-stretch" mat-cell *matCellDef="let row">
           <div>{{row.id}}</div> <div>{{row.label}}</div>
