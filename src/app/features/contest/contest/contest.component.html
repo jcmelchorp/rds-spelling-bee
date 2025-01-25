@@ -1,24 +1,22 @@
-<div  style="padding: 100px;text-align: center;">
+<div style="padding: 100px;text-align: center;">
   <h1 class="mat-h1 view-title">Concurso</h1>
 
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Grado o nivel</mat-label>
-    <mat-select [formControl]="gradeControl" required>
+    <mat-select [formControl]="gradeControl">
       @for (level of levels; track level) {
       <mat-option [value]="level">{{level}}</mat-option>
       }
     </mat-select>
-    @if (gradeControl.hasError('required')) {
-    <mat-error>No has seleccionado nada aun.</mat-error>
-    }
     <mat-icon matSuffix>supervisor_account</mat-icon>
   </mat-form-field>
   @if (wordlist$|async) {
-    <div fxLayout="row" fxLayoutAlign="center stretch">
-      <mat-card class="contest-card-left" fxFlex="0 1 calc(35% - 5px)">
-      <app-wordlist  [object]="(wordlist$|async)!"></app-wordlist>
+  <div fxLayout="row" fxLayoutAlign="stretch stretch">
+    <mat-card class="contest-card-left" fxFlex="0 1 calc(40% - 5px)">
+      <app-wordlist (onWordEmit)="startReading($event)" [object]="wordlist"></app-wordlist>
     </mat-card>
-      <mat-card class="contest-card-right"  fxFlex="0 1 calc(65% - 5px)"></mat-card>
-    </div>
-}
+    <mat-card class="contest-card-right" fxFlex="0 1 calc(60% - 5px)">
+    </mat-card>
+  </div>
+  }
 </div>

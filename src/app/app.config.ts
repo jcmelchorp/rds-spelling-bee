@@ -12,10 +12,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FlexLayoutModule } from 'ngx-flexible-layout';
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    importProvidersFrom([BrowserAnimationsModule,FlexLayoutModule]),
+    importProvidersFrom([BrowserAnimationsModule,FlexLayoutModule,NgxSpinnerModule]),
     provideRouter(routes), 
     provideAnimations(),
     provideAnimationsAsync(),

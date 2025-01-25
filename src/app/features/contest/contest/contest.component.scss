@@ -1,8 +1,16 @@
 .contest-card-left {
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px 0px 0px 10px;
   }
   .contest-card-right {
-    padding: 15px;
+    padding: 10px;
     border-radius: 0px 10px 10px 0px;
+  }
+
+  .big-icon {
+    font-size: 3rem;
+  }
+  .custom-backdrop {
+    background-color:rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
   }

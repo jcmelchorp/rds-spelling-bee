@@ -25,8 +25,11 @@ body {
 
 .app-name {
   color: $rds-logo-color;
-  font-family: "Comfortaa";
-  font-weight: 800;
+  font-family: "Fredoka";
+  font-weight: 500;
+  text-shadow: -0.5px -0.5px 0px $text-shadow-color;
+font-size: large;
+  
 }
 
 .display-4-responsive {

@@ -1,22 +1,16 @@
-// .mat-toolbar {
-//     min-height: 53px !important;
-//     max-height: max-content;
-//     // position: sticky;
-//     // top: 0;
-//     // z-index: 1;
-//     background-color: transparent !important;
-//     .mat-toolbar-row {
-//       max-height: 53px !important;
-//       background-color: transparent !important;
-//     }
-//   }
+.fix-top {
+  // background-color: transparent !important;
+  // position: relative;
+  // top: 0;
+  z-index: 100;
+}
   
   
 
   .mat-toolbar {
-    min-height: 50px !important;
+    min-height: 57px !important;
     .mat-toolbar-row {
-      max-height: 50px !important;
+      max-height: 57px !important;
     }
   }
   a:hover {

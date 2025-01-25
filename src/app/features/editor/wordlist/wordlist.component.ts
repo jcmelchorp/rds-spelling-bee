@@ -1,6 +1,6 @@
 import { LiveAnnouncer } from "@angular/cdk/a11y";
 import { CommonModule } from "@angular/common";
-import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, inject, Input, model, OnChanges, OnInit, Output, signal, SimpleChanges, ViewChild } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { merge, of, startWith, switchMap } from "rxjs";
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
@@ -14,35 +14,39 @@ import { MatButtonModule } from "@angular/material/button";
 import { MaterialElevationDirective } from "../../../shared/directives/material-elevation.directive";
 import { MatCardModule } from "@angular/material/card";
 import { FlexLayoutModule } from "ngx-flexible-layout";
+import { MatDialog } from "@angular/material/dialog";
+import { WordDialogComponent } from "../word-dialog/word-dialog.component";
+import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-wordlist',
   standalone: true,
-  imports: [MaterialElevationDirective,FlexLayoutModule, MatCardModule,ReactiveFormsModule, FormsModule, MatTableModule, MatOptionModule, MatIconModule, MatPaginatorModule, RouterLink,MatButtonModule,MatCardModule],
+  imports: [NgxSpinnerModule, FlexLayoutModule, MatCardModule, ReactiveFormsModule, FormsModule, MatTableModule, MatOptionModule, MatIconModule, MatPaginatorModule, RouterLink, MatButtonModule, MatCardModule],
   templateUrl: './wordlist.component.html',
   styleUrl: './wordlist.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WordlistComponent implements OnInit, OnChanges, AfterViewInit {
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
-  @ViewChild(MatSort)
-  sort!: MatSort;
-  @ViewChild(MatTable)
-  table!: MatTable<Word>;
+        readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
+  @ViewChild(MatPaginator)paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatTable) table!: MatTable<Word>;
   @Input({ required: true }) object!: Wordlist;
-  @Output() onIptvEmit = new EventEmitter<Word>();
+  @Output() onWordEmit = new EventEmitter<Word>();
   dataSource!: MatTableDataSource<Word>;
   defaultElevation = 2;
   raisedElevation = 4;
   isLoading = false;
   displayedColumns = ['label'];
+
+
   constructor() {
     this.dataSource = new MatTableDataSource();
   }
 
 
   ngOnInit(): void {
+    console.log(this.object);
     this.dataSource.data = this.object.words!;
   }
 
@@ -60,6 +64,8 @@ export class WordlistComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.dataSource.data = this.object.words!;
+
     this.table.dataSource = this.dataSource;
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -71,6 +77,20 @@ export class WordlistComponent implements OnInit, OnChanges, AfterViewInit {
     }
   }
 
-startContest(words: Word[]) {
-}
+  startContest(words: Word[],enterAnimationDuration: string, exitAnimationDuration: string) {
+    this.showSpinner();
+    let randIndex=Math.floor(Math.random() * words.length)
+      let word = words[randIndex];
+      this.onWordEmit.emit(word);
+      console.log(word);
+  }
+
+  showSpinner() {
+    this.spinner.show();
+    setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+    }, 2000);
+  }
+ 
 }

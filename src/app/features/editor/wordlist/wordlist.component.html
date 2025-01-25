@@ -1,15 +1,18 @@
-<table mat-table #table [dataSource]="dataSource" aria-label="word for contest" >
+@if (dataSource.data!) {
+  <div fxLayout="row" fxLayoutAlign="end stretch" fxLayoutGap="10px">
+    <button mat-raised-button color="primary" (click)="startContest(dataSource.data,'1000','1000')" (keyup.space)="startContest(dataSource.data,'1000','1000')">Hit me!</button>
+  </div>
+
+<table mat-table #table [dataSource]="dataSource" aria-label="word for contest">
   <ng-container matColumnDef="label">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordena por nombre">
-      <div fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="10px">
-        <div ><button mat-raised-button color="primary" (click)="startContest(dataSource.data)">Start</button></div>
-        <div>@if (dataSource.data!.length>0) {
-          {{dataSource!.data.length}} {{(dataSource!.data.length===0)?'':'palabra'}}{{(dataSource!.data.length<=1)?'':'s'}}
-          } para <br>
-             {{(object ? object.level! : 'concurso' )}} </div>
-      </div>
+        <div>
+          {{(object ? object.level! : 'concurso' )}} 
+          {{dataSource!.data.length}} {{(dataSource!.data.length===0)?'':'palabra'}}{{(dataSource!.data.length
+          <=1)?'':'s'}} 
+        </div>
     </th>
-    <td fxLayout="row" fxLayoutAlign="space-between stretch" mat-cell *matCellDef="let row">
+    <td fxLayout="row" fxLayoutAlign="space-evenly stretch" mat-cell *matCellDef="let row">
       <div fxFlex>{{row.id}}</div>
       <div fxFlex>{{row.label}}</div>
     </td>
@@ -32,3 +35,9 @@
   </tr>
   <tr mat-footer-row *matFooterRowDef="['paginator']"></tr>
 </table>
+}
+@else {
+<ngx-spinner bdColor="rgba(0,0,0,0.9)" size="large" color="#0060a0" type="ball-atom" [fullScreen]="true">
+  <p style="color: white"> Tu palabra es... </p>
+</ngx-spinner>
+}

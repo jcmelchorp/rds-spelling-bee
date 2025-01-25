@@ -1,6 +1,6 @@
 
 <div [ngClass]="{'dark-theme': isDarkTheme|async}" fxFlexFill>
-  <app-header  class="d-print-none fix-top" [isHandset]="isHandset$|async">
+  <app-header  class="d-print-none" [isHandset]="isHandset$|async">
     <mat-progress-bar class="progress-bar" name="progressBar" *ngIf="loading" mode="query" color="primary">
     </mat-progress-bar>
   </app-header>

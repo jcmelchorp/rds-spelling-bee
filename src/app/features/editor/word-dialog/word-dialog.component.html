@@ -1,5 +1,5 @@
-<mat-icon mat-dialog-close>close</mat-icon><h4 mat-dialog-title> The word is...</h4>
-<mat-dialog-content>
+<mat-icon mat-dialog-close>close</mat-icon><h1 mat-dialog-title>{{data.input}}</h1>
+<mat-dialog-content class="mat-typography">
     <h1 style="text-align: center;"><mat-icon type="button" mat-icon-button (click)="repeatWord()">record_voice_over</mat-icon></h1>
     <app-show-word [text]="data.input"></app-show-word>
 </mat-dialog-content>
