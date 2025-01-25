@@ -1,37 +1,34 @@
-<div *ngIf="dataSource.data" class="column-layout start-stretch">
-  <div class="flex-item-100">
-  </div>
-  <table appMaterialElevation mat-table #table [dataSource]="dataSource" aria-label="word for contest" matSort>
+<table mat-table #table [dataSource]="dataSource" aria-label="word for contest" >
+  <ng-container matColumnDef="label">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordena por nombre">
+      <div fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="10px">
+        <div ><button mat-raised-button color="primary" (click)="startContest(dataSource.data)">Start</button></div>
+        <div>@if (dataSource.data!.length>0) {
+          {{dataSource!.data.length}} {{(dataSource!.data.length===0)?'':'palabra'}}{{(dataSource!.data.length<=1)?'':'s'}}
+          } para <br>
+             {{(object ? object.level! : 'concurso' )}} </div>
+      </div>
+    </th>
+    <td fxLayout="row" fxLayoutAlign="space-between stretch" mat-cell *matCellDef="let row">
+      <div fxFlex>{{row.id}}</div>
+      <div fxFlex>{{row.label}}</div>
+    </td>
+  </ng-container>
 
-      <ng-container matColumnDef="label">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordena por nombre">
-             @if (dataSource.data!.length>0) {
-              {{dataSource!.data.length}} {{(dataSource!.data.length===0)?'':'palabra'}}{{(dataSource!.data.length<=1)?'':'s'}}
-                } 
-            para {{(object ? object.level! : 'concurso')}}
-            <button mat-raised-button color="accent" (click)="startContest(dataSource.data)">Start</button>
-        </th>
-        <td class="row-wrap space-between-stretch" mat-cell *matCellDef="let row">
-          <div>{{row.id}}</div> <div>{{row.label}}</div>
-        </td>
-      </ng-container>
-  
-      <ng-container matColumnDef="paginator">
-        <td mat-footer-cell *matFooterCellDef [colSpan]="displayedColumns.length">
-          <mat-paginator  showFirstLastButtons  class="paginator" #paginator
-            [length]="dataSource!.data.length" [pageSize]="20" [pageSizeOptions]="[ 25, 50, 100, 200,250]"
-            aria-label="Selección de páginas"></mat-paginator>
-        </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-      <tr  mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="row.id">
-      </tr>
-      <!-- Row shown when there is no matching data. -->
-      <tr class="mat-row" *matNoDataRow>
-        <td class="text-center h2" colspan="3"><span class="badge bg-warning text-light">No encontré
-            resultados.</span></td>
-      </tr>
-      <tr mat-footer-row *matFooterRowDef="['paginator']"></tr>
-    </table>
-  </div>
+  <ng-container matColumnDef="paginator">
+    <td mat-footer-cell *matFooterCellDef [colSpan]="displayedColumns.length">
+      <mat-paginator showFirstLastButtons class="paginator" #paginator [length]="dataSource!.data.length"
+        [pageSize]="20" [pageSizeOptions]="[ 25, 50, 100, 200,250]" aria-label="Selección de páginas"></mat-paginator>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="row.id">
+  </tr>
+  <!-- Row shown when there is no matching data. -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="text-center h2" colspan="3"><span class="badge bg-warning text-light">No encontré
+        resultados.</span></td>
+  </tr>
+  <tr mat-footer-row *matFooterRowDef="['paginator']"></tr>
+</table>

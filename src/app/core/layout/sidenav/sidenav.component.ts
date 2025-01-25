@@ -13,6 +13,7 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MainComponent } from "../main/main.component";
 import { FooterComponent } from "../footer/footer.component";
 import { MatLineModule } from "@angular/material/core";
+import { FlexLayoutModule } from "ngx-flexible-layout";
 
 
 @Component({
@@ -20,7 +21,8 @@ import { MatLineModule } from "@angular/material/core";
   standalone: true,
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
-  imports: [MainComponent,
+  imports: [
+    MainComponent,
     FooterComponent,
     MatSidenavModule,
     MatMenuModule,
@@ -30,7 +32,8 @@ import { MatLineModule } from "@angular/material/core";
     MatIconModule,
     MatExpansionModule,
     MatListModule,
-    MatLineModule
+    MatLineModule,
+    FlexLayoutModule
   ],
   animations: [onMainContentChange, onSideNavChange, animateText],
 })
@@ -44,11 +47,6 @@ export class SidenavComponent {
   linkText: boolean = false;
   sideNavState: boolean = false;
   loading = false;
-  opened = true;
-
-  toggle(): void {
-    this.opened = !this.opened;
-  }
 
   constructor(
   ) {
@@ -64,7 +62,7 @@ export class SidenavComponent {
     this.sideNavState = !this.sideNavState;
     setTimeout(() => {
       this.linkText = this.sideNavState;
-    }, 100);
+    }, 10);
     this.layoutService.sideNavState$.next(this.sideNavState);
   }
 }

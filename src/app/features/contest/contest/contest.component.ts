@@ -11,6 +11,8 @@ import { AsyncPipe, JsonPipe, NgFor, NgIf, NgIfContext } from "@angular/common";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
+import { FlexLayoutModule, FlexModule } from "ngx-flexible-layout";
+import { MatCardModule } from "@angular/material/card";
 
 @Component({
     templateUrl: './contest.component.html',
@@ -26,7 +28,8 @@ import { MatInputModule } from "@angular/material/input";
         MatFormFieldModule,
         MatSelectModule,
         MatInputModule,
-        NgIf
+        MatCardModule,
+        FlexLayoutModule
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -43,13 +46,13 @@ export class ContestComponent implements OnInit {
     gradeControl: FormControl = new FormControl<Wordlist>({}, Validators.required);;
 
     constructor() {
+        
+    }
+    ngOnInit(): void {
         this.wordlist$ = this.gradeControl.valueChanges.pipe(
             mergeMap((grade: string) => this.wordlistService.list().pipe(
                 map(wordlists => wordlists.find((wl) => wl.level === grade)!)
             ))
         );
-    }
-    ngOnInit(): void {
-       
     }
 } 

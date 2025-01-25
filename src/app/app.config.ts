@@ -11,10 +11,11 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { FlexLayoutModule } from 'ngx-flexible-layout';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    importProvidersFrom([BrowserAnimationsModule]),
+    importProvidersFrom([BrowserAnimationsModule,FlexLayoutModule]),
     provideRouter(routes), 
     provideAnimations(),
     provideAnimationsAsync(),

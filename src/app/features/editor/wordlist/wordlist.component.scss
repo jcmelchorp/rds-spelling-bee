@@ -4,14 +4,18 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-   background-color: transparent !important;
+  //  background-color: transparent !important;
     //font-size: xx-small;
   }
   
+  .table-card {
+    margin: 20px;
+    border-radius: 10px 0px 0px 10px;
+  }
   .paginator {
     // font-size: 80%;
     margin: 0 !important;
-     background-color: transparent !important;
+    //  background-color: transparent !important;
     font-family: "Fredoka", sans-serif;
     //  font-size: small;
    // width: 3vh;
@@ -20,22 +24,24 @@
   ::ng-deep {
     table {
       padding-left:2px;
-      padding-right:-2px;
-      border-radius: 10px;
+      padding-right:-2px;            
       min-width: min-content;
-      max-width: max-content;
     }
+    thead {
+      border-radius: 10px 0px 0px 0px;
+    }
+    tfoot {border-radius: 0px 0px 0px 10px;}
     tbody {
       display: block;
       overflow: auto;
-      max-height: 70vh;
+      max-height: 50vh;
       width: 100%;
       padding-top: 2px;
       padding-bottom: 2px;
     }
-    tfoot,thead,
+  tfoot, thead,
     tbody tr {
-      background-color: rgba(100, 100, 100, 0.1) !important;
+      // background-color: rgba(100, 100, 100, 0.1) !important;
       height: 30px;
       display: table;
       width: 100%;
@@ -47,7 +53,7 @@
     font-style: bold;
     font-size: 15px;
     background-color: transparent !important;
-    color: #42290b;
+    color: #804b0a;
     font-family: "Fredoka", sans-serif;
   }
   .mat-mdc-row {

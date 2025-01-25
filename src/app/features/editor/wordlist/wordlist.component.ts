@@ -12,11 +12,13 @@ import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
 import { MaterialElevationDirective } from "../../../shared/directives/material-elevation.directive";
+import { MatCardModule } from "@angular/material/card";
+import { FlexLayoutModule } from "ngx-flexible-layout";
 
 @Component({
   selector: 'app-wordlist',
   standalone: true,
-  imports: [MaterialElevationDirective,CommonModule, ReactiveFormsModule, FormsModule, MatTableModule, MatOptionModule, MatIconModule, MatPaginatorModule, RouterLink,MatButtonModule],
+  imports: [MaterialElevationDirective,FlexLayoutModule, MatCardModule,ReactiveFormsModule, FormsModule, MatTableModule, MatOptionModule, MatIconModule, MatPaginatorModule, RouterLink,MatButtonModule,MatCardModule],
   templateUrl: './wordlist.component.html',
   styleUrl: './wordlist.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

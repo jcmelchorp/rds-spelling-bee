@@ -1,4 +1,4 @@
-<mat-toolbar  [ngClass]="hide ? 'hideToolbar' : 'showToolbar'" class="hideShowToolbar">
+<mat-toolbar [ngClass]="hide ? 'hideToolbar' : 'showToolbar'" class="hideShowToolbar">
   <mat-toolbar-row class="space-between-center" >
     <div class="row-layout center-center" fxLayoutGap="5px">
       <button  type="button" aria-label="mostrar menu" mat-icon-button
@@ -6,7 +6,7 @@
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
       <a routerLink="/"><img src="/assets/images/rds-bee-logo-transparent.png" height="45px" /></a>
-      <div>RDS Spelling Bee</div>
+      <div class="app-name">RDS Spelling Bee</div>
     </div> 
       <div >
         <mat-icon  [matTooltip]="(isDarkTheme$|async)?'Modo oscuro':'Modo claro'" type="button"
