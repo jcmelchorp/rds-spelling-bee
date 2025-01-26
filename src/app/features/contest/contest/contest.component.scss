@@ -1,16 +1,15 @@
-.contest-card-left {
+.contest-card {
     padding: 10px;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .contest-card-right {
-    padding: 10px;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 10px;
   }
 
   .big-icon {
-    font-size: 3rem;
+    font-size: 6rem;
   }
-  .custom-backdrop {
-    background-color:rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
+
+
+  .custom-dialog-overlay {
+    filter: blur(20px);
+    background-color: #212121c4 !important;
+    opacity: 0.9 ;
   }

@@ -27,8 +27,8 @@ import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WordlistComponent implements OnInit, OnChanges, AfterViewInit {
-        readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
-  @ViewChild(MatPaginator)paginator!: MatPaginator;
+  readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<Word>;
   @Input({ required: true }) object!: Wordlist;
@@ -77,20 +77,20 @@ export class WordlistComponent implements OnInit, OnChanges, AfterViewInit {
     }
   }
 
-  startContest(words: Word[],enterAnimationDuration: string, exitAnimationDuration: string) {
+  startContest(words: Word[], enterAnimationDuration: string, exitAnimationDuration: string) {
     this.showSpinner();
-    let randIndex=Math.floor(Math.random() * words.length)
-      let word = words[randIndex];
-      this.onWordEmit.emit(word);
-      console.log(word);
+    let randIndex = Math.floor(Math.random() * words.length)
+    let word = words[randIndex];
+    this.onWordEmit.emit(word);
+    console.log(word);
   }
 
   showSpinner() {
     this.spinner.show();
     setTimeout(() => {
-        /** spinner ends after 5 seconds */
-        this.spinner.hide();
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
     }, 2000);
   }
- 
+
 }

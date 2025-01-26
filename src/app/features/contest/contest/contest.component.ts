@@ -16,6 +16,7 @@ import { MatCardModule } from "@angular/material/card";
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { MatDialog } from "@angular/material/dialog";
 import { WordDialogComponent } from "../../editor/word-dialog/word-dialog.component";
+import { WordchipsComponent } from "../wordchips/wordchips.component";
 
 @Component({
     templateUrl: './contest.component.html',
@@ -28,12 +29,14 @@ import { WordDialogComponent } from "../../editor/word-dialog/word-dialog.compon
         MatIconModule,
         MatOptionModule,
         WordlistComponent,
+        WordchipsComponent,
         MatFormFieldModule,
         MatSelectModule,
         MatInputModule,
         MatCardModule,
         FlexLayoutModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        WordchipsComponent
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -46,7 +49,7 @@ export class ContestComponent implements OnInit {
     readonly input = model('');
     readonly dialog = inject(MatDialog);
     word!: Word;
-
+    disableSelect: string = 'false';
     wordlists$!: Observable<Wordlist[]>;
     wordlist$: Observable<Wordlist> = new Observable<Wordlist>();
     wordlist!: Wordlist;
@@ -58,8 +61,11 @@ export class ContestComponent implements OnInit {
         this.wordlist$ = this.gradeControl.valueChanges.pipe(
             switchMap((grade: string) => this.wordlistService.list().pipe(
                 map(wordlists => wordlists.find((wl) => wl.level === grade)!),
-                tap(wordlist => this.wordlist = wordlist)
-            ))
+                tap(wordlist => {
+                    this.wordlist = wordlist;
+                })
+            )),
+            tap(() => this.gradeControl.disable() )
         );
     }
 
@@ -68,20 +74,18 @@ export class ContestComponent implements OnInit {
 
     startReading(word: Word) {
         this.word = word;
-        console.log('Reading started', event);
-        this.openDialog('500ms', '500ms');
+        this.openDialog('1000ms', '300ms');
     }
 
     openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
         this.input.set(this.word.label!);
         const dialogRef = this.dialog.open(WordDialogComponent, {
-            height: '200px',
-            width: '300px',
             enterAnimationDuration,
             exitAnimationDuration,
-             backdropClass: "custom-backdrop",
-             autoFocus: false,
-             data: { input: this.input(), output: this.output() },
+            backdropClass: 'backDrop',  // mat-dialog css class
+            //disableClose: true,  // If you click outside the mat-dialog box window, it will not close.
+            autoFocus: false,
+            data: { input: this.input(), output: this.output() },
         });
 
         dialogRef.afterClosed().subscribe(result => {

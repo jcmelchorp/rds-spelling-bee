@@ -2,13 +2,24 @@
 //@import "@angular/material/theming";
 $enable-negative-margins: true;
 @include mat.core();
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto&family=Fredoka+One&family=Fredoka&family=Love+Ya+Like+A+Sister&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&family=Miltonian&family=Modak&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&family=Miltonian&display=swap");
 
 $typography-config: mat.define-typography-config(
-  $font-family: '"Fredoka", "Fredoka One", sans-serif',
+  $font-family: '"Fredoka", "Miltonian", sans-serif',
+  $headline-1: mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $headline-2: mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $headline-3: mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $headline-4: mat.define-typography-level(34px, 40px, 400),
+  $headline-5: mat.define-typography-level(24px, 32px, 400),
+  $headline-6: mat.define-typography-level(20px, 32px, 400),
+  $subtitle-1: mat.define-typography-level(16px, 28px, 400),
+  $body-1: mat.define-typography-level(18px, 20px, 400),
+  $body-2: mat.define-typography-level(16px, 20px, 400),
+  $subtitle-2: mat.define-typography-level(30px, 28px, 400),
+  $caption: mat.define-typography-level(16px, 20px, 400),
+  $button: mat.define-typography-level(16px, 14px, 500),
 );
 
-//$typography-config: mat.define-typography-config();
 @include mat.typography-hierarchy($typography-config); // 👈 Added
 
 // Define a dark theme
@@ -50,6 +61,21 @@ $light-theme: mat.define-light-theme(
 }
 @include mat.all-component-colors($light-theme);
 
+.backDrop {
+  background-color:rgba(50,50,50,.3);
+  backdrop-filter: blur(10px);
+}
+
+.mat-form-field-appearance-fill .mat-mdc-form-field-infix {
+  padding-top: 20px !important;
+ // height: 10px !important;
+
+}
+.mat-form-field-appearance-fill .mat-mdc-floating-label {
+ // margin-top: -1vh !important;
+  // margin-bottom: -1vh !important;
+  height: 15px !important;
+}
 
 .mdc-list-item--with-leading-icon .mdc-list-item__start.blue { 
   color: #0060a0;
@@ -78,16 +104,6 @@ $light-theme: mat.define-light-theme(
     font-family: "Fredoka";
   }
 }
-
-// .mat-mdc-form-field-infix {
-//   padding-top: 20px !important;
-//   // height: 10px !important;
-// }
-// .mat-mdc-floating-label {
-//   // margin-top: -1vh !important;
-//   // margin-bottom: -1vh !important;
-//   height: 15px !important;
-// }
 
 //fxLayout="column"
 .column-layout {

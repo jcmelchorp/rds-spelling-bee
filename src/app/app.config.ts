@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
 import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -17,8 +17,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideRouter(routes,withViewTransitions()),
     importProvidersFrom([BrowserAnimationsModule,FlexLayoutModule,NgxSpinnerModule]),
-    provideRouter(routes), 
     provideAnimations(),
     provideAnimationsAsync(),
     provideFirebaseApp(() => initializeApp(environment.firebaseOptions)),

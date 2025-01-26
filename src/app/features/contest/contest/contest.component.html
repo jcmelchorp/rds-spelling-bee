@@ -1,22 +1,23 @@
-<div style="padding: 100px;text-align: center;">
-  <h1 class="mat-h1 view-title">Concurso</h1>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Grado o nivel</mat-label>
-    <mat-select [formControl]="gradeControl">
-      @for (level of levels; track level) {
-      <mat-option [value]="level">{{level}}</mat-option>
-      }
-    </mat-select>
-    <mat-icon matSuffix>supervisor_account</mat-icon>
-  </mat-form-field>
-  @if (wordlist$|async) {
-  <div fxLayout="row" fxLayoutAlign="stretch stretch">
-    <mat-card class="contest-card-left" fxFlex="0 1 calc(40% - 5px)">
-      <app-wordlist (onWordEmit)="startReading($event)" [object]="wordlist"></app-wordlist>
-    </mat-card>
-    <mat-card class="contest-card-right" fxFlex="0 1 calc(60% - 5px)">
-    </mat-card>
+<div style="padding-top: 65px;" fxLayout="column" fxLayoutAlign="center center">
+  <div fxFlex>
+    <h3 class="view-subtitle">Concurso de</h3>
+    <h1 class="view-title">Spelling Bee</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Grado o nivel</mat-label>
+      <mat-select [formControl]="gradeControl">
+        @for (level of levels; track level) {
+        <mat-option [value]="level">{{level}}</mat-option>
+        }
+      </mat-select>
+      <mat-icon matSuffix>supervisor_account</mat-icon>
+    </mat-form-field>
   </div>
-  }
+  <div style="padding: 50px;" fxFlexFill>
+    @if (wordlist$|async) {
+    <mat-card class="contest-card" fxFlexFill>
+      <!-- <app-wordlist (onWordEmit)="startReading($event)" [object]="wordlist"></app-wordlist> -->
+      <app-wordchips (onWordEmit)="startReading($event)" [object]="wordlist"> </app-wordchips>
+    </mat-card>
+    }
+  </div>
 </div>
