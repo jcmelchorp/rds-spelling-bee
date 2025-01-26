@@ -25,5 +25,5 @@ export const routes: Routes = [
         ]
         // loadComponent: () => import('./features/wordlists/wordlists.component'),
     },
-
+    { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
