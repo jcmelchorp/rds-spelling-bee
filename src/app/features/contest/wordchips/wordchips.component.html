@@ -1,12 +1,12 @@
-@if (dataSource.data!) {
+@if (filteredData) {
 <div fxLayout="column" fxLayoutAlign="stretch center" fxLayoutGap="5px">
-  <img style="text-align: center;" type="button" cdkFocusInitial (keyup.Space)="startContest(dataSource.data)"
-    (click)="startContest(dataSource.data)" height="100px" src="/assets/images/space_bar.gif" />
+  <img style="text-align: center;" type="button" cdkFocusInitial (keyup.Space)="startContest(filteredData)"
+    (click)="startContest(filteredData)" height="100px" src="/assets/images/space_bar.gif" />
 
   @if (filteredData!.length!==0) {
   <mat-chip-set class="mat-typography" aria-label="Word selection">
     <div fxLayout="row wrap" fxLayoutAlign="center stretch">
-      @for (word of filteredData; track $index) {<mat-chip>{{ word.id }}</mat-chip>}
+      @for (word of filteredData; track $index) {<mat-chip [ngClass]="word.staged ? 'word-done' : ''">{{ word.id }}</mat-chip>}
     </div>
   </mat-chip-set>
   } @else {

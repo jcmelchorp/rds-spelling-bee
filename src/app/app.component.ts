@@ -12,5 +12,5 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'rds-spelling-bee';
+  title = 'Spelling Bee RDS';
 }

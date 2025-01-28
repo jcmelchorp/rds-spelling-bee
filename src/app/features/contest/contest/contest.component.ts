@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, Input, input, model, NgModule, OnInit, output, signal } from "@angular/core";
+import { afterNextRender, ChangeDetectionStrategy, Component, ElementRef, inject, Input, input, model, NgModule, OnInit, output, signal, ViewChild } from "@angular/core";
 import { BehaviorSubject, concat, map, merge, mergeAll, mergeMap, Observable, Subscription, switchAll, switchMap, tap } from "rxjs";
 import { Grades, Word, Wordlist } from "../../editor/wordlist/wordlist.model";
 import { MatError, MatFormField, MatFormFieldModule, MatHint, MatLabel } from "@angular/material/form-field";
@@ -28,7 +28,6 @@ import { WordchipsComponent } from "../wordchips/wordchips.component";
         ReactiveFormsModule,
         MatIconModule,
         MatOptionModule,
-        WordlistComponent,
         WordchipsComponent,
         MatFormFieldModule,
         MatSelectModule,
@@ -48,24 +47,32 @@ export class ContestComponent implements OnInit {
     readonly output = signal('');
     readonly input = model('');
     readonly dialog = inject(MatDialog);
+    // @ViewChild('balloons', { static: false }) elRef!: ElementRef;
+    // balloonContainer!: HTMLElement;
     word!: Word;
     disableSelect: string = 'false';
     wordlists$!: Observable<Wordlist[]>;
     wordlist$: Observable<Wordlist> = new Observable<Wordlist>();
     wordlist!: Wordlist;
-
+    wordsCount: number = 1;
+    showB: BehaviorSubject<boolean> = new BehaviorSubject(false);
     levels = Grades;
     gradeControl: FormControl = new FormControl<Wordlist>({});
-
     constructor() {
-        this.wordlist$ = this.gradeControl.valueChanges.pipe(
+        // this.balloonContainer = this.elRef.nativeElement; 
+               this.wordlist$ = this.gradeControl.valueChanges.pipe(
             switchMap((grade: string) => this.wordlistService.list().pipe(
                 map(wordlists => wordlists.find((wl) => wl.level === grade)!),
                 tap(wordlist => {
                     this.wordlist = wordlist;
+                    // Hack for debugging fast
+                    // this.wordlist.words=this.wordlist.words!.map(word => {
+                    //     if (Number(word.id!) <=55) {word.staged = true;} else {word.staged = false;}
+                    //     return word;
+                    // });
                 })
             )),
-            tap(() => this.gradeControl.disable() )
+            tap(() => this.gradeControl.disable())
         );
     }
 
@@ -74,7 +81,7 @@ export class ContestComponent implements OnInit {
 
     startReading(word: Word) {
         this.word = word;
-        this.openDialog('1000ms', '300ms');
+        this.openDialog('4000ms', '300ms');
     }
 
     openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -91,7 +98,67 @@ export class ContestComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
             if (result !== undefined) {
                 this.output.set(result);
+                if (this.wordsCount === this.wordlist.words?.length) {
+                    //this.showBalloons()
+                    alert('The Spelling Bee contest has finished!')
+                    this.gradeControl.enable()
+                } else {
+                    console.log(this.word)
+                    this.wordsCount++;
+                    console.log(this.wordsCount)
+                }
             }
         });
     }
+
+    showBalloons() {
+        // this.showB.next(true);
+        // console.log('show balloons')
+        this.createBalloons(30)
+        setTimeout(() => {
+            /** spinner ends after 5 seconds */
+            this.removeBalloons();
+            // this.showB.next(false);
+        }, 10000);
+    }
+
+
+
+    random(num: number) {
+        return Math.floor(Math.random() * num);
+    }
+
+    getRandomStyles() {
+        var r = this.random(255);
+        var g = this.random(255);
+        var b = this.random(255);
+        var mt = this.random(200);
+        var ml = this.random(50);
+        var dur = this.random(5) + 5;
+        return `
+  background-color: rgba(${r},${g},${b},0.7);
+  color: rgba(${r},${g},${b},0.7); 
+  box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
+  margin: ${mt}px 0 0 ${ml}px;
+  animation: float ${dur}s ease-in infinite
+  `;
+    }
+
+    createBalloons(num: any) {
+        for (var i = num; i > 0; i--) {
+            var balloon = document.createElement("div");
+            balloon.className = "balloon";
+            balloon.style.cssText = this.getRandomStyles();
+            // console.log(balloon)
+            // this.balloonContainer.append(balloon);
+        }
+    }
+
+    removeBalloons() {
+        // this.balloonContainer.style.opacity = '0';
+        setTimeout(() => {
+            // this.balloonContainer.remove()
+        }, 500)
+    }
+
 } 

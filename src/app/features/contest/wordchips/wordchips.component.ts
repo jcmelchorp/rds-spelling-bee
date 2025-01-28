@@ -12,11 +12,12 @@ import { FlexLayoutModule } from "ngx-flexible-layout";
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { Word, Wordlist } from "../../editor/wordlist/wordlist.model";
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { NgClass } from "@angular/common";
 
 @Component({
   selector: 'app-wordchips',
   standalone: true,
-  imports: [NgxSpinnerModule, FlexLayoutModule, MatCardModule, ReactiveFormsModule, MatChipsModule, FormsModule, MatFormFieldModule, MatTableModule, MatOptionModule, MatIconModule, MatPaginatorModule, MatButtonModule, MatCardModule],
+  imports: [NgClass, NgxSpinnerModule, FlexLayoutModule, MatCardModule, ReactiveFormsModule, MatChipsModule, FormsModule, MatFormFieldModule, MatTableModule, MatOptionModule, MatIconModule, MatPaginatorModule, MatButtonModule, MatCardModule],
   templateUrl: './wordchips.component.html',
   styleUrl: './wordchips.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,20 +28,24 @@ export class WordchipsComponent implements OnInit/*, OnChanges*/ {
   @Input({ required: true }) object!: Wordlist;
   @Output() onWordEmit = new EventEmitter<Word>();
   filteredData: Word[] = [];
-  @HostListener('document:keyup', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    switch (event.key) {
-      case 'Space':
-        this.startContest(this.filteredData)
-        break;
-    }
-  }
+  // @HostListener('document:keyup', ['$event'])
+  // handleKeyboardEvent(event: KeyboardEvent) {
+  //   switch (event.key) {
+  //     case 'Space':
+  //       this.startContest(this.filteredData)
+  //       break;
+  //   }
+  // }
   defaultElevation = 2;
   raisedElevation = 4;
   size = 100;
   page = 0;
+  uttr: SpeechSynthesisUtterance;
   dataSource = new MatTableDataSource<Word>();
-  constructor() { }
+  constructor() {
+    this.uttr = new SpeechSynthesisUtterance()
+    this.uttr.lang = 'en-US'
+  }
 
   // ngOnChanges(changes: SimpleChanges): void {
   //   console.log(changes)
@@ -83,11 +88,24 @@ export class WordchipsComponent implements OnInit/*, OnChanges*/ {
   }
 
   startContest(words: Word[]) {
-  //  this.showSpinner();
-    let randIndex = Math.floor(Math.random() * words.length)
-    let word = words[randIndex];
-    this.onWordEmit.emit(word);
-    console.log(word);
+    this.showSpinner();
+    this.uttr.text = 'Your word is: ';
+    window.speechSynthesis.speak(this.uttr);
+    words = words.filter(w => w.staged === false);
+    let wordsCount: number = words.length;
+    if (wordsCount == 0) {
+      alert('El concurso ha terminado')
+    } else if (wordsCount <= this.object.words!.length) {
+      let randomIndex: number = Math.floor(Math.random() * wordsCount);
+      let word = words[randomIndex];
+      words[randomIndex].staged=true;
+      this.uttr.text = `number ${randomIndex + 1}`;
+      window.speechSynthesis.speak(this.uttr);
+      console.log('Word remain emitted #',wordsCount)
+      this.onWordEmit.emit(word);
+    } else {
+      alert('El concurso ha terminado')
+    }
   }
 
   showSpinner() {

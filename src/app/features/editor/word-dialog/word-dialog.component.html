@@ -2,10 +2,11 @@
 <div style="text-align: center;padding: 20px;">
   <mat-icon>record_voice_over</mat-icon><br>
   <app-word [word]="data.input"></app-word>
+  <app-show-word ></app-show-word>
 </div>
 <mat-dialog-actions align="center">
   <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-  <mat-icon style="color: #0060a0;" mat-icon-button type="button" (click)="nextWord()">skip_previous</mat-icon>
-  <mat-icon style="color: #0060a0;" mat-icon-button type="button" (click)="repeatWord()">replay</mat-icon>
-  <mat-icon style="color: #0060a0;" mat-icon-button type="button" (click)="nextWord()">skip_next</mat-icon>
+ <button mat-fab extended color="primary"  (click)="useInSentence()"> <mat-icon>replay</mat-icon>Enunciado</button>
+ <button mat-fab extended color="primary"  (click)="repeatWord()"> <mat-icon>replay</mat-icon>Repetir</button>
+ <button mat-fab extended color="primary"  (click)="defineWord()"> <mat-icon>replay</mat-icon>Definición</button>
 </mat-dialog-actions>
