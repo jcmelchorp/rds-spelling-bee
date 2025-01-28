@@ -17,6 +17,7 @@ import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { MatDialog } from "@angular/material/dialog";
 import { WordDialogComponent } from "../../editor/word-dialog/word-dialog.component";
 import { WordchipsComponent } from "../wordchips/wordchips.component";
+import * as confetti from 'canvas-confetti';
 
 @Component({
     templateUrl: './contest.component.html',
@@ -99,8 +100,8 @@ export class ContestComponent implements OnInit {
             if (result !== undefined) {
                 this.output.set(result);
                 if (this.wordsCount === this.wordlist.words?.length) {
-                    //this.showBalloons()
-                    alert('The Spelling Bee contest has finished!')
+                    this.celebrate()
+                    //alert('The Spelling Bee contest has finished!')
                     this.gradeControl.enable()
                 } else {
                     console.log(this.word)
@@ -110,6 +111,19 @@ export class ContestComponent implements OnInit {
             }
         });
     }
+
+    celebrate() {
+        const duration = 5000; // in milliseconds
+      
+        confetti.default({
+          particleCount: 100,
+          spread: 160,
+          origin: { y: 0.6 },
+        });
+      
+        // Clear confetti after a certain duration
+        setTimeout(() => confetti.reset(), duration);
+      }
 
     showBalloons() {
         // this.showB.next(true);
