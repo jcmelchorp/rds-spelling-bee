@@ -6,7 +6,7 @@ $enable-negative-margins: true;
 
 $typography-config: mat.define-typography-config(
   $font-family: '"Fredoka", "Miltonian", sans-serif',
-  $headline-1: mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $headline-1: mat.define-typography-level(124px, 124px, 600, $letter-spacing: -0.05em),
   $headline-2: mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
   $headline-3: mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
   $headline-4: mat.define-typography-level(34px, 40px, 400),

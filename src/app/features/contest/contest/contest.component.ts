@@ -13,6 +13,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
 import { FlexLayoutModule, FlexModule } from "ngx-flexible-layout";
 import { MatCardModule } from "@angular/material/card";
+import { MatBadgeModule } from "@angular/material/badge";
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { MatDialog } from "@angular/material/dialog";
 import { WordDialogComponent } from "../../editor/word-dialog/word-dialog.component";
@@ -27,6 +28,7 @@ import * as confetti from 'canvas-confetti';
         AsyncPipe,
         FormsModule,
         ReactiveFormsModule,
+        MatBadgeModule,
         MatIconModule,
         MatOptionModule,
         WordchipsComponent,
@@ -59,9 +61,12 @@ export class ContestComponent implements OnInit {
     showB: BehaviorSubject<boolean> = new BehaviorSubject(false);
     levels = Grades;
     gradeControl: FormControl = new FormControl<Wordlist>({});
+    duration = 15 * 1000;
+    animationEnd = Date.now() + this.duration;
+    defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
     constructor() {
         // this.balloonContainer = this.elRef.nativeElement; 
-               this.wordlist$ = this.gradeControl.valueChanges.pipe(
+        this.wordlist$ = this.gradeControl.valueChanges.pipe(
             switchMap((grade: string) => this.wordlistService.list().pipe(
                 map(wordlists => wordlists.find((wl) => wl.level === grade)!),
                 tap(wordlist => {
@@ -100,9 +105,10 @@ export class ContestComponent implements OnInit {
             if (result !== undefined) {
                 this.output.set(result);
                 if (this.wordsCount === this.wordlist.words?.length) {
-                    this.celebrate()
+                    this.celebrate(); this.celebrate();
+                    // this.interval()
                     //alert('The Spelling Bee contest has finished!')
-                    this.gradeControl.enable()
+                    this.gradeControl.enable();
                 } else {
                     console.log(this.word)
                     this.wordsCount++;
@@ -112,18 +118,37 @@ export class ContestComponent implements OnInit {
         });
     }
 
+
+
+    randomInRange(min: number, max: number) {
+        return Math.random() * (max - min) + min;
+    }
+
+    interval: any = () => {
+        var timeLeft = this.animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+            return clearInterval(this.interval);
+        }
+
+        var particleCount = 50 * (timeLeft / this.duration);
+        // since particles fall down, start a bit higher than random
+        confetti.default({ ...this.defaults, particleCount, origin: { x: this.randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+        confetti.default({ ...this.defaults, particleCount, origin: { x: this.randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+    };
+
     celebrate() {
-        const duration = 5000; // in milliseconds
-      
+        const duration = 10000; // in milliseconds
+
         confetti.default({
-          particleCount: 100,
-          spread: 160,
-          origin: { y: 0.6 },
+            particleCount: 100,
+            spread: 160,
+            origin: { x: this.randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
         });
-      
+
         // Clear confetti after a certain duration
-        setTimeout(() => confetti.reset(), duration);
-      }
+        setTimeout(() => confetti.default.reset(), duration);
+    }
 
     showBalloons() {
         // this.showB.next(true);
