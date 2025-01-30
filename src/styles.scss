@@ -4,8 +4,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-
+  height: 100%;
 }
 .view-title {
   color: $bg-main;
@@ -34,13 +33,13 @@ font-size: large;
 .year {
   position: relative;
   color: #be7714;
-  margin-top: -1px;
+  margin-top: -20px;
   padding-left: 50px;
-  transform: scale(2);
+  //transform: scale(2);
   font-family: "Londrina Shadow";
   font-weight: 500;
   text-shadow: -0.5px -0.5px 0.6px rgba($color: #221502, $alpha: 1);
-  //font-size: calc(1rem + 2vw);
+  font-size: calc(1rem + 2vw);
 }
 
 .display-4-responsive {

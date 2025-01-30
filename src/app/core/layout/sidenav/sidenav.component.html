@@ -1,10 +1,10 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #leftSidenav class="sidenav d-print-none" fixedInViewport
+  <mat-sidenav #leftSidenav class="sidenav d-print-none" fixedInViewport=false
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [@onSideNavChange]="sideNavState ? 'close' : 'open'"
     [mode]="isHandset ? 'over':'side'" [opened]="false">
     <div role="navigation" class="column-layout space-between fx-flex-fill">
       <mat-nav-list >
-        <mat-list-item style="margin-top: 20px;margin-bottom: 20px;" [routerLink]="['/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+        <mat-list-item style="margin-bottom: 20px;" [routerLink]="['/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
           <mat-icon class="blue" matListItemIcon >home</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Inicio</span>
         </mat-list-item>
@@ -47,8 +47,9 @@
       <!-- </mat-nav-list>  -->
     </div>
   </mat-sidenav>
-  <mat-sidenav-content [@onMainContentChange]="(onSideNavChange && !isHandset) ? 'open': 'close'">
-    <app-main-component ></app-main-component>
-    <app-footer class="sticky-bottom"></app-footer>
+  <mat-sidenav-content [@onMainContentChange]="(onSideNavChange && !isHandset) ? 'open': 'close'" fxLayout="column" fxLayoutAlign="stretch stretch">
+    
+    <app-main-component class="main-content" ></app-main-component>
+   <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

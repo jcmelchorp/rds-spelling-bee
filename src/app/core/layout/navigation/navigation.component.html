@@ -1,8 +1,7 @@
 
-<div [ngClass]="{'dark-theme': isDarkTheme|async}" fxFlexFill>
+<div [ngClass]="{'dark-theme': isDarkTheme|async}" >
   <app-header  class="d-print-none" [isHandset]="isHandset$|async">
-    <mat-progress-bar class="progress-bar" name="progressBar" *ngIf="loading" mode="query" color="primary">
-    </mat-progress-bar>
+    <mat-progress-bar class="progress-bar" name="progressBar" *ngIf="loading" mode="query" color="primary"></mat-progress-bar>
   </app-header>
-  <app-sidenav fxFlex [isHandset]="(isHandset$|async)!"></app-sidenav>
+  <app-sidenav  [isHandset]="(isHandset$|async)!"></app-sidenav>
 </div>
