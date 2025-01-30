@@ -81,7 +81,10 @@ $light-theme: mat.define-light-theme(
   color: #0060a0;
 }   
 
+.mat-mdc-form-field {
+  font-family: 'Fredoka'mportant !important;
 
+}
 // Handle buttons appropriately, with respect to line-height
 .mat-raised-button,
 .mat-stroked-button,

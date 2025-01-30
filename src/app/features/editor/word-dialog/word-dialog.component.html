@@ -1,6 +1,6 @@
 <mat-icon mat-dialog-close>close</mat-icon>
 <div style="text-align: center;padding: 20px;">
-  <mat-icon>record_voice_over</mat-icon><br>
+  <mat-icon [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">record_voice_over</mat-icon><br>
   <app-word [word]="data.input"></app-word>
   <app-show-word ></app-show-word>
 </div>

@@ -1,6 +1,6 @@
 <div class="grid-container">
   <h1 class="mat-h1">Novedades</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
+  <mat-grid-list cols="2" rowHeight="180px">
     @for (card of cards | async; track card) {
     <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card" appMaterialElevation [raisedElevation]="raisedElevation"
@@ -13,7 +13,7 @@
               class="view-subtitle">{{card.subtitle}}</span></mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="dashboard-card-center">
-          <img mat-card-md-image [src]="card.image" />
+         <!--  <img mat-card-md-image [src]="card.image" /> -->
         </mat-card-content>
         <mat-card-actions align="end">
           <button mat-raised-button color="warn" [routerLink]="['/',card.route]">Ir al {{card.title.toLowerCase()}}</button>

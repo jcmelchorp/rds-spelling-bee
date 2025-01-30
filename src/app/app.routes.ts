@@ -4,6 +4,8 @@ import { NavigationComponent } from './core/layout/navigation/navigation.compone
 import { HomeComponent } from './core/layout/home/home.component';
 import { ContestComponent } from './features/contest/contest/contest.component';
 import { PresentationComponent } from './features/presentation/presentation/presentation.component';
+import { animation } from '@angular/animations';
+import { slideInUpOnEnterAnimation } from 'angular-animations';
 
 export const routes: Routes = [
     {
@@ -20,7 +22,8 @@ export const routes: Routes = [
                 path: 'presentation', component: PresentationComponent
             },
             {
-                path: 'contest', component: ContestComponent
+                path: 'contest', component: ContestComponent,
+
             }
         ]
         // loadComponent: () => import('./features/wordlists/wordlists.component'),

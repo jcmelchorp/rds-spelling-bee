@@ -19,6 +19,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { WordDialogComponent } from "../../editor/word-dialog/word-dialog.component";
 import { WordchipsComponent } from "../wordchips/wordchips.component";
 import * as confetti from 'canvas-confetti';
+import { bounceInDownOnEnterAnimation, bounceInLeftOnEnterAnimation, bounceInRightOnEnterAnimation, bounceInUpOnEnterAnimation, fadeOutOnLeaveAnimation, flipOnEnterAnimation, hingeOnLeaveAnimation, hueRotateAnimation, jackInTheBoxAnimation, jackInTheBoxOnEnterAnimation, jelloAnimation, lightSpeedInOnEnterAnimation, lightSpeedOutOnLeaveAnimation, rotateInUpRightAnimation, rotateOutUpRightAnimation, rubberBandAnimation, zoomInUpAnimation, zoomInUpOnEnterAnimation, zoomOutUpAnimation } from "angular-animations";
 
 @Component({
     templateUrl: './contest.component.html',
@@ -38,7 +39,17 @@ import * as confetti from 'canvas-confetti';
         MatCardModule,
         FlexLayoutModule,
         NgxSpinnerModule,
-        WordchipsComponent
+        WordchipsComponent,
+    ],
+    animations:[
+        bounceInUpOnEnterAnimation({ anchor: 'enter1' }),
+        bounceInLeftOnEnterAnimation({ anchor: 'enter2', delay: 200 }),
+        bounceInDownOnEnterAnimation({ anchor: 'enter3', delay: 200 }),
+        bounceInRightOnEnterAnimation({ anchor: 'enter4', delay: 200 }),
+        jackInTheBoxOnEnterAnimation({ anchor: 'enter5', delay: 200 }),
+        rubberBandAnimation({ anchor: 'rubberBand', delay: 500 }),
+        jelloAnimation(),
+        hueRotateAnimation({ anchor: 'hueButton', duration: 20000 })
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -50,8 +61,17 @@ export class ContestComponent implements OnInit {
     readonly output = signal('');
     readonly input = model('');
     readonly dialog = inject(MatDialog);
-    // @ViewChild('balloons', { static: false }) elRef!: ElementRef;
-    // balloonContainer!: HTMLElement;
+    animation = 'rubberBand';
+    animationState = false;
+    animationWithState = false;
+    hueBtnState = false;
+    animate() {
+      this.animationState = false;
+      setTimeout(() => {
+        this.animationState = true;
+        this.animationWithState = !this.animationWithState;
+      }, 1);
+    }
     word!: Word;
     disableSelect: string = 'false';
     wordlists$!: Observable<Wordlist[]>;
@@ -118,8 +138,6 @@ export class ContestComponent implements OnInit {
         });
     }
 
-
-
     randomInRange(min: number, max: number) {
         return Math.random() * (max - min) + min;
     }
@@ -145,59 +163,7 @@ export class ContestComponent implements OnInit {
             spread: 160,
             origin: { x: this.randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
         });
-
         // Clear confetti after a certain duration
         setTimeout(() => confetti.default.reset(), duration);
     }
-
-    showBalloons() {
-        // this.showB.next(true);
-        // console.log('show balloons')
-        this.createBalloons(30)
-        setTimeout(() => {
-            /** spinner ends after 5 seconds */
-            this.removeBalloons();
-            // this.showB.next(false);
-        }, 10000);
-    }
-
-
-
-    random(num: number) {
-        return Math.floor(Math.random() * num);
-    }
-
-    getRandomStyles() {
-        var r = this.random(255);
-        var g = this.random(255);
-        var b = this.random(255);
-        var mt = this.random(200);
-        var ml = this.random(50);
-        var dur = this.random(5) + 5;
-        return `
-  background-color: rgba(${r},${g},${b},0.7);
-  color: rgba(${r},${g},${b},0.7); 
-  box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
-  margin: ${mt}px 0 0 ${ml}px;
-  animation: float ${dur}s ease-in infinite
-  `;
-    }
-
-    createBalloons(num: any) {
-        for (var i = num; i > 0; i--) {
-            var balloon = document.createElement("div");
-            balloon.className = "balloon";
-            balloon.style.cssText = this.getRandomStyles();
-            // console.log(balloon)
-            // this.balloonContainer.append(balloon);
-        }
-    }
-
-    removeBalloons() {
-        // this.balloonContainer.style.opacity = '0';
-        setTimeout(() => {
-            // this.balloonContainer.remove()
-        }, 500)
-    }
-
 } 

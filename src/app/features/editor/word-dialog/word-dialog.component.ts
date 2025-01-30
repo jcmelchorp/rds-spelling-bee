@@ -18,6 +18,8 @@ export class WordDialogComponent {
   readonly data = inject<{input:string,output:string}>(MAT_DIALOG_DATA);
   readonly output = model(this.data.output);
   uttr!: SpeechSynthesisUtterance;
+  hueBtnState = false;
+
   constructor() {
 this.uttr = new SpeechSynthesisUtterance()
     this.uttr.lang = 'en-US'
