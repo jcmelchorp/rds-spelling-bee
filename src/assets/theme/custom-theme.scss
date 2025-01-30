@@ -5,6 +5,15 @@ $enable-negative-margins: true;
 @include mat.core();
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&family=Miltonian&display=swap");
 
+.elevation-card {
+  @include mat.elevation-transition();
+  @include mat.elevation(2);
+  
+  &:hover {
+    @include mat.elevation(8);
+  }
+}
+
 $typography-config: mat.define-typography-config(
   $font-family: '"Fredoka", "Miltonian", sans-serif',
   $headline-1: mat.define-typography-level(124px, 124px, 600, $letter-spacing: -0.05em),
@@ -20,47 +29,7 @@ $typography-config: mat.define-typography-config(
   $caption: mat.define-typography-level(16px, 20px, 400),
   $button: mat.define-typography-level(16px, 14px, 500),
 );
-
-/* Styles to be applied to buttons */
-$my-custom-button: mat.define-typography-level(
-  $font-family: 'Fredoka',
-  $font-weight: 500,
-  $font-size: 1rem,
-  $line-height: 1,
-  $letter-spacing: 'narrow'
-);
-
-/* Styles to be applied to input-fields */
-$my-custom-input: mat.define-typography-level(
-  $font-family: 'Fredoka',
-  $font-weight: 400,
-  $font-size: 1rem,
-  $line-height: 1,
-  $letter-spacing: 'normal'
-);
-
-/* Merge custom configs into existing config */
-$typography-config: map.merge(
-    mat.define-typography-config(
-        /* 'button'-property will work out of the box */
-        $button: $my-custom-button
-    ),
-    (
-        /* 'input'-property will have to be assigned under '@mixin typography' further below */
-        'input': $my-custom-input
-    )
-);
-
-.elevation-card {
-  @include mat.elevation-transition();
-  @include mat.elevation(2);
-  
-  &:hover {
-    @include mat.elevation(8);
-  }
-}
-
-@include mat.all-component-typographies();
+@include mat.all-component-typographies($typography-config);
 @include mat.typography-hierarchy($typography-config); // 👈 Added
 
 /* Let's assign the custom property 'input' that we defined above */
@@ -124,7 +93,7 @@ $light-theme: mat.define-light-theme(
 .mat-form-field-appearance-fill .mat-mdc-floating-label {
  // margin-top: -1vh !important;
   // margin-bottom: -1vh !important;
-  height: 15px !important;
+  height: -8px !important;
 }
 
 .mdc-list-item--with-leading-icon .mdc-list-item__start.blue { 
