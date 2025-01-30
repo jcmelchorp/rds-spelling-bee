@@ -29,7 +29,18 @@ body {
   font-weight: 500;
   text-shadow: -0.5px -0.5px 0px $text-shadow-color;
 font-size: large;
-  
+}
+
+.year {
+  position: relative;
+  color: #be7714;
+  margin-top: -1px;
+  padding-left: 50px;
+  transform: scale(2);
+  font-family: "Londrina Shadow";
+  font-weight: 500;
+  text-shadow: -0.5px -0.5px 0.6px rgba($color: #221502, $alpha: 1);
+  //font-size: calc(1rem + 2vw);
 }
 
 .display-4-responsive {
@@ -80,6 +91,8 @@ font-size: large;
   font-family: "Fedoka";
 }
 
+
+
 @media (max-width: 1200px) {
   .view-title {
     font-size: calc(0.5em + 4vw);
@@ -101,3 +114,27 @@ font-size: large;
   -ms-user-select: none; /* IE 10+ */
   user-select: none; /* Likely future */
 }
+
+.hideShowToolbar {
+  -webkit-transition: all 0.4s ease-in-out !important;
+  -moz-transition: all 0.4s ease-in-out !important;
+  -o-transition: all 0.4s ease-in-out !important;
+  transition: all 0.4s ease-in-out !important;
+  position: fixed;
+  top: 0px;
+}
+
+.hideToolbar {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.showToolbar {
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%);
+}
+

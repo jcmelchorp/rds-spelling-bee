@@ -3,20 +3,19 @@
   <mat-grid-list cols="2" rowHeight="180px">
     @for (card of cards | async; track card) {
     <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card" appMaterialElevation [raisedElevation]="raisedElevation"
-        [defaultElevation]="defaultElevation">
+      <mat-card class="dashboard-card elevation-card">
         <mat-card-header>
           <mat-card-title class="dashboard-card-center" [@rubberBand]="animationState">
             <span class="view-title">{{card.title}}</span>
           </mat-card-title>
-          <mat-card-subtitle class="dashboard-card-center"><span
-              class="view-subtitle">{{card.subtitle}}</span></mat-card-subtitle>
+          <mat-card-subtitle class="dashboard-card-center"><div
+            class="year">{{card.subtitle}}</div></mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="dashboard-card-center">
          <!--  <img mat-card-md-image [src]="card.image" /> -->
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-raised-button style="background-color: #0060a0;color:#a3cfeb" [routerLink]="['/',card.route]">Ir al {{card.title.toLowerCase()}}</button>
+          <button mat-raised-button style="background-color: #0060a060" [routerLink]="['/',card.route]">Ir al {{card.title.toLowerCase()}}</button>
         </mat-card-actions >
       </mat-card>
     </mat-grid-tile>
