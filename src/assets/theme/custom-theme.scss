@@ -1,4 +1,5 @@
 @use "@angular/material" as mat;
+@use "sass:map";
 //@import "@angular/material/theming";
 $enable-negative-margins: true;
 @include mat.core();
@@ -20,7 +21,46 @@ $typography-config: mat.define-typography-config(
   $button: mat.define-typography-level(16px, 14px, 500),
 );
 
+/* Styles to be applied to buttons */
+$my-custom-button: mat.define-typography-level(
+  $font-family: 'Fredoka',
+  $font-weight: 500,
+  $font-size: 1rem,
+  $line-height: 1,
+  $letter-spacing: 'narrow'
+);
+
+/* Styles to be applied to input-fields */
+$my-custom-input: mat.define-typography-level(
+  $font-family: 'Fredoka',
+  $font-weight: 400,
+  $font-size: 1rem,
+  $line-height: 1,
+  $letter-spacing: 'normal'
+);
+
+/* Merge custom configs into existing config */
+$typography-config: map.merge(
+    mat.define-typography-config(
+        /* 'button'-property will work out of the box */
+        $button: $my-custom-button
+    ),
+    (
+        /* 'input'-property will have to be assigned under '@mixin typography' further below */
+        'input': $my-custom-input
+    )
+);
+@include mat.all-component-typographies();
 @include mat.typography-hierarchy($typography-config); // 👈 Added
+
+/* Let's assign the custom property 'input' that we defined above */
+@mixin typography($theme) {
+  $custom-typography-config: mat.get-typography-config($theme);
+  
+  .mat-mdc-form-field {
+      @include mat.typography-level($custom-typography-config, 'input')
+  }
+}
 
 // Define a dark theme
 $dark-theme: mat.define-dark-theme(
@@ -81,10 +121,7 @@ $light-theme: mat.define-light-theme(
   color: #0060a0;
 }   
 
-.mat-mdc-form-field {
-  font-family: 'Fredoka'mportant !important;
 
-}
 // Handle buttons appropriately, with respect to line-height
 .mat-raised-button,
 .mat-stroked-button,

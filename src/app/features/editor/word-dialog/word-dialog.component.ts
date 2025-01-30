@@ -3,12 +3,15 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { MatIconModule } from '@angular/material/icon';
 import { ShowWordComponent } from '../../presentation/show-word/show-word.component';
 import { WordComponent } from '../../contest/word/word.component';
+import { hueRotateAnimation } from 'angular-animations';
 
 @Component({
   
   selector: 'app-word-dialog',
       standalone: true,
       imports: [WordComponent, MatIconModule, MatDialogModule, ShowWordComponent],
+      animations:[ hueRotateAnimation({ anchor: 'hueButton', duration: 20000 })
+      ],
       templateUrl: './word-dialog.component.html',
   styleUrls: ['./word-dialog.component.scss'],
 

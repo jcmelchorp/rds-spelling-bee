@@ -5,13 +5,13 @@
 
   .year {
     color: #be7714;
-    padding-top: -2px;
+    margin-top: -1px;
     padding-left: 50px ;
     transform: rotate(-35deg);
     transform: scale(3);
-   font-family: 'Londrina Sketch';
+   font-family: 'Londrina Shadow';
    font-weight: 500;
-   text-shadow: -0.5px -0.5px 0px rgba($color: #3c2605, $alpha: 1.0);
+   text-shadow: -0.5px -0.5px 0.6px rgba($color: #221502, $alpha: 1.0);
 
   }
 
