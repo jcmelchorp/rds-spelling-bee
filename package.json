@@ -10,6 +10,9 @@
     "deploy": "ng deploy",
     "clean": "rm -rf ./node_modules yarn.lock package-lock.json"
   },
+  "browserslist": [
+    "defaults", "iOS >= 13.2"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.3.10",
