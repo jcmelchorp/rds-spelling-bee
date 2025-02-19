@@ -1,13 +1,16 @@
 .word-container {
     display: inline-flex;
-    gap: 20px; /* Espaciado entre letras (opcional) */
+    gap: calc(1px + 1vw); /* Espaciado entre letras (opcional) */
   }
   
   .letter {
     text-decoration: underline;
-    text-underline-offset: 35px; /* Ajuste opcional para la distancia del subrayado */
+    text-align: center;
+    text-underline-offset: calc(5px + 1.5vw); /* Ajuste opcional para la distancia del subrayado */
     font-family: 'Londrina Shadow';
-    font-size: 8rem;
+    font-weight: 900;
+    color: var(--color);
+    font-size: calc(1.1rem + 5vw);
   }
 
 //   :host {

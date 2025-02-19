@@ -1,9 +1,13 @@
 <mat-icon mat-dialog-close>close</mat-icon>
-<div style="text-align: center;padding: 20px;">
-  <mat-icon mat-icon-button [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">record_voice_over</mat-icon><br>
+<mat-dialog-content>
+<div style="text-align: center;padding: 20px;width: fit-content;">
+  <mat-icon mat-icon-button [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">record_voice_over</mat-icon>
+  <br>
+  <br>
   <app-word [word]="data.input"></app-word>
   <app-show-word ></app-show-word>
 </div>
+</mat-dialog-content>
 <mat-dialog-actions align="center">
   <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
  <button mat-fab extended color="primary"  (click)="useInSentence()"> <mat-icon>replay</mat-icon>Enunciado</button>

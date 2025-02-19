@@ -113,6 +113,7 @@ export class ContestComponent implements OnInit {
     openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
         this.input.set(this.word.label!);
         const dialogRef = this.dialog.open(WordDialogComponent, {
+            width: 'fit-content',
             enterAnimationDuration,
             exitAnimationDuration,
             backdropClass: 'backDrop',  // mat-dialog css class
