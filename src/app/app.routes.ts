@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { WordlistsComponent } from './features/editor/wordlists/wordlists.component';
+import { WordlistsComponent } from './features/contest/wordlists/wordlists.component';
 import { NavigationComponent } from './core/layout/navigation/navigation.component';
 import { HomeComponent } from './core/layout/home/home.component';
 import { ContestComponent } from './features/contest/contest/contest.component';
-import { PresentationComponent } from './features/presentation/presentation/presentation.component';
+import { PresentationComponent } from './features/contest/presentation/presentation.component';
 import { animation } from '@angular/animations';
 import { slideInUpOnEnterAnimation } from 'angular-animations';
 

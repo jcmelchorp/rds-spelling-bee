@@ -10,7 +10,7 @@ import { MatTableModule, MatTableDataSource } from "@angular/material/table";
 import { RouterLink } from "@angular/router";
 import { FlexLayoutModule } from "ngx-flexible-layout";
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
-import { Word, Wordlist } from "../../editor/wordlist/wordlist.model";
+import { Word, Wordlist } from "../wordlist/wordlist.model";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { NgClass } from "@angular/common";
 
@@ -104,7 +104,7 @@ export class WordchipsComponent implements OnInit/*, OnChanges*/ {
       let randomIndex: number = Math.floor(Math.random() * wordsCount);
       let word = words[randomIndex];
       words[randomIndex].staged=true;
-      this.uttr.text = `number ${randomIndex + 1}`;
+      this.uttr.text = `number ${Number(word.id)}`;
       window.speechSynthesis.speak(this.uttr);
       console.log('Word remain emitted #',wordsCount)
       this.onWordEmit.emit(word);
@@ -118,6 +118,6 @@ export class WordchipsComponent implements OnInit/*, OnChanges*/ {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 1000);
+    }, 4000);
   }
 }

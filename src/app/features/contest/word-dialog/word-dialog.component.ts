@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, inject, Inject, model } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { ShowWordComponent } from '../../presentation/show-word/show-word.component';
-import { WordComponent } from '../../contest/word/word.component';
+import { ShowWordComponent } from '../show-word/show-word.component';
+import { WordComponent } from '../word/word.component';
 import { hueRotateAnimation } from 'angular-animations';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   
   selector: 'app-word-dialog',
       standalone: true,
-      imports: [WordComponent, MatIconModule, MatDialogModule, ShowWordComponent],
+      imports: [WordComponent, MatIconModule, MatButtonModule, MatDialogModule, ShowWordComponent],
       animations:[ hueRotateAnimation({ anchor: 'hueButton', duration: 20000 })
       ],
       templateUrl: './word-dialog.component.html',
@@ -22,7 +23,8 @@ export class WordDialogComponent {
   readonly output = model(this.data.output);
   uttr!: SpeechSynthesisUtterance;
   hueBtnState = false;
-
+  label!: string;
+  id!: string;
   constructor() {
     const voicesList:SpeechSynthesisVoice[] = speechSynthesis.getVoices()
     this.uttr = new SpeechSynthesisUtterance();
@@ -31,9 +33,12 @@ export class WordDialogComponent {
     this.uttr.pitch=0.9;
     this.uttr.voice = voicesList.filter((voice) => voice.lang === lang).pop()!;
     this.uttr.lang = lang;
+    this.label=this.data.input.split(',')[1];
+    this.id=this.data.input.split(',')[0];
+    console.log(this.id);
   }
   repeatWord() {
-    this.uttr.text = this.data.input;
+    this.uttr.text = this.label;
     window.speechSynthesis.speak(this.uttr);  } 
 
   useInSentence(){

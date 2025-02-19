@@ -2,11 +2,11 @@ import { Component, inject, Input, model, OnInit, signal } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { WordlistsService } from '../../editor/wordlists/wordlists.service';
-import { Word, Wordlist } from '../../editor/wordlist/wordlist.model';
+import { WordlistsService } from '../wordlists/wordlists.service';
+import { Word, Wordlist } from '../wordlist/wordlist.model';
 import { map, mergeMap, Observable, tap } from 'rxjs';
 import { AsyncPipe, JsonPipe, DatePipe } from '@angular/common';
-import { WordDialogComponent } from '../../editor/word-dialog/word-dialog.component';
+import { WordDialogComponent } from '../word-dialog/word-dialog.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
