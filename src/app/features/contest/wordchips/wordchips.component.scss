@@ -1,8 +1,15 @@
 .word-done {
-  background-color: rgba(159, 17, 29, 0.554) !important;
+  background-color: rgb(216, 40, 40) !important;
+  --mdc-chip-label-text-color: #fff;
+  //  --mdc-chip-label-text-weight:500;
 }
 
+.word-pending {
+  background-color: rgb(255, 255, 255) !important;
+  border: #494949 1px solid;
+    --mdc-chip-label-text-size: 0.8em;
 
+}
 ::ng-deep .mat-paginator-container {
   display: flex;
   align-items: center;

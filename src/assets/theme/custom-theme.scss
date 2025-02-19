@@ -2,6 +2,7 @@
 @use "sass:map";
 //@import "@angular/material/theming";
 $enable-negative-margins: true;
+
 @include mat.core();
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&family=Miltonian&family=Sixtyfour&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
@@ -14,6 +15,7 @@ $enable-negative-margins: true;
     @include mat.elevation(8);
   }
 }
+
 
 $typography-config: mat.define-typography-config(
   $font-family: '"Fredoka", "Miltonian", sans-serif',
@@ -87,7 +89,9 @@ $light-theme: mat.define-light-theme(
 }
 
 
-
+// .mat-mdc-standard-chip {
+//   --mdc-chip-label-text-color: #fff;
+// }
 .mat-mdc-dialog-container {
   --mdc-dialog-container-shape: 10px;
 }

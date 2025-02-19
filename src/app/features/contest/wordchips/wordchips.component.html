@@ -6,7 +6,7 @@
   @if (filteredData!.length!==0) {
   <mat-chip-set  aria-label="Word selection">
     <div fxLayout="row wrap" fxLayoutAlign="center stretch">
-      @for (word of filteredData; track $index) {<mat-chip  #chipRef="matChip" (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : ''">{{ word.id }}</mat-chip>}
+      @for (word of filteredData; track $index) {<mat-chip  #chipRef="matChip" (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{ word.id }}</mat-chip>}
     </div>
   </mat-chip-set>
   } @else {
