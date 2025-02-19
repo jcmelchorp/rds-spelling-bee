@@ -1,10 +1,10 @@
 <div style="padding-top: 65px;" fxLayout="column" fxLayoutAlign="center center">
   <div fxLayout="column" fxLayoutAlign="start center" >
-    <img src="/assets/images/rds-bee-logo-transparent.png" height="100px" [@enter5] (@enter5.done)="animationState = !animationState"/>    
+    <img src="/assets/images/rds-bee-logo-transparent.png" height="120px" [@enter5] (@enter5.done)="animationState = !animationState"/>    
     <div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState" [@rubberBand]="animationState">Spelling Bee</div>
     <div fxLayout="row" >
-      <div style="margin-top: -10px;" class="view-subtitle" [@enter2] (@enter2.done)="animationState = !animationState" [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">Contest</div>
-      <div class="year"[@enter4] (@enter4.done)="animationState = !animationState">2025</div>
+      <div style="margin-top: -6px;" class="view-subtitle" [@enter2] (@enter2.done)="animationState = !animationState" [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">Contest</div>
+      <div style="margin-top: -10px;" class="year"[@enter4] (@enter4.done)="animationState = !animationState">2025</div>
   </div>
     <mat-form-field appearance="fill" [@enter3] (@enter3.done)="animationState = !animationState" >
       <mat-label>Grado o nivel</mat-label>
@@ -13,7 +13,7 @@
         <mat-option [value]="level">{{level}}</mat-option>
         }
       </mat-select>
-      <mat-icon matSuffix>school</mat-icon>
+      <mat-icon  class="rds-icon" matSuffix>school</mat-icon>
     </mat-form-field>
   </div>
   <div style="padding: 50px;" fxFlexFill>

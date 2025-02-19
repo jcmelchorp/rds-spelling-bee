@@ -9,16 +9,16 @@ body {
 .view-title {
   color: $bg-main;
   font-weight: 400;
-  font-size: 2.5em;
+  font-size: 4.2em;
   font-family: "fredoka one", cursive;
   text-shadow: -3px -2px 1px $text-shadow-color;
   max-width: 1200px;
 }
 .view-subtitle {
-  font-weight: 400;
+  font-weight: 600;
   color: $brown-color;
   font-family: "Comfortaa";
-  font-size: 1.8em;
+  font-size: 2.8em;
   max-width: 1200px;
 }
 
@@ -37,7 +37,7 @@ font-size: large;
   padding-left: 50px;
   //transform: scale(2);
   font-family: "Londrina Shadow";
-  font-weight: 500;
+  font-weight: 600;
   text-shadow: -0.5px -0.5px 0.6px rgba($color: #221502, $alpha: 1);
   font-size: calc(1rem + 2vw);
 }
@@ -94,10 +94,10 @@ font-size: large;
 
 @media (max-width: 1200px) {
   .view-title {
-    font-size: calc(0.5em + 4vw);
+    font-size: calc(1.8em + 4vw);
   }
   .view-subtitle {
-    font-size: calc(0.4em + 2vw);
+    font-size: calc(0.9em + 2vw);
   }
 }
 

@@ -1,17 +1,18 @@
 .word-done {
-background-color: rgba(144, 23, 33, 0.3)!important;
+  background-color: rgba(159, 17, 29, 0.554) !important;
 }
 
-  ::ng-deep .mat-paginator-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50px;
-    flex-wrap: wrap-reverse;
-    width: 100%;
-  }
-  .paginator {
-    margin: 0 !important;
-    background-color: transparent !important;
-    font-family: "Fredoka",sans-serif;
-  }
+
+::ng-deep .mat-paginator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+}
+.paginator {
+  margin: 0 !important;
+  background-color: transparent !important;
+  font-family: "Fredoka", sans-serif;
+}

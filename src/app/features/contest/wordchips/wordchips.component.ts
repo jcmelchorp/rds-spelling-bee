@@ -38,7 +38,7 @@ export class WordchipsComponent implements OnInit/*, OnChanges*/ {
   // }
   defaultElevation = 2;
   raisedElevation = 4;
-  size = 100;
+  size = 300;
   page = 0;
   uttr: SpeechSynthesisUtterance;
   dataSource = new MatTableDataSource<Word>();
@@ -120,4 +120,9 @@ export class WordchipsComponent implements OnInit/*, OnChanges*/ {
       this.spinner.hide();
     }, 4000);
   }
+
+  changeStaged($event: any)
+{
+
+}
 }

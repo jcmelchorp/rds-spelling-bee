@@ -1,7 +1,6 @@
-<mat-icon mat-dialog-close>close</mat-icon>
+<mat-icon class="rds-icon" mat-dialog-close>cancel</mat-icon>
 <mat-dialog-content >
-  <div style="text-align: center;">
-    <mat-icon>record_voice_over</mat-icon>
+  <div style="text-align: center;color: black;">
     <p>{{id}}</p>
     <br>
     <br>
@@ -12,7 +11,7 @@
 </mat-dialog-content>
 <mat-dialog-actions align="center">
   <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-  <button style="margin: 15px;" color="default" [matTooltip]="'Ejemplo'"    mat-mini-fab type="button" (click)="useInSentence()"> <mat-icon class="rds-icon">psychology</mat-icon></button>
-  <button style="margin: 15px;" color="default" [matTooltip]="'Repetir'"    mat-mini-fab type="button" (click)="repeatWord()"> <mat-icon class="rds-icon">replay</mat-icon></button>
-  <button style="margin: 15px;" color="default" [matTooltip]="'Definición'" mat-mini-fab type="button" (click)="defineWord()"> <mat-icon class="rds-icon">auto_stories</mat-icon></button>
+   <mat-icon [matTooltip]="'Ejemplo'"      (click)="useInSentence()" mat-icon-button style="margin-left: 25px;margin-right: 25px;font-size: 28px;" class="rds-icon">psychology</mat-icon>
+   <mat-icon [matTooltip]="'Repetir'"      (click)="repeatWord()" mat-icon-button style="margin-left: 25px;margin-right: 25px;font-size: 25px;" class="rds-icon">record_voice_over</mat-icon>
+   <mat-icon [matTooltip]="'Definición'"   (click)="defineWord()" mat-icon-button style="margin-left: 25px;margin-right: 25px;font-size: 25px;" class="rds-icon">auto_stories</mat-icon>
 </mat-dialog-actions>
