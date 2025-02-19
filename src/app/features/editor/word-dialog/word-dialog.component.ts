@@ -24,8 +24,13 @@ export class WordDialogComponent {
   hueBtnState = false;
 
   constructor() {
-this.uttr = new SpeechSynthesisUtterance()
-    this.uttr.lang = 'en-US'
+    const voicesList:SpeechSynthesisVoice[] = speechSynthesis.getVoices()
+    this.uttr = new SpeechSynthesisUtterance();
+    let lang = 'en-US';
+    this.uttr.rate=0.75;
+    this.uttr.pitch=0.9;
+    this.uttr.voice = voicesList.filter((voice) => voice.lang === lang).pop()!;
+    this.uttr.lang = lang;
   }
   repeatWord() {
     this.uttr.text = this.data.input;

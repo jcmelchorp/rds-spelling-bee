@@ -15,9 +15,9 @@ export const routes: Routes = [
             { 
                 path: '', component: HomeComponent 
             },
-            { 
-                path: 'editor', component: WordlistsComponent 
-            },
+            // { 
+            //     path: 'editor', component: WordlistsComponent 
+            // },
             {
                 path: 'presentation', component: PresentationComponent
             },
