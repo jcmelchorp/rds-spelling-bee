@@ -1,13 +1,13 @@
 <!-- <app-wordlist></app-wordlist> -->
-<div>
+<!-- <div>
   <h2>Nueva lista</h2>
-  <!-- <mat-form-field> -->
+   <mat-form-field> 
   <mat-label>Escribe el grado escolar</mat-label>
   <br>
   <input matInput type="text" [(ngModel)]="wordlist.level" />
-  <!-- </mat-form-field> -->
+  </mat-form-field
   <button mat-raised-button [disabled]="!wordlist.level" (click)="submit()">Add +</button>
-</div>
+</div> -->
 <div fxLayout="row wrap" fxLayoutAlign="center stretch">
   <!-- @for (wordlist of wordlists$ | async; track $index) { -->
   <ng-container *ngFor="let wordlist of wordlists$ | async">
