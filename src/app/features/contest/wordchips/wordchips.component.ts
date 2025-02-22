@@ -70,8 +70,8 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   dataSource = new MatTableDataSource<Word>();
   uttr!: SpeechSynthesisUtterance;
   constructor() {
-    const voicesList: SpeechSynthesisVoice[] = speechSynthesis.getVoices();
-    const lang = 'en-US';
+    let voicesList: SpeechSynthesisVoice[] = speechSynthesis.getVoices();
+    let lang = 'en-US';
     this.uttr = new SpeechSynthesisUtterance();
     this.uttr.rate = 0.75;
     this.uttr.pitch = 0.9;
@@ -159,12 +159,9 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
 
   playSound(arg0: string): void {
     let audio = new Audio(arg0);
+    audio.onended = () => this.speechText('Your word is:');
     audio.load();
     audio.play();
-    audio.onended = () => {
-     return this.speechText('Your word is:');
-      // return
-    };
   }
 
   showSpinner() {
