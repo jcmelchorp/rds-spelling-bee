@@ -107,7 +107,7 @@ export class ContestComponent implements OnInit {
 
     startReading(word: Word) {
         this.word = word;
-        this.openDialog('6000ms', '300ms');
+        this.openDialog('3000ms', '300ms');
     }
 
     openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
