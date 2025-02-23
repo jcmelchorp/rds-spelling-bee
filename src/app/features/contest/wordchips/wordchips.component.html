@@ -1,7 +1,7 @@
 @if (filteredData) {
 <div fxLayout="column" fxLayoutAlign="stretch center" fxLayoutGap="5px">
-  <img style="text-align: center;" type="button" cdkFocusInitial (keyup.Space)="wordFlow(filteredData)"
-    (click)="wordFlow(filteredData)" height="100px" src="/assets/images/space_bar.gif" />
+  <img style="text-align: center;" type="button" cdkFocusInitial (keyup.Space)="playSound(filteredData)"
+    (click)="playSound(filteredData)" height="100px" src="/assets/images/space_bar.gif" />
 
   @if (filteredData!.length!==0) {
   <mat-chip-set  aria-label="Word selection">
