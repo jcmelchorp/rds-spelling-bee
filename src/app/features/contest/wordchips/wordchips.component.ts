@@ -68,9 +68,14 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   size = 300;
   page = 0;
   dataSource = new MatTableDataSource<Word>();
-  uttr!: SpeechSynthesisUtterance;
+  uttr: SpeechSynthesisUtterance;
   constructor() {
+    let voicesList: SpeechSynthesisVoice[] = speechSynthesis.getVoices();
     this.uttr = new SpeechSynthesisUtterance();
+    let lang = 'en-US';
+    this.uttr.lang = lang;
+    this.uttr.voice = voicesList.filter((voice) => voice.lang === lang).pop()!;
+
   }
 
   // ngOnChanges(changes: SimpleChanges): void {
@@ -147,12 +152,8 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   }
 
   speechText(text: string,rate?: number, pitch?: number) {
-    let voicesList: SpeechSynthesisVoice[] = speechSynthesis.getVoices();
-    let lang = 'en-US';
-    this.uttr.rate = rate||10.75;
+    this.uttr.rate = rate||0.75;
     this.uttr.pitch = pitch||0.9;
-    this.uttr.voice = voicesList.filter((voice) => voice.lang === lang).pop()!;
-    this.uttr.lang = lang;
     this.uttr.text = text;
     window.speechSynthesis.speak(this.uttr);
   }
