@@ -33,7 +33,6 @@
     "@ngrx/router-store": "^17.2.0",
     "@ngrx/store": "^17.2.0",
     "@ngrx/store-devtools": "^17.2.0",
-    "@types/dom-speech-recognition": "^0.0.4",
     "angular-animations": "^0.11.0",
     "canvas-confetti": "^1.9.3",
     "firebase": "^10.14.1",

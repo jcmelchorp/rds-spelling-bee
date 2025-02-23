@@ -2,14 +2,11 @@ import {
   Component,
   ChangeDetectionStrategy,
   OnInit,
-  OnChanges,
   inject,
   ViewChild,
   Input,
   Output,
   EventEmitter,
-  SimpleChanges,
-  HostListener,
 } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,7 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
-import { RouterLink } from '@angular/router';
 import { FlexLayoutModule } from 'ngx-flexible-layout';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { Word, Wordlist } from '../wordlist/wordlist.model';
@@ -68,8 +64,7 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   size = 300;
   page = 0;
   dataSource = new MatTableDataSource<Word>();
-  uttr!: SpeechSynthesisUtterance;
-  synth = window.speechSynthesis;
+
   // ngOnChanges(changes: SimpleChanges): void {
   //   console.log(changes)
   //   if (changes['objects'].currentValue) {
@@ -78,6 +73,15 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   //   }
   // }
 
+  synth!: SpeechSynthesis;
+  voices!: any[];
+  uttr!: SpeechSynthesisUtterance;
+
+  constructor() {
+    this.synth = window.speechSynthesis;
+
+    this.uttr = new SpeechSynthesisUtterance();
+  }
   ngOnInit(): void {
     this.loadPaginatedData(this.object.words!);
     this.linkListToPaginator({ pageIndex: this.page, pageSize: this.size });
@@ -144,15 +148,14 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   }
 
   speechText(text: string) {
-    const lang = 'en-US';
-    this.uttr = new SpeechSynthesisUtterance(text);
-    //this.uttr.lang = lang;
-    this.uttr.voice = this.synth
-      .getVoices()
-      .find((voice) => voice.lang === lang)!;
+    this.voices = this.synth.getVoices();
+    let lang = 'en-US';
+    this.uttr.lang = lang;
+    this.uttr.voice = this.voices.find((voice) => voice.lang == lang)!;
     this.uttr.rate = 0.75;
     this.uttr.pitch = 0.9;
     this.uttr.volume = 1;
+    this.uttr.text = text;
     console.log(this.uttr);
     this.synth.speak(this.uttr);
   }
