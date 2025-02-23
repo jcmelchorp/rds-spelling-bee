@@ -77,16 +77,16 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
   // }
 
   synth!: SpeechSynthesis;
-  voices!: any[];
+  voices!: SpeechSynthesisVoice[];
   uttr!: SpeechSynthesisUtterance;
  
-  constructor() {
-    this.synth = window.speechSynthesis;
-  }
   
   ngOnInit(): void {
     this.loadPaginatedData(this.object.words!);
     this.linkListToPaginator({ pageIndex: this.page, pageSize: this.size });
+    this.synth = window.speechSynthesis;
+    console.log(this.synth.speaking);
+
   }
 
   loadPaginatedData(dataObj: Word[]): void {
@@ -141,6 +141,7 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
 
   emitWord(word: Word) {
     setTimeout(() => {
+      this.speechText(word.label!);
       this.onWordEmit.emit(word);
     }, 2500);
   }
@@ -150,14 +151,14 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
   }
 
   speechText(text: string) {
-    this.uttr = new SpeechSynthesisUtterance();
     this.voices = this.synth.getVoices();
+    this.uttr = new SpeechSynthesisUtterance();
     this.uttr.rate = 0.75;
     this.uttr.pitch = 0.9;
     this.uttr.volume = 1;
     const lang = 'en-US';
     this.uttr.lang = lang;
-    this.uttr.voice = this.voices.find((voice) => voice.lang == lang)!;
+    this.uttr.voice = this.voices.filter((voice) => voice.lang == lang).pop()!;
     this.uttr.text = text;
     console.log(this.uttr);
     this.synth.speak(this.uttr);
@@ -175,6 +176,6 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 5000);
+    }, 4000);
   }
 }
