@@ -74,6 +74,8 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
     this.uttr = new SpeechSynthesisUtterance();
     let lang = 'en-US';
     this.uttr.lang = lang;
+    this.uttr.rate = 0.75;
+    this.uttr.pitch = 0.9;
     this.uttr.voice = voicesList.filter((voice) => voice.lang === lang).pop()!;
 
   }
@@ -151,9 +153,7 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
     this.speechText(`number ${Number(word.id)}`);
   }
 
-  speechText(text: string,rate?: number, pitch?: number) {
-    this.uttr.rate = rate||0.75;
-    this.uttr.pitch = pitch||0.9;
+  speechText(text: string) {
     this.uttr.text = text;
     window.speechSynthesis.speak(this.uttr);
   }
