@@ -47,7 +47,7 @@ import { NgClass } from '@angular/common';
   ],
   templateUrl: './wordchips.component.html',
   styleUrl: './wordchips.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
@@ -68,18 +68,8 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   size = 300;
   page = 0;
   dataSource = new MatTableDataSource<Word>();
-  uttr: SpeechSynthesisUtterance;
-  constructor() {
-    let voicesList: SpeechSynthesisVoice[] = speechSynthesis.getVoices();
-    this.uttr = new SpeechSynthesisUtterance();
-    let lang = 'en-US';
-    this.uttr.lang = lang;
-    this.uttr.rate = 0.75;
-    this.uttr.pitch = 0.9;
-    this.uttr.voice = voicesList.filter((voice) => voice.lang === lang).pop()!;
-
-  }
-
+  uttr!: SpeechSynthesisUtterance;
+  synth = window.speechSynthesis;
   // ngOnChanges(changes: SimpleChanges): void {
   //   console.log(changes)
   //   if (changes['objects'].currentValue) {
@@ -91,7 +81,7 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   ngOnInit(): void {
     this.loadPaginatedData(this.object.words!);
     this.linkListToPaginator({ pageIndex: this.page, pageSize: this.size });
-    }
+  }
 
   loadPaginatedData(dataObj: Word[]): void {
     this.dataSource.data = dataObj;
@@ -134,7 +124,7 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
       words[randomIndex].staged = true;
 
       setTimeout(() => {
-        this.playWordId(word)
+        this.playWordId(word);
       }, 2500);
       this.emitWord(word);
       console.log('Word remain emitted #', wordsCount);
@@ -154,8 +144,16 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   }
 
   speechText(text: string) {
-    this.uttr.text = text;
-    window.speechSynthesis.speak(this.uttr);
+    const lang = 'en-US';
+    this.uttr = new SpeechSynthesisUtterance(text);
+    this.uttr.lang = lang;
+    this.uttr.voice =  
+    this.synth.getVoices().find((voice) => voice.lang === lang)!;
+    this.uttr.rate = 0.75;
+    this.uttr.pitch = 0.9;
+    this.uttr.volume = 0.5;
+console.log(this.uttr)
+    this.synth.speak(this.uttr);
   }
 
   playSound(arg0: string): void {
