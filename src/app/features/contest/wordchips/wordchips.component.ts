@@ -7,6 +7,8 @@ import {
   Input,
   Output,
   EventEmitter,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -45,7 +47,7 @@ import { NgClass } from '@angular/common';
   styleUrl: './wordchips.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WordchipsComponent implements OnInit /*, OnChanges*/ {
+export class WordchipsComponent implements OnInit , OnChanges {
   readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input({ required: true }) object!: Wordlist;
@@ -65,26 +67,25 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   page = 0;
   dataSource = new MatTableDataSource<Word>();
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   console.log(changes)
-  //   if (changes['objects'].currentValue) {
-  //     this.loadPaginatedData(changes['objects'].currentValue);
-  //     this.linkListToPaginator({ pageIndex: this.page, pageSize: this.paginator.pageSize });
-  //   }
-  // }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['object'].currentValue) {
+      // this.loadPaginatedData(changes['object'].currentValue);
+      // this.linkListToPaginator({ pageIndex: this.page, pageSize: this.paginator.pageSize });
+      this.synth = window.speechSynthesis;
+    this.uttr = new SpeechSynthesisUtterance();
+    }
+  }
 
   synth!: SpeechSynthesis;
   voices!: any[];
   uttr!: SpeechSynthesisUtterance;
 
-  constructor() {
-    this.synth = window.speechSynthesis;
-
-    this.uttr = new SpeechSynthesisUtterance();
-  }
+ 
   ngOnInit(): void {
     this.loadPaginatedData(this.object.words!);
     this.linkListToPaginator({ pageIndex: this.page, pageSize: this.size });
+    this.synth = window.speechSynthesis;
+    this.uttr = new SpeechSynthesisUtterance();
   }
 
   loadPaginatedData(dataObj: Word[]): void {
@@ -96,7 +97,7 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   }
 
   linkListToPaginator(obj: any): void {
-    console.log(obj);
+    // console.log(obj);
     let index = 0,
       startingIndex = obj.pageIndex * obj.pageSize,
       endingIndex = startingIndex + obj.pageSize;
@@ -149,12 +150,12 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
 
   speechText(text: string) {
     this.voices = this.synth.getVoices();
-    let lang = 'en-US';
-    this.uttr.lang = lang;
-    this.uttr.voice = this.voices.find((voice) => voice.lang == lang)!;
     this.uttr.rate = 0.75;
     this.uttr.pitch = 0.9;
     this.uttr.volume = 1;
+    const lang = 'en-US';
+    this.uttr.lang = lang;
+    this.uttr.voice = this.voices.find((voice) => voice.lang == lang)!;
     this.uttr.text = text;
     console.log(this.uttr);
     this.synth.speak(this.uttr);
