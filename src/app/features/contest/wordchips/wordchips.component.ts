@@ -23,6 +23,7 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { Word, Wordlist } from '../wordlist/wordlist.model';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgClass } from '@angular/common';
+import { SpeechService } from '../../../core/services/speech.service';
 
 @Component({
   selector: 'app-wordchips',
@@ -49,6 +50,7 @@ import { NgClass } from '@angular/common';
 })
 export class WordchipsComponent implements OnInit /*, OnChanges */{
   readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
+  readonly _speech:SpeechService = inject(SpeechService);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input({ required: true }) object!: Wordlist;
   @Output() onWordEmit = new EventEmitter<Word>();
@@ -76,16 +78,13 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
   //   }
   // }
 
-  synth!: SpeechSynthesis;
-  voices!: SpeechSynthesisVoice[];
-  uttr!: SpeechSynthesisUtterance;
+
  
   
   ngOnInit(): void {
     this.loadPaginatedData(this.object.words!);
     this.linkListToPaginator({ pageIndex: this.page, pageSize: this.size });
-    this.synth = window.speechSynthesis;
-    console.log(this.synth.speaking);
+    
 
   }
 
@@ -141,32 +140,20 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
 
   emitWord(word: Word) {
     setTimeout(() => {
-      this.speechText(word.label!);
+      this._speech.speechText(word.label!);
       this.onWordEmit.emit(word);
     }, 2500);
   }
 
   playWordId(word: Word) {
-    this.speechText(`number ${Number(word.id)}`);
+    this._speech.speechText(`number ${Number(word.id)}`);
   }
 
-  speechText(text: string) {
-    this.voices = this.synth.getVoices();
-    this.uttr = new SpeechSynthesisUtterance();
-    this.uttr.rate = 0.75;
-    this.uttr.pitch = 0.9;
-    this.uttr.volume = 1;
-    const lang = 'en-US';
-    this.uttr.lang = lang;
-    this.uttr.voice = this.voices.filter((voice) => voice.lang == lang).pop()!;
-    this.uttr.text = text;
-    console.log(this.uttr);
-    this.synth.speak(this.uttr);
-  }
+  
 
   playSound(arg0: string): void {
     let audio = new Audio(arg0);
-    audio.onended = () => this.speechText('Your word is:');
+    audio.onended = () => this._speech.speechText('Your word is:');
     audio.load();
     audio.play();
   }
