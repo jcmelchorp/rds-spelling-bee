@@ -47,7 +47,7 @@ import { NgClass } from '@angular/common';
   ],
   templateUrl: './wordchips.component.html',
   styleUrl: './wordchips.component.scss',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
@@ -146,13 +146,14 @@ export class WordchipsComponent implements OnInit /*, OnChanges*/ {
   speechText(text: string) {
     const lang = 'en-US';
     this.uttr = new SpeechSynthesisUtterance(text);
-    this.uttr.lang = lang;
-    this.uttr.voice =  
-    this.synth.getVoices().find((voice) => voice.lang === lang)!;
+    //this.uttr.lang = lang;
+    this.uttr.voice = this.synth
+      .getVoices()
+      .find((voice) => voice.lang === lang)!;
     this.uttr.rate = 0.75;
     this.uttr.pitch = 0.9;
-    this.uttr.volume = 0.5;
-console.log(this.uttr)
+    this.uttr.volume = 1;
+    console.log(this.uttr);
     this.synth.speak(this.uttr);
   }
 
