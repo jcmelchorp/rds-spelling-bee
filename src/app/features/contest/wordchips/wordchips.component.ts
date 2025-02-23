@@ -47,7 +47,7 @@ import { NgClass } from '@angular/common';
   styleUrl: './wordchips.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WordchipsComponent implements OnInit , OnChanges {
+export class WordchipsComponent implements OnInit /*, OnChanges */{
   readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input({ required: true }) object!: Wordlist;
@@ -67,25 +67,26 @@ export class WordchipsComponent implements OnInit , OnChanges {
   page = 0;
   dataSource = new MatTableDataSource<Word>();
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['object'].currentValue) {
-      // this.loadPaginatedData(changes['object'].currentValue);
-      // this.linkListToPaginator({ pageIndex: this.page, pageSize: this.paginator.pageSize });
-      this.synth = window.speechSynthesis;
-    this.uttr = new SpeechSynthesisUtterance();
-    }
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if (changes['object'].currentValue) {
+  //     // this.loadPaginatedData(changes['object'].currentValue);
+  //     // this.linkListToPaginator({ pageIndex: this.page, pageSize: this.paginator.pageSize });
+  //     this.synth = window.speechSynthesis;
+  //   this.uttr = new SpeechSynthesisUtterance();
+  //   }
+  // }
 
   synth!: SpeechSynthesis;
   voices!: any[];
   uttr!: SpeechSynthesisUtterance;
-
  
+  constructor() {
+    this.synth = window.speechSynthesis;
+  }
+  
   ngOnInit(): void {
     this.loadPaginatedData(this.object.words!);
     this.linkListToPaginator({ pageIndex: this.page, pageSize: this.size });
-    this.synth = window.speechSynthesis;
-    this.uttr = new SpeechSynthesisUtterance();
   }
 
   loadPaginatedData(dataObj: Word[]): void {
@@ -149,6 +150,7 @@ export class WordchipsComponent implements OnInit , OnChanges {
   }
 
   speechText(text: string) {
+    this.uttr = new SpeechSynthesisUtterance();
     this.voices = this.synth.getVoices();
     this.uttr.rate = 0.75;
     this.uttr.pitch = 0.9;
