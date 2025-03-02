@@ -1,7 +1,4 @@
 @use "@angular/material" as mat;
-//@import "@angular/material/theming";
-$enable-negative-margins: true;
-
 @include mat.core();
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&family=Miltonian&family=Sixtyfour&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
@@ -82,9 +79,11 @@ $light-theme: mat.define-light-theme(
 }
 @include mat.all-component-colors($light-theme);
 
+$enable-negative-margins: true;
+$enable-negative-padding: true;
 
 .backDrop {
-  background-color:rgba(0,0,0,.9);
+  background-color:rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
 }
 // .mat-mdc-standard-chip {

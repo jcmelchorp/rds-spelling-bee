@@ -142,6 +142,8 @@ export class ContestComponent implements OnInit {
   duration = 15 * 1000;
   animationEnd = Date.now() + this.duration;
   defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+// @ViewChild('brand', { static: true }) brand!: ElementRef;
+  
   constructor() {
     // this.balloonContainer = this.elRef.nativeElement;
     this.wordlist$ = this.gradeControl.valueChanges.pipe(
@@ -162,7 +164,16 @@ export class ContestComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  
+  }
+
+  onGradeChange(event:any) {
+console.log(event);
+// this.brand.nativeElement.style.display = 'flex';
+// this.brand.nativeElement.style.flex = 'column';
+
+  }
 
   startReading(word: Word) {
     this.word = word;

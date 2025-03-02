@@ -1,18 +1,23 @@
-<div  class="my-container">
-  <div fxLayout="column" fxLayoutAlign="start center">
+<div fxLayout.gt-md="row-wrap" fxLayoutAlign.gt-md="space-between center" fxLayoutGap.gt-md="20px"  class="my-container">
+  <div fxLayout="column" fxLayoutAlign="center center">
+
     <img src="/assets/images/rds-bee-logo-transparent.png" height="120px" [@enter5]
       (@enter5.done)="animationState = !animationState" />
-    <div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState" [@rubberBand]="animationState">
+
+    <div style="min-width:250px;" class="view-title" [@enter1] (@enter1.done)="animationState = !animationState" [@rubberBand]="animationState">
       Spelling Bee</div>
+
     <div fxLayout="row">
       <div style="margin-top: -6px;" class="view-subtitle" [@enter2] (@enter2.done)="animationState = !animationState"
-        [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">Contest</div>
+        [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">Contest
+      </div>
       <div style="margin-top: -10px;" class="year" [@enter4] (@enter4.done)="animationState = !animationState">2025
       </div>
     </div>
-    <mat-form-field style="position: sticky;" appearance="fill" [@enter3] (@enter3.done)="animationState = !animationState">
+
+    <mat-form-field appearance="fill" [@enter3] (@enter3.done)="animationState = !animationState">
       <mat-label>Grado o nivel</mat-label>
-      <mat-select [formControl]="gradeControl">
+      <mat-select [formControl]="gradeControl" (selectionChange)="onGradeChange($event)">
         @for (level of levels; track level) {
         <mat-option [value]="level">{{level}}</mat-option>
         }
@@ -20,11 +25,10 @@
       <mat-icon class="rds-icon" matSuffix>school</mat-icon>
     </mat-form-field>
   </div>
-  <div style="padding-top: 10px;" >
+
     @if (wordlist$|async) {
-    <mat-card class="contest-card">
-      <!-- <app-wordlist (onWordEmit)="startReading($event)" [object]="wordlist"></app-wordlist> -->
-      <app-wordchips (onWordEmit)="startReading($event)" [object]="wordlist"> </app-wordchips>
-    </mat-card>
+    <!-- <app-wordlist (onWordEmit)="startReading($event)" [object]="wordlist"></app-wordlist> -->
+    <app-wordchips (onWordEmit)="startReading($event)" [object]="wordlist"> </app-wordchips>
     }
-  </div>
+
+</div>

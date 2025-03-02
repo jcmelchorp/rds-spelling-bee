@@ -1,25 +1,23 @@
-@if (filteredData) {
-<div fxLayout="column" fxLayoutAlign="stretch center" fxLayoutGap="5px">
-  <img style="text-align: center;" type="button" cdkFocusInitial 
-    (click)="wordFlow(filteredData)" height="100px" src="/assets/images/space_bar.gif" />
-
+<img type="button" cdkFocusInitial 
+    (click)="wordFlow(filteredData)" height="60px" src="/assets/images/space_bar.gif" />  
   @if (filteredData!.length!==0) {
   <mat-chip-set  aria-label="Word selection">
     <div fxLayout="row wrap" fxLayoutAlign="center stretch">
       @for (word of filteredData; track $index) {<mat-chip  #chipRef="matChip" (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{ word.id }}</mat-chip>}
     </div>
   </mat-chip-set>
+
   } @else {
-  <div fxLayout="row wrap" fxLayoutAlign="center center">
+  <div fxLayout="row-wrap" fxLayoutAlign="center center">
+    <mat-card class="contest-card">
+
     <h2 class="text-center">
       <span>No encontré resultados.</span>
     </h2>
+  </mat-card>
+
   </div>
   }
   <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length" [pageSize]=" this.object.words?.length!"
     (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray" showFirstLastButtons
     aria-label="Select channel"></mat-paginator>
-</div>
-} @else {
-
-}

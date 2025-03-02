@@ -1,8 +1,8 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #leftSidenav class="sidenav d-print-none" [fixedInViewport]="false"
+  <mat-sidenav #leftSidenav class="sidenav d-print-none" fixedInViewport="false"
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [@onSideNavChange]="sideNavState ? 'close' : 'open'"
     [mode]="isHandset ? 'over':'side'" [opened]="false">
-    <div role="navigation" fxLayout="column" fxLayoutAlign="space-between" fxFlexFill>
+    <div role="navigation" fxLayout="column" fxLayoutAlign="space-between">
       <mat-nav-list >
         <mat-list-item style="margin-bottom: 20px;" [routerLink]="['/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
           <mat-icon class="blue" matListItemIcon >home</mat-icon>
@@ -49,6 +49,6 @@
   </mat-sidenav>
   <mat-sidenav-content [@onMainContentChange]="(onSideNavChange && !isHandset) ? 'open': 'close'"  fxLayout="column" fxLayoutAlign="stretch stretch">
   <app-main class="main-content" ></app-main>
-  <!-- <app-footer></app-footer> -->
+  <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
