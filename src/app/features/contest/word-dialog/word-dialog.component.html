@@ -11,7 +11,19 @@
 </mat-dialog-content>
 <mat-dialog-actions align="center">
   <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-   <mat-icon  [matTooltip]="'Ejemplo'"    [matTooltipShowDelay]="0" [matTooltipHideDelay]="5000"  (click)="useInSentence()" mat-icon-button style="margin-left: 25px;margin-right: 25px;font-size: 28px;" class="rds-icon">psychology</mat-icon>
-   <mat-icon  [matTooltip]="'Repetir'"    [matTooltipShowDelay]="0" [matTooltipHideDelay]="5000"  (click)="repeatWord()" mat-icon-button style="margin-left: 25px;margin-right: 25px;font-size: 25px;" class="rds-icon">record_voice_over</mat-icon>
-   <mat-icon  [matTooltip]="'Definición'" [matTooltipShowDelay]="0" [matTooltipHideDelay]="5000"  (click)="defineWord()" mat-icon-button style="margin-left: 25px;margin-right: 25px;font-size: 25px;" class="rds-icon">auto_stories</mat-icon>
+   <div fxLayout="column" fxLayoutAlign="start center">
+   <mat-icon  [matTooltip]="'Ejemplo'"    [matTooltipShowDelay]="0" [matTooltipHideDelay]="5000" 
+  (click)="useInSentence()" mat-icon-button style="margin-left: 35px;margin-right: 35px;font-size: 28px;" class="rds-icon">psychology</mat-icon>
+    <p class="mat-body-2">Ejemplo</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start center">
+   <mat-icon  [matTooltip]="'Repetir'"    [matTooltipShowDelay]="0" [matTooltipHideDelay]="5000" 
+  (click)="repeatWord()" mat-icon-button style="margin-left: 35px;margin-right: 35px;font-size: 25px;" class="rds-icon">record_voice_over</mat-icon>
+  <p class="mat-body-2">Repetir</p>
+    </div>
+  <div fxLayout="column" fxLayoutAlign="start center"> 
+  <mat-icon  [matTooltip]="'Definición'" [matTooltipShowDelay]="0" [matTooltipHideDelay]="5000" 
+  (click)="defineWord()" mat-icon-button style="margin-left: 35px;margin-right: 35px;font-size: 25px;" class="rds-icon">auto_stories</mat-icon>
+  <p class="mat-body-2">Definición</p>
+</div>
 </mat-dialog-actions>

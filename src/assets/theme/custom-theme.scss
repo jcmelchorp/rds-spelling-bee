@@ -94,7 +94,9 @@ $light-theme: mat.define-light-theme(
 // }
 .mat-mdc-dialog-container {
   --mdc-dialog-container-shape: 10px;
+ --mdc-dialog-container-elevation-shadow: inset -5px -5px 0 0 #0060a0, 0 0 15px 5px #00000096;
 }
+
 .mat-form-field-appearance-fill .mat-mdc-form-field-infix {
   padding-top: 20px !important;
  // height: 10px !important;

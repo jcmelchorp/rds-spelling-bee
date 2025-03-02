@@ -9,11 +9,16 @@
     font-size: 6rem;
   }
 
+  ::ng-deep .custom-dialog {
+    mat-dialog-container {
+    }
+    }
 
   .custom-dialog-overlay {
     filter: blur(20px);
     background-color: #212121c4 !important;
     opacity: 0.9 ;
+
   }
 
 

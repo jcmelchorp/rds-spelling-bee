@@ -9,11 +9,13 @@ import { WordComponent } from '../word/word.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SpeechService } from '../../../core/services/speech.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-word-dialog',
   standalone: true,
   imports: [
+    NgClass,
     WordComponent,
     MatIconModule,
     MatButtonModule,

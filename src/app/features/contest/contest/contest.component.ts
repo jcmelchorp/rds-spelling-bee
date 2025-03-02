@@ -188,8 +188,9 @@ export class ContestComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration,
       backdropClass: 'backDrop', // mat-dialog css class
-      //disableClose: true,  // If you click outside the mat-dialog box window, it will not close.
+      disableClose: true,  // If you click outside the mat-dialog box window, it will not close.
       autoFocus: false,
+      //panelClass: 'custom-dialog',
       data: { input: this.input(), output: this.output() },
     });
 
