@@ -166,7 +166,7 @@ export class ContestComponent implements OnInit {
 
   startReading(word: Word) {
     this.word = word;
-    this.openDialog('3000ms', '300ms');
+    this.openDialog('2000ms', '500ms');
   }
 
   openDialog(
@@ -198,54 +198,53 @@ export class ContestComponent implements OnInit {
       if (result !== undefined) {
         this.output.set(result);
         if (this.wordsCount === this.wordlist.words?.length) {
-          this.celebrate();
-          this.celebrate();
+          //this.celebrate();
+         // this.celebrate();
           // this.interval()
           //alert('The Spelling Bee contest has finished!')
           this.gradeControl.enable();
         } else {
           console.log(this.word);
           this.wordsCount++;
-          console.log(this.wordsCount);
         }
       }
     });
   }
 
-  randomInRange(min: number, max: number) {
-    return Math.random() * (max - min) + min;
-  }
+  // randomInRange(min: number, max: number) {
+  //   return Math.random() * (max - min) + min;
+  // }
 
-  interval: any = () => {
-    var timeLeft = this.animationEnd - Date.now();
+  // interval: any = () => {
+  //   var timeLeft = this.animationEnd - Date.now();
 
-    if (timeLeft <= 0) {
-      return clearInterval(this.interval);
-    }
+  //   if (timeLeft <= 0) {
+  //     return clearInterval(this.interval);
+  //   }
 
-    var particleCount = 50 * (timeLeft / this.duration);
-    // since particles fall down, start a bit higher than random
-    confetti.default({
-      ...this.defaults,
-      particleCount,
-      origin: { x: this.randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-    });
-    confetti.default({
-      ...this.defaults,
-      particleCount,
-      origin: { x: this.randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-    });
-  };
+  //   var particleCount = 50 * (timeLeft / this.duration);
+  //   // since particles fall down, start a bit higher than random
+  //   confetti.default({
+  //     ...this.defaults,
+  //     particleCount,
+  //     origin: { x: this.randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+  //   });
+  //   confetti.default({
+  //     ...this.defaults,
+  //     particleCount,
+  //     origin: { x: this.randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+  //   });
+  // };
 
-  celebrate() {
-    const duration = 10000; // in milliseconds
+  // celebrate() {
+  //   const duration = 10000; // in milliseconds
 
-    confetti.default({
-      particleCount: 100,
-      spread: 160,
-      origin: { x: this.randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-    });
-    // Clear confetti after a certain duration
-    setTimeout(() => confetti.default.reset(), duration);
-  }
+  //   confetti.default({
+  //     particleCount: 100,
+  //     spread: 160,
+  //     origin: { x: this.randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+  //   });
+  //   // Clear confetti after a certain duration
+  //   setTimeout(() => confetti.default.reset(), duration);
+  // }
 }

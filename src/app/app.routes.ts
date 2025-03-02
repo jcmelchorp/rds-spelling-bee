@@ -18,7 +18,9 @@ export const routes: Routes = [
                 path: 'editor', component: WordlistsComponent 
             },
             {
-                path: 'contest', component: ContestComponent,
+                path: 'contest', 
+                        loadComponent: () => import('./features/contest/contest/contest.component').then(m => m.ContestComponent)
+
             }
         ]
         // loadComponent: () => import('./features/wordlists/wordlists.component'),

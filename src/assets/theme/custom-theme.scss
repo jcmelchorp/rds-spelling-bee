@@ -1,5 +1,4 @@
 @use "@angular/material" as mat;
-@use "sass:map";
 //@import "@angular/material/theming";
 $enable-negative-margins: true;
 
@@ -83,12 +82,11 @@ $light-theme: mat.define-light-theme(
 }
 @include mat.all-component-colors($light-theme);
 
+
 .backDrop {
-  background-color:rgba(50,50,50,.3);
+  background-color:rgba(0,0,0,.9);
   backdrop-filter: blur(10px);
 }
-
-
 // .mat-mdc-standard-chip {
 //   --mdc-chip-label-text-color: #fff;
 // }
@@ -136,114 +134,39 @@ $light-theme: mat.define-light-theme(
   }
 }
 
-//fxLayout="column"
-.column-layout {
-  display: flex;
-  flex-direction: column;
-}
 
-//fxLayout="row"
-.row-layout {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
 
-//fxLayout="row wrap"
-.flex-wrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
-//fxFlex="100%"
-.flex-item-100 {
-  flex: 1 1 100%;
-}
-
-//fxFlex="calc(50% - 10px)"
-.flex-item-calc-50 {
-  flex: 1;
-  width: calc(50% - 10px);
-}
-
-//fxFlex="nogrow"
-.flex-item-nogrow {
-  flex-grow: 0;
-}
-.fx-flex-fill {
-  margin: 0;
+.my-container {
   width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
+  max-width: 1200px; /* Maximum width of the container */
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
 }
 
-//fxLayoutAlign="space-between"
-.space-between {
-  display: flex;
-  justify-content: space-between;
+@media (min-width: 576px) {
+  .my-container {
+      max-width: 540px;
+  }
 }
 
-//fxLayoutAlign="space-between center"
-.center-space-between {
-  display: flex;
-  justify-content: center;
-  align-items: space-between;
-}
-//fxLayoutAlign="start stretch"
-.start-stretch {
-  display: flex;
-  justify-content: stretch;
-  align-items: start;
+@media (min-width: 768px) {
+  .my-container {
+      max-width: 720px;
+  }
 }
 
-//fxLayoutAlign="center space-between"
-.space-between-center {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media (min-width: 992px) {
+  .my-container {
+      max-width: 960px;
+  }
 }
 
-//fxLayoutAlign="space-between stretch"
-.space-between-stretch {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-}
-//fxLayoutAlign="center center"
-.center-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-//fxLayoutGap="10px"
-.flex-gap {
-  display: flex;
-  gap: 10px;
-}
-
-// //fxLayout.gt-xs
-// @media (min-width: 480px) {
-//   .your-setting {
-//     ...
-//   }
-// }
-
-// //fxLayout.lt-sm
-// @media (max-width: 600px) {
-//   .your-setting {
-//     ...
-//   }
-// }
-
-.text-wrap-right {
-  float: right;
-  margin: 5px;
-}
-
-.text-wrap-left {
-  float: left;
-  margin: 5px;
+@media (min-width: 1200px) {
+  .my-container {
+      max-width: 1140px;
+  }
 }

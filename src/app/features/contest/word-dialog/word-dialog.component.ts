@@ -9,13 +9,11 @@ import { WordComponent } from '../word/word.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SpeechService } from '../../../core/services/speech.service';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-word-dialog',
   standalone: true,
   imports: [
-    NgClass,
     WordComponent,
     MatIconModule,
     MatButtonModule,
@@ -41,10 +39,10 @@ export class WordDialogComponent {
     this.example = this.data.input.split('|')[3];
     this.definition = this.data.input.split('|')[2];
     this.label = this.data.input.split('|')[1];
-    this.id = this.data.input.split('|')[0];
+    this.id = Number(this.data.input.split('|')[0]).toLocaleString();
   }
   repeatWord() {
-    this._speech.speechText("I'll repeat:  " + " number "+ Number(this.id).toLocaleString() + "..." + this.label);
+    this._speech.speechText("I'll repeat:  " + " number "+ this.id + "..." + this.label);
   }
 
   useInSentence() {

@@ -35,7 +35,7 @@ import { FlexLayoutModule } from "ngx-flexible-layout";
     MatLineModule,
     FlexLayoutModule
   ],
-  animations: [onMainContentChange, onSideNavChange, animateText],
+  animations: [],
 })
 export class SidenavComponent {
   private layoutService = inject(LayoutService);

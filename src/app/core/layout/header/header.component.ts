@@ -17,12 +17,11 @@ import { FlexLayoutModule } from "ngx-flexible-layout";
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
     standalone: true,
-    imports: [AsyncPipe,MatIconModule, NgClass ,MatToolbarModule,RouterLink,MatButtonModule, MatTooltipModule,AsyncPipe,FlexLayoutModule ],
-    encapsulation: ViewEncapsulation.None,
+    imports: [RouterLink,AsyncPipe,MatIconModule ,MatToolbarModule,MatButtonModule, MatTooltipModule,AsyncPipe,FlexLayoutModule ],
+     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    
-
 })
+
 export class HeaderComponent {
     @Input() isHandset!: boolean | null;
     private layoutService = inject(LayoutService);

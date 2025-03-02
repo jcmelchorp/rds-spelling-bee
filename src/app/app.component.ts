@@ -7,7 +7,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,FormsModule, ReactiveFormsModule,NgxSpinnerModule],
+  imports: [RouterOutlet,FormsModule, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

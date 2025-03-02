@@ -1,21 +1,21 @@
 .sidenav .mat-toolbar {
-   padding-top: 50px;
+  padding-top: 50px;
   background: inherit;
 }
 
 .sidenav-container {
-  // background: transparent;
-  height: calc(100vh - 55px);
- // height: 100%;
+ min-height: calc(100vh - 55px);  
+  // height: calc(100%);
 }
 
 .sidenav {
-  padding-left: 20px;
+  // padding-left: 20px;
    border-radius: 0px 5px 5px 0px;
-  width: 150px;
+  width: 180px;
   // font-size: x-large;
 }
 
 .main-content {
-  height: calc(100vh - 85px);
+    //min-height: calc(100vh - 95px);
+   //height: calc(100% - 95px);
 }

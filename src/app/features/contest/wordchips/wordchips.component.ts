@@ -65,7 +65,7 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
   // }
   defaultElevation = 2;
   raisedElevation = 4;
-  size = 300;
+  pageArray:number[]=[];
   page = 0;
   dataSource = new MatTableDataSource<Word>();
 
@@ -82,10 +82,12 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
  
   
   ngOnInit(): void {
+    let arr=[4,3,2,1];
+    for (var index in arr) {
+      this.pageArray.push(Math.floor(this.object.words?.length!/Number(arr[index])));
+    }
     this.loadPaginatedData(this.object.words!);
-    this.linkListToPaginator({ pageIndex: this.page, pageSize: this.size });
-    
-
+    this.linkListToPaginator({ pageIndex: this.page, pageSize: this.object.words?.length!, pageSizeOptions: this.pageArray });
   }
 
   loadPaginatedData(dataObj: Word[]): void {
@@ -147,7 +149,7 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
   }
 
   playWordId(word: Word) {
-    this._speech.speechText(`number ${Number(word.id)}` as string);
+    this._speech.speechText("number " + Number(word.id).toLocaleString());
   }
 
   showSpinner() {
@@ -155,6 +157,6 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 4000);
+    }, 2500);
   }
 }

@@ -28,13 +28,12 @@ import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withViewTransitions()),
     importProvidersFrom([BrowserAnimationsModule, FlexLayoutModule]),
+    provideRouter(routes, withViewTransitions()),
     provideAnimations(),
     provideAnimationsAsync(),
     provideHttpClient(),
     provideFirebaseApp(() => initializeApp(environment.firebaseOptions)),
-    { provide: FIREBASE_OPTIONS, useValue: environment.firebaseOptions },
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
     //provideAuth(() => getAuth()), 

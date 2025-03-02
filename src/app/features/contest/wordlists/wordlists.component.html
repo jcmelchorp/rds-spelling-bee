@@ -8,7 +8,7 @@
   </mat-form-field
   <button mat-raised-button [disabled]="!wordlist.level" (click)="submit()">Add +</button>
 </div> -->
-<div fxLayout="row wrap" fxLayoutAlign="center stretch">
+<div style="padding-top: 50px;" fxLayout="row" fxLayoutAlign="space-evenly stretch">
   <!-- @for (wordlist of wordlists$ | async; track $index) { -->
   <ng-container *ngFor="let wordlist of wordlists$ | async">
     <mat-card>
