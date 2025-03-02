@@ -118,6 +118,7 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
 
   wordFlow(words: Word[]) {
     this.showSpinner();
+    this._speech.playSound();
     this._speech.speechText("Your word is:" as string);
     words = words.filter((w) => w.staged === false);
     let wordsCount: number = words.length;
@@ -147,15 +148,6 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
 
   playWordId(word: Word) {
     this._speech.speechText(`number ${Number(word.id)}` as string);
-  }
-
-  
-
-  playSound(words: Word[]): void {
-    let audio = new Audio("/assets/media/ascenso.mp3");
-    audio.onended = () => this.wordFlow(words);
-    audio.load();
-    audio.play();
   }
 
   showSpinner() {

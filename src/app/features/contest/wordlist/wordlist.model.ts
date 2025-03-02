@@ -10,6 +10,8 @@ export interface Word {
     id?:string;
     label?:string;
     staged?:boolean;
+    definition?:string;
+    example?:string;
 }
 
 export const Grades:any = [

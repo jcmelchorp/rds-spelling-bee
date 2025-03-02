@@ -33,23 +33,22 @@ export class WordDialogComponent {
   hueBtnState = false;
   label!: string;
   id!: string;
+  example!: string;
+  definition!: string;
   constructor() {
-    // const voicesList: SpeechSynthesisVoice[] = speechSynthesis.getVoices();
-    // this.uttr = new SpeechSynthesisUtterance();
-    // let lang = 'en-US';
-    // this.uttr.rate = 0.75;
-    // this.uttr.pitch = 0.9;
-    // this.uttr.voice = voicesList.filter((voice) => voice.lang === lang).pop()!;
-    // this.uttr.lang = lang;
-
-    this.label = this.data.input.split(',')[1];
-    this.id = this.data.input.split(',')[0];
-    console.log(this.id);
+    this.example = this.data.input.split('|')[3];
+    this.definition = this.data.input.split('|')[2];
+    this.label = this.data.input.split('|')[1];
+    this.id = this.data.input.split('|')[0];
   }
   repeatWord() {
-    this._speech.speechText(this.label);
+    this._speech.speechText("I'll repeat:  " + " number "+ Number(this.id).toLocaleString() + "..." + this.label);
   }
 
-  useInSentence() {}
-  defineWord() {}
+  useInSentence() {
+    this._speech.speechText("Example:  " + this.example);
+  }
+  defineWord() {
+    this._speech.speechText("Definition:  " + this.definition);
+  }
 }

@@ -12,8 +12,6 @@
         <mat-icon class="rds-icon"  [matTooltip]="(isDarkTheme$|async)?'Modo oscuro':'Modo claro'" type="button"
         aria-label="Alternar tema" mat-icon-button
         (click)="toggleDarkTheme(isDarkTheme)">{{(isDarkTheme$|async)?'nightlight':'light_mode'}}</mat-icon>
-      <!-- <span style="font-size:50%">{{ (isDarkTheme$|async)?'on':'off' }}</span> -->
-      <!-- <button > -->
       <mat-icon class="rds-icon" matTooltip="Pantalla completa" type="button" mat-icon-button
         onclick="var el = document.querySelector('body'); el.requestFullscreen();">fullscreen</mat-icon> 
       </div>
