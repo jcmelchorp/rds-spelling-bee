@@ -48,9 +48,9 @@ import { SpeechService } from '../../../core/services/speech.service';
   styleUrl: './wordchips.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WordchipsComponent implements OnInit /*, OnChanges */{
-  readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
-  readonly _speech:SpeechService = inject(SpeechService);
+export class WordchipsComponent implements OnInit  {
+  // readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
+  // readonly _speech:SpeechService = inject(SpeechService);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input({ required: true }) object!: Wordlist;
   @Output() onWordEmit = new EventEmitter<Word>();
@@ -70,12 +70,12 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
   dataSource = new MatTableDataSource<Word>();
 
   // ngOnChanges(changes: SimpleChanges): void {
-  //   if (changes['object'].currentValue) {
-  //     // this.loadPaginatedData(changes['object'].currentValue);
-  //     // this.linkListToPaginator({ pageIndex: this.page, pageSize: this.paginator.pageSize });
-  //     this.synth = window.speechSynthesis;
-  //   this.uttr = new SpeechSynthesisUtterance();
+  //   if (!changes['object'].isFirstChange()) {
+  //     this.loadPaginatedData(changes['object'].currentValue.words);
+  //     this.linkListToPaginator({ pageIndex: this.page, pageSize: changes['object'].currentValue.words!.length});
+
   //   }
+  //   console.log('changes', changes);
   // }
 
 
@@ -118,45 +118,45 @@ export class WordchipsComponent implements OnInit /*, OnChanges */{
     });
   }
 
-  wordFlow(words: Word[]) {
-    this.showSpinner();
-    this._speech.playSound();
-    this._speech.speechText("Your word is:" as string);
-    words = words.filter((w) => w.staged === false);
-    let wordsCount: number = words.length;
-    if (wordsCount == 0) {
-      alert('El concurso ha terminado');
-    } else if (wordsCount <= this.object.words!.length) {
-      let randomIndex: number = Math.floor(Math.random() * wordsCount);
-      let word = words[randomIndex];
-      words[randomIndex].staged = true;
+  // wordFlow(words: Word[]) {
+  //   this.showSpinner();
+  //   this._speech.playSound();
+  //   this._speech.speechText("Your word is:" as string);
+  //   words = words.filter((w) => w.staged === false);
+  //   let wordsCount: number = words.length;
+  //   if (wordsCount == 0) {
+  //     alert('El concurso ha terminado');
+  //   } else if (wordsCount <= this.object.words!.length) {
+  //     let randomIndex: number = Math.floor(Math.random() * wordsCount);
+  //     let word = words[randomIndex];
+  //     words[randomIndex].staged = true;
 
-      setTimeout(() => {
-        this.playWordId(word);
-      }, 2500);
-      this.emitWord(word);
-      console.log('Word remain emitted #', wordsCount);
-    } else {
-      alert('El concurso ha terminado');
-    }
-  }
+  //     setTimeout(() => {
+  //       this.playWordId(word);
+  //     }, 2500);
+  //     this.emitWord(word);
+  //     console.log('Word remain emitted #', wordsCount);
+  //   } else {
+  //     alert('El concurso ha terminado');
+  //   }
+  // }
 
-  emitWord(word: Word) {
-    setTimeout(() => {
-      this._speech.speechText(word.label!);
-      this.onWordEmit.emit(word);
-    }, 2500);
-  }
+  // emitWord(word: Word) {
+  //   setTimeout(() => {
+  //     this._speech.speechText(word.label!);
+  //     this.onWordEmit.emit(word);
+  //   }, 2500);
+  // }
 
-  playWordId(word: Word) {
-    this._speech.speechText("number " + Number(word.id).toLocaleString());
-  }
+  // playWordId(word: Word) {
+  //   this._speech.speechText("number " + Number(word.id).toLocaleString());
+  // }
 
-  showSpinner() {
-    this.spinner.show();
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 2500);
-  }
+  // showSpinner() {
+  //   this.spinner.show();
+  //   setTimeout(() => {
+  //     /** spinner ends after 5 seconds */
+  //     this.spinner.hide();
+  //   }, 2500);
+  // }
 }

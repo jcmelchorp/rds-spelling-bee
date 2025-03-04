@@ -8,6 +8,7 @@ import {
   input,
   model,
   NgModule,
+  OnDestroy,
   OnInit,
   output,
   signal,
@@ -47,7 +48,7 @@ import { WordlistsService } from '../wordlists/wordlists.service';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatCommonModule, MatOptionModule } from '@angular/material/core';
 import { WordlistComponent } from '../wordlist/wordlist.component';
-import { AsyncPipe, JsonPipe, NgFor, NgIf, NgIfContext } from '@angular/common';
+import { AsyncPipe, JsonPipe, NgClass, NgFor, NgIf, NgIfContext } from '@angular/common';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -80,6 +81,11 @@ import {
   zoomInUpOnEnterAnimation,
   zoomOutUpAnimation,
 } from 'angular-animations';
+import { SpeechService } from '../../../core/services/speech.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
 
 @Component({
   templateUrl: './contest.component.html',
@@ -87,19 +93,21 @@ import {
   standalone: true,
   imports: [
     AsyncPipe,
+    NgClass,
     FormsModule,
     ReactiveFormsModule,
     MatBadgeModule,
     MatIconModule,
     MatOptionModule,
-    WordchipsComponent,
+    MatButtonModule,
+    MatChipsModule,
+    MatPaginatorModule,
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
     MatCardModule,
     FlexLayoutModule,
     NgxSpinnerModule,
-    WordchipsComponent,
   ],
   animations: [
     bounceInUpOnEnterAnimation({ anchor: 'enter1' }),
@@ -114,8 +122,11 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContestComponent implements OnInit {
-  private readonly wordlistService = inject(WordlistsService);
+  private readonly _wordlistService = inject(WordlistsService);
   readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
+  readonly _speech: SpeechService = inject(SpeechService);
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
   readonly output = signal('');
   readonly input = model('');
   readonly dialog = inject(MatDialog);
@@ -131,54 +142,131 @@ export class ContestComponent implements OnInit {
     }, 1);
   }
   word!: Word;
-  disableSelect: string = 'false';
+  disableSelect: boolean = false;
   wordlists$!: Observable<Wordlist[]>;
-  wordlist$: Observable<Wordlist> = new Observable<Wordlist>();
+  wordlist$!: Observable<Wordlist>;
   wordlist!: Wordlist;
+  // subs:Subscription = new Subscription();
   wordsCount: number = 1;
-  showB: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  filteredWordlist: BehaviorSubject<Wordlist> = new BehaviorSubject(
+    {} as Wordlist
+  );
   levels = Grades;
-  gradeControl: FormControl = new FormControl<Wordlist>({});
+  // gradeControl: FormControl = new FormControl<Wordlist>({});
   duration = 15 * 1000;
   animationEnd = Date.now() + this.duration;
   defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-// @ViewChild('brand', { static: true }) brand!: ElementRef;
-  
-  constructor() {
-    // this.balloonContainer = this.elRef.nativeElement;
-    this.wordlist$ = this.gradeControl.valueChanges.pipe(
-      switchMap((grade: string) =>
-        this.wordlistService.list().pipe(
-          map((wordlists) => wordlists.find((wl) => wl.level === grade)!),
-          tap((wordlist) => {
-            this.wordlist = wordlist;
-            // Hack for debugging fast
-            // this.wordlist.words=this.wordlist.words!.map(word => {
-            //     if (Number(word.id!) <=55) {word.staged = true;} else {word.staged = false;}
-            //     return word;
-            // });
-          })
-        )
-      ),
-      tap(() => this.gradeControl.disable())
+  // @ViewChild('brand', { static: true }) brand!: ElementRef;
+  pageArray: number[] = [];
+  page = 0;
+  dataSource = new MatTableDataSource<Word>();
+  filteredData: Word[] = [];
+
+  ngOnInit(): void {}
+
+  onGradeChange(event: any) {
+   let level:string = event.value.replace('°','');
+  //  console.log(level);
+    this.wordlist$ = this._wordlistService.getByGrade(level).pipe(
+      map((wordlist) => {
+        console.log(wordlist)
+        let wordsCount = wordlist.words?.length!;
+        let arr = [4, 3, 2, 1];
+        for (var index in arr) {
+          this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
+        }
+        this.loadPaginatedData(wordlist.words!);
+        this.linkListToPaginator({
+          pageIndex: this.page,
+          pageSize:wordsCount,
+          pageSizeOptions: this.pageArray,
+        });
+        return wordlist;
+      })
     );
   }
 
-  ngOnInit(): void {
-  
+  loadPaginatedData(dataObj: Word[]): void {
+    this.dataSource.data = dataObj;
+    this.dataSource.paginator = this.paginator;
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
-  onGradeChange(event:any) {
-console.log(event);
-// this.brand.nativeElement.style.display = 'flex';
-// this.brand.nativeElement.style.flex = 'column';
+  linkListToPaginator(obj: any): void {
+    // console.log(obj);
+    let index = 0,
+      startingIndex = obj.pageIndex * obj.pageSize,
+      endingIndex = startingIndex + obj.pageSize;
 
+    this.filteredData = this.dataSource.filteredData.filter(() => {
+      index++;
+      return index > startingIndex && index <= endingIndex ? true : false;
+    });
   }
 
-  startReading(word: Word) {
-    this.word = word;
-    this.openDialog('2000ms', '500ms');
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.linkListToPaginator({
+      pageIndex: this.paginator.pageIndex,
+      pageSize: this.paginator.pageSize,
+    });
   }
+
+  wordFlow() {
+    console.log('Word Flow');
+    let words = this.dataSource.data.filter(
+      (word) => word.staged === false
+    );
+    this.showSpinner();
+    this._speech.playSound();
+    this._speech.speechText('Your word is:' as string);
+    this.wordsCount = words!.length;
+    let randomIndex: number = Math.floor(Math.random() * this.wordsCount);
+    let word = words![randomIndex];
+    setTimeout(() => {
+      this.playWordId(word);
+    }, 2500);
+    this.emitWord(word);
+    this.dataSource.data[randomIndex].staged = true;
+    // this.filteredWordlist.next(this.wordlist);
+    // console.log(this.filteredData);
+
+    // if (wordsCount == 0) {
+    //   alert('El concurso ha terminado');
+    // } else if (wordsCount <= this.wordlist.words!.length) {
+
+    //   console.log('Word remain emitted #', wordsCount);
+    // } else {
+    //   alert('El concurso ha terminado');
+    // }
+  }
+
+  emitWord(word: Word) {
+    setTimeout(() => {
+      this.word = word;
+      this._speech.speechText(word.label!);
+      this.openDialog('2000ms', '500ms');
+    }, 2500);
+  }
+
+  playWordId(word: Word) {
+    this._speech.speechText('number ' + Number(word.id).toLocaleString());
+  }
+
+  showSpinner() {
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 2500);
+  }
+
+  // startReading(word: Word) {
+  //   this.word = word;
+  //   this.openDialog('2000ms', '500ms');
+  // }
 
   openDialog(
     enterAnimationDuration: string,
@@ -199,7 +287,7 @@ console.log(event);
       enterAnimationDuration,
       exitAnimationDuration,
       backdropClass: 'backDrop', // mat-dialog css class
-      disableClose: true,  // If you click outside the mat-dialog box window, it will not close.
+      disableClose: true, // If you click outside the mat-dialog box window, it will not close.
       autoFocus: false,
       //panelClass: 'custom-dialog',
       data: { input: this.input(), output: this.output() },
@@ -208,12 +296,12 @@ console.log(event);
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== undefined) {
         this.output.set(result);
-        if (this.wordsCount === this.wordlist.words?.length) {
+        if (this.wordsCount === this.dataSource.data.length) {
           //this.celebrate();
-         // this.celebrate();
+          // this.celebrate();
           // this.interval()
           //alert('The Spelling Bee contest has finished!')
-          this.gradeControl.enable();
+          // this.gradeControl.enable();
         } else {
           console.log(this.word);
           this.wordsCount++;
@@ -222,6 +310,11 @@ console.log(event);
     });
   }
 
+  // ngOnDestroy(): void {
+  //   //Called once, before the instance is destroyed.
+  //   //Add 'implements OnDestroy' to the class.
+  //   this.subs.unsubscribe();
+  // }
   // randomInRange(min: number, max: number) {
   //   return Math.random() * (max - min) + min;
   // }

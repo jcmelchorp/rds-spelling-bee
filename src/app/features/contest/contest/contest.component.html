@@ -17,18 +17,46 @@
 
     <mat-form-field appearance="fill" [@enter3] (@enter3.done)="animationState = !animationState">
       <mat-label>Grado o nivel</mat-label>
-      <mat-select [formControl]="gradeControl" (selectionChange)="onGradeChange($event)">
+      <mat-select  (selectionChange)="onGradeChange($event);disableSelect=true" [disabled]="disableSelect">
         @for (level of levels; track level) {
         <mat-option [value]="level">{{level}}</mat-option>
         }
       </mat-select>
       <mat-icon class="rds-icon" matSuffix>school</mat-icon>
     </mat-form-field>
+    @if (disableSelect) {
+      <button mat-fab-extended type="button"  (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState" mat-raised-button color="primary"> <mat-icon>hearing</mat-icon> Give me a word </button>
+      @if ((wordlist$|async) && dataSource.data ) {
+
+        @if (wordsCount > 0) {
+        <mat-chip-set  aria-label="Word selection">
+          <div fxLayout="row wrap" fxLayoutAlign="center stretch">
+            @for (word of dataSource.data; track $index) {<mat-chip  #chipRef="matChip" (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{ word.id }}</mat-chip>}
+          </div>
+        </mat-chip-set>
+        <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length" [pageSize]="dataSource.data.length"
+        (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray" showFirstLastButtons
+        aria-label="Select channel"></mat-paginator>
+        }
+        @else if (wordsCount === 0) {
+          <mat-card class="contest-card">
+            <div fxLayout="row-wrap" fxLayoutAlign="center center">
+          <h2 class="text-center">
+            No encontré resultados.
+          </h2>
+        </div> 
+        </mat-card>
+        }
+      }
+    }
+   
+    <!-- <img *ngIf="(wordlist$|async)! && filteredWordlist|async" type="button" cdkFocusInitial 
+    (click)="wordFlow()" height="60px" src="/assets/images/space_bar.gif" />  -->
   </div>
 
-    @if (wordlist$|async) {
     <!-- <app-wordlist (onWordEmit)="startReading($event)" [object]="wordlist"></app-wordlist> -->
-    <app-wordchips (onWordEmit)="startReading($event)" [object]="wordlist"> </app-wordchips>
-    }
+    <!-- <app-wordchips (onWordEmit)="startReading($event)" *ngIf="(wordlist$|async)!" [object]="wordlist"> </app-wordchips> -->
+    <!-- <app-wordchips   *ngIf="wordlist" [object]="wordlist"> </app-wordchips> -->
+  
 
 </div>

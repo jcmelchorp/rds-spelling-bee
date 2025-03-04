@@ -1,30 +1,5 @@
 
 
 
-.word-done {
-  background-color: rgb(216, 40, 40) !important;
-  --mdc-chip-label-text-color: #fff;
-  //  --mdc-chip-label-text-weight:500;
-}
 
-.word-pending {
-  background-color: rgb(255, 255, 255) !important;
-  border: #494949 1px solid;
-  --mdc-chip-label-text-color: #183606;
-  //  --mdc-chip-label-text-weight:500;
-    --mdc-chip-label-text-size: 0.8em;
 
-}
-::ng-deep .mat-paginator-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  flex-wrap: wrap-reverse;
-  width: 100%;
-}
-.paginator {
-  margin: 0 !important;
-  background-color: transparent !important;
-  font-family: "Fredoka", sans-serif;
-}
