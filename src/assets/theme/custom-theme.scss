@@ -1,6 +1,6 @@
 @use "@angular/material" as mat;
 @include mat.core();
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&family=Miltonian&family=Sixtyfour&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&family=VT323&family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&family=Miltonian&family=Sixtyfour&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
 
 .elevation-card {
@@ -14,7 +14,7 @@
 
 
 $typography-config: mat.define-typography-config(
-  $font-family: '"Fredoka", "Miltonian", sans-serif',
+  $font-family: '"Fredoka", "Sixtyfour", sans-serif',
   $headline-1: mat.define-typography-level(124px, 124px, 600, $letter-spacing: -0.05em),
   $headline-2: mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
   $headline-3: mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
@@ -120,16 +120,24 @@ $enable-negative-padding: true;
   line-height: 36.4px;
 }
 
-.mat-standard-chip {
-  padding: 0.5em 0.85em;
-  min-height: 2.5em;
-}
+// .chip-id {
+//   min-height: 1.5em;
+//   min-width: 3em;
+// }
 
+.mat-mdc-standard-chip {
+  /* typography */
+  --mdc-chip-label-text-font: "VT323";
+  --mdc-chip-label-text-line-height: 18px;
+  --mdc-chip-label-text-size: 24px;
+  --mdc-chip-label-text-tracking: 0em;
+  --mdc-chip-label-text-weight: 500
+}
 .material-icons {
   // font-size: 30px;
   font-family: "Material Icons Outlined", "Material Icons";
   .mat-badge-content {
-    font-family: "Fredoka";
+    font-family: "Sixtyfour", sans-serif;
   }
 }
 
