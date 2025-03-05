@@ -33,9 +33,11 @@ import { Overlay } from '@angular/cdk/overlay';
 import { FlexLayoutModule } from 'ngx-flexible-layout';
 import { flyInOut } from '../../../shared/animations/router.animations';
 import * as configSelectors from '../../../store/selectors/config.selectors';
+import * as fromAuthSelectors from '../../../store/selectors/auth.selectors';
 import { AppState } from '../../../store/states/app.state';
 import { Store } from '@ngrx/store';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { User } from '../../auth/models/user.model';
 
 @Component({
   templateUrl: './navigation.component.html',
@@ -64,18 +66,24 @@ export class NavigationComponent implements OnInit {
   private layoutService = inject(LayoutService);
   private router = inject(Router);
   isHandset$: Observable<boolean>;
-  isDarkTheme!: Observable<boolean>;
+  user$!: Observable<User>;
+  isOnline$!: Observable<boolean>;
+  isAdmin$!: Observable<boolean>;  isDarkTheme!: Observable<boolean>;
   loading = false;
 
-  constructor(private store: Store<AppState>) {
-    this.router.events.subscribe((event) =>
+  constructor(
+    private store: Store<AppState>
+  ) {
+        this.router.events.subscribe((event) =>
       this.navigationInterceptor(event as RouterEvent)
     );
     this.router.events.subscribe((event_2) =>
       this.navigationInterceptor(event_2 as RouterEvent)
     );
     this.isHandset$ = this.layoutService.isHandset$;
-  }
+    this.isOnline$ = this.store.select(fromAuthSelectors.isOnline);
+    this.user$ = this.store.select(fromAuthSelectors.selectUser);
+    this.isAdmin$ = this.store.select(fromAuthSelectors.isAdmin);  }
 
   ngOnInit(): void {
     this.isDarkTheme = this.store.select(configSelectors.isDarkMode);

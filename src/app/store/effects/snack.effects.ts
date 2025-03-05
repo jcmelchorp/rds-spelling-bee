@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-// import * as fromAuthActions from '../actions/auth.actions';
+import * as fromAuthActions from '../actions/auth.actions';
 
 import { ToastrService } from 'ngx-toastr';
 
@@ -16,12 +16,12 @@ export class SnackEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          // fromAuthActions.saveUser
+          fromAuthActions.saveUser
         ),
         tap((payload) =>
           setTimeout(() => {
-            this.snackService.justMessage(''
-              // `Bienvenido, ${payload.user.displayName}`
+            this.snackService.justMessage(
+              `Bienvenido, ${payload.user.displayName}`
             );
           }, 2000)
         )
@@ -65,7 +65,7 @@ export class SnackEffects {
   //   { dispatch: false }
   // );
 
-  /* youAreLoggedOut$ = createEffect(
+   youAreLoggedOut$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
@@ -77,13 +77,13 @@ export class SnackEffects {
         )
       ),
     { dispatch: false }
-  ); */
+  ); 
 
   comeBackSoon$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(
-          // fromAuthActions.signOutCompleted
+          fromAuthActions.signOutCompleted
         ),
         tap(() =>
           setTimeout(() => {

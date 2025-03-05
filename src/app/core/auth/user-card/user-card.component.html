@@ -1,0 +1,10 @@
+@if (user) {
+<mat-card class="simple-card" fxLayout="column wrap" fxLayoutAlign="space-around center">
+   <div>
+    <img mat-card-avatar src="{{user.photoUrl?user.photoUrl:'assets/images/default_user.jpeg'}}" />
+    @if (user.isAdmin) { <mat-icon class="rds-icon">admin</mat-icon> }
+</div>
+<div class="mat-body-strong">{{user.displayName}}</div>
+    <div class="mat-small">{{user.primaryEmail}}</div>
+</mat-card>
+}

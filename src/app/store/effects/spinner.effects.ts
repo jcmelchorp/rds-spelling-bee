@@ -7,7 +7,7 @@ import {
   ROUTER_NAVIGATION,
 } from '@ngrx/router-store';
 
-// import * as fromAuthActions from '../actions/auth.actions';
+import * as fromAuthActions from '../actions/auth.actions';
 
 
 import { tap } from 'rxjs/operators';
@@ -19,9 +19,9 @@ export class SpinnerEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          // fromAuthActions.signInByEmail,
-          // fromAuthActions.signInByGoogle,
-          // fromAuthActions.signOut,
+          fromAuthActions.signInByEmail,
+          fromAuthActions.signInByGoogle,
+          fromAuthActions.signOut,
         ),
         tap(() => {
           this.spinner.show('entitySpinner', {
@@ -46,10 +46,10 @@ export class SpinnerEffects {
             ea.payload.entityOp.endsWith(OP_SUCCESS)
         ),  */
         ofType(
-          // fromAuthActions.notAuthenticated,
-          // fromAuthActions.signInSuccess,
-          // fromAuthActions.signInFail,
-          // fromAuthActions.signOutCompleted,
+          fromAuthActions.notAuthenticated,
+          fromAuthActions.signInSuccess,
+          fromAuthActions.signInFail,
+          fromAuthActions.signOutCompleted,
         ),
 
         tap(() => {

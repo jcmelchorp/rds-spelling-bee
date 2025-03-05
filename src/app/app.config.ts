@@ -3,7 +3,7 @@ import { provideRouter, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
 import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getAuth, provideAuth } from '@angular/fire/auth';
+import { browserPopupRedirectResolver, getAuth, indexedDBLocalPersistence, initializeAuth, provideAuth } from '@angular/fire/auth';
 import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
@@ -34,11 +34,17 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(),
     provideFirebaseApp(() => initializeApp(environment.firebaseOptions)),
+    provideAuth(() => {
+      const auth = initializeAuth(getApp(), {
+          persistence: indexedDBLocalPersistence,
+          popupRedirectResolver: browserPopupRedirectResolver,
+      });
+      return auth;
+  }),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
-    //provideAuth(() => getAuth()), 
-    //provideAnalytics(() => getAnalytics()), 
-    //ScreenTrackingService, UserTrackingService, 
+    provideAnalytics(() => getAnalytics()), 
+    ScreenTrackingService, UserTrackingService, 
     provideStore(fromRoot.reducers, fromConfig.storeConfig),
     provideStoreDevtools({
     maxAge: 25, // Retains last 25 states
@@ -46,7 +52,7 @@ export const appConfig: ApplicationConfig = {
     autoPause: false, // Pauses recording actions and state changes when the extension window is not open
     trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
     traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
-    connectInZone: true // If set to true, the connection is established within the Angular zone
+    connectInZone: false // If set to true, the connection is established within the Angular zone
     }),
    provideEffects(registeredEffects),
     provideEntityData(fromEntity.entityConfig, withEffects()),

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { RouterNavigatedAction, ROUTER_NAVIGATION } from '@ngrx/router-store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-// import * as fromAuthActions from '../actions/auth.actions';
+import * as fromAuthActions from '../actions/auth.actions';
 
 import { filter, map, tap, withLatestFrom } from 'rxjs/operators';
 
@@ -46,9 +46,9 @@ export class RouteEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          // fromAuthActions.signInSuccess
+          fromAuthActions.signInSuccess
         ),
-        tap(() => this.router.navigate(['/home']))
+        tap(() => this.router.navigate(['/contest']))
       ),
     { dispatch: false }
   );
@@ -56,7 +56,7 @@ export class RouteEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          // fromAuthActions.signOutCompleted
+          fromAuthActions.signOutCompleted
         ),
         tap(() => this.router.navigate(['/']))
       ),

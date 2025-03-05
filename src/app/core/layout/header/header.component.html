@@ -21,6 +21,7 @@
       }
     </div>
     <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+      @if (isOnline && user) {
       <button type="button" mat-icon-button (click)="toggleDarkTheme(isDarkTheme)">
         <mat-icon class="rds-icon" [matTooltip]="(isDarkTheme$|async)?'Modo oscuro':'Modo claro'"
           aria-label="Alternar tema">{{(isDarkTheme$|async)?'nightlight':'light_mode'}}</mat-icon>
@@ -28,7 +29,52 @@
       <button type="button" mat-icon-button onclick="var el = document.querySelector('body'); el.requestFullscreen();">
         <mat-icon class="rds-icon" matTooltip="Pantalla completa">fullscreen</mat-icon>
       </button>
+      <button type="button" mat-icon-button [matMenuTriggerFor]="userMenu">
+        <img class="rounded-circle" src="{{user.photoUrl?user.photoUrl!:'/assets/images/default_user.jpeg'}}" />
+      </button>
+      } @else {
+      <button type="button" mat-icon-button matTooltip="Iniciar sesión" [routerLink]="['/login']">
+        <mat-icon class="rds-icon">login</mat-icon>
+      </button>
+      }
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
 <ng-content #progressBar></ng-content>
+<mat-menu #userMenu="matMenu" fxLayoutAlign="end">
+  <ng-template matMenuContent>
+    <div mat-menu-item *ngIf="isOnline && user" [routerLink]="['p']">
+      <app-user-card [isOnline]="isOnline" [user]="user"> </app-user-card>
+    </div>
+    <mat-accordion>
+      <mat-expansion-panel [class.mat-elevation-z0]="true" (opened)="panelOpenState = true"
+        (closed)="canLogout = true;panelOpenState = false" (click)="$event.stopPropagation();"
+        hideToggle="panelOpenState">
+        <mat-expansion-panel-header>
+          <div mat-menu-item>
+            <mat-icon matListIcon>logout</mat-icon>
+            <span>&nbsp;Cerrar sesión</span>
+          </div>
+        </mat-expansion-panel-header>
+        <div mat-menu-item (click)="onLogout(user.uid!)">
+          <mat-icon matListIcon style="color:darkred">directions_run</mat-icon>
+          <span style="color:darkred">&nbsp;Salir</span>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!-- <mat-accordion displayMode="flat">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header (click)="$event.stopPropagation();">
+            <mat-panel-title>
+              <mat-icon *ngIf="!canLogout">logout</mat-icon>
+              <span *ngIf="!canLogout">Cerrar sesión</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item class="text-danger" *ngIf="canLogout">¿Deseas salir?</mat-list-item>
+            <mat-list-item *ngIf="canLogout" (click)="cancel()">Cancelar</mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion> -->
+  </ng-template>
+</mat-menu>
