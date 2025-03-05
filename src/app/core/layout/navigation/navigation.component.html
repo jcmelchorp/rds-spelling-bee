@@ -7,5 +7,5 @@
   [isAdmin]="(isAdmin$|async)!" [isOnline]="(isOnline$|async)!">
     <mat-progress-bar class="progress-bar" name="progressBar" *ngIf="loading" mode="query" color="primary"></mat-progress-bar>
   </app-header>
-  <app-sidenav  [isHandset]="(isHandset$|async)!"></app-sidenav>
+  <app-sidenav  [isHandset]="(isHandset$|async)!" [isOnline]="(isOnline$|async)!"></app-sidenav>
 </div>

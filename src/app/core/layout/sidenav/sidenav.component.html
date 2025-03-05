@@ -4,18 +4,21 @@
     [mode]="isHandset ? 'over':'side'" [opened]="false">
     <div role="navigation" fxLayout="column" fxLayoutAlign="space-between">
       <mat-nav-list >
-        <mat-list-item style="margin-bottom: 20px;" [routerLink]="['/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+        <mat-list-item  [routerLink]="['/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
           <mat-icon class="blue" matListItemIcon >home</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Inicio</span>
         </mat-list-item>
-        <mat-list-item style="margin-top: 20px;margin-bottom: 20px;" [routerLink]="['contest']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+        @if (isOnline) {
+
+        <mat-list-item  [routerLink]="['contest']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
           <mat-icon class="blue" matListItemIcon >workspace_premium</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Concurso</span>
         </mat-list-item>
-        <mat-list-item style="margin-top: 20px;margin-bottom: 20px;" [routerLink]="['editor']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+        <mat-list-item  [routerLink]="['editor']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
           <mat-icon class="blue" matListItemIcon>auto_stories</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Vocabulario</span>
         </mat-list-item>
+      }
       </mat-nav-list>
       <!-- <mat-nav-list > -->
        <!--  <mat-accordion>

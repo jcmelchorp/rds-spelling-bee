@@ -9,7 +9,7 @@
       <button type="button" aria-label="Inicio" mat-icon-button [routerLink]="['/']">
         <img class="rounded-circle" src="/assets/images/rds-bee-logo-transparent.png" />
       </button>
-      @if (!isHandset) {
+      @if (!isHandset && isOnline) {
       <a type="button" style="background-color: transparent;" aria-label="Concurso 2025" mat-flat-button
         [routerLink]="['/contest']">
         Concurso 2025
@@ -46,7 +46,7 @@
     <div mat-menu-item *ngIf="isOnline && user" [routerLink]="['p']">
       <app-user-card [isOnline]="isOnline" [user]="user"> </app-user-card>
     </div>
-    <mat-accordion>
+    <mat-accordion displayMode="flat">
       <mat-expansion-panel [class.mat-elevation-z0]="true" (opened)="panelOpenState = true"
         (closed)="canLogout = true;panelOpenState = false" (click)="$event.stopPropagation();"
         hideToggle="panelOpenState">

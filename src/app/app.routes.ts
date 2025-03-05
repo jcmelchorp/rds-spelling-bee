@@ -8,6 +8,8 @@ import { slideInUpOnEnterAnimation } from 'angular-animations';
 import { LoginComponent } from './core/auth/login/login.component';
 import { authGuard, publicGuard } from './core/auth/guards/auth.guard';
 import { RegisterComponent } from './core/auth/register/register.component';
+import { TermsComponent } from './core/auth/terms/terms.component';
+import { PrivacyPolicyComponent } from './core/auth/privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
     {
@@ -17,6 +19,14 @@ export const routes: Routes = [
             { 
                 path: '', component: HomeComponent 
             },
+            {
+                path: 'terms',
+                component: TermsComponent,
+              },
+              {
+                path: 'policy',
+                component: PrivacyPolicyComponent,
+              },
             { 
                 path: 'editor', 
                 canActivate: [authGuard],
@@ -37,7 +47,8 @@ export const routes: Routes = [
                 canActivate: [authGuard],
                 loadComponent: () => import('./features/contest/contest/contest.component').then(m => m.ContestComponent)
 
-            }
+            },
+
         ]
     },
     { path: '**', redirectTo: '/', pathMatch: 'full' }
