@@ -1,0 +1,53 @@
+<div class="my-container" style="text-align: center;">
+  <div fxLayout="column" fxLayoutAlign="center center" >
+    <img src="/assets/images/rds-bee-logo-transparent.png" height="120px" />
+    <div style="min-width:250px;" class="view-title">Spelling Bee</div>
+  </div>
+  <mat-card>
+  <mat-card-title>Para registrarte, escribe un correo electrónico y crea una contraseña.</mat-card-title>
+  <mat-card-subtitle>Registro</mat-card-subtitle>
+    <mat-card-content>
+      <form [formGroup]="registerForm">
+        <div fxLayout="column" fxLayoutAlign="center stretch">
+        <div fxFlex>
+        <mat-form-field>
+          <mat-label>Correo electrónico</mat-label>
+          <input type="email" matInput formControlName="email">
+       
+            <mat-icon matSuffix>email</mat-icon>
+            @if (registerForm.get('email')?.hasError('required')) {
+                <mat-error>Se requiere un correo electrónico.</mat-error>
+            }
+            @if (registerForm.get('email')?.hasError('email')) {
+                <mat-error>Correo electrónico no válido.</mat-error>
+            }
+        </mat-form-field>
+      </div>
+      <div fxFlex>
+        <mat-form-field >
+            <mat-label>Contraseña nueva</mat-label>
+            <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+                        @if (registerForm.get('password')?.hasError('required')) {
+                <mat-error>Se requiere una contraseña.</mat-error>
+            }
+        </mat-form-field>
+      </div>
+        <button mat-stroked-button (click)="submit()" [disabled]="registerForm.invalid">Registrar</button>
+      </div>
+    </form>
+</mat-card-content>
+</mat-card>
+</div>

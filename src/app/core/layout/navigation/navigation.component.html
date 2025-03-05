@@ -3,8 +3,9 @@
   <p class="mat-h1" style="color: #dfdfdf;"> Your word is... </p>
 </ngx-spinner>
 <div [ngClass]="{'dark-theme': isDarkTheme|async}"  >
-  <app-header class="d-print-none" [isHandset]="(isHandset$|async)!">
+  <app-header class="d-print-none" [user]="(user$|async)!" [isHandset]="(isHandset$|async)!"
+  [isAdmin]="(isAdmin$|async)!" [isOnline]="(isOnline$|async)!">
     <mat-progress-bar class="progress-bar" name="progressBar" *ngIf="loading" mode="query" color="primary"></mat-progress-bar>
   </app-header>
-  <app-sidenav  [isHandset]="(isHandset$|async)!"></app-sidenav>
+  <app-sidenav  [isHandset]="(isHandset$|async)!" [isOnline]="(isOnline$|async)!"></app-sidenav>
 </div>

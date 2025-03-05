@@ -1,7 +1,7 @@
 {
   "rules": {
-    ".read": "true",  // 2025-2-21
-    ".write": "false",  // 2025-2-21
+    ".read": "true",  
+    ".write": "false",  
        "wordlists": {
       ".indexOn": ["id", "level"]
     }

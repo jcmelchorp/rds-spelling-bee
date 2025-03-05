@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-// import * as fromAuthActions from '../actions/auth.actions';
+import * as fromAuthActions from '../actions/auth.actions';
 
 import { tap } from 'rxjs/operators';
 
@@ -13,7 +13,7 @@ export class DialogEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          // fromAuthActions.signInByGoogle,fromAuthActions.signInByEmail
+          fromAuthActions.signInByGoogle,fromAuthActions.signInByEmail
         ),
         tap(() => this.dialog.closeAll())
       ),

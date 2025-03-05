@@ -5,6 +5,11 @@ import { HomeComponent } from './core/layout/home/home.component';
 import { ContestComponent } from './features/contest/contest/contest.component';
 import { animation } from '@angular/animations';
 import { slideInUpOnEnterAnimation } from 'angular-animations';
+import { LoginComponent } from './core/auth/login/login.component';
+import { authGuard, publicGuard } from './core/auth/guards/auth.guard';
+import { RegisterComponent } from './core/auth/register/register.component';
+import { TermsComponent } from './core/auth/terms/terms.component';
+import { PrivacyPolicyComponent } from './core/auth/privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
     {
@@ -14,16 +19,37 @@ export const routes: Routes = [
             { 
                 path: '', component: HomeComponent 
             },
+            {
+                path: 'terms',
+                component: TermsComponent,
+              },
+              {
+                path: 'policy',
+                component: PrivacyPolicyComponent,
+              },
             { 
-                path: 'editor', component: WordlistsComponent 
+                path: 'editor', 
+                canActivate: [authGuard],
+                component: WordlistsComponent 
             },
             {
+                path: 'login',
+                canActivate: [publicGuard],
+                component: LoginComponent,
+              },
+              {
+                path: 'register',
+                canActivate: [publicGuard],
+                component: RegisterComponent,
+              },
+            {
                 path: 'contest', 
-                        loadComponent: () => import('./features/contest/contest/contest.component').then(m => m.ContestComponent)
+                canActivate: [authGuard],
+                loadComponent: () => import('./features/contest/contest/contest.component').then(m => m.ContestComponent)
 
-            }
+            },
+
         ]
-        // loadComponent: () => import('./features/wordlists/wordlists.component'),
     },
     { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

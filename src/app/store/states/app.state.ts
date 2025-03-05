@@ -1,17 +1,19 @@
 import { Action, ActionReducer, ActionReducerMap, INIT, MetaReducer } from "@ngrx/store";
+import * as fromAuth from "../reducers/auth.reducer";
 import * as fromConfig  from '../reducers/config.reducer';
+import * as authActions from '../actions/auth.actions';
 
 import { routerReducer, RouterState } from "@ngrx/router-store";
 import { routerKey } from "../router";
 import { environment } from "../../../environments/environment";
 
 export interface AppState {
-    // [fromAuth.authFeatureKey]: fromAuth.AuthenticationState;
+    [fromAuth.authFeatureKey]: fromAuth.AuthenticationState;
     [routerKey]: RouterState;
     [fromConfig.configFeatureKey]: fromConfig.ConfigState
   }
   export const reducers: ActionReducerMap<AppState> = {
-    // [fromAuth.authFeatureKey]:fromAuth.authReducer,
+    [fromAuth.authFeatureKey]:fromAuth.authReducer,
     [routerKey]: routerReducer,
     [fromConfig.configFeatureKey]: fromConfig.configReducer
   };
@@ -42,13 +44,13 @@ export interface AppState {
     };
   }
   
-  // export function logout(
-  //   reducer: ActionReducer<AppState, Action>
-  // ): ActionReducer<AppState, Action> {
-  //   return (state, action) => {
-  //     if (action != null && action.type === authActions.signOut.type) {
-  //       return reducer(undefined, { type: INIT });
-  //     }
-  //     return reducer(state, action);
-  //   };
-  // }
+  export function logout(
+    reducer: ActionReducer<AppState, Action>
+  ): ActionReducer<AppState, Action> {
+    return (state, action) => {
+      if (action != null && action.type === authActions.signOut.type) {
+        return reducer(undefined, { type: INIT });
+      }
+      return reducer(state, action);
+    };
+  }

@@ -14,6 +14,7 @@ import { MainComponent } from "../main/main.component";
 import { FooterComponent } from "../footer/footer.component";
 import { MatLineModule } from "@angular/material/core";
 import { FlexLayoutModule } from "ngx-flexible-layout";
+import { User } from "../../auth/models/user.model";
 
 
 @Component({
@@ -41,6 +42,7 @@ export class SidenavComponent {
   private layoutService = inject(LayoutService);
   @ViewChild('leftSidenav') sidenavLeft!: MatSidenav;
   @Input() isHandset!: boolean;
+  @Input() isOnline!: boolean;
   onSideNavChange!: boolean;
   panelOpenState = false;
   mobileQuery!: MediaQueryList;

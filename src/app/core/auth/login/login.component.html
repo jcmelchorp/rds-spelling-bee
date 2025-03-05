@@ -1,0 +1,48 @@
+<div class="my-container" style="text-align: center;">
+  <div fxLayout="column" fxLayoutAlign="center center" >
+    <img src="/assets/images/rds-bee-logo-transparent.png" height="120px" />
+    <div style="min-width:250px;" class="view-title">Spelling Bee</div>
+  </div>
+
+  <mat-card>
+    <mat-card-title>Si no te has registrado, házlo antes <a [routerLink]="['/register']" >aquí</a>.</mat-card-title>
+    <mat-card-subtitle>Inicio de sesión</mat-card-subtitle>
+    <mat-card-content>
+      <form [formGroup]="loginForm">
+        <div fxLayout="column" fxLayoutAlign="center stretch">
+          <div fxFlex>
+            <mat-form-field>
+              <mat-label>Correo electrónico</mat-label>
+              <input type="email" matInput formControlName="email">
+
+              <mat-icon matSuffix>email</mat-icon>
+              @if (loginForm.get('email')?.hasError('required')) {
+              <mat-error>Se requiere un correo electrónico.</mat-error>
+              }
+              @if (loginForm.get('email')?.hasError('email')) {
+              <mat-error>Correo electrónico no válido.</mat-error>
+              }
+            </mat-form-field>
+          </div>
+          <div fxFlex>
+            <mat-form-field>
+              <mat-label>Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+              </button>
+              @if (loginForm.get('password')?.hasError('required')) {
+              <mat-error>Se requiere una contraseña.</mat-error>
+              }
+            </mat-form-field>
+          </div>
+          <button mat-stroked-button (click)="loginByEmail()" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+          
+          <p class="mat-h3">ó</p>
+          <button mat-raised-button color="blue" (click)="loginByGoogle()">Inicia sesión con Google</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
