@@ -59,6 +59,13 @@ export class AuthService {
     ).then((user) => this._setUserData(user));
     return this.user$;
   }
+  async sendEmailVerification() {
+    //return await this._auth.currentUser.sendEmailVerification()
+}
+
+async sendPasswordResetEmail(passwordResetEmail: string) {
+  // return await this._auth.sendPasswordResetEmail(passwordResetEmail);
+}
 
   login(credential: Credential) {
     signInWithEmailAndPassword(
