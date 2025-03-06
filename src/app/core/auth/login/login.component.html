@@ -1,11 +1,11 @@
 <div class="my-container" style="text-align: center;">
-  <div fxLayout="column" fxLayoutAlign="center center" >
+  <div fxLayout="column" fxLayoutAlign="center center">
     <img src="/assets/images/rds-bee-logo-transparent.png" height="120px" />
     <div style="min-width:250px;" class="view-title">Spelling Bee</div>
   </div>
 
   <mat-card>
-    <mat-card-title>Si no te has registrado, házlo antes <a [routerLink]="['/register']" >aquí</a>.</mat-card-title>
+    <mat-card-title>Si no te has registrado, házlo antes <a [routerLink]="['/register']">aquí</a>.</mat-card-title>
     <mat-card-subtitle>Inicio de sesión</mat-card-subtitle>
     <mat-card-content>
       <form [formGroup]="loginForm">
@@ -38,9 +38,11 @@
             </mat-form-field>
           </div>
           <button mat-stroked-button (click)="loginByEmail()" [disabled]="loginForm.invalid">Iniciar Sesión</button>
-          
           <p class="mat-h3">ó</p>
-          <button mat-raised-button color="blue" (click)="loginByGoogle()">Inicia sesión con Google</button>
+          <button mat-fab extended color="default" (click)="loginByGoogle()">
+              <img src="/assets/images/g.png" height="20px">
+              <span class="mat-h4">&nbsp; Inicia sesión con Google</span>
+          </button>
         </div>
       </form>
     </mat-card-content>
