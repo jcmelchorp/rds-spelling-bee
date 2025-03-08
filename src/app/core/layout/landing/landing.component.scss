@@ -10,9 +10,13 @@ $size: 25px;
   font-size: 6vw;
   max-width: 1200px;
 }
-.text-stripe-container {
+.text-container {
   width: 100%;
   text-align: center;
+  background-image: url(/assets/images/rds-bee-logo.png);
+  background-repeat: no-repeat;
+  background-position: 32% 3%;
+  background-size: 8%;
 }
 .text-stripe {
   font-family: "Bungee Shade", cursive;

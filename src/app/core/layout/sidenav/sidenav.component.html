@@ -3,7 +3,7 @@
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [@onSideNavChange]="sideNavState ? 'close' : 'open'"
     [mode]="isHandset ? 'over':'side'" [opened]="false">
     <div role="navigation" fxLayout="column" fxLayoutAlign="space-between">
-      <mat-nav-list >
+      <mat-nav-list dense>
         <mat-list-item  [routerLink]="['/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
           <mat-icon class="blue" matListItemIcon >home</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Inicio</span>
@@ -17,6 +17,15 @@
         <mat-list-item  [routerLink]="['editor']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
           <mat-icon class="blue" matListItemIcon>auto_stories</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Vocabulario</span>
+        </mat-list-item>
+      } @else {
+        <mat-list-item  [routerLink]="['/policy']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+          <mat-icon class="blue" matListItemIcon >assured_workload</mat-icon>
+          <span matListItemTitle class="app-name" >&nbsp; Privacy Policy</span>
+        </mat-list-item>
+        <mat-list-item  [routerLink]="['/terms']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+          <mat-icon class="blue" matListItemIcon >gavel</mat-icon>
+          <span matListItemTitle class="app-name" >&nbsp; Terminos de uso</span>
         </mat-list-item>
       }
       </mat-nav-list>

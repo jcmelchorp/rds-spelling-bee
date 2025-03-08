@@ -5,19 +5,27 @@
       <button type="button" aria-label="mostrar menu" mat-icon-button (click)="toggleSidenavLeft($event)">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      }
-      <button type="button" aria-label="Inicio" mat-icon-button [routerLink]="['/home']">
-        <img class="rounded-circle" src="/assets/images/rds-bee-logo-transparent.png" />
-      </button>
-      @if (!isHandset && isOnline) {
-      <a type="button" style="background-color: transparent;" aria-label="Concurso 2025" mat-flat-button
-        [routerLink]="['/contest']">
-        Concurso 2025
-      </a>
-      <a type="button" style="background-color: transparent;" aria-label="Preguntas frecuentes" mat-flat-button
-        [routerLink]="['/editor']">
-        Vocabulario
-      </a>
+      } @else {
+        <button type="button" aria-label="Inicio" mat-icon-button [routerLink]="['/home']">
+          <img class="rounded-circle" src="/assets/images/rds-bee-logo-transparent.png" />
+        </button>
+        @if (isOnline) {
+          <a type="button" style="background-color: transparent;" aria-label="Concurso 2025" mat-flat-button
+          [routerLink]="['/contest']">
+          Concurso 2025
+        </a>
+        <a type="button" style="background-color: transparent;" aria-label="Preguntas frecuentes" mat-flat-button
+          [routerLink]="['/editor']">
+          Vocabulario
+        </a>
+        } @else {
+          <button type="button" mat-icon-button matTooltip="Privacy policy" [routerLink]="['/policy']">
+            <mat-icon class="rds-icon">assured_workload</mat-icon>
+          </button>
+          <button type="button" mat-icon-button matTooltip="Terms of use" [routerLink]="['/terms']">
+            <mat-icon class="rds-icon">gavel</mat-icon>
+          </button>
+        }
       }
     </div>
     <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">

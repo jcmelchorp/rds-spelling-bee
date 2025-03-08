@@ -1,6 +1,8 @@
-<div class="text-stripe-container">
-	<div class="view-subtitle" [@enter4] (@enter4.done)="animationState = !animationState">Wellcome to  </div>
-	<div class="text-stripe" [@enter3] (@enter3.done)="animationState = !animationState">RDS</div>
+<img style="position: fixed;top: 55px;right: calc(0% + 5vw);width:calc(20% + 0.05vw);max-width: 150px;" src="/assets/images/rds-logo-repujado.png" >
+
+<div class="text-container">
+	<div style="padding-left: 50px;" class="view-subtitle" [@enter4] (@enter4.done)="animationState = !animationState">Wellcome to  </div>
+	<div class="text-stripe" [@enter3] (@enter3.done)="animationState = !animationState"> RDS</div>
 	<div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState" [@rubberBand]="animationState">
 		Spelling Bee</div>
 	<div style="margin-top: -6px;" class="view-subtitle " [@enter2] (@enter2.done)="animationState = !animationState"
