@@ -48,7 +48,7 @@ export class RouteEffects {
         ofType(
           fromAuthActions.signInSuccess
         ),
-        tap(() => this.router.navigate(['/contest']))
+        tap(() => this.router.navigate(['/home']))
       ),
     { dispatch: false }
   );

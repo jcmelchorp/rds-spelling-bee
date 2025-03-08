@@ -20,9 +20,12 @@ export const routes: Routes = [
       {
         path: '',
         component: LandingComponent,
+        canActivate: [publicGuard],
+
       },
       {
         path: 'home',
+        canActivate: [authGuard],
         component: HomeComponent,
       },
       {
