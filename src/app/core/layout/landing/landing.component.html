@@ -1,16 +1,18 @@
 <div class="text-stripe-container">
-	<div class="view-subtitle" [@enter4] (@enter4.done)="animationState = !animationState">Wellcome to the </div>
-	<div class="text-stripe" [@enter5] (@enter5.done)="animationState = !animationState">RDS</div>
+	<div class="view-subtitle" [@enter4] (@enter4.done)="animationState = !animationState">Wellcome to  </div>
+	<div class="text-stripe" [@enter3] (@enter3.done)="animationState = !animationState">RDS</div>
 	<div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState" [@rubberBand]="animationState">
 		Spelling Bee</div>
-	<div style="margin-top: -6px;" class="view-subtitle" [@enter2] (@enter2.done)="animationState = !animationState"
+	<div style="margin-top: -6px;" class="view-subtitle " [@enter2] (@enter2.done)="animationState = !animationState"
 		[@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">Contest Administrator
 	</div>
-	<div class="mat-h1" [@enter3] (@enter3.done)="animationState = !animationState">Improve your spelling bee skills,
-		<br>
-		practice pronunciation and play with classmates.</div>
-	<div class="mat-body-1" [@enter3] (@enter3.done)="animationState = !animationState">Get your account for start a
-		contest</div>
+	<div class="mat-h2 shrink-margin" [@enter2] (@enter2.done)="animationState = !animationState">Improve your spelling bee skills,</div>
+	<div class="mat-h2" [@enter3] (@enter3.done)="animationState = !animationState">practice pronunciation and play with classmates.</div>
+	<div class="mat-body-1 shrink-margin" [@enter4] (@enter4.done)="animationState = !animationState">Get your account for start a contest. </div>
+	<div class="mat-h4" [@enter5] (@enter5.done)="animationState = !animationState">
+		Reead about our <a routerLink="/policy">privacy policy</a>
+		and <a routerLink="/terms">terms of use.</a>
+	</div>
 	<button mat-fab extended color="default" routerLink="/login" type="button">
 		<img src="/assets/images/g.png" height="20px">
 		<span class="mat-h4">&nbsp; Sign in</span>

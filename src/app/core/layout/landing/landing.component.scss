@@ -2,7 +2,9 @@ $size: 25px;
 
 
 
-
+.shrink-margin {
+  margin-bottom:-0.2vw;
+}
 
 .view-title {
   font-size: 6vw;
@@ -10,7 +12,6 @@ $size: 25px;
 }
 .text-stripe-container {
   width: 100%;
-  background: #ffed943a;
   text-align: center;
 }
 .text-stripe {
