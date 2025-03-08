@@ -55,7 +55,7 @@ export class HomeComponent {
     map(({ matches }) => {
       if (matches) {
         return [
-          { route: 'login', title: 'Spelling Bee Contest', subtitle:'2025', image:'/assets/images/rds-bee-logo-transparent.png', cols: 2, rows: 1 },
+          { route: 'contest', title: 'Spelling Bee Contest', subtitle:'2025', image:'/assets/images/rds-bee-logo-transparent.png', cols: 2, rows: 1 },
           { route:'editor',   title: 'Vocabulario', subtitle:'Listas de palabras por grado', image:'/assets/images/rds-bee-logo-transparent.png', cols: 2, rows: 1 },
          // { route:'results',  title: 'Resultados', subtitle:'', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 },
           // { title: 'Card 4', subtitle:'', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 }
@@ -63,7 +63,7 @@ export class HomeComponent {
       }
 
       return [
-        { route: 'login', title: 'Spelling Bee Contest', subtitle:'2025', image:'/assets/images/rds-bee-logo-transparent.png',  cols: 1, rows: 1 },
+        { route: 'contest', title: 'Spelling Bee Contest', subtitle:'2025', image:'/assets/images/rds-bee-logo-transparent.png',  cols: 1, rows: 1 },
         { route:'editor',   title: 'Vocabulario', subtitle:'Listas de palabras', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 },
        // { route:'results',  title: 'Resultados', subtitle:'Ganadores del Spelling Bee Contest 2025', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 2 },
         //   { title: 'Card 4', subtitle:'', image:'/assets/images/rds-bee-logo-transparent.png', cols: 1, rows: 1 }

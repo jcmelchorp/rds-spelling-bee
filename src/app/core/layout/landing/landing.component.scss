@@ -1,4 +1,8 @@
-$size: 20px;
+$size: 25px;
+
+
+
+
 
 .view-title {
   font-size: 6vw;
@@ -6,12 +10,14 @@ $size: 20px;
 }
 .text-stripe-container {
   width: 100%;
-  background: #ffed9484;
+  background: #ffed943a;
   text-align: center;
 }
 .text-stripe {
   font-family: "Bungee Shade", cursive;
-  margin-bottom: -3.5vw;
+  margin-bottom: -2.5vw;
+  margin-top: -2.5vw;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,12 +28,12 @@ $size: 20px;
   background: linear-gradient(
     -45deg,
     #0060a0 25%,
-    #8e8277 25%,
-    #8e8277 50%,
+    #9c9c97 25%,
+    #9c9c97 50%,
     #0060a0 50%,
     #0060a0 75%,
-    #8e8277 75%,
-    #8e8277
+    #9c9c97 75%,
+    #9c9c97
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -46,7 +52,7 @@ $size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65vh;
+  height: 70vh;
 }
 
 .gallery {
