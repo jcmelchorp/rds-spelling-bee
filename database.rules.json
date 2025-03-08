@@ -1,9 +1,16 @@
 {
   "rules": {
-    ".read": "true",  
-    ".write": "false",  
-       "wordlists": {
-      ".indexOn": ["id", "level"]
+    "users": {
+      "$userId": {
+        ".read": "auth.uid",
+        ".write": "$userId === auth.uid"
+      }
+    },
+    "wordlists": {
+      "$id": {
+        ".read": "auth.uid",
+        ".write": "false"
+      }
     }
   }
 }
