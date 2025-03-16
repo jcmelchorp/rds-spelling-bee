@@ -122,6 +122,7 @@ import { consumerPollProducersForChange } from '@angular/core/primitives/signals
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContestComponent implements OnInit {
+  
   private readonly _wordlistService = inject(WordlistsService);
   readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
   readonly _speech: SpeechService = inject(SpeechService);
@@ -163,6 +164,18 @@ export class ContestComponent implements OnInit {
   filteredData: Word[] = [];
 
   ngOnInit(): void {}
+
+
+    canDeactivate() {
+      console.log('i am navigating away');
+      let conf=window.confirm('Are you sure you want to leave the contest?');
+      // you logic goes here, whatever that may be 
+      // and it must return either True or False
+      if (conf) {
+        window.alert('Contest Saved')
+      }
+        return conf
+  }
 
   onGradeChange(event: any) {
    let level:string = event.value.replace('°','');

@@ -25,11 +25,13 @@ import * as fromConfig  from './store/config/store-config';
 import { registeredEffects } from './store/config/registered-effects';
 import { provideHttpClient } from '@angular/common/http';
 import { provideServiceWorker } from '@angular/service-worker';
+import { CanDeactivateGuard } from './core/auth/guards/can-deactive.guard';
 
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    importProvidersFrom([BrowserAnimationsModule, FlexLayoutModule]),
+    CanDeactivateGuard,
+    importProvidersFrom([BrowserAnimationsModule, FlexLayoutModule  ]),
     provideRouter(routes, withViewTransitions()),
     provideAnimations(),
     provideAnimationsAsync(),

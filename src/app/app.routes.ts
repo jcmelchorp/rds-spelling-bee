@@ -12,6 +12,7 @@ import { TermsComponent } from './core/auth/terms/terms.component';
 import { PrivacyPolicyComponent } from './core/auth/privacy-policy/privacy-policy.component';
 import { LandingComponent } from './core/layout/landing/landing.component';
 import { ProfileComponent } from './core/auth/profile/profile.component';
+import { CanDeactivateGuard } from './core/auth/guards/can-deactive.guard';
 
 export const routes: Routes = [
   {
@@ -60,6 +61,7 @@ export const routes: Routes = [
       {
         path: 'contest',
         canActivate: [authGuard],
+        canDeactivate: [CanDeactivateGuard],
         loadComponent: () =>
           import('./features/contest/contest/contest.component').then(
             (m) => m.ContestComponent
