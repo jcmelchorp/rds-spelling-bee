@@ -1,18 +1,19 @@
-<img style="position: fixed;top: 55px;right: calc(0% + 5vw);width:calc(20% + 0.05vw);max-width: 150px;" src="/assets/images/rds-logo-repujado.png" >
+<img style="position: absolute;top: 0;right: calc(5% + 10vw);width:calc(18% + 0.1vw);max-width: 150px;" src="/assets/images/rds-logo-stamp.png" >
 
 <div class="text-container">
-	<div style="padding-left: 50px;" class="view-subtitle" [@enter4] (@enter4.done)="animationState = !animationState">Wellcome to  </div>
+	<div style="padding-left: calc(20px + 0.1vw)" class="view-subtitle" [@enter4] (@enter4.done)="animationState = !animationState">Wellcome to  </div>
 	<div class="text-stripe" [@enter3] (@enter3.done)="animationState = !animationState"> RDS</div>
 	<div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState" [@rubberBand]="animationState">
 		Spelling Bee</div>
-	<div style="margin-top: -6px;" class="view-subtitle " [@enter2] (@enter2.done)="animationState = !animationState"
-		[@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">Contest Administrator
+	<div style="margin-top: -6px;" class="view-subtitle " [@enter2] (@enter2.done)="animationState = !animationState">
+		<span [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">Contest</span>
+		<span style="font-size: smaller;"> Platform</span>
 	</div>
 	<div class="mat-h2 shrink-margin" [@enter2] (@enter2.done)="animationState = !animationState">Improve your spelling bee skills,</div>
-	<div class="mat-h2" [@enter3] (@enter3.done)="animationState = !animationState">practice pronunciation and play with classmates.</div>
+	<div class="mat-h2 shrink-margin" [@enter3] (@enter3.done)="animationState = !animationState">practice pronunciation and play with classmates.</div>
 	<div class="mat-body-1 shrink-margin" [@enter4] (@enter4.done)="animationState = !animationState">Get your account for start a contest. </div>
 	<div class="mat-h4" [@enter5] (@enter5.done)="animationState = !animationState">
-		Reead about our <a routerLink="/policy">privacy policy</a>
+		Read about our <a routerLink="/policy">privacy policy</a>
 		and <a routerLink="/terms">terms of use.</a>
 	</div>
 	<button mat-fab extended color="default" routerLink="/login" type="button">

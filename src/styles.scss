@@ -14,7 +14,7 @@ body { margin: 0; }
   font-weight: 600;
   color: $brown-color;
   font-family: "Comfortaa";
-  font-size: 1.8em;
+  font-size: 3em;
   max-width: 1200px;
 }
 
@@ -94,7 +94,7 @@ font-size: large;
     font-size: calc(1.8em + 1vw);
   }
   .view-subtitle {
-    font-size: calc(0.9em + 1.2vw);
+    font-size: calc(1em + 2vw);
   }
 }
 

@@ -9,7 +9,7 @@
     "wordlists": {
       "$id": {
         ".read": "auth.uid",
-        ".write": "false"
+        ".write": "auth.uid"
       }
     }
   }
