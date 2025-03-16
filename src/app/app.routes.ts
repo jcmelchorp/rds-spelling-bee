@@ -13,6 +13,7 @@ import { PrivacyPolicyComponent } from './core/auth/privacy-policy/privacy-polic
 import { LandingComponent } from './core/layout/landing/landing.component';
 import { ProfileComponent } from './core/auth/profile/profile.component';
 import { CanDeactivateGuard } from './core/auth/guards/can-deactive.guard';
+import { preventUnsavedChanges } from './features/contest/confirm-dialog/prevent-unsaved-changes';
 
 export const routes: Routes = [
   {
@@ -60,8 +61,8 @@ export const routes: Routes = [
       },
       {
         path: 'contest',
+        canDeactivate: [preventUnsavedChanges],
         canActivate: [authGuard],
-        canDeactivate: [CanDeactivateGuard],
         loadComponent: () =>
           import('./features/contest/contest/contest.component').then(
             (m) => m.ContestComponent

@@ -86,6 +86,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   templateUrl: './contest.component.html',
@@ -163,18 +164,23 @@ export class ContestComponent implements OnInit {
   dataSource = new MatTableDataSource<Word>();
   filteredData: Word[] = [];
 
+constructor(public dialogo: MatDialog){}
+
   ngOnInit(): void {}
 
-
     canDeactivate() {
+      let conf:boolean=false;
       console.log('i am navigating away');
-      let conf=window.confirm('Are you sure you want to leave the contest?');
-      // you logic goes here, whatever that may be 
-      // and it must return either True or False
-      if (conf) {
-        window.alert('Contest Saved')
-      }
+      this.dialogo
+      .open(ConfirmDialogComponent, {
+        data: `¿Deseas abandonar el concurso?`
+      }).afterClosed()
+      .subscribe((confirmado: boolean) => {
+        console.log(confirmado)
+        conf=confirmado;
         return conf
+      });
+      return conf
   }
 
   onGradeChange(event: any) {
