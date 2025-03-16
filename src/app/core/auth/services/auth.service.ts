@@ -48,7 +48,7 @@ export class AuthService {
     provider.addScope('profile');
     provider.addScope('email');
     provider.setCustomParameters({ prompt: 'select_account' });
-    return from(signInWithPopup(this._auth, provider)/*.then((user) => this._setUserData(user))*/).pipe(take(1),switchMap(u=>this.user$));
+    return from(signInWithPopup(this._auth, provider).then((user) => this._setUserData(user))).pipe(take(1),switchMap(u=>this.user$));
   }
 
   signup(email: string, password: string) {
