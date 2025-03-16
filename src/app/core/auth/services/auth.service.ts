@@ -42,13 +42,20 @@ export class AuthService {
   user$ = user(this._auth);
   idToken$ = idToken(this._auth); // 👈👈👈
 
-   byGoogle() {
+  byGoogle() {
     // you can simply change the Google for another provider here
     const provider = new GoogleAuthProvider(); // Use 'GoogleAuthProvider' directly
     provider.addScope('profile');
     provider.addScope('email');
     provider.setCustomParameters({ prompt: 'select_account' });
-    return from(signInWithPopup(this._auth, provider).then((user) => this._setUserData(user))).pipe(take(1),switchMap(u=>this.user$));
+    return from(
+      signInWithPopup(this._auth, provider).then((user) =>
+        this._setUserData(user)
+      )
+    ).pipe(
+      take(1),
+      switchMap((u) => this.user$)
+    );
   }
 
   signup(email: string, password: string) {
@@ -61,11 +68,11 @@ export class AuthService {
   }
   async sendEmailVerification() {
     //return await this._auth.currentUser.sendEmailVerification()
-}
+  }
 
-async sendPasswordResetEmail(passwordResetEmail: string) {
-  // return await this._auth.sendPasswordResetEmail(passwordResetEmail);
-}
+  async sendPasswordResetEmail(passwordResetEmail: string) {
+    // return await this._auth.sendPasswordResetEmail(passwordResetEmail);
+  }
 
   login(credential: Credential) {
     signInWithEmailAndPassword(
@@ -101,6 +108,38 @@ async sendPasswordResetEmail(passwordResetEmail: string) {
     /* } */
   }
 
+  //   getSetContest(uid:string,contestId:string)  {
+  //     let contests:any[]=[];
+
+  //     const afsRef = doc(this._firestore, `users/${uid}`);
+  //     return from(getDoc(afsRef)
+  //     .then((user) => {
+  // if (user.get(`/contests/${contestId}`)) {
+  //   user.exists.contests.push(contestId);
+
+  //   return from(updateDoc(afsRef, firebaseSerialize(user)));
+  // } else {
+  //   user.get(`/contests/${contestId}`)
+  // }
+  //  }))
+
+  //   }
+
+  checkContest(uid: string, contestId: string): Observable<boolean> {
+    /*  if (environment.useAuthEmulator) {
+       const doc = ref(this.database, `${this.collection}/${id}`);
+       return objectVal(doc).pipe(pluck('isAdmin'));
+     } else { */
+    const afsRef = doc(this._firestore, `users/${uid}/contests`);
+    return from(getDoc(afsRef).then((user) => user.get(contestId)));
+    /* } */
+  }
+
+  addWordContest(uid: string, contestId: string, word: any) {
+    const afsRef = doc(this._firestore, `users/${uid}/contests/${contestId}`);
+    return from(updateDoc(afsRef, firebaseSerialize(word)));
+  }
+
   updateOnlineStatus(uid: string, status: boolean): Observable<void> {
     /* if (status) {
       return from(
@@ -134,6 +173,58 @@ async sendPasswordResetEmail(passwordResetEmail: string) {
       // name: { familyName:auth.user.providerData[1].displayName!, fullName: auth.user.providerData[0].displayName!},
       primaryEmail: auth.user.email!,
       isVerified: auth.user.emailVerified,
+      contests: {
+        
+          "pgtqsDYZtJ6bYGmVbZvn": {
+            level: 'Secundaria',
+            timestamp: Date.now(),
+            description: 'Palabras de nivel secundaria',
+            words: [],
+          },
+        
+          "QLvLarZlxXw6YNjjEE6w": {
+            level: '6° de Primaria',
+            timestamp: Date.now(),
+            description: 'Palabras de 6° de Primaria',
+            words: [],
+          },
+       
+          "IUGdYlB8ma4J1DPgrCVo": {
+            level: '5° de Primaria',
+            timestamp: Date.now(),
+            description: 'Palabras de 5° de Primaria',
+            words: [],
+          },
+        
+          "Gi8Fwa8ckgl6va7ZM8kG": {
+            level: '4° de Primaria',
+            timestamp: Date.now(),
+            description: 'Palabras de 4° de Primaria',
+            words: [],
+          },
+       
+          "v4gU967FdaycIkHqO99b": {
+            level: '3° de Primaria',
+            timestamp: Date.now(),
+            description: 'Palabras de 3° de Primaria',
+            words: [],
+          },
+       
+          "y1BAggJJ5FJePyhTU1Jy": {
+            level: '2° de Primaria',
+            timestamp: Date.now(),
+            description: 'Palabras de 2° de Primaria',
+            words: [],
+          },
+     
+          "rwBzLsgIVNSkwPLCiBis": {
+            level: '1° de Primaria',
+            timestamp: Date.now(),
+            description: 'Palabras de 1° de Primaria',
+            words: [],
+          },
+        
+        },
       // custom ones
     };
     const userDocRef = doc(this._firestore, `users/${user.uid}`);

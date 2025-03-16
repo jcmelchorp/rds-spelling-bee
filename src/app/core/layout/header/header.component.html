@@ -6,7 +6,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       } @else {
-        <button type="button" aria-label="Inicio" mat-icon-button [routerLink]="['/home']">
+        <button type="button" aria-label="Inicio" mat-icon-button [routerLink]="[isAuthenticated()?'home':'/']">
           <img class="rounded-circle" src="/assets/images/rds-bee-logo-transparent.png" />
         </button>
         @if (isOnline) {
@@ -19,10 +19,10 @@
           Vocabulario
         </a>
         } @else {
-          <button type="button" mat-icon-button matTooltip="Privacy policy" [routerLink]="['/policy']">
+          <button type="button" mat-icon-button matTooltip="Privacy policy" [routerLink]="['policy']">
             <mat-icon class="rds-icon">assured_workload</mat-icon>
           </button>
-          <button type="button" mat-icon-button matTooltip="Terms of use" [routerLink]="['/terms']">
+          <button type="button" mat-icon-button matTooltip="Terms of use" [routerLink]="['terms']">
             <mat-icon class="rds-icon">gavel</mat-icon>
           </button>
         }
@@ -41,7 +41,7 @@
         <img class="rounded-circle" src="{{user.photoUrl?user.photoUrl!:'/assets/images/default_user.jpeg'}}" />
       </button>
       } @else {
-      <button type="button" mat-icon-button matTooltip="Iniciar sesión" [routerLink]="['/login']">
+      <button type="button" mat-icon-button matTooltip="Iniciar sesión" [routerLink]="['login']">
         <mat-icon class="rds-icon">login</mat-icon>
       </button>
       }

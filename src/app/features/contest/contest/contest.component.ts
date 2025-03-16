@@ -48,7 +48,14 @@ import { WordlistsService } from '../wordlists/wordlists.service';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatCommonModule, MatOptionModule } from '@angular/material/core';
 import { WordlistComponent } from '../wordlist/wordlist.component';
-import { AsyncPipe, JsonPipe, NgClass, NgFor, NgIf, NgIfContext } from '@angular/common';
+import {
+  AsyncPipe,
+  JsonPipe,
+  NgClass,
+  NgFor,
+  NgIf,
+  NgIfContext,
+} from '@angular/common';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -87,6 +94,15 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { User } from '../../../core/auth/models/user.model';
+import { AppState } from '../../../store/states/app.state';
+import { Store } from '@ngrx/store';
+import {
+  selectUser,
+  selectUserId,
+} from '../../../store/selectors/auth.selectors';
+import { AuthService } from '../../../core/auth/services/auth.service';
+import { ContestService } from '../services/contest.service';
 
 @Component({
   templateUrl: './contest.component.html',
@@ -122,13 +138,13 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContestComponent implements OnInit {
-  
+export class ContestComponent implements OnInit, OnDestroy {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   private readonly _wordlistService = inject(WordlistsService);
+  private readonly _auth = inject(AuthService);
+  private readonly _contests = inject(ContestService);
   readonly spinner: NgxSpinnerService = inject(NgxSpinnerService);
   readonly _speech: SpeechService = inject(SpeechService);
-    @ViewChild(MatPaginator) paginator!: MatPaginator;
-  
   readonly output = signal('');
   readonly input = model('');
   readonly dialog = inject(MatDialog);
@@ -148,7 +164,11 @@ export class ContestComponent implements OnInit {
   wordlists$!: Observable<Wordlist[]>;
   wordlist$!: Observable<Wordlist>;
   wordlist!: Wordlist;
-  // subs:Subscription = new Subscription();
+  wordlistId!: string;
+  user$!: Observable<User>;
+  userId$!: Observable<string>;
+  userId!: string;
+  subs: Subscription = new Subscription();
   wordsCount: number = 1;
   filteredWordlist: BehaviorSubject<Wordlist> = new BehaviorSubject(
     {} as Wordlist
@@ -164,31 +184,42 @@ export class ContestComponent implements OnInit {
   dataSource = new MatTableDataSource<Word>();
   filteredData: Word[] = [];
 
-constructor(public dialogo: MatDialog){}
-
-  ngOnInit(): void {}
-
-    canDeactivate() {
-      let conf:boolean=false;
-      console.log('i am navigating away');
-      this.dialogo
-      .open(ConfirmDialogComponent, {
-        data: `¿Deseas abandonar el concurso?`
-      }).afterClosed()
-      .subscribe((confirmado: boolean) => {
-        console.log(confirmado)
-        conf=confirmado;
-        return conf
-      });
-      return conf
+  constructor(public dialogo: MatDialog, private store: Store<AppState>) {}
+  ngOnDestroy(): void {
+    if (!this.subs.closed) {
+      this.subs.unsubscribe();
+    }
   }
 
+  ngOnInit(): void {
+    this.user$ = this.store.select(selectUser);
+    this.subs = this.store
+      .select(selectUserId)
+      .subscribe((uid) => (this.userId = uid));
+  }
+
+  //   canDeactivate() {
+  //     let conf:boolean=false;
+  //     console.log('i am navigating away');
+  //     this.dialogo
+  //     .open(ConfirmDialogComponent, {
+  //       data: `¿Deseas abandonar el concurso?`
+  //     }).afterClosed()
+  //     .subscribe((confirmado: boolean) => {
+  //       console.log(confirmado)
+  //       conf=confirmado;
+  //       return conf
+  //     });
+  //     return conf
+  // }
+
   onGradeChange(event: any) {
-   let level:string = event.value.replace('°','');
-  //  console.log(level);
+    let level: string = event.value.replace('°', '');
+    //  console.log(level);
     this.wordlist$ = this._wordlistService.getByGrade(level).pipe(
       map((wordlist) => {
-        console.log(wordlist)
+        this.wordlistId = wordlist.id!;
+        console.log(wordlist);
         let wordsCount = wordlist.words?.length!;
         let arr = [4, 3, 2, 1];
         for (var index in arr) {
@@ -197,11 +228,26 @@ constructor(public dialogo: MatDialog){}
         this.loadPaginatedData(wordlist.words!);
         this.linkListToPaginator({
           pageIndex: this.page,
-          pageSize:wordsCount,
+          pageSize: wordsCount,
           pageSizeOptions: this.pageArray,
         });
         return wordlist;
-      })
+      }),
+      switchMap((wordlist) =>
+        this._contests.getById(this.userId, wordlist.id!).pipe(
+          map(wl => {
+            if (wl.words!.length > 0) {
+              wl.words?.map((word) => word.id)
+                .map((wid) => {
+                  wordlist.words!.find((w) => w.id == wid)!.staged = true;
+                });
+            } else {
+               this._contests.saveWord(this.userId, wl)
+            }
+            return wordlist;
+          })
+        )
+      )
     );
   }
 
@@ -235,9 +281,7 @@ constructor(public dialogo: MatDialog){}
 
   wordFlow() {
     console.log('Word Flow');
-    let words = this.dataSource.data.filter(
-      (word) => word.staged === false
-    );
+    let words = this.dataSource.data.filter((word) => word.staged === false);
     this.showSpinner();
     this._speech.playSound();
     this._speech.speechText('Your word is:' as string);
@@ -312,21 +356,36 @@ constructor(public dialogo: MatDialog){}
       data: { input: this.input(), output: this.output() },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result !== undefined) {
-        this.output.set(result);
-        if (this.wordsCount === this.dataSource.data.length) {
-          //this.celebrate();
-          // this.celebrate();
-          // this.interval()
-          //alert('The Spelling Bee contest has finished!')
-          // this.gradeControl.enable();
-        } else {
-          console.log(this.word);
-          this.wordsCount++;
+    dialogRef.afterClosed().subscribe(
+      // map(
+      (result: string) => {
+        let obj = {};
+        if (result !== undefined) {
+          obj = {
+            label: result.split('|')[1],
+            id: Number(result.split('|')[0]).toLocaleString(),
+          };
         }
+        this._auth.addWordContest(this.userId, this.wordlistId, obj);
       }
-    });
+      // ),
+      // switchMap((o) =>
+      //   this.userId$.pipe(
+      //     switchMap((uid) => this._auth.addWordContest(uid, this.wordlistId, o))
+      //   )
+      // )
+    );
+
+    if (this.wordsCount === this.dataSource.data.length) {
+      //this.celebrate();
+      // this.celebrate();
+      // this.interval()
+      //alert('The Spelling Bee contest has finished!')
+      // this.gradeControl.enable();
+    } else {
+      console.log(this.word);
+      this.wordsCount++;
+    }
   }
 
   // ngOnDestroy(): void {

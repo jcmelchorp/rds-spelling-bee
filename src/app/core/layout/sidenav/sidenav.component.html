@@ -4,7 +4,7 @@
     [mode]="isHandset ? 'over':'side'" [opened]="false">
     <div role="navigation" fxLayout="column" fxLayoutAlign="space-between">
       <mat-nav-list dense>
-        <mat-list-item  [routerLink]="['/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
+        <mat-list-item  [routerLink]="[isOnline?'home':'/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
           <mat-icon class="blue" matListItemIcon >home</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Inicio</span>
         </mat-list-item>
