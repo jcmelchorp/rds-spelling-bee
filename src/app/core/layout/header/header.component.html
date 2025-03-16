@@ -51,7 +51,7 @@
 <ng-content #progressBar></ng-content>
 <mat-menu #userMenu="matMenu" fxLayoutAlign="end">
   <ng-template matMenuContent>
-    <div mat-menu-item *ngIf="isOnline && user" [routerLink]="['p']">
+    <div mat-menu-item *ngIf="isOnline && user" [routerLink]="['profile']">
       <app-user-card [isOnline]="isOnline" [user]="user"> </app-user-card>
     </div>
     <mat-accordion displayMode="flat">

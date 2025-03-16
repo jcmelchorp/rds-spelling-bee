@@ -11,6 +11,7 @@ import { RegisterComponent } from './core/auth/register/register.component';
 import { TermsComponent } from './core/auth/terms/terms.component';
 import { PrivacyPolicyComponent } from './core/auth/privacy-policy/privacy-policy.component';
 import { LandingComponent } from './core/layout/landing/landing.component';
+import { ProfileComponent } from './core/auth/profile/profile.component';
 
 export const routes: Routes = [
   {
@@ -27,6 +28,11 @@ export const routes: Routes = [
         path: 'home',
         canActivate: [authGuard],
         component: HomeComponent,
+      },
+      {
+        path: 'profile',
+        canActivate: [authGuard],
+        component: ProfileComponent,
       },
       {
         path: 'terms',
