@@ -1,12 +1,12 @@
-<div class="my-container">
-  <ng-template #spinner>
+<div class="my-container mat-typography">
+  <!-- <ng-template #spinner>
     <div style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">
       <mat-spinner strokeWidth="8" [diameter]="64">
       </mat-spinner>
       <span>Buscando ...</span><br>
     </div>
-  </ng-template>
-  <div *ngIf="(user$|async) as user;else spinner" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="center"
+  </ng-template> -->
+  <!-- <div *ngIf="(user$|async) as user;else spinner" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="center"
     fxLayoutGap="20px">
     <mat-card fxFlex="0 1 calc(50% - 20px)" fxFlex.lt-md="100%">
       <mat-card-header mat-title-group>
@@ -40,4 +40,55 @@
       </mat-card-actions>
     </mat-card>
   </div>
-</div>
+</div> -->
+<aside *ngIf="(user$|async) as user;" class="profile-card">
+  <header>
+    <!-- here’s the avatar -->
+    <img  class="img-fluid rounded-circle d-print-none hoverZoomLink" alt="Usuario conectado"
+      src="{{user.photoUrl?user.photoUrl:user.authPhotoUrl}}" />
+
+    <!-- the username -->
+    <h1>
+      {{ user.displayName }}
+    </h1>
+
+    <!-- and role or location -->
+    <h2>
+      {{ user.primaryEmail }}
+    </h2>
+
+  </header>
+
+  <!-- bit of a bio; who are you? -->
+  <div class="profile-bio">
+
+    <p>
+    Conoce las <a [routerLink]="['/policy']">políticas de privacidad </a>de tus datos.
+    </p>
+
+  </div>
+  <!-- some social links to show off -->
+  <ul class="profile-social-links">
+    <li>
+      <a target="_blank" href="https://www.facebook.com/creativedonut">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://twitter.com/dropyourbass">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://github.com/vipulsaxena">
+        <i class="fa fa-github"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://www.behance.net/vipulsaxena">
+
+        <i class="fa fa-behance"></i>
+      </a>
+    </li>
+  </ul>
+</aside>

@@ -9,12 +9,13 @@ import { signOut } from 'firebase/auth';
 import { selectUserId, isOnline, isAdmin, selectUser } from '../../../store/selectors/auth.selectors';
 import { AppState } from '../../../store/states/app.state';
 import { SubscriptionService } from '../../services/subscription.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-profile',
   standalone:true,
-  imports:[TitleCasePipe, AsyncPipe, NgIf, MatCardModule,MatProgressSpinnerModule],
+  imports:[TitleCasePipe, RouterLink,AsyncPipe, NgIf, MatCardModule,MatProgressSpinnerModule],
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
