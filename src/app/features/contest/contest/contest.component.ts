@@ -233,23 +233,35 @@ export class ContestComponent implements OnInit, OnDestroy {
         });
         return wordlist;
       }),
-      switchMap((wordlist) =>
-        this._contests.getById(this.userId, wordlist.id!).pipe(
+      switchMap(wordlist =>
+        this._contests.getById(this.userId, this.wordlistId).pipe(
           map(wl => {
-            if (wl.words!.length > 0) {
-              wl.words?.map((word) => word.id)
-                .map((wid) => {
-                  wordlist.words!.find((w) => w.id == wid)!.staged = true;
-                });
+            if (wl) {
+              console.log(wl)
+              return wl;
             } else {
-               this._contests.saveWord(this.userId, wl)
+              this._contests.saveWordlist(this.userId, wordlist);
+              return wordlist;
             }
-            return wordlist;
           })
         )
       )
     );
   }
+
+  // this._contests.getById(this.userId, wordlist.id!).pipe(
+  //   map(wl => {
+  //     if (wl.words!.length > 0) {
+  //       wl.words?.map((word) => word.id)
+  //         .map((wid) => {
+  //           wordlist.words!.find((w) => w.id == wid)!.staged = true;
+  //         });
+  //     } else {
+  //        this._contests.saveWord(this.userId, wl)
+  //     }
+  //     return wordlist;
+  //   })
+  // )
 
   loadPaginatedData(dataObj: Word[]): void {
     this.dataSource.data = dataObj;
@@ -366,7 +378,7 @@ export class ContestComponent implements OnInit, OnDestroy {
             id: Number(result.split('|')[0]).toLocaleString(),
           };
         }
-        this._auth.addWordContest(this.userId, this.wordlistId, obj);
+        this._contests.addWordContest(this.userId, this.wordlistId, obj);
       }
       // ),
       // switchMap((o) =>

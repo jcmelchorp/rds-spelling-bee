@@ -11,7 +11,7 @@ export interface User {
   password?: string;
   suspensionReason?: string;
   orgUnitPath?: string;
-  contests?:any,
+  contests?:[],
   emails?: [{
     address: string,
     customType: string,

@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Wordlist } from '../wordlist/wordlist.model';
+import { Word, Wordlist } from '../wordlist/wordlist.model';
 import {
   collection,
   doc,
@@ -7,10 +7,12 @@ import {
   Firestore,
   getDoc,
   query,
+  refEqual,
   updateDoc,
   where,
 } from '@angular/fire/firestore';
-import { from } from 'rxjs';
+import { from, map, timestamp } from 'rxjs';
+import { User as AuthUser } from '../../../core/auth/models/user.model';
 import { firebaseSerialize } from '../../../core/models/firebase.model';
 
 @Injectable({
@@ -30,30 +32,42 @@ export class ContestService {
     // if (docSnap.exists()) {
     return from(
       getDoc(docRef).then((user) => {
-        let contests = user.get('contests') as Wordlist[];
-        if (contests.find(c=>c.id==contestId)) {
-          return contests.filter((c) => c.id == contestId).pop() as Wordlist;
-        } else {
-          return {id:contestId,words:[]} as Wordlist
-        }
+        let contest: Wordlist = user.get('contests')[contestId];
+        return contest as Wordlist;
       })
     );
-    // }
-    //  else {
-    //   // docSnap.data() will be undefined in this case
-    //   console.log("No such document!");
-    //   return docSnap.data() as Wordlist
-
-    // }
   }
 
-  saveWord(uid: string, contest: Wordlist) {
+  saveWordlist(uid: string, contest: any) {
+    const docRef = doc(this._firestore, this.collectionName, `${uid}`);
+    return from(
+      getDoc(docRef).then((user) => {
+        let contests: Wordlist[] = user.get('contests');
+        return updateDoc(docRef, {
+          contests: {
+            ...contests,
+            [contest.id]: { ...contest, words: [], timestamp: Date.now() },
+          },
+        }).then(() => contest);
+      })
+    );
+  }
+
+  addWordContest(uid: string, contestId: string, word: any) {
     const docRef = doc(this._firestore, this.collectionName, uid);
-    let contests:Wordlist[]=[];
-    getDoc(docRef).then(user => {
-      contests = user.get('contests') as Wordlist[];
-      contests.push(contest)
-    })
- return from(updateDoc(docRef, {contests}).then(()=>contest));
+    return from(
+      getDoc(docRef).then((user) => {
+        let contests = user.get('contests');
+        let contest = contests[contestId];
+        let words: Word[] = contest.words;
+        words.push(word);
+        return updateDoc(docRef, {
+          contests: {
+            ...contests,
+            [contestId]: { ...contest, words: [...words] },
+          },
+        }).then()
+      })
+    );
   }
 }
