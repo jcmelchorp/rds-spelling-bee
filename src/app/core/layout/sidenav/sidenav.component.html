@@ -1,33 +1,32 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #leftSidenav class="sidenav d-print-none" fixedInViewport="false"
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav #leftSidenav class="sidenav d-print-none" [fixedInViewport]="true"
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [@onSideNavChange]="sideNavState ? 'close' : 'open'"
-    [mode]="isHandset ? 'over':'side'" [opened]="false">
-    <div role="navigation" fxLayout="column" fxLayoutAlign="space-between">
+    [mode]="isHandset ? 'over':'side'" [opened]="!isHandset">
+    <div role="navigation" fxLayout="column" fxLayoutAlign="space-between stretch">
       <mat-nav-list dense>
-        <mat-list-item  [routerLink]="[isOnline?'home':'/']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
-          <mat-icon class="blue" matListItemIcon >home</mat-icon>
+        <mat-list-item [routerLink]="[isOnline?'home':'/']" routerLinkActive="router-link-active" (click)="isHandset?leftSidenav.close():''">
+          <mat-icon style="margin-left: 15px" class="blue" matListItemIcon >home</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Inicio</span>
         </mat-list-item>
         @if (isOnline) {
-
-        <mat-list-item  [routerLink]="['contest']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
-          <mat-icon class="blue" matListItemIcon >workspace_premium</mat-icon>
+        <mat-list-item  [routerLink]="['contest']" routerLinkActive="router-link-active" (click)="isHandset?leftSidenav.close():''">
+          <mat-icon style="margin-left: 15px" class="blue" matListItemIcon >workspace_premium</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Concurso</span>
         </mat-list-item>
-        <mat-list-item  [routerLink]="['editor']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
-          <mat-icon class="blue" matListItemIcon>auto_stories</mat-icon>
+        <mat-list-item  [routerLink]="['editor']" routerLinkActive="router-link-active" (click)="isHandset?leftSidenav.close():''">
+          <mat-icon style="margin-left: 15px" class="blue" matListItemIcon>auto_stories</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Vocabulario</span>
         </mat-list-item>
-      } @else {
-        <mat-list-item  [routerLink]="['/policy']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
-          <mat-icon class="blue" matListItemIcon >assured_workload</mat-icon>
+      }
+        <mat-list-item  [routerLink]="['/policy']" routerLinkActive="router-link-active" (click)="isHandset?leftSidenav.close():''">
+          <mat-icon style="margin-left: 15px" class="blue" matListItemIcon >assured_workload</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Privacy Policy</span>
         </mat-list-item>
-        <mat-list-item  [routerLink]="['/terms']" routerLinkActive="router-link-active" (click)="leftSidenav.close()">
-          <mat-icon class="blue" matListItemIcon >gavel</mat-icon>
+        <mat-list-item  [routerLink]="['/terms']" routerLinkActive="router-link-active" (click)="isHandset?leftSidenav.close():''">
+          <mat-icon style="margin-left: 15px" class="blue" matListItemIcon >gavel</mat-icon>
           <span matListItemTitle class="app-name" >&nbsp; Terminos de uso</span>
         </mat-list-item>
-      }
+      
       </mat-nav-list>
       <!-- <mat-nav-list > -->
        <!--  <mat-accordion>

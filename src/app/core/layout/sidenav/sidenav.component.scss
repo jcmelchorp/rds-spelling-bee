@@ -1,21 +1,28 @@
 .sidenav .mat-toolbar {
-  padding-top: 50px;
+  padding-top: 55px;
   background: inherit;
 }
 
 .sidenav-container {
- min-height: calc(100vh - 55px);  
+  // padding-left: 20px;
+  min-height: calc(100vh - 55px);
   // height: calc(100%);
 }
 
 .sidenav {
-  // padding-left: 20px;
-   border-radius: 0px 5px 5px 0px;
-  width: 220px;
+  padding-top: 55px;
+  border-radius: 0px 5px 5px 0px;
+  width: fit-content;
+  // background: transparent;
   // font-size: x-large;
 }
 
 .main-content {
-    min-height: calc(100vh - 95px);
-   //height: calc(100% - 95px);
+  min-height: calc(100vh - 95px);
+  //height: calc(100% - 95px);
+}
+
+mat-list-item {
+  align-items: center;
+  min-height: 40px;
 }
