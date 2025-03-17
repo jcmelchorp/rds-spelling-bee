@@ -1,15 +1,32 @@
 .word-container {
-    display: inline-flex;
-    gap: calc(1px + 1vw); /* Espaciado entre letras (opcional) */
-  }
-  
-  .letter {
-    text-decoration: underline;
-    text-align: center;
-    text-underline-offset: calc(10px + 1.5vw); /* Ajuste opcional para la distancia del subrayado */
-    font-family: 'Londrina Shadow';
-    font-weight: 900;
-    color: var(--color);
-    font-size: calc(2rem + 5vw);
-  }
+  display: inline-flex;
+  gap: calc(0.2px + 1vw); /* Espaciado entre letras (opcional) */
+}
 
+
+.letter {
+  text-decoration: underline;
+  text-align: center;
+  text-underline-offset: calc(
+    12px + 1.5vw
+  ); /* Ajuste opcional para la distancia del subrayado */
+  font-family: "Londrina Shadow";
+  font-weight: 900;
+  color: var(--color);
+  font-size: calc(2rem + 5vw);
+  text-shadow: 
+1px calc(3px  + 0.1vw)  1px #bbbbbb,
+1px calc(3px  + 0.2vw) 1px #bbbbbb,
+1px calc(3px  + 0.3vw) 1px #bbbbbb,
+1px calc(3px  + 0.4vw) 1px #bbbbbb,
+1px calc(3px  + 0.5vw) 1px #bbbbbb,
+1px calc(3px  + 0.6vw) 1px #bbbbbb,
+1px calc(3px  + 0.7vw) 1px #bbbbbb,
+1px calc(3px  + 0.8vw) 1px #bbbbbb,
+1px calc(3px  + 0.9vw) 1px #bbbbbb,
+1px calc(3px +  1.0vw) 1px #bbbbbb,
+1px calc(1px  + 0.8vw) 6px  rgba(16,16,16,0.4),
+1px calc(1px  + 1.2vw) 10px rgba(16,16,16,0.2),
+1px calc(1px  + 1.8vw) 35px rgba(16,16,16,0.2),
+1px calc(1px  + 2.2vw) 60px rgba(16,16,16,0.4);
+}

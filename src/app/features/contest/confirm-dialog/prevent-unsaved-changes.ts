@@ -16,8 +16,8 @@ export const preventUnsavedChanges: CanDeactivateFn<ContestComponent> = ({
         ConfirmDialogResult
       >(ConfirmDialogComponent, {
         data: {
-          title: 'Do you really want to leave?',
-          content: 'You have unsaved changes!',
+          title: 'Deseas salir?',
+          content: 'Podrás volver a este concurso después.',
         },
         disableClose: true,
       });

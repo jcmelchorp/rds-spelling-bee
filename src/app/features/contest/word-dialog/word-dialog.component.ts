@@ -9,6 +9,7 @@ import { WordComponent } from '../word/word.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SpeechService } from '../../../core/services/speech.service';
+import { ShowWordComponent } from "../show-word/show-word.component";
 
 @Component({
   selector: 'app-word-dialog',
@@ -19,7 +20,8 @@ import { SpeechService } from '../../../core/services/speech.service';
     MatButtonModule,
     MatDialogModule,
     MatTooltipModule,
-  ],
+    ShowWordComponent
+],
   templateUrl: './word-dialog.component.html',
   styleUrls: ['./word-dialog.component.scss'],
 })

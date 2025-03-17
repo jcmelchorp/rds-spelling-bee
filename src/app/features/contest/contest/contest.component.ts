@@ -220,17 +220,6 @@ export class ContestComponent implements OnInit, OnDestroy {
     this.wordlist$ = this._wordlistService.getByGrade(level).pipe(
       map((wordlist) => {
         this.wordlistId = wordlist.id!;
-        let wordsCount = wordlist.words?.length!;
-        let arr = [4, 3, 2, 1];
-        for (var index in arr) {
-          this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
-        }
-        this.loadPaginatedData(wordlist.words!);
-        this.linkListToPaginator({
-          pageIndex: this.page,
-          pageSize: wordsCount,
-          pageSizeOptions: this.pageArray,
-        });
         return wordlist;
       }),
       switchMap((wordlist) =>
@@ -238,14 +227,24 @@ export class ContestComponent implements OnInit, OnDestroy {
           map((wl) => {
             if (wl) {
               wl.words?.forEach((word) => {
+                console.log(word.id)
                 wordlist.words!.find((w) => w.id === word.id)!.staged = true;
-                this.dataSource.data.find((w) => w.id === word.id)!.staged=true
-
+                // this.dataSource.data.find((w) => w.id === word.id)!.staged=true
               });
             } else {
               this._contests.saveWordlist(this.userId, wordlist);
             }
+            let wordsCount = wordlist.words?.length!;
+            let arr = [4, 3, 2, 1];
+            for (var index in arr) {
+              this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
+            }
             this.loadPaginatedData(wordlist.words!);
+            this.linkListToPaginator({
+              pageIndex: this.page,
+              pageSize: wordsCount,
+              pageSizeOptions: this.pageArray,
+            });
             return wordlist;
           })
         )
@@ -308,7 +307,7 @@ export class ContestComponent implements OnInit, OnDestroy {
       this.playWordId(word);
     }, 2500);
     this.emitWord(word);
-    this.dataSource.data[randomIndex].staged = true;
+    this.dataSource.data.find(d=>d.id==word.id)!.staged = true;
     // this.filteredWordlist.next(this.wordlist);
     // console.log(this.filteredData);
 

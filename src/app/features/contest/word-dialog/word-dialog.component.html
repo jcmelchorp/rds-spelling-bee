@@ -1,10 +1,11 @@
 <mat-icon class="rds-icon" mat-dialog-close>cancel</mat-icon>
-<mat-dialog-content >
+<mat-dialog-content class="no-copy">
   <div style="text-align: center;color: black;">
-    <p style="color: brown;">{{id}}</p>
+    <p class="neon-text">{{id}}</p>
     <br>
     <br>
     <app-word [word]="label"></app-word>
+     <!-- <app-show-word [word]="label"></app-show-word> -->
     <br>
     <br>
   </div>
