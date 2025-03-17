@@ -61,7 +61,7 @@ export class AuthEffects implements OnInitEffects {
     this.actions$.pipe(
       ofType(authAction.signInByGoogle),
       switchMap(() =>
-          this.authService.byGoogle().pipe(
+          this.authService.loginByGoogle().pipe(
           map((res: any) => {
             // console.log(res)
             return {

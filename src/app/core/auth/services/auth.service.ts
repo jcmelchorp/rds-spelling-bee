@@ -42,7 +42,19 @@ export class AuthService {
   user$ = user(this._auth);
   idToken$ = idToken(this._auth); // 👈👈👈
 
-  byGoogle() {
+  loginByGoogle() {
+    // you can simply change the Google for another provider here
+    const provider = new GoogleAuthProvider(); // Use 'GoogleAuthProvider' directly
+    provider.addScope('profile');
+    provider.addScope('email');
+    provider.setCustomParameters({ prompt: 'select_account' });
+    return from(signInWithPopup(this._auth, provider) ).pipe(
+      take(1),
+      switchMap((u) => this.user$)
+    );
+  }
+
+  registerByGoogle() {
     // you can simply change the Google for another provider here
     const provider = new GoogleAuthProvider(); // Use 'GoogleAuthProvider' directly
     provider.addScope('profile');
@@ -167,10 +179,11 @@ export class AuthService {
       id: auth.user.providerData[0].uid,
       photoUrl: auth.user.providerData[0].photoURL!,
       displayName: auth.user.providerData[0].displayName!,
+      username: auth.user.email!.split('@')[0],
       // name: { familyName:auth.user.providerData[1].displayName!, fullName: auth.user.providerData[0].displayName!},
       primaryEmail: auth.user.email!,
       isVerified: auth.user.emailVerified,
-      contests: [],
+       contests: {},
       // custom ones
     };
     const userDocRef = doc(this._firestore, `users/${user.uid}`);

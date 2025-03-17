@@ -45,8 +45,8 @@ export class RegisterComponent {
     password: new FormControl(''),
   });
 
-  byGoogle(): void {
-    this._service.byGoogle();
+  registerByGoogle(): void {
+    this._service.registerByGoogle();
     //.then(() => /* some logic here */ )
     //.catch(() => /* some logic here */ );
   }

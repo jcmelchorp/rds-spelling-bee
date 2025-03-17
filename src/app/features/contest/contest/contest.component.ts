@@ -17,6 +17,7 @@ import {
 import {
   BehaviorSubject,
   concat,
+  findIndex,
   map,
   merge,
   mergeAll,
@@ -219,7 +220,6 @@ export class ContestComponent implements OnInit, OnDestroy {
     this.wordlist$ = this._wordlistService.getByGrade(level).pipe(
       map((wordlist) => {
         this.wordlistId = wordlist.id!;
-        console.log(wordlist);
         let wordsCount = wordlist.words?.length!;
         let arr = [4, 3, 2, 1];
         for (var index in arr) {
@@ -233,16 +233,20 @@ export class ContestComponent implements OnInit, OnDestroy {
         });
         return wordlist;
       }),
-      switchMap(wordlist =>
+      switchMap((wordlist) =>
         this._contests.getById(this.userId, this.wordlistId).pipe(
-          map(wl => {
+          map((wl) => {
             if (wl) {
-              console.log(wl)
-              return wl;
+              wl.words?.forEach((word) => {
+                wordlist.words!.find((w) => w.id === word.id)!.staged = true;
+                this.dataSource.data.find((w) => w.id === word.id)!.staged=true
+
+              });
             } else {
               this._contests.saveWordlist(this.userId, wordlist);
-              return wordlist;
             }
+            this.loadPaginatedData(wordlist.words!);
+            return wordlist;
           })
         )
       )
@@ -292,7 +296,7 @@ export class ContestComponent implements OnInit, OnDestroy {
   }
 
   wordFlow() {
-    console.log('Word Flow');
+    // console.log('Word Flow');
     let words = this.dataSource.data.filter((word) => word.staged === false);
     this.showSpinner();
     this._speech.playSound();
@@ -371,6 +375,7 @@ export class ContestComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe(
       // map(
       (result: string) => {
+        console.log(result);
         let obj = {};
         if (result !== undefined) {
           obj = {
@@ -378,7 +383,7 @@ export class ContestComponent implements OnInit, OnDestroy {
             id: Number(result.split('|')[0]).toLocaleString(),
           };
         }
-        this._contests.addWordContest(this.userId, this.wordlistId, obj);
+        this._contests.addWordContest(this.userId, this.wordlistId, this.word);
       }
       // ),
       // switchMap((o) =>

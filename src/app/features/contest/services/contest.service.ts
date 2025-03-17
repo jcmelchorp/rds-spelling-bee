@@ -53,20 +53,20 @@ export class ContestService {
     );
   }
 
-  addWordContest(uid: string, contestId: string, word: any) {
+  addWordContest(uid: string, contestId: string, word: Word) {
     const docRef = doc(this._firestore, this.collectionName, uid);
     return from(
       getDoc(docRef).then((user) => {
-        let contests = user.get('contests');
-        let contest = contests[contestId];
-        let words: Word[] = contest.words;
+        let words= user.get('contests')[contestId].words;
         words.push(word);
+        let contest = user.get('contests')[contestId];
+        contest.words=words;
+        let contests= user.get('contests');
+        contests[contest.id] = contest
+        console.log(contests)
         return updateDoc(docRef, {
-          contests: {
-            ...contests,
-            [contestId]: { ...contest, words: [...words] },
-          },
-        }).then()
+          contests
+        })
       })
     );
   }
