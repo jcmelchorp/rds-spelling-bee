@@ -3,7 +3,7 @@
     <img src="/assets/images/rds-bee-logo-transparent.png" height="200px" />
   </div>
 <div class="grid-container">
-  <mat-grid-list cols="2" rowHeight="180px">
+  <mat-grid-list cols="3" rowHeight="180px">
     @for (card of cards | async; track card) {
     <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card elevation-card">
@@ -18,7 +18,7 @@
          <!--  <img mat-card-md-image [src]="card.image" /> -->
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-raised-button style="background-color: #0060a060" [routerLink]="['/',card.route]">Ir al {{card.title.toLowerCase()}}</button>
+          <button mat-fab extended color="default" [routerLink]="[card.route]">Ir a {{card.title.toLowerCase()}}</button>
         </mat-card-actions >
       </mat-card>
     </mat-grid-tile>

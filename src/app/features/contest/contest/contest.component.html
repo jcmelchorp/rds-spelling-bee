@@ -1,6 +1,5 @@
-<div class="my-container" fxLayout.gt-md="row-wrap"
-fxLayoutAlign.gt-md="space-between center" fxLayoutGap="50px">
-  <div fxLayout="column" fxLayoutAlign="center center" >
+<div class="my-container" fxLayout.gt-md="row-wrap" fxLayoutAlign.gt-md="space-between center" fxLayoutGap="50px">
+  <div fxLayout="column" fxLayoutAlign="space-between center">
 
     <img src="/assets/images/rds-bee-logo-transparent.png" height="120px" [@enter5]
       (@enter5.done)="animationState = !animationState" />
@@ -27,8 +26,8 @@ fxLayoutAlign.gt-md="space-between center" fxLayoutGap="50px">
       <mat-icon class="rds-icon" matSuffix>school</mat-icon>
     </mat-form-field>
     @if (disableSelect) {
-    <button mat-fab-extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
-      (@hueButton.done)="hueBtnState = !hueBtnState" mat-raised-button color="primary"> <mat-icon>hearing</mat-icon>
+    <button mat-fab extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
+      (@hueButton.done)="hueBtnState = !hueBtnState" color="primary"> <mat-icon>hearing</mat-icon>
       Play word </button>
     }
   </div>
@@ -45,6 +44,8 @@ fxLayoutAlign.gt-md="space-between center" fxLayoutGap="50px">
     <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
       [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
       showFirstLastButtons aria-label="Select channel"></mat-paginator>
+    <button mat-button type="button" (click)="wordFlow()" color="default"> <mat-icon>autorenew</mat-icon>
+      Comenzar de nuevo</button>
     }
     @else if (wordsCount === 0) {
     <mat-card class="contest-card">
