@@ -23,7 +23,7 @@
         <mat-option [value]="level">{{level}}</mat-option>
         }
       </mat-select>
-      <mat-icon class="rds-icon" matSuffix>school</mat-icon>
+      <mat-icon mat-icon-button (click)="disableSelect=!disableSelect" class="rds-icon" matSuffix>{{disableSelect?'lock':'lock_open'}}</mat-icon>
     </mat-form-field>
     @if (disableSelect) {
     <button mat-fab extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
@@ -31,21 +31,26 @@
       Play word </button>
     }
   </div>
-  <div fxLayout="column" fxLayoutAlign="center center">
-    @if (disableSelect && (wordlist$|async) && dataSource.data ) {
+  <div *ngIf="disableSelect && dataSource.data" fxLayout="column" fxLayoutAlign="center">
     @if (wordsCount > 0) {
-    <mat-chip-set aria-label="Word selection">
-      <div fxLayout="row wrap" fxLayoutAlign="center stretch">
-        @for (word of filteredData; track $index) {<mat-chip class="elevation-card chip-id" #chipRef="matChip"
-          (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{ word.id!
-          }}</mat-chip>}
+      <ng-template #spinner>
+        <mat-spinner strokeWidth="8" [diameter]="128"> </mat-spinner>
+    </ng-template>
+      <div *ngIf="(wordlist$|async);else spinner">
+        <mat-chip-set aria-label="Word selection">
+          <div fxLayout="row wrap" fxLayoutAlign="center stretch">
+            @for (word of filteredData; track $index) {<mat-chip class="elevation-card chip-id" #chipRef="matChip"
+              (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{ word.id!
+              }}</mat-chip>}
+          </div>
+        </mat-chip-set>
+        <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
+          [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
+          showFirstLastButtons aria-label="Select channel"></mat-paginator>
+        <button mat-button type="button" (click)="clearContest()" color="default"> <mat-icon>restart_alt</mat-icon>
+          Reiniciar concurso</button>
       </div>
-    </mat-chip-set>
-    <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
-      [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
-      showFirstLastButtons aria-label="Select channel"></mat-paginator>
-    <button mat-button type="button" (click)="wordFlow()" color="default"> <mat-icon>autorenew</mat-icon>
-      Comenzar de nuevo</button>
+      
     }
     @else if (wordsCount === 0) {
     <mat-card class="contest-card">
@@ -55,7 +60,6 @@
         </h2>
       </div>
     </mat-card>
-    }
     }
   </div>
 </div>

@@ -53,6 +53,22 @@ export class ContestService {
     );
   }
 
+  removeContest(uid: string, contestId: string) {
+    const docRef = doc(this._firestore, this.collectionName, uid);
+    return from(
+      getDoc(docRef).then((user) => {
+        let contest = user.get('contests')[contestId];
+        contest.words=[];
+        let contests= user.get('contests');
+        contests[contest.id] = contest
+        // console.log(contests)
+        return updateDoc(docRef, {
+          contests
+        }).then(() => contest);
+      })
+    );
+  }
+  
   addWordContest(uid: string, contestId: string, word: Word) {
     const docRef = doc(this._firestore, this.collectionName, uid);
     return from(
@@ -63,7 +79,7 @@ export class ContestService {
         contest.words=words;
         let contests= user.get('contests');
         contests[contest.id] = contest
-        console.log(contests)
+        // console.log(contests)
         return updateDoc(docRef, {
           contests
         })

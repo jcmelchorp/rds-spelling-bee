@@ -18,7 +18,7 @@
          <!--  <img mat-card-md-image [src]="card.image" /> -->
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-fab extended color="default" [routerLink]="[card.route]">Ir a {{card.title.toLowerCase()}}</button>
+          <button mat-raised-button type="button" color="default" [routerLink]="['/',card.route]">Ir a {{card.title.toLowerCase()}}</button>
         </mat-card-actions >
       </mat-card>
     </mat-grid-tile>

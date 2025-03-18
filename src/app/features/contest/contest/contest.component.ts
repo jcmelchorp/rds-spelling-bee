@@ -104,6 +104,7 @@ import {
 } from '../../../store/selectors/auth.selectors';
 import { AuthService } from '../../../core/auth/services/auth.service';
 import { ContestService } from '../services/contest.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   templateUrl: './contest.component.html',
@@ -112,6 +113,7 @@ import { ContestService } from '../services/contest.service';
   imports: [
     AsyncPipe,
     NgClass,
+    NgIf,
     FormsModule,
     ReactiveFormsModule,
     MatBadgeModule,
@@ -120,6 +122,7 @@ import { ContestService } from '../services/contest.service';
     MatButtonModule,
     MatChipsModule,
     MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
@@ -227,7 +230,7 @@ export class ContestComponent implements OnInit, OnDestroy {
           map((wl) => {
             if (wl) {
               wl.words?.forEach((word) => {
-                console.log(word.id)
+                console.log(word.id);
                 wordlist.words!.find((w) => w.id === word.id)!.staged = true;
                 // this.dataSource.data.find((w) => w.id === word.id)!.staged=true
               });
@@ -294,6 +297,25 @@ export class ContestComponent implements OnInit, OnDestroy {
     });
   }
 
+  clearContest() {
+    let cleanData = this.dataSource.data.map((d) => {
+      return { ...d, staged: false };
+    });
+    console.log(cleanData);
+    this.wordlist$ = this._contests.removeContest(this.userId, this.wordlistId);
+    let wordsCount = cleanData.length!;
+    let arr = [4, 3, 2, 1];
+    for (var index in arr) {
+      this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
+    }
+    this.loadPaginatedData(cleanData);
+    this.linkListToPaginator({
+      pageIndex: this.page,
+      pageSize: wordsCount,
+      pageSizeOptions: this.pageArray,
+    });
+  }
+
   wordFlow() {
     // console.log('Word Flow');
     let words = this.dataSource.data.filter((word) => word.staged === false);
@@ -307,7 +329,7 @@ export class ContestComponent implements OnInit, OnDestroy {
       this.playWordId(word);
     }, 2500);
     this.emitWord(word);
-    this.dataSource.data.find(d=>d.id==word.id)!.staged = true;
+    this.dataSource.data.find((d) => d.id == word.id)!.staged = true;
     // this.filteredWordlist.next(this.wordlist);
     // console.log(this.filteredData);
 
