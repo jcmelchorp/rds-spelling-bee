@@ -120,17 +120,18 @@ $enable-negative-padding: true;
   line-height: 36.4px;
 }
 
-// .chip-id {
-//   min-height: 1.5em;
-//   min-width: 3em;
-// }
+
 
 .mat-mdc-standard-chip {
+
+  --mdc-chip-container-shape-family: rounded;
+  --mdc-chip-container-height: 1.3em;
+  --mdc-chip-container-shape-radius: 3px 3px 3px 3px ;
   /* typography */
   --mdc-chip-label-text-font: "VT323";
-  --mdc-chip-label-text-line-height: 18px;
+  --mdc-chip-label-text-line-height: auto;
   --mdc-chip-label-text-size: 24px;
-  --mdc-chip-label-text-tracking: 0em;
+  --mdc-chip-label-text-tracking: -0.05em;
   --mdc-chip-label-text-weight: 500;
 }
 .material-icons {

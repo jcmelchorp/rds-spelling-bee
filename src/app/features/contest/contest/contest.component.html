@@ -38,9 +38,9 @@
     </ng-template>
       <div *ngIf="(wordlist$|async);else spinner">
         <mat-chip-set aria-label="Word selection">
-          <div fxLayout="row wrap" fxLayoutAlign="center stretch">
-            @for (word of filteredData; track $index) {<mat-chip class="elevation-card chip-id" #chipRef="matChip"
-              (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{ word.id!
+          <div fxLayout="row wrap" fxLayoutAlign="center center">
+            @for (word of filteredData; track $index) {<mat-chip class="elevation-card" #chipRef="matChip"
+              (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{ (word.id!) 
               }}</mat-chip>}
           </div>
         </mat-chip-set>
