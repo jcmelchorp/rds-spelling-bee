@@ -237,12 +237,16 @@ export class ContestComponent implements OnInit, OnDestroy {
             } else {
               this._contests.saveWordlist(this.userId, wordlist);
             }
+            wordlist.words = wordlist.words?.map((w) => {
+              return { ...w, id_number: Number(w.id) };
+            });
+            this.loadPaginatedData(wordlist.words!);
+
             let wordsCount = wordlist.words?.length!;
             let arr = [4, 3, 2, 1];
             for (var index in arr) {
               this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
             }
-            this.loadPaginatedData(wordlist.words!);
             this.linkListToPaginator({
               pageIndex: this.page,
               pageSize: wordsCount,

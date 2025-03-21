@@ -1,13 +1,13 @@
 <mat-toolbar class="mat-toolbar">
   <mat-toolbar-row class="elevation-card" fxLayoutAlign="space-between center">
     <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
-        <button type="button" aria-label="mostrar menu" mat-icon-button (click)="toggleSidenavLeft($event)">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-        <button type="button" aria-label="Inicio" mat-icon-button [routerLink]="[isAuthenticated()?'home':'/']">
-          <img class="rounded-circle" src="/assets/images/rds-bee-logo-transparent.png" />
-        </button>
-        <!-- @if (isOnline) {
+      <button type="button" aria-label="mostrar menu" mat-icon-button (click)="toggleSidenavLeft($event)">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <button type="button" aria-label="Inicio" mat-icon-button [routerLink]="[isAuthenticated()?'home':'/']">
+        <img class="rounded-circle" src="/assets/images/rds-bee-logo-transparent.png" />
+      </button>
+      <!-- @if (isOnline) {
           <a type="button" style="background-color: transparent;" aria-label="Concurso 2025" mat-flat-button
           [routerLink]="['/contest']">
           Concurso 2025
@@ -30,12 +30,9 @@
         <mat-icon class="rds-icon" [matTooltip]="(isDarkTheme$|async)?'Modo oscuro':'Modo claro'"
           aria-label="Alternar tema">{{(isDarkTheme$|async)?'nightlight':'light_mode'}}</mat-icon>
       </button>
-      <button type="button" mat-icon-button onclick="var el = document.querySelector('body'); el.requestFullscreen();">
-        <mat-icon class="rds-icon" matTooltip="Pantalla completa">fullscreen</mat-icon>
-      </button>
       @if (isOnline && user) {
       <button type="button" mat-icon-button [matMenuTriggerFor]="userMenu">
-        <img class="rounded-circle" src="{{user.photoUrl?user.photoUrl!:'/assets/images/default_user.jpeg'}}" />
+        <img class="rounded-circle" src="{{user.photoUrl?user.photoUrl:'/assets/images/default_user.jpeg'}}" />
       </button>
       } @else {
       <button type="button" mat-icon-button matTooltip="Iniciar sesión" [routerLink]="['login']">

@@ -41,54 +41,54 @@
     </mat-card>
   </div>
 </div> -->
-<aside *ngIf="(user$|async) as user;" class="profile-card">
-  <header>
-    <!-- here’s the avatar -->
-    <img  class="img-fluid rounded-circle d-print-none hoverZoomLink" alt="Usuario conectado"
-      src="{{user.photoUrl?user.photoUrl:user.authPhotoUrl}}" />
+  <aside *ngIf="(user$|async) as user;" class="profile-card">
+    <header>
+      <!-- here’s the avatar -->
+      <img class="img-fluid rounded-circle d-print-none hoverZoomLink" alt="Usuario conectado"
+        src="{{user.authPhotoUrl?user.authPhotoUrl:user.photoUrl}}" />
 
-    <!-- the username -->
-    <h1>
-      {{ user.displayName }}
-    </h1>
+      <!-- the username -->
+      <h1>
+        {{ user.displayName }}
+      </h1>
+      <h2 class="mat-h1">{{ user.username }}</h2>
+      <!-- and role or location -->
+      <h2>
+        {{ user.primaryEmail }}
+      </h2>
 
-    <!-- and role or location -->
-    <h2>
-      {{ user.primaryEmail }}
-    </h2>
+    </header>
 
-  </header>
+    <!-- bit of a bio; who are you? -->
+    <div class="profile-bio">
 
-  <!-- bit of a bio; who are you? -->
-  <div class="profile-bio">
+      <p>
+        Conoce las <a [routerLink]="['/policy']">políticas de privacidad </a>de tus datos.
+      </p>
 
-    <p>
-    Conoce las <a [routerLink]="['/policy']">políticas de privacidad </a>de tus datos.
-    </p>
+    </div>
+    <!-- some social links to show off -->
+    <ul class="profile-social-links">
+      <li>
+        <a target="_blank" href="https://www.facebook.com/creativedonut">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://twitter.com/dropyourbass">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://github.com/vipulsaxena">
+          <i class="fa fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.behance.net/vipulsaxena">
 
-  </div>
-  <!-- some social links to show off -->
-  <ul class="profile-social-links">
-    <li>
-      <a target="_blank" href="https://www.facebook.com/creativedonut">
-        <i class="fa fa-facebook"></i>
-      </a>
-    </li>
-    <li>
-      <a target="_blank" href="https://twitter.com/dropyourbass">
-        <i class="fa fa-twitter"></i>
-      </a>
-    </li>
-    <li>
-      <a target="_blank" href="https://github.com/vipulsaxena">
-        <i class="fa fa-github"></i>
-      </a>
-    </li>
-    <li>
-      <a target="_blank" href="https://www.behance.net/vipulsaxena">
-
-        <i class="fa fa-behance"></i>
-      </a>
-    </li>
-  </ul>
-</aside>
+          <i class="fa fa-behance"></i>
+        </a>
+      </li>
+    </ul>
+  </aside>
