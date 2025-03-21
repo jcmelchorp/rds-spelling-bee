@@ -6,18 +6,20 @@
 .elevation-card {
   @include mat.elevation-transition();
   @include mat.elevation(2);
-  
+
   &:hover {
     @include mat.elevation(8);
   }
 }
 
-
 $typography-config: mat.define-typography-config(
   $font-family: '"Fredoka", "Sixtyfour", sans-serif',
-  $headline-1: mat.define-typography-level(124px, 124px, 600, $letter-spacing: -0.05em),
-  $headline-2: mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
-  $headline-3: mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $headline-1:
+    mat.define-typography-level(124px, 124px, 600, $letter-spacing: -0.05em),
+  $headline-2:
+    mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $headline-3:
+    mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
   $headline-4: mat.define-typography-level(34px, 40px, 400),
   $headline-5: mat.define-typography-level(24px, 32px, 400),
   $headline-6: mat.define-typography-level(20px, 32px, 400),
@@ -34,9 +36,9 @@ $typography-config: mat.define-typography-config(
 /* Let's assign the custom property 'input' that we defined above */
 @mixin typography($theme) {
   $custom-typography-config: mat.get-typography-config($theme);
-  
+
   .mat-mdc-form-field {
-      @include mat.typography-level($custom-typography-config, 'input')
+    @include mat.typography-level($custom-typography-config, "input");
   }
 }
 
@@ -83,7 +85,7 @@ $enable-negative-margins: true;
 $enable-negative-padding: true;
 
 .backDrop {
-  background-color:rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
 }
 // .mat-mdc-standard-chip {
@@ -91,24 +93,23 @@ $enable-negative-padding: true;
 // }
 .mat-mdc-dialog-container {
   --mdc-dialog-container-shape: 10px;
- --mdc-dialog-container-elevation-shadow: inset -5px -5px 0 0 #0060a0, 0 0 15px 5px #00000096;
+  --mdc-dialog-container-elevation-shadow: inset -5px -5px 0 0 #0060a0,
+    0 0 15px 5px #00000096;
 }
 
 .mat-form-field-appearance-fill .mat-mdc-form-field-infix {
   padding-top: 20px !important;
- // height: 10px !important;
-
+  // height: 10px !important;
 }
 .mat-form-field-appearance-fill .mat-mdc-floating-label {
- // margin-top: -1vh !important;
+  // margin-top: -1vh !important;
   // margin-bottom: -1vh !important;
   height: -8px !important;
 }
 
-.mdc-list-item--with-leading-icon .mdc-list-item__start.blue { 
+.mdc-list-item--with-leading-icon .mdc-list-item__start.blue {
   color: #0060a0;
-}   
-
+}
 
 // Handle buttons appropriately, with respect to line-height
 .mat-raised-button,
@@ -120,13 +121,10 @@ $enable-negative-padding: true;
   line-height: 36.4px;
 }
 
-
-
 .mat-mdc-standard-chip {
-
   --mdc-chip-container-shape-family: rounded;
   --mdc-chip-container-height: 1.3em;
-  --mdc-chip-container-shape-radius: 3px 3px 3px 3px ;
+  --mdc-chip-container-shape-radius: 3px 3px 3px 3px;
   /* typography */
   --mdc-chip-label-text-font: "VT323";
   --mdc-chip-label-text-line-height: auto;
@@ -142,9 +140,6 @@ $enable-negative-padding: true;
   }
 }
 
-
-
-
 .my-container {
   width: 100%;
   max-width: 1200px; /* Maximum width of the container */
@@ -157,24 +152,24 @@ $enable-negative-padding: true;
 
 @media (min-width: 576px) {
   .my-container {
-      max-width: 540px;
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .my-container {
-      max-width: 720px;
+    max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .my-container {
-      max-width: 960px;
+    max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
   .my-container {
-      max-width: 1140px;
+    max-width: 1140px;
   }
 }
