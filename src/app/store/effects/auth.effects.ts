@@ -1,11 +1,26 @@
 import { Injectable } from '@angular/core';
 
 import { Actions, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
-import { of, Observable, defer, from, switchMap, map, catchError, tap } from 'rxjs';
+import {
+  of,
+  Observable,
+  defer,
+  from,
+  switchMap,
+  map,
+  catchError,
+  tap,
+} from 'rxjs';
 import * as authAction from '../actions/auth.actions';
 
 import { Action, INIT } from '@ngrx/store';
-import { Auth, authState, GoogleAuthProvider, signInWithPopup, User as FireUser } from '@angular/fire/auth';
+import {
+  Auth,
+  authState,
+  GoogleAuthProvider,
+  signInWithPopup,
+  User as FireUser,
+} from '@angular/fire/auth';
 import { AuthService } from '../../core/auth/services/auth.service';
 import { User } from '../../core/auth/models/user.model';
 @Injectable()
@@ -14,7 +29,7 @@ export class AuthEffects implements OnInitEffects {
     private actions$: Actions,
     private authService: AuthService,
     private auth: Auth
-  ) { }
+  ) {}
   ngrxOnInitEffects(): Action {
     return { type: authAction.getUser.type };
   }
@@ -24,9 +39,9 @@ export class AuthEffects implements OnInitEffects {
   getUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(authAction.getUser),
-      switchMap(() => authState(this.auth)
-        .pipe(
-          map((fireUser: FireUser|null)=> {
+      switchMap(() =>
+        authState(this.auth).pipe(
+          map((fireUser: FireUser | null) => {
             if (fireUser) {
               return {
                 id: fireUser.providerData[0].uid,
@@ -40,7 +55,7 @@ export class AuthEffects implements OnInitEffects {
                 uid: fireUser.uid,
               } as User;
             } else {
-              return null
+              return null;
             }
           }),
           map((user) => {
@@ -61,7 +76,7 @@ export class AuthEffects implements OnInitEffects {
     this.actions$.pipe(
       ofType(authAction.signInByGoogle),
       switchMap(() =>
-          this.authService.loginByGoogle().pipe(
+        this.authService.loginByGoogle().pipe(
           map((res: any) => {
             // console.log(res)
             return {
@@ -76,10 +91,10 @@ export class AuthEffects implements OnInitEffects {
               uid: res!.uid,
             };
           }),
-          switchMap((user:any) => {
+          switchMap((user: any) => {
             return [
               authAction.saveUser({ user }),
-              authAction.signInSuccess({ user })
+              authAction.signInSuccess({ user }),
             ];
           }),
           catchError((error) => of(authAction.notAuthenticated({ error })))
@@ -91,8 +106,8 @@ export class AuthEffects implements OnInitEffects {
   signInByEmail$ = createEffect(() =>
     this.actions$.pipe(
       ofType(authAction.signInByEmail),
-      switchMap(c =>
-          this.authService.login(c.credential).pipe(
+      switchMap((c) =>
+        this.authService.login(c.credential).pipe(
           map((res: any) => {
             // console.log(res)
             return {
@@ -107,10 +122,10 @@ export class AuthEffects implements OnInitEffects {
               uid: res!.uid,
             };
           }),
-          switchMap((user:any) => {
+          switchMap((user: any) => {
             return [
-              authAction.saveUser({user}),
-              authAction.signInSuccess({ user })
+              authAction.saveUser({ user }),
+              authAction.signInSuccess({ user }),
             ];
           }),
           catchError((error) => of(authAction.notAuthenticated({ error })))
@@ -122,8 +137,8 @@ export class AuthEffects implements OnInitEffects {
   signUpByEmail$ = createEffect(() =>
     this.actions$.pipe(
       ofType(authAction.signUpByEmail),
-      switchMap(c =>
-          this.authService.signup(c.credential.email,c.credential.password).pipe(
+      switchMap((c) =>
+        this.authService.signup(c.credential.email, c.credential.password).pipe(
           map((res: any) => {
             // console.log(res)
             return {
@@ -136,12 +151,14 @@ export class AuthEffects implements OnInitEffects {
               creationTime: res!.metadata.creationTime,
               lastLoginTime: res!.metadata.lastSignInTime,
               uid: res!.uid,
+              username: res!.email.split('@')[0],
+              contests: {},
             };
           }),
-          switchMap((user:any) => {
+          switchMap((user: any) => {
             return [
               authAction.saveUser({ user }),
-              authAction.signInSuccess({ user })
+              authAction.signInSuccess({ user }),
             ];
           }),
           catchError((error) => of(authAction.notAuthenticated({ error })))
@@ -149,6 +166,39 @@ export class AuthEffects implements OnInitEffects {
       )
     )
   );
+  signUpByGoogle$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(authAction.signUpByGoogle),
+      switchMap(() =>
+        this.authService.registerByGoogle().pipe(
+          map((res: any) => {
+            // console.log(res)
+            return {
+              id: res!.providerData[0].uid,
+              primaryEmail: res!.email,
+              photoUrl: res!.providerData[0].photoURL,
+              authPhotoUrl: res!.photoURL,
+              displayName: res!.displayName,
+              isVerified: res!.emailVerified,
+              creationTime: res!.metadata.creationTime,
+              lastLoginTime: res!.metadata.lastSignInTime,
+              uid: res!.uid,
+              username: res!.email.split('@')[0],
+              contests: {},
+            };
+          }),
+          switchMap((user: any) => {
+            return [
+              authAction.saveUser({ user }),
+              authAction.signInSuccess({ user }),
+            ];
+          }),
+          catchError((error) => of(authAction.notAuthenticated({ error })))
+        )
+      )
+    )
+  );
+
   signInSuccess$ = createEffect(() =>
     this.actions$.pipe(
       ofType(authAction.signInSuccess),
@@ -186,12 +236,11 @@ export class AuthEffects implements OnInitEffects {
     )
   );
 
- 
   signOut$ = createEffect(() =>
     this.actions$.pipe(
       ofType(authAction.signOut),
       switchMap((action) =>
-        of(this.authService.logOut(action.id)).pipe(
+        this.authService.logOut(action.id).pipe(
           map(() => {
             return authAction.signOutCompleted();
           }),
@@ -200,7 +249,6 @@ export class AuthEffects implements OnInitEffects {
       )
     )
   );
-
 
   updateOnlineStatus$ = createEffect(
     () =>

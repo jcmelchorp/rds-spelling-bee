@@ -60,22 +60,14 @@ export class AuthService {
     provider.addScope('profile');
     provider.addScope('email');
     provider.setCustomParameters({ prompt: 'select_account' });
-    return from(
-      signInWithPopup(this._auth, provider).then((user) =>
-        this._setUserData(user)
-      )
-    ).pipe(
+    return from(signInWithPopup(this._auth, provider)).pipe(
       take(1),
       switchMap((u) => this.user$)
     );
   }
 
   signup(email: string, password: string) {
-    createUserWithEmailAndPassword(
-      this._auth,
-      email.trim(),
-      password.trim()
-    ).then((user) => this._setUserData(user));
+    createUserWithEmailAndPassword(this._auth, email.trim(), password.trim());
     return this.user$;
   }
   async sendEmailVerification() {
@@ -95,103 +87,52 @@ export class AuthService {
     return this.user$;
   }
 
-  logOut(id?: string): Promise<void> {
-    return this._auth.signOut();
+  logOut(id?: string): Observable<void> {
+    return from(this._auth.signOut());
   }
 
   checkAdminRole(uid: string): Observable<boolean> {
-    /*  if (environment.useAuthEmulator) {
-       const doc = ref(this.database, `${this.collection}/${id}`);
-       return objectVal(doc).pipe(pluck('isAdmin'));
-     } else { */
     const afsRef = doc(this._firestore, `users/${uid}`);
     return from(getDoc(afsRef).then((user) => user.get('isAdmin')));
-    /* } */
   }
 
   saveUser(user: AuthUser) {
-    // const key = user.id;
-    /*  if (environment.useAuthEmulator) {
-       const rtdbRef = ref(this.database, `${this.collection}/${key}`);
-       return from(update(rtdbRef, user))
-     } else { */
     const afsRef = doc(this._firestore, `users/${user.uid}`);
     return from(updateDoc(afsRef, firebaseSerialize(user)));
-    /* } */
   }
 
-  //   getSetContest(uid:string,contestId:string)  {
-  //     let contests:any[]=[];
-
-  //     const afsRef = doc(this._firestore, `users/${uid}`);
-  //     return from(getDoc(afsRef)
-  //     .then((user) => {
-  // if (user.get(`/contests/${contestId}`)) {
-  //   user.exists.contests.push(contestId);
-
-  //   return from(updateDoc(afsRef, firebaseSerialize(user)));
-  // } else {
-  //   user.get(`/contests/${contestId}`)
-  // }
-  //  }))
-
-  //   }
-
   checkContest(uid: string, contestId: string): Observable<boolean> {
-    /*  if (environment.useAuthEmulator) {
-       const doc = ref(this.database, `${this.collection}/${id}`);
-       return objectVal(doc).pipe(pluck('isAdmin'));
-     } else { */
     const afsRef = doc(this._firestore, `users/${uid}/contests`);
     return from(getDoc(afsRef).then((user) => user.get(contestId)));
-    /* } */
   }
 
   updateOnlineStatus(uid: string, status: boolean): Observable<void> {
-    /* if (status) {
-      return from(
-        this.afDatabase.database
-          .ref()
-          .child(`${this.collection}/${id}`)
-          .onDisconnect()
-          .update({ isOnline: status })
-      );
-    }
-    return from(
-      this.afDatabase
-        .object(`${this.collection}/${id}`)
-        .update({ isOnline: status })
-    ); */
-    /*  if (environment.useAuthEmulator) {
-       const doc = ref(this.database, `${this.collection}/${id}`);
-       return from(update(doc, { isOnline: status }));
-     } else { */
     const afsRef = doc(this._firestore, `users/${uid}`);
     return from(updateDoc(afsRef, { isOnline: status }));
-    /*  } */
   }
 
-  private async _setUserData(auth: UserCredential): Promise<AuthUser> {
-    console.log(auth);
-    var pict = (await this.getBase64ImageFromUrl(
-      auth.user.providerData[0].photoURL!
-    )) as string;
-    const user: AuthUser = {
-      uid: auth.user.uid!,
-      id: auth.user.providerData[0].uid,
-      authPhotoUrl: auth.user.providerData[0].photoURL!,
-      photoUrl: pict || '/assets/images/default_user.jpeg',
-      displayName: auth.user.providerData[0].displayName!,
-      username: auth.user.email!.split('@')[0],
-      // name: { familyName:auth.user.providerData[1].displayName!, fullName: auth.user.providerData[0].displayName!},
-      primaryEmail: auth.user.email!,
-      isVerified: auth.user.emailVerified,
-      contests: {},
-      // custom ones
-    };
-    const userDocRef = doc(this._firestore, `users/${user.uid}`);
-    return setDoc(userDocRef, user).then(() => user);
-  }
+  // private async _setUserData(auth: UserCredential): Promise<AuthUser> {
+  //   // console.log(auth);
+  //   let pict = '/assets/images/default_user.jpeg';
+  //   pict = (await this.getBase64ImageFromUrl(
+  //     auth.user.providerData[0].photoURL!
+  //   )) as string;
+  //   const user: AuthUser = {
+  //     uid: auth.user.uid!,
+  //     id: auth.user.providerData[0].uid,
+  //     authPhotoUrl: auth.user.providerData[0].photoURL!,
+  //     photoUrl: pict || '/assets/images/default_user.jpeg',
+  //     displayName: auth.user.providerData[0].displayName!,
+  //     username: auth.user.email!.split('@')[0],
+  //     // name: { familyName:auth.user.providerData[1].displayName!, fullName: auth.user.providerData[0].displayName!},
+  //     primaryEmail: auth.user.email!,
+  //     isVerified: auth.user.emailVerified,
+  //     contests: {},
+  //     // custom ones
+  //   };
+  //   const userDocRef = doc(this._firestore, `users/${user.uid}`);
+  //   return setDoc(userDocRef, user).then(() => user);
+  // }
 
   async getBase64ImageFromUrl(imageUrl: string) {
     var res = await fetch(imageUrl);
@@ -216,7 +157,7 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     const user = this._auth.currentUser;
-    console.log(user);
+    // console.log(user);
     // console.log(user?.email);
     return user !== null;
   }

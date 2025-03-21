@@ -8,7 +8,6 @@ import * as fromAuthActions from '../actions/auth.actions';
 
 import { filter, map, tap, withLatestFrom } from 'rxjs/operators';
 
-
 @Injectable()
 export class RouteEffects {
   /* getSingleCourse$ = createEffect(
@@ -45,23 +44,19 @@ export class RouteEffects {
   goroot$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(
-          fromAuthActions.signInSuccess
-        ),
-        tap(() => this.router.navigate(['/home']))
+        ofType(fromAuthActions.signInSuccess),
+        tap(() => this.router.navigate(['home']))
       ),
     { dispatch: false }
   );
   gohome$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(
-          fromAuthActions.signOutCompleted
-        ),
-        tap(() => this.router.navigate(['/']))
+        ofType(fromAuthActions.signOutCompleted),
+        tap(() => this.router.navigate(['']))
       ),
     { dispatch: false }
   );
 
-  constructor(private actions$: Actions, private router: Router) { }
+  constructor(private actions$: Actions, private router: Router) {}
 }

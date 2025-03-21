@@ -23,13 +23,20 @@ export const saveUser = createAction(
   '[Auth Firebase] Save user to firebase',
   props<{ user: User }>()
 );
-export const signInByEmail= createAction('[AccountUser] Email`s sign-in request',
+export const signInByEmail = createAction(
+  '[AccountUser] Email`s sign-in request',
   props<{ credential: Credential }>()
 );
-export const signUpByEmail= createAction('[AccountUser] Email`s sign-up request',
+export const signUpByEmail = createAction(
+  '[AccountUser] Email`s sign-up request',
   props<{ credential: Credential }>()
 );
-export const signInByGoogle = createAction('[AccountUser] Google`s sign-in request');
+export const signInByGoogle = createAction(
+  '[AccountUser] Google`s sign-in request'
+);
+export const signUpByGoogle = createAction(
+  '[AccountUser] Google`s sign-up request'
+);
 export const signInFail = createAction('[Auth SignIn] Google`s sign-in Fail');
 export const signInSuccess = createAction(
   '[Auth SignIn] Google`s sign-in Success',
@@ -50,8 +57,14 @@ export const updateOnlineStatus = createAction(
   '[Auth Online] Update online status',
   props<{ id: string; isOnline: boolean }>()
 );
-export const updateProfile = createAction('[Auth Component] Update profile', props<{ userData: User }>());
-export const updateProfileSuccess = createAction('[Auth Component] Update profile success', props<{ user: User }>());
+export const updateProfile = createAction(
+  '[Auth Component] Update profile',
+  props<{ userData: User }>()
+);
+export const updateProfileSuccess = createAction(
+  '[Auth Component] Update profile success',
+  props<{ user: User }>()
+);
 export const updateTeachersRole = createAction(
   '[Auth Role] Update teacher role',
   props<{ isTeacher: boolean }>()
