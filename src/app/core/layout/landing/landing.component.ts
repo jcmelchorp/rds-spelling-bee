@@ -1,14 +1,25 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { bounceInDownOnEnterAnimation, bounceInLeftOnEnterAnimation, bounceInRightOnEnterAnimation, bounceInUpOnEnterAnimation, hueRotateAnimation, jackInTheBoxOnEnterAnimation, jelloAnimation, rubberBandAnimation } from 'angular-animations';
+import {
+  bounceInDownOnEnterAnimation,
+  bounceInLeftOnEnterAnimation,
+  bounceInRightOnEnterAnimation,
+  bounceInUpOnEnterAnimation,
+  hueRotateAnimation,
+  jackInTheBoxOnEnterAnimation,
+  jelloAnimation,
+  rubberBandAnimation,
+} from 'angular-animations';
+import { FlexModule } from 'ngx-flexible-layout';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [RouterLink, MatButtonModule],
+  imports: [RouterLink, MatButtonModule, MatIconModule, FlexModule],
   animations: [
-  bounceInUpOnEnterAnimation({ anchor: 'enter1' }),
+    bounceInUpOnEnterAnimation({ anchor: 'enter1' }),
     bounceInLeftOnEnterAnimation({ anchor: 'enter2', delay: 200 }),
     bounceInDownOnEnterAnimation({ anchor: 'enter3', delay: 200 }),
     bounceInRightOnEnterAnimation({ anchor: 'enter4', delay: 200 }),

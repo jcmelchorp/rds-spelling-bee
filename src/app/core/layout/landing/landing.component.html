@@ -1,7 +1,9 @@
-<img style="position: absolute;top: 0;right: calc(5% + 10vw);width:calc(18% + 0.1vw);max-width: 150px;" src="/assets/images/rds-logo-stamp.png" >
+<img style="position: absolute;top: 0;right: calc(5% + 10vw);width:calc(18% + 0.1vw);max-width: 150px;"
+	src="/assets/images/rds-logo-stamp.png">
 
 <div class="text-container">
-	<div style="padding-left: calc(20px + 0.1vw)" class="view-subtitle" [@enter4] (@enter4.done)="animationState = !animationState">Wellcome to  </div>
+	<div style="padding-left: calc(20px + 0.1vw)" class="view-subtitle" [@enter4]
+		(@enter4.done)="animationState = !animationState">Wellcome to </div>
 	<div class="text-stripe" [@enter3] (@enter3.done)="animationState = !animationState"> RDS</div>
 	<div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState" [@rubberBand]="animationState">
 		Spelling Bee</div>
@@ -9,17 +11,32 @@
 		<span [@hueButton]="hueBtnState" (@hueButton.done)="hueBtnState = !hueBtnState">Contest</span>
 		<span style="font-size: smaller;"> Platform</span>
 	</div>
-	<div class="mat-h2 shrink-margin" [@enter2] (@enter2.done)="animationState = !animationState">Improve your spelling bee skills,</div>
-	<div class="mat-h2 shrink-margin" [@enter3] (@enter3.done)="animationState = !animationState">practice pronunciation and play with classmates.</div>
-	<div class="mat-body-1 shrink-margin" [@enter4] (@enter4.done)="animationState = !animationState">Get your account for start a contest. </div>
+	<div class="mat-h2 shrink-margin" [@enter2] (@enter2.done)="animationState = !animationState">Improve your spelling
+		bee skills,</div>
+	<div class="mat-h2 shrink-margin" [@enter3] (@enter3.done)="animationState = !animationState">practice pronunciation
+		and play with classmates.</div>
+	<div class="mat-body-1 shrink-margin" [@enter4] (@enter4.done)="animationState = !animationState">Get your account
+		for start a contest. </div>
 	<div class="mat-h4" [@enter5] (@enter5.done)="animationState = !animationState">
 		Read about our <a routerLink="/policy">privacy policy</a>
 		and <a routerLink="/terms">terms of use.</a>
 	</div>
-	<button mat-fab extended color="default" [routerLink]="['register']" type="button">
-		<img src="/assets/images/g.png" height="20px">
-		<span class="mat-h4">&nbsp; registrate</span>
-	</button>
+	<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+		<div>
+			<p class="mat-body-2">Si eres <strong style="color: brown;">nuevo</strong>:</p>
+			<button mat-fab extended color="warn" [routerLink]="['register']" type="button">
+				<mat-icon>checkbook</mat-icon>
+				<span class="mat-body-2">&nbsp; Regístrate</span>
+			</button>
+		</div>
+		<div>
+			<p class="mat-body-2">Si ya estas registrado:</p>
+			<button mat-fab extended color="default" [routerLink]="['login']" type="button">
+				<mat-icon>login</mat-icon>
+				<span class="mat-body-2">&nbsp; Ingresa</span>
+			</button>
+		</div>
+	</div>
 	<br>
 	<div class="gallery-container">
 		<div class='gallery'>

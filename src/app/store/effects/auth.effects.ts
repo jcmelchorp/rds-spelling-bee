@@ -163,7 +163,8 @@ export class AuthEffects implements OnInitEffects {
           }),
           catchError((error) => of(authAction.notAuthenticated({ error })))
         )
-      )
+      ),
+      catchError((error) => of(authAction.notAuthenticated({ error })))
     )
   );
   signUpByGoogle$ = createEffect(() =>
