@@ -1,27 +1,63 @@
-# RdsSpellingBee
+# RDS Spelling Bee
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
+RDS Spelling Bee es una aplicación web diseñada como una plataforma de gestión para los concursos de Spelling Bee organizados por la Escuela Rafael Díaz Serdán. La aplicación permite a los administradores gestionar participantes, palabras y resultados, mientras que los usuarios pueden practicar y participar en los concursos de manera interactiva.
 
-## Development server
+## Características principales
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Gestión de concursos**: Administración de participantes, palabras y resultados.
+- **Práctica interactiva**: Los usuarios pueden practicar palabras con retroalimentación en tiempo real.
+- **Integración de voz**: Uso de `speechSynthesis` para pronunciar palabras durante las prácticas y concursos.
+- **Autenticación segura**: Implementada con Firebase Authentication.
+- **Almacenamiento en la nube**: Uso de Firebase Firestore para la base de datos.
+- **Estado global**: Gestión del estado de la aplicación con NgRx.
 
-## Code scaffolding
+## Tecnologías utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 17**: Framework principal para el desarrollo de la aplicación.
+- **Firebase**: Servicios de autenticación, base de datos y hosting.
+  - Firebase Authentication
+  - Firebase Firestore
+- **NgRx**: Gestión del estado global de la aplicación.
+- **speechSynthesis**: API para la síntesis de voz en el navegador.
 
-## Build
+## Demo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Puedes ver una implementación demo de la aplicación en el siguiente enlace:
 
-## Running unit tests
+[https://rds-spelling-bee.web.app](https://rds-spelling-bee.web.app)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instalación y configuración
 
-## Running end-to-end tests
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/rds-spelling-bee.git
+   cd rds-spelling-bee
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-## Further help
+3. Configura Firebase:
+   - Crea un proyecto en Firebase.
+   - Configura Firebase Authentication y Firestore.
+   - Descarga el archivo `firebaseConfig` y colócalo en el proyecto.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Inicia el servidor de desarrollo:
+   ```bash
+   ng serve
+   ```
+
+5. Accede a la aplicación en `http://localhost:4200`.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issue o envía un pull request.
+
+## Licencia
+
+Este proyecto está licenciado bajo la [MIT License](LICENSE).
+
+---
+Desarrollado con ❤️ por la Escuela Rafael Díaz Serdán.
