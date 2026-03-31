@@ -53,6 +53,7 @@ export class AuthEffects implements OnInitEffects {
                 creationTime: fireUser.metadata.creationTime,
                 lastLoginTime: fireUser.metadata.lastSignInTime,
                 uid: fireUser.uid,
+                contests: {},
               } as User;
             } else {
               return null;

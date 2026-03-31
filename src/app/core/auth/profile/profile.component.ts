@@ -1,4 +1,4 @@
-import { AsyncPipe, JsonPipe, NgIf, TitleCasePipe } from '@angular/common';
+import { AsyncPipe, JsonPipe, KeyValuePipe, NgIf, TitleCasePipe } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -26,7 +26,8 @@ import { RouterLink } from '@angular/router';
   selector: 'app-profile',
   standalone: true,
   imports: [
-    // JsonPipe,
+    JsonPipe,
+    KeyValuePipe,
     TitleCasePipe,
     RouterLink,
     AsyncPipe,
