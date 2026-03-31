@@ -18,6 +18,7 @@ import {
   UserCredential,
 } from '@angular/fire/auth';
 import {
+  addDoc,
   doc,
   Firestore,
   getDoc,
@@ -26,7 +27,7 @@ import {
 } from '@angular/fire/firestore';
 import { User as AuthUser } from '../../auth/models/user.model';
 import { from, Observable, of, switchMap, take } from 'rxjs';
-import { firebaseSerialize } from '../../models/firebase.model';
+import { firebaseSerialize,  } from '../../models/firebase.model';
 
 export interface Credential {
   email: string;
@@ -98,7 +99,7 @@ export class AuthService {
 
   saveUser(user: AuthUser) {
     const afsRef = doc(this._firestore, `users/${user.uid}`);
-    return from(updateDoc(afsRef, firebaseSerialize(user)));
+    return from(setDoc(afsRef, firebaseSerialize(user)));
   }
 
   checkContest(uid: string, contestId: string): Observable<boolean> {

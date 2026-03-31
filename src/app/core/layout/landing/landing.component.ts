@@ -13,6 +13,11 @@ import {
   rubberBandAnimation,
 } from 'angular-animations';
 import { FlexModule } from 'ngx-flexible-layout';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../store/states/app.state';
+import * as fromAuthActions from '../../../store/actions/auth.actions';
+
+
 
 @Component({
   selector: 'app-landing',
@@ -47,7 +52,11 @@ export class LandingComponent implements OnInit {
   duration = 15 * 1000;
   animationEnd = Date.now() + this.duration;
   defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-  constructor() {}
+  constructor(private store: Store<AppState>){}
 
   ngOnInit() {}
+
+  loginByGoogle() {
+      this.store.dispatch(fromAuthActions.signInByGoogle());
+    }
 }

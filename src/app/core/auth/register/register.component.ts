@@ -51,6 +51,12 @@ export class RegisterComponent {
     //.catch(() => /* some logic here */ );
   }
 
+
+
+loginByGoogle() {
+      this.store.dispatch(fromAuthActions.signInByGoogle());
+    }
+    
   submit(): void {
     if (this.registerForm.invalid) return;
     const credential: Credential = {

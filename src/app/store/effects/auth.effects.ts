@@ -89,6 +89,7 @@ export class AuthEffects implements OnInitEffects {
               creationTime: res!.metadata.creationTime,
               lastLoginTime: res!.metadata.lastSignInTime,
               uid: res!.uid,
+              contests: {},
             };
           }),
           switchMap((user: any) => {
@@ -120,6 +121,7 @@ export class AuthEffects implements OnInitEffects {
               creationTime: res!.metadata.creationTime,
               lastLoginTime: res!.metadata.lastSignInTime,
               uid: res!.uid,
+              contests: {},
             };
           }),
           switchMap((user: any) => {
