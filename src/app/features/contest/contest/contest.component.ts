@@ -331,7 +331,7 @@ export class ContestComponent implements OnInit, OnDestroy {
     let word = words![randomIndex];
     setTimeout(() => {
       this.playWordId(word);
-    }, 2500);
+    }, 1000);
     this.emitWord(word);
     this.dataSource.data.find((d) => d.id == word.id)!.staged = true;
     // this.filteredWordlist.next(this.wordlist);
@@ -351,8 +351,8 @@ export class ContestComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.word = word;
       this._speech.speechText(word.label!);
-      this.openDialog('2000ms', '500ms');
-    }, 2500);
+      this.openDialog('1500ms', '500ms');
+    }, 1500);
   }
 
   playWordId(word: Word) {
@@ -364,7 +364,7 @@ export class ContestComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 2500);
+    }, 1500);
   }
 
   // startReading(word: Word) {
