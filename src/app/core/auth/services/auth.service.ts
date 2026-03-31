@@ -68,8 +68,10 @@ export class AuthService {
   }
 
   signup(email: string, password: string) {
-    createUserWithEmailAndPassword(this._auth, email.trim(), password.trim());
-    return this.user$;
+    return from(createUserWithEmailAndPassword(this._auth, email.trim(), password.trim())).pipe(
+        take(1),
+        switchMap((u) => this.user$)
+      );
   }
   async sendEmailVerification() {
     //return await this._auth.currentUser.sendEmailVerification()
