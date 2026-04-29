@@ -16,6 +16,7 @@ export interface Word {
 }
 
 export const Grades: any = [
+  'Zona 14',
   'Secundaria',
   '6° de Primaria',
   '5° de Primaria',
