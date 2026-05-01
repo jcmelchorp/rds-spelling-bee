@@ -1,10 +1,12 @@
 <div class="my-container contest-container" fxLayout.lt-md="column" fxLayout.gt-md="row-wrap" fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="50px">
   <div fxLayout="column" fxLayoutAlign="space-between center">
-
+    <div fxLayout="row">
     <img src="/assets/images/rds-bee-logo-transparent.png" height="120px" [@enter5]
       (@enter5.done)="animationState = !animationState" />
-
+      <img src="/assets/images/zona14.png" height="120px" [@enter5]
+      (@enter5.done)="animationState = !animationState" />
+</div>
     <div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState"
       [@rubberBand]="animationState">
       Spelling Bee</div>
