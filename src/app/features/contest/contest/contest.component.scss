@@ -4,12 +4,13 @@
   justify-content: center;
   min-height: 50px;
   flex-wrap: wrap-reverse;
-  width: 100%;
+  width: 95vw;
 }
 .paginator {
   margin: 0 !important;
   background-color: transparent !important;
 }
+
 
 .word-done {
   background-color: rgb(140, 98, 0) !important;
@@ -19,16 +20,15 @@
 }
 
 .my-container {
-  padding-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 95vh;
+  width: 105%;
 }
 
 .word-pending {
   background-color: rgb(255, 255, 255) !important;
-  border: #494949 1px solid;
+  border: #ebebeb 1px solid;
   --mdc-chip-label-text-color: #445e25;
   //  --mdc-chip-label-text-weight:500;
   // --mdc-chip-label-text-size: 0.8em;

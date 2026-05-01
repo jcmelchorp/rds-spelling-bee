@@ -1,6 +1,6 @@
 @use "@angular/material" as mat;
 @include mat.core();
-@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&family=VT323&family=Bungee+Shade&family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&family=Smooch+Sans&family=Bungee+Shade&family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
 
 .elevation-card {
@@ -121,16 +121,22 @@ $enable-negative-padding: true;
   line-height: 36.4px;
 }
 
+.mat-mdc-chip.mat-mdc-standard-chip {
+  /* size */
+  --mdc-chip-container-height: 16px;
+}
+
 .mat-mdc-standard-chip {
   --mdc-chip-container-shape-family: rounded;
-  --mdc-chip-container-height: 1.3em;
+  //--mdc-chip-container-width: 1px;
   --mdc-chip-container-shape-radius: 3px 3px 3px 3px;
   /* typography */
-  --mdc-chip-label-text-font: "VT323";
-  --mdc-chip-label-text-line-height: auto;
-  --mdc-chip-label-text-size: 24px;
-  --mdc-chip-label-text-tracking: -0.05em;
-  --mdc-chip-label-text-weight: 500;
+  --mdc-chip-label-text-font: "Smooch Sans";
+  --mdc-chip-label-text-line-height: 17px;
+  //--mdc-chip-label-text-line-width: auto;
+  --mdc-chip-label-text-size: 18px;
+  --mdc-chip-label-text-tracking:  0px;
+  --mdc-chip-label-text-weight: 600;
 }
 .material-icons {
   // font-size: 30px;
@@ -141,12 +147,13 @@ $enable-negative-padding: true;
 }
 
 .my-container {
-  width: 100%;
-  max-width: 1200px; /* Maximum width of the container */
+  width: 105%;
+  min-height: 88vh;
+ // max-width: 1200px; /* Maximum width of the container */
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
-  padding-left: 15px;
+  padding-left: 30px;
   box-sizing: border-box;
 }
 
@@ -158,18 +165,18 @@ $enable-negative-padding: true;
 
 @media (min-width: 768px) {
   .my-container {
-    max-width: 720px;
+    max-width: 92vw;
   }
 }
 
 @media (min-width: 992px) {
   .my-container {
-    max-width: 960px;
+    max-width: 95vw;
   }
 }
 
 @media (min-width: 1200px) {
   .my-container {
-    max-width: 1140px;
+    max-width: 98vw;
   }
 }

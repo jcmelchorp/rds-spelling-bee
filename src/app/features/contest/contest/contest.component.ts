@@ -165,6 +165,7 @@ export class ContestComponent implements OnInit, OnDestroy {
   }
   word!: Word;
   disableSelect: boolean = false;
+  isFinals: boolean = false;
   wordlists$!: Observable<Wordlist[]>;
   wordlist$!: Observable<Wordlist>;
   wordlist!: Wordlist;
@@ -302,8 +303,13 @@ export class ContestComponent implements OnInit, OnDestroy {
   }
 
   clearContest() {
+    this.isFinals=true;
     let cleanData = this.dataSource.data.map((d) => {
-      return { ...d, staged: false };
+      if (d.id_number!>508) {
+        return { ...d, staged: true };
+        } else {
+          return { ...d, staged: false };
+        }      
     });
     console.log(cleanData);
     this.wordlist$ = this._contests.removeContest(this.userId, this.wordlistId);
@@ -425,11 +431,32 @@ export class ContestComponent implements OnInit, OnDestroy {
       //alert('The Spelling Bee contest has finished!')
       // this.gradeControl.enable();
     } else {
-      console.log(this.word);
+      console.log(this.word);2
       this.wordsCount++;
     }
   }
 
+  goFinals() {
+this.isFinals=true;
+let activeFinals = this.dataSource.data.map((d) => {
+  if (d.id_number!>508) {
+  return { ...d, staged: false };
+  } else {
+    return d;
+  }
+});
+let wordsCount = activeFinals.length!;
+let arr = [4, 3, 2, 1];
+for (var index in arr) {
+  this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
+}
+this.loadPaginatedData(activeFinals);
+this.linkListToPaginator({
+  pageIndex: this.page,
+  pageSize: wordsCount,
+  pageSizeOptions: this.pageArray,
+});
+  }
   // ngOnDestroy(): void {
   //   //Called once, before the instance is destroyed.
   //   //Add 'implements OnDestroy' to the class.

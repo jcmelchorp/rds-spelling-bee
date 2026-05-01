@@ -1,4 +1,4 @@
-<div class="my-container" fxLayout.lt-md="column" fxLayout.gt-md="row-wrap" fxLayoutAlign.gt-md="space-between start"
+<div class="my-container contest-container" fxLayout.lt-md="column" fxLayout.gt-md="row-wrap" fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="50px">
   <div fxLayout="column" fxLayoutAlign="space-between center">
 
@@ -31,31 +31,44 @@
     <button mat-fab extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
       (@hueButton.done)="hueBtnState = !hueBtnState" color="primary"> <mat-icon>hearing</mat-icon>
       Play word </button>
+      <button mat-button type="button" (click)="clearContest()" color="default"> <mat-icon>restart_alt</mat-icon>
+        Reiniciar concurso
+      </button>
+   
+      <button mat-button type="button" [disabled]="isFinals" (click)="goFinals();isFinals=true" color="default"> <mat-icon>lightning</mat-icon>
+        Etapa final
+      </button>
     }
+    <button type="button" mat-button onclick="var el = document.querySelector('body'); el.requestFullscreen();">
+        <mat-icon>fullscreen</mat-icon> Pantalla completa
+      </button>
   </div>
-  <div *ngIf="disableSelect && dataSource.data" fxLayout="column" fxLayoutAlign="center">
+  <div *ngIf="disableSelect && dataSource.data" fxLayout="column" fxLayoutAlign="center center">
     @if (wordsCount > 0) {
     <ng-template #spinner>
       <mat-spinner strokeWidth="8" [diameter]="128"> </mat-spinner>
     </ng-template>
     <div *ngIf="(wordlist$|async);else spinner">
       <mat-chip-set aria-label="Word selection">
-        <div fxLayout="row wrap" fxLayoutAlign="center center">
-          @for (word of filteredData; track $index) {<mat-chip class="elevation-card" #chipRef="matChip"
+        <div fxLayout="row wrap" fxLayoutAlign="stretch stretch">
+          @for (word of filteredData; track $index) {
+          @if (word.id_number!<=508) {  
+            <mat-chip class="elevation-card" #chipRef="matChip"
             (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{
-            (word.id_number!)
-            }}</mat-chip>}
+            (word.id!)
+            }}</mat-chip>
+          } @else if (isFinals && word.id_number!>508) {
+            <mat-chip class="elevation-card" #chipRef="matChip"
+            (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{
+            (word.id!)
+            }}</mat-chip>
+          } 
+          }
         </div>
       </mat-chip-set>
       <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
         [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
         showFirstLastButtons aria-label="Select channel"></mat-paginator>
-      <button mat-button type="button" (click)="clearContest()" color="default"> <mat-icon>restart_alt</mat-icon>
-        Reiniciar concurso
-      </button>
-      <button type="button" mat-button onclick="var el = document.querySelector('body'); el.requestFullscreen();">
-        <mat-icon>fullscreen</mat-icon> Pantalla completa
-      </button>
     </div>
 
     }
