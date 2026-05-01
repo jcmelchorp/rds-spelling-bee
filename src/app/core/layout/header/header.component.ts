@@ -62,7 +62,6 @@ export class HeaderComponent {
   hide: boolean = false;
   canLogout!: boolean;
   panelOpenState: boolean = false;
-  lastScrollTop: number = 0;
   constructor(private store: Store<AppState>) {
     this.isDarkTheme$ = this.themeService.isThemeDark.pipe(
       map((isDark: boolean) => (this.isDarkTheme = isDark))

@@ -5,17 +5,17 @@ body { margin: 0; }
 .view-title {
   color: $bg-main;
   font-weight: 400;
-  font-size: 2.6em;
+  font-size: 2.5em;
   font-family: "fredoka one", cursive;
-  text-shadow: -3px -2px 1px $text-shadow-color;
+  text-shadow: 3px 2px 1px $text-shadow-color;
   max-width: 1200px;
 }
 .view-subtitle {
   font-weight: 600;
   color: $brown-color;
   font-family: "Comfortaa";
-  font-size: 3em;
-  max-width: 1200px;
+  font-size: 1em;
+  //max-width: 1200px;
 }
 
 .app-name {
@@ -29,13 +29,14 @@ font-size: large;
 .year {
   position: relative;
   color: #be7714;
-  margin-top: -20px;
-  padding-left: 50px;
+  margin-top: -10px;
+  padding-left: 15px;
   //transform: scale(2);
   font-family: "Londrina Shadow";
   font-weight: 600;
   text-shadow: -0.5px -0.5px 0.6px rgba($color: #221502, $alpha: 1);
-  font-size: calc(1rem + 2vw);
+  //font-size: calc(1rem + 2vw);
+  font-size: 2em;
 }
 
 .display-4-responsive {
@@ -94,7 +95,7 @@ font-size: large;
     font-size: calc(1.8em + 1vw);
   }
   .view-subtitle {
-    font-size: calc(1em + 2vw);
+    font-size: calc(0.75em + 1vw);
   }
 }
 

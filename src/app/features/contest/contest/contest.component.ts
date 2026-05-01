@@ -105,6 +105,8 @@ import {
 import { AuthService } from '../../../core/auth/services/auth.service';
 import { ContestService } from '../services/contest.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatAccordion, MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 
 @Component({
   templateUrl: './contest.component.html',
@@ -127,6 +129,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSelectModule,
     MatInputModule,
     MatCardModule,
+    MatTooltipModule,
     FlexLayoutModule,
     NgxSpinnerModule,
   ],
@@ -152,6 +155,11 @@ export class ContestComponent implements OnInit, OnDestroy {
   readonly output = signal('');
   readonly input = model('');
   readonly dialog = inject(MatDialog);
+  canClear!: boolean;
+  canFinals!: boolean;
+  finalsOpenState: boolean = false;
+  clearOpenState: boolean = false;
+
   animation = 'rubberBand';
   animationState = false;
   animationWithState = false;
@@ -189,7 +197,7 @@ export class ContestComponent implements OnInit, OnDestroy {
   dataSource = new MatTableDataSource<Word>();
   filteredData: Word[] = [];
 
-  constructor(public dialogo: MatDialog, private store: Store<AppState>) {}
+  constructor(public dialogo: MatDialog, private store: Store<AppState>) { }
   ngOnDestroy(): void {
     if (!this.subs.closed) {
       this.subs.unsubscribe();
@@ -302,14 +310,24 @@ export class ContestComponent implements OnInit, OnDestroy {
     });
   }
 
+  handleClear() {
+    if (!this.clearOpenState) {
+      this.clearOpenState = true;
+      // Automatically reset after 3 seconds if not clicked
+      setTimeout(() => this.clearOpenState = false, 3000);
+    } else {
+      this.clearContest();
+      this.clearOpenState = false;
+    }
+  }
   clearContest() {
-    // this.isFinals=true;
+     this.isFinals=false;
     let cleanData = this.dataSource.data.map((d) => {
-      if (d.id_number!>508) {
+      if (d.id_number! > 508) {
         return { ...d, staged: true };
-        } else {
-          return { ...d, staged: false };
-        }      
+      } else {
+        return { ...d, staged: false };
+      }
     });
     console.log(cleanData);
     this.wordlist$ = this._contests.removeContest(this.userId, this.wordlistId);
@@ -386,12 +404,12 @@ export class ContestComponent implements OnInit, OnDestroy {
   ): void {
     this.input.set(
       this.word.id +
-        '|' +
-        this.word.label! +
-        '|' +
-        this.word.definition! +
-        '|' +
-        this.word.example!
+      '|' +
+      this.word.label! +
+      '|' +
+      this.word.definition! +
+      '|' +
+      this.word.example!
     );
     const dialogRef = this.dialog.open(WordDialogComponent, {
       width: 'fit-content',
@@ -433,31 +451,31 @@ export class ContestComponent implements OnInit, OnDestroy {
       //alert('The Spelling Bee contest has finished!')
       // this.gradeControl.enable();
     } else {
-      console.log(this.word);2
+      console.log(this.word); 2
       this.wordsCount++;
     }
   }
 
   goFinals() {
-this.isFinals=true;
-let activeFinals = this.dataSource.data.map((d) => {
-  if (d.id_number!>508) {
-  return { ...d, staged: false };
-  } else {
-    return d;
-  }
-});
-let wordsCount = activeFinals.length!;
-// let arr = [4, 3, 2, 1];
-// for (var index in arr) {
-//   this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
-// }
-this.loadPaginatedData(activeFinals);
-this.linkListToPaginator({
-  pageIndex: this.page,
-  pageSize: wordsCount,
-  pageSizeOptions: this.pageArray,
-});
+    this.isFinals = true;
+    let activeFinals = this.dataSource.data.map((d) => {
+      if (d.id_number! > 508) {
+        return { ...d, staged: false };
+      } else {
+        return d;
+      }
+    });
+    let wordsCount = activeFinals.length!;
+    // let arr = [4, 3, 2, 1];
+    // for (var index in arr) {
+    //   this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
+    // }
+    this.loadPaginatedData(activeFinals);
+    this.linkListToPaginator({
+      pageIndex: this.page,
+      pageSize: wordsCount,
+      pageSizeOptions: this.pageArray,
+    });
   }
   // ngOnDestroy(): void {
   //   //Called once, before the instance is destroyed.

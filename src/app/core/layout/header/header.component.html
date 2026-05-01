@@ -25,7 +25,11 @@
           </button>
         } -->
     </div>
-    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
+      <button type="button" mat-icon-button 
+      onclick="var el = document.querySelector('body'); el.requestFullscreen();">
+        <mat-icon class="rds-icon" [matTooltip]="'Pantalla completa'" aria-label="Pantalla completa">fullscreen</mat-icon> 
+      </button>
       <button type="button" mat-icon-button (click)="toggleDarkTheme(isDarkTheme)">
         <mat-icon class="rds-icon" [matTooltip]="(isDarkTheme$|async)?'Modo oscuro':'Modo claro'"
           aria-label="Alternar tema">{{(isDarkTheme$|async)?'nightlight':'light_mode'}}</mat-icon>

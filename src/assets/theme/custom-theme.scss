@@ -6,9 +6,21 @@
 .elevation-card {
   @include mat.elevation-transition();
   @include mat.elevation(2);
-
+  
   &:hover {
     @include mat.elevation(8);
+  }
+}
+
+.elevation-chip {
+  @include mat.elevation-transition();
+  @include mat.elevation(2);
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  
+  &:hover {
+    @include mat.elevation(12);
+    transform: scale(2);    // Grow effect
+    //font-weight: bold;
   }
 }
 
@@ -136,7 +148,7 @@ $enable-negative-padding: true;
   //--mdc-chip-label-text-line-width: auto;
   --mdc-chip-label-text-size: 16px;
   --mdc-chip-label-text-tracking:  0px;
-  --mdc-chip-label-text-weight: 400;
+  --mdc-chip-label-text-weight: 600;
 }
 .material-icons {
   // font-size: 30px;
