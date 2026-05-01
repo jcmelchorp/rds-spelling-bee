@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 105%;
+  width: 108%;
 }
 
 .word-pending {
@@ -53,19 +53,7 @@
   opacity: 0.9;
 }
 
-/* Contenedor principal */
-mat-accordion {
-  display: flex;
-  flex-direction: row;
-  //overflow: hidden;
-}
 
-/* Paneles individuales */
-mat-expansion-panel {
-  display: row;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
 // #balloon-container {
 //   height: 50vh;
 //   padding: 1em;

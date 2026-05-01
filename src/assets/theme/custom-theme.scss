@@ -1,6 +1,6 @@
 @use "@angular/material" as mat;
 @include mat.core();
-@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&family=Smooch+Sans&family=Bungee+Shade&family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&family=VT323&family=Bungee+Shade&family=Comfortaa&family=Fredoka+One&family=Fredoka&family=Sarabun&family=Londrina+Shadow&family=Londrina+Sketch&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
 
 .elevation-card {
@@ -19,7 +19,7 @@
   
   &:hover {
     @include mat.elevation(12);
-    transform: scale(2);    // Grow effect
+    transform: scale(1.5);    // Grow effect
     //font-weight: bold;
   }
 }
@@ -135,20 +135,20 @@ $enable-negative-padding: true;
 
 .mat-mdc-chip.mat-mdc-standard-chip {
   /* size */
-  --mdc-chip-container-height: 11px;
+  --mdc-chip-container-height: 10px;
 }
 
 .mat-mdc-standard-chip {
   --mdc-chip-container-shape-family: rounded;
   //--mdc-chip-container-width: 1px;
-  --mdc-chip-container-shape-radius: 3px 3px 3px 3px;
+  //--mdc-chip-container-shape-radius: 3px 3px 3px 3px;
   /* typography */
-  --mdc-chip-label-text-font: "Smooch Sans";
-  --mdc-chip-label-text-line-height: 12px;
+  --mdc-chip-label-text-font: "VT323", monospace;
+  --mdc-chip-label-text-line-height: auto;//12px;
   //--mdc-chip-label-text-line-width: auto;
-  --mdc-chip-label-text-size: 16px;
-  --mdc-chip-label-text-tracking:  0px;
-  --mdc-chip-label-text-weight: 600;
+  --mdc-chip-label-text-size: 18px;
+  --mdc-chip-label-text-tracking:  -1.5px;
+  --mdc-chip-label-text-weight: 500;
 }
 .material-icons {
   // font-size: 30px;
