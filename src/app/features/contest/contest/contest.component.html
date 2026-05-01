@@ -5,7 +5,7 @@
     <img src="/assets/images/rds-bee-logo-transparent.png" height="120px" [@enter5]
       (@enter5.done)="animationState = !animationState" />
 
-    <div style="min-width:250px;" class="view-title" [@enter1] (@enter1.done)="animationState = !animationState"
+    <div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState"
       [@rubberBand]="animationState">
       Spelling Bee</div>
 
@@ -35,7 +35,7 @@
         Reiniciar concurso
       </button>
    
-      <button mat-button type="button" [disabled]="isFinals" (click)="goFinals();isFinals=true" color="default"> <mat-icon>lightning</mat-icon>
+      <button mat-button type="button" [disabled]="isFinals" (click)="goFinals();isFinals=isFinals!" color="default"> <mat-icon>lightning</mat-icon>
         Etapa final
       </button>
     }

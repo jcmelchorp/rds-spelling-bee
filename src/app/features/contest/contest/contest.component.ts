@@ -303,7 +303,7 @@ export class ContestComponent implements OnInit, OnDestroy {
   }
 
   clearContest() {
-    this.isFinals=true;
+    // this.isFinals=true;
     let cleanData = this.dataSource.data.map((d) => {
       if (d.id_number!>508) {
         return { ...d, staged: true };
@@ -314,16 +314,18 @@ export class ContestComponent implements OnInit, OnDestroy {
     console.log(cleanData);
     this.wordlist$ = this._contests.removeContest(this.userId, this.wordlistId);
     let wordsCount = cleanData.length!;
-    let arr = [4, 3, 2, 1];
-    for (var index in arr) {
-      this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
-    }
+    // let arr = [4, 3, 2, 1];
+    // for (var index in arr) {
+    //   this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
+    // }
     this.loadPaginatedData(cleanData);
+
     this.linkListToPaginator({
       pageIndex: this.page,
       pageSize: wordsCount,
       pageSizeOptions: this.pageArray,
     });
+
   }
 
   wordFlow() {
@@ -446,10 +448,10 @@ let activeFinals = this.dataSource.data.map((d) => {
   }
 });
 let wordsCount = activeFinals.length!;
-let arr = [4, 3, 2, 1];
-for (var index in arr) {
-  this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
-}
+// let arr = [4, 3, 2, 1];
+// for (var index in arr) {
+//   this.pageArray.push(Math.floor(wordsCount / Number(arr[index])));
+// }
 this.loadPaginatedData(activeFinals);
 this.linkListToPaginator({
   pageIndex: this.page,

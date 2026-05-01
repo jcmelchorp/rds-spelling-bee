@@ -123,7 +123,7 @@ $enable-negative-padding: true;
 
 .mat-mdc-chip.mat-mdc-standard-chip {
   /* size */
-  --mdc-chip-container-height: 16px;
+  --mdc-chip-container-height: 11px;
 }
 
 .mat-mdc-standard-chip {
@@ -132,11 +132,11 @@ $enable-negative-padding: true;
   --mdc-chip-container-shape-radius: 3px 3px 3px 3px;
   /* typography */
   --mdc-chip-label-text-font: "Smooch Sans";
-  --mdc-chip-label-text-line-height: 17px;
+  --mdc-chip-label-text-line-height: 12px;
   //--mdc-chip-label-text-line-width: auto;
-  --mdc-chip-label-text-size: 18px;
+  --mdc-chip-label-text-size: 16px;
   --mdc-chip-label-text-tracking:  0px;
-  --mdc-chip-label-text-weight: 600;
+  --mdc-chip-label-text-weight: 400;
 }
 .material-icons {
   // font-size: 30px;
@@ -147,12 +147,11 @@ $enable-negative-padding: true;
 }
 
 .my-container {
-  width: 105%;
   min-height: 88vh;
  // max-width: 1200px; /* Maximum width of the container */
   margin-right: auto;
   margin-left: auto;
-  padding-right: 15px;
+  padding-right: 0px;
   padding-left: 30px;
   box-sizing: border-box;
 }
@@ -165,7 +164,7 @@ $enable-negative-padding: true;
 
 @media (min-width: 768px) {
   .my-container {
-    max-width: 92vw;
+    max-width: 98vw;
   }
 }
 
