@@ -15,12 +15,13 @@
 .elevation-chip {
   @include mat.elevation-transition();
   @include mat.elevation(2);
-  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  // transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
   
   &:hover {
-    @include mat.elevation(12);
-    transform: scale(1.5);    // Grow effect
-    //font-weight: bold;
+    @include mat.elevation(10);
+     transform: scale(1.2);    // Grow effect
+    //font-weight: bolder;
+   // color: orange;
   }
 }
 
@@ -135,20 +136,24 @@ $enable-negative-padding: true;
 
 .mat-mdc-chip.mat-mdc-standard-chip {
   /* size */
-  --mdc-chip-container-height: 10px;
+  --mdc-chip-container-height: 16px;
+
 }
 
 .mat-mdc-standard-chip {
   --mdc-chip-container-shape-family: rounded;
   //--mdc-chip-container-width: 1px;
-  //--mdc-chip-container-shape-radius: 3px 3px 3px 3px;
+  --mdc-chip-container-shape-radius: 3px 3px 3px 3px;
   /* typography */
   --mdc-chip-label-text-font: "VT323", monospace;
   --mdc-chip-label-text-line-height: auto;//12px;
   //--mdc-chip-label-text-line-width: auto;
-  --mdc-chip-label-text-size: 18px;
+  --mdc-chip-label-text-size: 20px;
   --mdc-chip-label-text-tracking:  -1.5px;
-  --mdc-chip-label-text-weight: 500;
+  --mdc-chip-label-text-weight: 400;
+
+  padding: -2px -2px -2px -2px !important; 
+  margin: 1px 1px 1px 1px !important; 
 }
 .material-icons {
   // font-size: 30px;

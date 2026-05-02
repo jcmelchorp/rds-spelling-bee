@@ -1,4 +1,4 @@
-<div class="my-container" fxLayout.lt-lg="column" fxLayout.lg-md="row-wrap" fxLayoutAlign.gt-md="space-around center"
+<div class="my-container" fxLayout.lt-md="column" fxLayout.lg-md="row-wrap" fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="30px">
   <div fxLayout="column" fxLayoutAlign="stretch center">
     <div fxLayout="row" fxLayoutAlign="space-around">
@@ -84,7 +84,7 @@
       <mat-spinner strokeWidth="8" [diameter]="128"> </mat-spinner>
     </ng-template>
     <div *ngIf="(wordlist$|async);else spinner">
-      <mat-chip-set aria-label="Word selection">
+      <mat-chip-listbox aria-label="Word selection">
         <div fxLayout="row wrap" fxLayoutAlign="stretch stretch">
           @for (word of filteredData; track $index) {
           @if (word.id_number!<=508) { <mat-chip class="elevation-chip" #chipRef="matChip"
@@ -99,7 +99,7 @@
             }
             }
         </div>
-      </mat-chip-set>
+      </mat-chip-listbox>
       <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
         [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
         showFirstLastButtons aria-label="Select channel"></mat-paginator>
