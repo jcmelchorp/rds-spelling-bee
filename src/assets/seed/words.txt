@@ -1,682 +1,774 @@
-{"id":"001","definition": "","example": "","label": "bicycle","staged": false },
-{"id":"002","definition": "","example": "","label": "boat","staged": false },
-{"id":"003","definition": "","example": "","label": "cable car","staged": false },
-{"id":"004","definition": "","example": "","label": "flight ","staged": false },
-{"id":"005","definition": "","example": "","label": "helicopter","staged": false },
-{"id":"006","definition": "","example": "","label": "plane","staged": false },
-{"id":"007","definition": "","example": "","label": "railroad","staged": false },
-{"id":"008","definition": "","example": "","label": "rocket","staged": false },
-{"id":"009","definition": "","example": "","label": "ship","staged": false },
-{"id":"010","definition": "","example": "","label": "spaceship","staged": false },
-{"id":"011","definition": "","example": "","label": "speedboat","staged": false },
-{"id":"012","definition": "","example": "","label": "taxi","staged": false },
-{"id":"013","definition": "","example": "","label": "train","staged": false },
-{"id":"014","definition": "","example": "","label": "transportation","staged": false },
-{"id":"015","definition": "","example": "","label": "airport","staged": false },
-{"id":"016","definition": "","example": "","label": "bus driver","staged": false },
-{"id":"017","definition": "","example": "","label": "bus schedule","staged": false },
-{"id":"018","definition": "","example": "","label": "bus station","staged": false },
-{"id":"019","definition": "","example": "","label": "bus stop","staged": false },
-{"id":"020","definition": "","example": "","label": "bus ticket","staged": false },
-{"id":"021","definition": "","example": "","label": "car driver","staged": false },
-{"id":"022","definition": "","example": "","label": "car engine","staged": false },
-{"id":"023","definition": "","example": "","label": "car wash","staged": false },
-{"id":"024","definition": "","example": "","label": "ferry","staged": false },
-{"id":"025","definition": "","example": "","label": "high-speed-train","staged": false },
-{"id":"026","definition": "","example": "","label": "paddle boat","staged": false },
-{"id":"027","definition": "","example": "","label": "passenger ","staged": false },
-{"id":"028","definition": "","example": "","label": "railroad crossing","staged": false },
-{"id":"029","definition": "","example": "","label": "railroad engine","staged": false },
-{"id":"030","definition": "","example": "","label": "railroad station","staged": false },
-{"id":"031","definition": "","example": "","label": "railroad track","staged": false },
-{"id":"032","definition": "","example": "","label": "snowmobile","staged": false },
-{"id":"033","definition": "","example": "","label": "streetcar","staged": false },
-{"id":"034","definition": "","example": "","label": "subway","staged": false },
-{"id":"035","definition": "","example": "","label": "train driver","staged": false },
-{"id":"036","definition": "","example": "","label": "train schedule","staged": false },
-{"id":"037","definition": "","example": "","label": "train station","staged": false },
-{"id":"038","definition": "","example": "","label": "train ticket","staged": false },
-{"id":"039","definition": "","example": "","label": "wagon","staged": false },
-{"id":"040","definition": "","example": "","label": "across from","staged": false },
-{"id":"041","definition": "","example": "","label": "behind","staged": false },
-{"id":"042","definition": "","example": "","label": "between","staged": false },
-{"id":"043","definition": "","example": "","label": "in front of","staged": false },
-{"id":"044","definition": "","example": "","label": "inside","staged": false },
-{"id":"045","definition": "","example": "","label": "near","staged": false },
-{"id":"046","definition": "","example": "","label": "next to","staged": false },
-{"id":"047","definition": "","example": "","label": "outside","staged": false },
-{"id":"048","definition": "","example": "","label": "over","staged": false },
-{"id":"049","definition": "","example": "","label": "under","staged": false },
-{"id":"050","definition": "","example": "","label": "along","staged": false },
-{"id":"051","definition": "","example": "","label": "around","staged": false },
-{"id":"052","definition": "","example": "","label": "down","staged": false },
-{"id":"053","definition": "","example": "","label": "onto","staged": false },
-{"id":"054","definition": "","example": "","label": "past","staged": false },
-{"id":"055","definition": "","example": "","label": "through","staged": false },
-{"id":"056","definition": "","example": "","label": "aquarium","staged": false },
-{"id":"057","definition": "","example": "","label": "canyon","staged": false },
-{"id":"058","definition": "","example": "","label": "circus","staged": false },
-{"id":"059","definition": "","example": "","label": "falls","staged": false },
-{"id":"060","definition": "","example": "","label": "museum","staged": false },
-{"id":"061","definition": "","example": "","label": "sightseeing","staged": false },
-{"id":"062","definition": "","example": "","label": "suspension bridge","staged": false },
-{"id":"063","definition": "","example": "","label": "theme park","staged": false },
-{"id":"064","definition": "","example": "","label": "waterfall","staged": false },
-{"id":"065","definition": "","example": "","label": "fortress","staged": false },
-{"id":"066","definition": "","example": "","label": "fountain","staged": false },
-{"id":"067","definition": "","example": "","label": "monument","staged": false },
-{"id":"068","definition": "","example": "","label": "palace","staged": false },
-{"id":"069","definition": "","example": "","label": "ruins","staged": false },
-{"id":"070","definition": "","example": "","label": "statue","staged": false },
-{"id":"071","definition": "","example": "","label": "dress","staged": false },
-{"id":"072","definition": "","example": "","label": "earring","staged": false },
-{"id":"073","definition": "","example": "","label": "jeans","staged": false },
-{"id":"074","definition": "","example": "","label": "jewelry","staged": false },
-{"id":"075","definition": "","example": "","label": "sunglasses","staged": false },
-{"id":"076","definition": "","example": "","label": "pants","staged": false },
-{"id":"077","definition": "","example": "","label": "sweatshirt","staged": false },
-{"id":"078","definition": "","example": "","label": "hoodie","staged": false },
-{"id":"079","definition": "","example": "","label": "watch","staged": false },
-{"id":"080","definition": "","example": "","label": "shirt","staged": false },
-{"id":"081","definition": "","example": "","label": "camera","staged": false },
-{"id":"082","definition": "","example": "","label": "clothes","staged": false },
-{"id":"083","definition": "","example": "","label": "jacket","staged": false },
-{"id":"084","definition": "","example": "","label": "pocket","staged": false },
-{"id":"085","definition": "","example": "","label": "shoes","staged": false },
-{"id":"086","definition": "","example": "","label": "shorts","staged": false },
-{"id":"087","definition": "","example": "","label": "skirt","staged": false },
-{"id":"088","definition": "","example": "","label": "sneakers","staged": false },
-{"id":"089","definition": "","example": "","label": "T-shirt","staged": false },
-{"id":"090","definition": "","example": "","label": "umbrella","staged": false },
-{"id":"091","definition": "","example": "","label": "sweater","staged": false },
-{"id":"092","definition": "","example": "","label": "underwear","staged": false },
-{"id":"093","definition": "","example": "","label": "wallet","staged": false },
-{"id":"094","definition": "","example": "","label": "swim trunks","staged": false },
-{"id":"095","definition": "","example": "","label": "uniform","staged": false },
-{"id":"096","definition": "","example": "","label": "waterproof","staged": false },
-{"id":"097","definition": "","example": "","label": "wool","staged": false },
-{"id":"098","definition": "","example": "","label": "suit","staged": false },
-{"id":"099","definition": "","example": "","label": "raincoat","staged": false },
-{"id":"100","definition": "","example": "","label": "polyester","staged": false },
-{"id":"101","definition": "","example": "","label": "fleece jacket","staged": false },
-{"id":"102","definition": "","example": "","label": "designer clothes","staged": false },
-{"id":"103","definition": "","example": "","label": "cotton","staged": false },
-{"id":"104","definition": "","example": "","label": "cloth","staged": false },
-{"id":"105","definition": "","example": "","label": "bread","staged": false },
-{"id":"106","definition": "","example": "","label": "beans","staged": false },
-{"id":"107","definition": "","example": "","label": "cheese","staged": false },
-{"id":"108","definition": "","example": "","label": "dairy products","staged": false },
-{"id":"109","definition": "","example": "","label": "diet","staged": false },
-{"id":"110","definition": "","example": "","label": "fried egg","staged": false },
-{"id":"111","definition": "","example": "","label": "fruit","staged": false },
-{"id":"112","definition": "","example": "","label": "garlic","staged": false },
-{"id":"113","definition": "","example": "","label": "meat","staged": false },
-{"id":"114","definition": "","example": "","label": "mushroom","staged": false },
-{"id":"115","definition": "","example": "","label": "olive","staged": false },
-{"id":"116","definition": "","example": "","label": "onion","staged": false },
-{"id":"117","definition": "","example": "","label": "pepper","staged": false },
-{"id":"118","definition": "","example": "","label": "pineapple","staged": false },
-{"id":"119","definition": "","example": "","label": "rice","staged": false },
-{"id":"120","definition": "","example": "","label": "spinach","staged": false },
-{"id":"121","definition": "","example": "","label": "tomato","staged": false },
-{"id":"122","definition": "","example": "","label": "potato","staged": false },
-{"id":"123","definition": "","example": "","label": "vegetable","staged": false },
-{"id":"124","definition": "","example": "","label": "burger","staged": false },
-{"id":"125","definition": "","example": "","label": "champagne","staged": false },
-{"id":"126","definition": "","example": "","label": "grape","staged": false },
-{"id":"127","definition": "","example": "","label": "lentils","staged": false },
-{"id":"128","definition": "","example": "","label": "noodles","staged": false },
-{"id":"129","definition": "","example": "","label": "soup","staged": false },
-{"id":"130","definition": "","example": "","label": "wine","staged": false },
-{"id":"131","definition": "","example": "","label": "apple juice","staged": false },
-{"id":"132","definition": "","example": "","label": "beer","staged": false },
-{"id":"133","definition": "","example": "","label": "bread","staged": false },
-{"id":"134","definition": "","example": "","label": "chocolate cake","staged": false },
-{"id":"135","definition": "","example": "","label": "coffee","staged": false },
-{"id":"136","definition": "","example": "","label": "fast food","staged": false },
-{"id":"137","definition": "","example": "","label": "frozen food","staged": false },
-{"id":"138","definition": "","example": "","label": "fruit juice","staged": false },
-{"id":"139","definition": "","example": "","label": "fruit salad","staged": false },
-{"id":"140","definition": "","example": "","label": "grain","staged": false },
-{"id":"141","definition": "","example": "","label": "hamburger","staged": false },
-{"id":"142","definition": "","example": "","label": "kebab","staged": false },
-{"id":"143","definition": "","example": "","label": "meal","staged": false },
-{"id":"144","definition": "","example": "","label": "orange","staged": false },
-{"id":"145","definition": "","example": "","label": "porridge","staged": false },
-{"id":"146","definition": "","example": "","label": "potato chips","staged": false },
-{"id":"147","definition": "","example": "","label": "sandwich","staged": false },
-{"id":"148","definition": "","example": "","label": "sausage","staged": false },
-{"id":"149","definition": "","example": "","label": "stew","staged": false },
-{"id":"150","definition": "","example": "","label": "toast","staged": false },
-{"id":"151","definition": "","example": "","label": "tomato salad","staged": false },
-{"id":"152","definition": "","example": "","label": "assistant","staged": false },
-{"id":"153","definition": "","example": "","label": "photographer","staged": false },
-{"id":"154","definition": "","example": "","label": "pilot","staged": false },
-{"id":"155","definition": "","example": "","label": "playwright","staged": false },
-{"id":"156","definition": "","example": "","label": "politician","staged": false },
-{"id":"157","definition": "","example": "","label": "receptionist","staged": false },
-{"id":"158","definition": "","example": "","label": "reporter","staged": false },
-{"id":"159","definition": "","example": "","label": "rock singer","staged": false },
-{"id":"160","definition": "","example": "","label": "street performer","staged": false },
-{"id":"161","definition": "","example": "","label": "waiter","staged": false },
-{"id":"162","definition": "","example": "","label": "archaeologist","staged": false },
-{"id":"163","definition": "","example": "","label": "writer","staged": false },
-{"id":"164","definition": "","example": "","label": "cleaner","staged": false },
-{"id":"165","definition": "","example": "","label": "electrician","staged": false },
-{"id":"166","definition": "","example": "","label": "tour guide","staged": false },
-{"id":"167","definition": "","example": "","label": "hairdresser","staged": false },
-{"id":"168","definition": "","example": "","label": "firefighter","staged": false },
-{"id":"169","definition": "","example": "","label": "judge","staged": false },
-{"id":"170","definition": "","example": "","label": "juggler","staged": false },
-{"id":"171","definition": "","example": "","label": "musician","staged": false },
-{"id":"172","definition": "","example": "","label": "novelist","staged": false },
-{"id":"173","definition": "","example": "","label": "movie star","staged": false },
-{"id":"174","definition": "","example": "","label": "train driver","staged": false },
-{"id":"175","definition": "","example": "","label": "translator","staged": false },
-{"id":"176","definition": "","example": "","label": "astronaut","staged": false },
-{"id":"177","definition": "","example": "","label": "businessman","staged": false },
-{"id":"178","definition": "","example": "","label": "police officer","staged": false },
-{"id":"179","definition": "","example": "","label": "salesperson","staged": false },
-{"id":"180","definition": "","example": "","label": "scientist","staged": false },
-{"id":"181","definition": "","example": "","label": "journalist","staged": false },
-{"id":"182","definition": "","example": "","label": "designer","staged": false },
-{"id":"183","definition": "","example": "","label": "filmmaker","staged": false },
-{"id":"184","definition": "","example": "","label": "teacher","staged": false },
-{"id":"185","definition": "","example": "","label": "taxi driver","staged": false },
-{"id":"186","definition": "","example": "","label": "doctor","staged": false },
-{"id":"187","definition": "","example": "","label": "architect","staged": false },
-{"id":"188","definition": "","example": "","label": "consultant","staged": false },
-{"id":"189","definition": "","example": "","label": "manager","staged": false },
-{"id":"190","definition": "","example": "","label": "mechanic","staged": false },
-{"id":"191","definition": "","example": "","label": "producer","staged": false },
-{"id":"192","definition": "","example": "","label": "referee","staged": false },
-{"id":"193","definition": "","example": "","label": "surgeon","staged": false },
-{"id":"194","definition": "","example": "","label": "translate","staged": false },
-{"id":"195","definition": "","example": "","label": "salesperson","staged": false },
-{"id":"196","definition": "","example": "","label": "student","staged": false },
-{"id":"197","definition": "","example": "","label": "cutting board","staged": false },
-{"id":"198","definition": "","example": "","label": "fork","staged": false },
-{"id":"199","definition": "","example": "","label": "knife","staged": false },
-{"id":"200","definition": "","example": "","label": "matches","staged": false },
-{"id":"201","definition": "","example": "","label": "mirror","staged": false },
-{"id":"202","definition": "","example": "","label": "cupboard","staged": false },
-{"id":"203","definition": "","example": "","label": "paraffin","staged": false },
-{"id":"204","definition": "","example": "","label": "plate","staged": false },
-{"id":"205","definition": "","example": "","label": "dishwasher","staged": false },
-{"id":"206","definition": "","example": "","label": "shampoo","staged": false },
-{"id":"207","definition": "","example": "","label": "spoon","staged": false },
-{"id":"208","definition": "","example": "","label": "toilet paper","staged": false },
-{"id":"209","definition": "","example": "","label": "measuring cup","staged": false },
-{"id":"210","definition": "","example": "","label": "saucepan","staged": false },
-{"id":"211","definition": "","example": "","label": "microwave","staged": false },
-{"id":"212","definition": "","example": "","label": "towels","staged": false },
-{"id":"213","definition": "","example": "","label": "toothpaste","staged": false },
-{"id":"214","definition": "","example": "","label": "scissors","staged": false },
-{"id":"215","definition": "","example": "","label": "cookbook","staged": false },
-{"id":"216","definition": "","example": "","label": "refrigerator","staged": false },
-{"id":"217","definition": "","example": "","label": "stove","staged": false },
-{"id":"218","definition": "","example": "","label": "washing machine","staged": false },
-{"id":"219","definition": "","example": "","label": "cliff","staged": false },
-{"id":"220","definition": "","example": "","label": "desert","staged": false },
-{"id":"221","definition": "","example": "","label": "hill","staged": false },
-{"id":"222","definition": "","example": "","label": "jungle","staged": false },
-{"id":"223","definition": "","example": "","label": "mountain","staged": false },
-{"id":"224","definition": "","example": "","label": "tundra","staged": false },
-{"id":"225","definition": "","example": "","label": "volcano","staged": false },
-{"id":"226","definition": "","example": "","label": "waterfall","staged": false },
-{"id":"227","definition": "","example": "","label": "river","staged": false },
-{"id":"228","definition": "","example": "","label": "cave","staged": false },
-{"id":"229","definition": "","example": "","label": "forest","staged": false },
-{"id":"230","definition": "","example": "","label": "island","staged": false },
-{"id":"231","definition": "","example": "","label": "drizzle","staged": false },
-{"id":"232","definition": "","example": "","label": "flurry","staged": false },
-{"id":"233","definition": "","example": "","label": "hailstones","staged": false },
-{"id":"234","definition": "","example": "","label": "slush","staged": false },
-{"id":"235","definition": "","example": "","label": "blizzard","staged": false },
-{"id":"236","definition": "","example": "","label": "thunderstorm","staged": false },
-{"id":"237","definition": "","example": "","label": "blustery wind","staged": false },
-{"id":"238","definition": "","example": "","label": "hurricane","staged": false },
-{"id":"239","definition": "","example": "","label": "drought","staged": false },
-{"id":"240","definition": "","example": "","label": "snowflake","staged": false },
-{"id":"241","definition": "","example": "","label": "peak","staged": false },
-{"id":"242","definition": "","example": "","label": "stream","staged": false },
-{"id":"243","definition": "","example": "","label": "swamp","staged": false },
-{"id":"244","definition": "","example": "","label": "valley","staged": false },
-{"id":"245","definition": "","example": "","label": "woods","staged": false },
-{"id":"246","definition": "","example": "","label": "lagoon","staged": false },
-{"id":"247","definition": "","example": "","label": "hollow","staged": false },
-{"id":"248","definition": "","example": "","label": "pond","staged": false },
-{"id":"249","definition": "","example": "","label": "creak","staged": false },
-{"id":"250","definition": "","example": "","label": "landscape","staged": false },
-{"id":"251","definition": "","example": "","label": "continent","staged": false },
-{"id":"252","definition": "","example": "","label": "coast","staged": false },
-{"id":"253","definition": "","example": "","label": "path","staged": false },
-{"id":"254","definition": "","example": "","label": "road","staged": false },
-{"id":"255","definition": "","example": "","label": "peninsula","staged": false },
-{"id":"256","definition": "","example": "","label": "plain","staged": false },
-{"id":"257","definition": "","example": "","label": "fortress","staged": false },
-{"id":"258","definition": "","example": "","label": "landmark","staged": false },
-{"id":"259","definition": "","example": "","label": "board game","staged": false },
-{"id":"260","definition": "","example": "","label": "chess","staged": false },
-{"id":"261","definition": "","example": "","label": "dancing","staged": false },
-{"id":"262","definition": "","example": "","label": "dice game","staged": false },
-{"id":"263","definition": "","example": "","label": "drawing","staged": false },
-{"id":"264","definition": "","example": "","label": "fishing","staged": false },
-{"id":"265","definition": "","example": "","label": "football","staged": false },
-{"id":"266","definition": "","example": "","label": "hobby","staged": false },
-{"id":"267","definition": "","example": "","label": "horseback riding","staged": false },
-{"id":"268","definition": "","example": "","label": "ice hockey","staged": false },
-{"id":"269","definition": "","example": "","label": "inline skating","staged": false },
-{"id":"270","definition": "","example": "","label": "knitting","staged": false },
-{"id":"271","definition": "","example": "","label": "painting","staged": false },
-{"id":"272","definition": "","example": "","label": "sailing","staged": false },
-{"id":"273","definition": "","example": "","label": "skateboard","staged": false },
-{"id":"274","definition": "","example": "","label": "skateboarding","staged": false },
-{"id":"275","definition": "","example": "","label": "skydiving","staged": false },
-{"id":"276","definition": "","example": "","label": "snowboarding","staged": false },
-{"id":"277","definition": "","example": "","label": "surfing","staged": false },
-{"id":"278","definition": "","example": "","label": "swimming","staged": false },
-{"id":"279","definition": "","example": "","label": "camping","staged": false },
-{"id":"280","definition": "","example": "","label": "hiking","staged": false },
-{"id":"281","definition": "","example": "","label": "storm","staged": false },
-{"id":"282","definition": "","example": "","label": "sunny","staged": false },
-{"id":"283","definition": "","example": "","label": "temperature","staged": false },
-{"id":"284","definition": "","example": "","label": "tropics","staged": false },
-{"id":"285","definition": "","example": "","label": "warm","staged": false },
-{"id":"286","definition": "","example": "","label": "weather","staged": false },
-{"id":"287","definition": "","example": "","label": "windy","staged": false },
-{"id":"288","definition": "","example": "","label": "autumn","staged": false },
-{"id":"289","definition": "","example": "","label": "spring","staged": false },
-{"id":"290","definition": "","example": "","label": "summer","staged": false },
-{"id":"291","definition": "","example": "","label": "woodworking ","staged": false },
-{"id":"292","definition": "","example": "","label": "scrapbooking","staged": false },
-{"id":"292","definition": "","example": "","label": "pottery","staged": false },
-{"id":"293","definition": "","example": "","label": "climate change","staged": false },
-{"id":"294","definition": "","example": "","label": "cloudy","staged": false },
-{"id":"295","definition": "","example": "","label": "foggy","staged": false },
-{"id":"296","definition": "","example": "","label": "rainy","staged": false },
-{"id":"297","definition": "","example": "","label": "season","staged": false },
-{"id":"298","definition": "","example": "","label": "shine","staged": false },
-{"id":"299","definition": "","example": "","label": "snowy","staged": false },
-{"id":"301","definition": "","example": "","label": "winter","staged": false },
-{"id":"302","definition": "","example": "","label": "degree","staged": false },
-{"id":"303","definition": "","example": "","label": "frozen","staged": false },
-{"id":"304","definition": "","example": "","label": "coffee shop","staged": false },
-{"id":"305","definition": "","example": "","label": "movie theater","staged": false },
-{"id":"306","definition": "","example": "","label": "store","staged": false },
-{"id":"307","definition": "","example": "","label": "park","staged": false },
-{"id":"308","definition": "","example": "","label": "shopping mall","staged": false },
-{"id":"309","definition": "","example": "","label": "bank","staged": false },
-{"id":"310","definition": "","example": "","label": "bookstore","staged": false },
-{"id":"311","definition": "","example": "","label": "cathedral","staged": false },
-{"id":"312","definition": "","example": "","label": "church","staged": false },
-{"id":"313","definition": "","example": "","label": "drugstore","staged": false },
-{"id":"314","definition": "","example": "","label": "fire department","staged": false },
-{"id":"315","definition": "","example": "","label": "flower shop","staged": false },
-{"id":"316","definition": "","example": "","label": "carnage","staged": false },
-{"id":"317","definition": "","example": "","label": "music store","staged": false },
-{"id":"318","definition": "","example": "","label": "newsstand","staged": false },
-{"id":"319","definition": "","example": "","label": "parking lot","staged": false },
-{"id":"320","definition": "","example": "","label": "police station","staged": false },
-{"id":"321","definition": "","example": "","label": "post office","staged": false },
-{"id":"322","definition": "","example": "","label": "stadium","staged": false },
-{"id":"323","definition": "","example": "","label": "supermarket","staged": false },
-{"id":"324","definition": "","example": "","label": "temple","staged": false },
-{"id":"325","definition": "","example": "","label": "travel agency","staged": false },
-{"id":"326","definition": "","example": "","label": "ambulance","staged": false },
-{"id":"327","definition": "","example": "","label": "bite","staged": false },
-{"id":"328","definition": "","example": "","label": "disease","staged": false },
-{"id":"329","definition": "","example": "","label": "healthy ","staged": false },
-{"id":"330","definition": "","example": "","label": "hospital","staged": false },
-{"id":"331","definition": "","example": "","label": "hurt","staged": false },
-{"id":"332","definition": "","example": "","label": "medical school","staged": false },
-{"id":"333","definition": "","example": "","label": "medicine","staged": false },
-{"id":"334","definition": "","example": "","label": "nurse","staged": false },
-{"id":"335","definition": "","example": "","label": "sick","staged": false },
-{"id":"336","definition": "","example": "","label": "well","staged": false },
-{"id":"337","definition": "","example": "","label": "X-ray","staged": false },
-{"id":"338","definition": "","example": "","label": "toothache ","staged": false },
-{"id":"339","definition": "","example": "","label": "headache","staged": false },
-{"id":"340","definition": "","example": "","label": "amphibian","staged": false },
-{"id":"341","definition": "","example": "","label": "cheetah","staged": false },
-{"id":"342","definition": "","example": "","label": "cobra","staged": false },
-{"id":"343","definition": "","example": "","label": "dolphin","staged": false },
-{"id":"344","definition": "","example": "","label": "elephant","staged": false },
-{"id":"345","definition": "","example": "","label": "giraffe","staged": false },
-{"id":"346","definition": "","example": "","label": "falcon","staged": false },
-{"id":"347","definition": "","example": "","label": "hippo","staged": false },
-{"id":"348","definition": "","example": "","label": "horse","staged": false },
-{"id":"349","definition": "","example": "","label": "insect","staged": false },
-{"id":"350","definition": "","example": "","label": "monkey","staged": false },
-{"id":"351","definition": "","example": "","label": "mosquito","staged": false },
-{"id":"352","definition": "","example": "","label": "octopus","staged": false },
-{"id":"353","definition": "","example": "","label": "parrot","staged": false },
-{"id":"354","definition": "","example": "","label": "penguin","staged": false },
-{"id":"355","definition": "","example": "","label": "polar bear","staged": false },
-{"id":"356","definition": "","example": "","label": "rabbit","staged": false },
-{"id":"357","definition": "","example": "","label": "sailfish","staged": false },
-{"id":"358","definition": "","example": "","label": "shark","staged": false },
-{"id":"359","definition": "","example": "","label": "sheep","staged": false },
-{"id":"360","definition": "","example": "","label": "snake","staged": false },
-{"id":"361","definition": "","example": "","label": "whale","staged": false },
-{"id":"362","definition": "","example": "","label": "tiger","staged": false },
-{"id":"363","definition": "","example": "","label": "acting company","staged": false },
-{"id":"364","definition": "","example": "","label": "backstage","staged": false },
-{"id":"365","definition": "","example": "","label": "band ","staged": false },
-{"id":"366","definition": "","example": "","label": "character","staged": false },
-{"id":"367","definition": "","example": "","label": "concert","staged": false },
-{"id":"368","definition": "","example": "","label": "costume","staged": false },
-{"id":"369","definition": "","example": "","label": "drama","staged": false },
-{"id":"370","definition": "","example": "","label": "director","staged": false },
-{"id":"371","definition": "","example": "","label": "episode","staged": false },
-{"id":"372","definition": "","example": "","label": "movie","staged": false },
-{"id":"373","definition": "","example": "","label": "perform","staged": false },
-{"id":"374","definition": "","example": "","label": "performance","staged": false },
-{"id":"375","definition": "","example": "","label": "rehearsal","staged": false },
-{"id":"376","definition": "","example": "","label": "rehearse","staged": false },
-{"id":"377","definition": "","example": "","label": "scene","staged": false },
-{"id":"378","definition": "","example": "","label": "show","staged": false },
-{"id":"379","definition": "","example": "","label": "stage","staged": false },
-{"id":"380","definition": "","example": "","label": "cinema","staged": false },
-{"id":"381","definition": "","example": "","label": "studio","staged": false },
-{"id":"382","definition": "","example": "","label": "theater","staged": false },
-{"id":"383","definition": "","example": "","label": "bored","staged": false },
-{"id":"384","definition": "","example": "","label": "angry","staged": false },
-{"id":"385","definition": "","example": "","label": "embarrassed","staged": false },
-{"id":"386","definition": "","example": "","label": "exhausted","staged": false },
-{"id":"387","definition": "","example": "","label": "frightened","staged": false },
-{"id":"388","definition": "","example": "","label": "sensitive","staged": false },
-{"id":"389","definition": "","example": "","label": "shocked","staged": false },
-{"id":"390","definition": "","example": "","label": "surprised","staged": false },
-{"id":"391","definition": "","example": "","label": "unhappy","staged": false },
-{"id":"392","definition": "","example": "","label": "upset","staged": false },
-{"id":"393","definition": "","example": "","label": "worried","staged": false },
-{"id":"394","definition": "","example": "","label": "confident","staged": false },
-{"id":"395","definition": "","example": "","label": "afraid","staged": false },
-{"id":"396","definition": "","example": "","label": "quiet","staged": false },
-{"id":"397","definition": "","example": "","label": "nervous","staged": false },
-{"id":"398","definition": "","example": "","label": "playful","staged": false },
-{"id":"399","definition": "","example": "","label": "courageous","staged": false },
-{"id":"400","definition": "","example": "","label": "peaceful","staged": false },
-{"id":"401","definition": "","example": "","label": "reliable","staged": false },
-{"id":"402","definition": "","example": "","label": "energetic","staged": false },
-{"id":"403","definition": "","example": "","label": "lucky","staged": false },
-{"id":"404","definition": "","example": "","label": "amazed","staged": false },
-{"id":"405","definition": "","example": "","label": "optimistic","staged": false },
-{"id":"406","definition": "","example": "","label": "pleased","staged": false },
-{"id":"407","definition": "","example": "","label": "delighted","staged": false },
-{"id":"408","definition": "","example": "","label": "sympathetic","staged": false },
-{"id":"409","definition": "","example": "","label": "interested","staged": false },
-{"id":"410","definition": "","example": "","label": "thankful","staged": false },
-{"id":"411","definition": "","example": "","label": "satisfied","staged": false },
-{"id":"412","definition": "","example": "","label": "shy","staged": false },
-{"id":"413","definition": "","example": "","label": "cheerful","staged": false },
-{"id":"414","definition": "","example": "","label": "positive","staged": false },
-{"id":"415","definition": "","example": "","label": "fascinated","staged": false },
-{"id":"416","definition": "","example": "","label": "anxious","staged": false },
-{"id":"417","definition": "","example": "","label": "apologize","staged": false },
-{"id":"418","definition": "","example": "","label": "knit","staged": false },
-{"id":"419","definition": "","example": "","label": "laugh","staged": false },
-{"id":"420","definition": "","example": "","label": "oversleep","staged": false },
-{"id":"421","definition": "","example": "","label": "sneeze","staged": false },
-{"id":"422","definition": "","example": "","label": "suggest","staged": false },
-{"id":"423","definition": "","example": "","label": "sunbathe","staged": false },
-{"id":"424","definition": "","example": "","label": "translate","staged": false },
-{"id":"425","definition": "","example": "","label": "attract","staged": false },
-{"id":"426","definition": "","example": "","label": "encourage","staged": false },
-{"id":"427","definition": "","example": "","label": "experience","staged": false },
-{"id":"428","definition": "","example": "","label": "inspire","staged": false },
-{"id":"429","definition": "","example": "","label": "manage","staged": false },
-{"id":"430","definition": "","example": "","label": "overtake","staged": false },
-{"id":"431","definition": "","example": "","label": "push away","staged": false },
-{"id":"432","definition": "","example": "","label": "refuse","staged": false },
-{"id":"433","definition": "","example": "","label": "repel","staged": false },
-{"id":"434","definition": "","example": "","label": "appear","staged": false },
-{"id":"435","definition": "","example": "","label": "broadcast","staged": false },
-{"id":"436","definition": "","example": "","label": "compare","staged": false },
-{"id":"437","definition": "","example": "","label": "delete","staged": false },
-{"id":"438","definition": "","example": "","label": "rehearse","staged": false },
-{"id":"439","definition": "","example": "","label": "spread","staged": false },
-{"id":"440","definition": "","example": "","label": "substitute","staged": false },
-{"id":"441","definition": "","example": "","label": "succeed","staged": false },
-{"id":"442","definition": "","example": "","label": "survive","staged": false },
-{"id":"443","definition": "","example": "","label": "suitcase","staged": false },
-{"id":"444","definition": "","example": "","label": "hand luggage","staged": false },
-{"id":"445","definition": "","example": "","label": "boarding pass","staged": false },
-{"id":"446","definition": "","example": "","label": "backpack","staged": false },
-{"id":"447","definition": "","example": "","label": "bag","staged": false },
-{"id":"448","definition": "","example": "","label": "daypack","staged": false },
-{"id":"449","definition": "","example": "","label": "pack","staged": false },
-{"id":"450","definition": "","example": "","label": "check-in","staged": false },
-{"id":"451","definition": "","example": "","label": "magazine","staged": false },
-{"id":"452","definition": "","example": "","label": "newspaper","staged": false },
-{"id":"453","definition": "","example": "","label": "aisle","staged": false },
-{"id":"454","definition": "","example": "","label": "lounge","staged": false },
-{"id":"455","definition": "","example": "","label": "passport","staged": false },
-{"id":"456","definition": "","example": "","label": "flight number","staged": false },
-{"id":"457","definition": "","example": "","label": "abbreviation","staged": false },
-{"id":"458","definition": "","example": "","label": "adjective","staged": false },
-{"id":"459","definition": "","example": "","label": "adverb","staged": false },
-{"id":"460","definition": "","example": "","label": "auxiliary verb","staged": false },
-{"id":"461","definition": "","example": "","label": "countable","staged": false },
-{"id":"462","definition": "","example": "","label": "plural","staged": false },
-{"id":"463","definition": "","example": "","label": "singular","staged": false },
-{"id":"464","definition": "","example": "","label": "somebody","staged": false },
-{"id":"465","definition": "","example": "","label": "something","staged": false },
-{"id":"466","definition": "","example": "","label": "uncountable","staged": false },
-{"id":"467","definition": "","example": "","label": "gerund","staged": false },
-{"id":"468","definition": "","example": "","label": "grammar","staged": false },
-{"id":"469","definition": "","example": "","label": "infinitive","staged": false },
-{"id":"470","definition": "","example": "","label": "preposition","staged": false },
-{"id":"471","definition": "","example": "","label": "pronoun","staged": false },
-{"id":"472","definition": "","example": "","label": "ball","staged": false },
-{"id":"473","definition": "","example": "","label": "candle","staged": false },
-{"id":"474","definition": "","example": "","label": "carnival","staged": false },
-{"id":"475","definition": "","example": "","label": "celebrate","staged": false },
-{"id":"476","definition": "","example": "","label": "celebration","staged": false },
-{"id":"477","definition": "","example": "","label": "Christmas","staged": false },
-{"id":"478","definition": "","example": "","label": "costume","staged": false },
-{"id":"479","definition": "","example": "","label": "dancer","staged": false },
-{"id":"480","definition": "","example": "","label": "gift","staged": false },
-{"id":"481","definition": "","example": "","label": "greeting card","staged": false },
-{"id":"482","definition": "","example": "","label": "Happy New Year","staged": false },
-{"id":"483","definition": "","example": "","label": "parade","staged": false },
-{"id":"484","definition": "","example": "","label": "party","staged": false },
-{"id":"485","definition": "","example": "","label": "stage","staged": false },
-{"id":"486","definition": "","example": "","label": "street hair","staged": false },
-{"id":"487","definition": "","example": "","label": "Africa","staged": false },
-{"id":"488","definition": "","example": "","label": "Asia","staged": false },
-{"id":"489","definition": "","example": "","label": "Europe","staged": false },
-{"id":"490","definition": "","example": "","label": "America","staged": false },
-{"id":"491","definition": "","example": "","label": "North America","staged": false },
-{"id":"492","definition": "","example": "","label": "South America","staged": false },
-{"id":"493","definition": "","example": "","label": "Antarctica","staged": false },
-{"id":"494","definition": "","example": "","label": "Australia","staged": false },
-{"id":"495","definition": "","example": "","label": "Barbados","staged": false },
-{"id":"496","definition": "","example": "","label": "Brazil","staged": false },
-{"id":"497","definition": "","example": "","label": "China","staged": false },
-{"id":"498","definition": "","example": "","label": "Denmark","staged": false },
-{"id":"499","definition": "","example": "","label": "France","staged": false },
-{"id":"400","definition": "","example": "","label": "India","staged": false },
-{"id":"401","definition": "","example": "","label": "Italy","staged": false },
-{"id":"402","definition": "","example": "","label": "Japan","staged": false },
-{"id":"503","definition": "","example": "","label": "Russia","staged": false },
-{"id":"504","definition": "","example": "","label": "Spain","staged": false },
-{"id":"505","definition": "","example": "","label": "Mexico","staged": false },
-{"id":"506","definition": "","example": "","label": "Jamaica","staged": false },
-{"id":"507","definition": "","example": "","label": "Canada","staged": false },
-{"id":"508","definition": "","example": "","label": "England","staged": false }
-{"id":"601", "definition": "", "example": "", "label": "name", "staged": true   },
-{"id":"602", "definition": "", "example": "", "label": "first name", "staged": true   },
-{"id":"603", "definition": "", "example": "", "label": "last name", "staged": true   },
-{"id":"604", "definition": "", "example": "", "label": "address", "staged": true   },
-{"id":"605", "definition": "", "example": "", "label": "street", "staged": true   },
-{"id":"606", "definition": "", "example": "", "label": "apartment number", "staged": true   },
-{"id":"607", "definition": "", "example": "", "label": "city", "staged": true   },
-{"id":"608", "definition": "", "example": "", "label": "state", "staged": true   },
-{"id":"609", "definition": "", "example": "", "label": "zip code", "staged": true   },
-{"id":"610", "definition": "", "example": "", "label": "phone number", "staged": true   },
-{"id":"611", "definition": "", "example": "", "label": "wife", "staged": true   },
-{"id":"612", "definition": "", "example": "", "label": "husband", "staged": true   },
-{"id":"613", "definition": "", "example": "", "label": "mother", "staged": true   },
-{"id":"614", "definition": "", "example": "", "label": "father", "staged": true   },
-{"id":"615", "definition": "", "example": "", "label": "daughter", "staged": true   },
-{"id":"616", "definition": "", "example": "", "label": "son", "staged": true   },
-{"id":"617", "definition": "", "example": "", "label": "sister", "staged": true   },
-{"id":"618", "definition": "", "example": "", "label": "brother", "staged": true   },
-{"id":"619", "definition": "", "example": "", "label": "baby", "staged": true   },
-{"id":"620", "definition": "", "example": "", "label": "grandmother", "staged": true   },
-{"id":"621", "definition": "", "example": "", "label": "grandfather", "staged": true   },
-{"id":"622", "definition": "", "example": "", "label": "aunt", "staged": true   },
-{"id":"623", "definition": "", "example": "", "label": "uncle", "staged": true   },
-{"id":"624", "definition": "", "example": "", "label": "niece", "staged": true   },
-{"id":"625", "definition": "", "example": "", "label": "nephew", "staged": true   },
-{"id":"626", "definition": "", "example": "", "label": "cousin", "staged": true   },
-{"id":"627", "definition": "", "example": "", "label": "mother-in-law", "staged": true   },
-{"id":"628", "definition": "", "example": "", "label": "father-in-law", "staged": true   },
-{"id":"629", "definition": "", "example": "", "label": "son-in-law", "staged": true   },
-{"id":"630", "definition": "", "example": "", "label": "daughter-in-law", "staged": true   },
-{"id":"631", "definition": "", "example": "", "label": "brother-in-law", "staged": true   },
-{"id":"632", "definition": "", "example": "", "label": "get up", "staged": true   },
-{"id":"633", "definition": "", "example": "", "label": "take a shower", "staged": true   },
-{"id":"634", "definition": "", "example": "", "label": "shave", "staged": true   },
-{"id":"635", "definition": "", "example": "", "label": "get dressed", "staged": true   },
-{"id":"636", "definition": "", "example": "", "label": "make the bed", "staged": true   },
-{"id":"637", "definition": "", "example": "", "label": "get undressed", "staged": true   },
-{"id":"638", "definition": "", "example": "", "label": "go to bed", "staged": true   },
-{"id":"639", "definition": "", "example": "", "label": "make breakfast", "staged": true   },
-{"id":"640", "definition": "", "example": "", "label": "make lunch", "staged": true   },
-{"id":"641", "definition": "", "example": "", "label": "make dinner", "staged": true   },
-{"id":"642", "definition": "", "example": "", "label": "dust", "staged": true   },
-{"id":"643", "definition": "", "example": "", "label": "vacuum", "staged": true   },
-{"id":"644", "definition": "", "example": "", "label": "wash the dishes", "staged": true   },
-{"id":"645", "definition": "", "example": "", "label": "iron", "staged": true   },
-{"id":"646", "definition": "", "example": "", "label": "Feed the cat", "staged": true   },
-{"id":"647", "definition": "", "example": "", "label": "walk the dog", "staged": true   },
-{"id":"648", "definition": "", "example": "", "label": "watch T.V.", "staged": true   },
-{"id":"649", "definition": "", "example": "", "label": "listen to music", "staged": true   },
-{"id":"650", "definition": "", "example": "", "label": "play soccer", "staged": true   },
-{"id":"651", "definition": "", "example": "", "label": "teacher", "staged": true   },
-{"id":"652", "definition": "", "example": "", "label": "student", "staged": true   },
-{"id":"653", "definition": "", "example": "", "label": "pen", "staged": true   },
-{"id":"654", "definition": "", "example": "", "label": "pencil", "staged": true   },
-{"id":"655", "definition": "", "example": "", "label": "eraser", "staged": true   },
-{"id":"656", "definition": "", "example": "", "label": "desk", "staged": true   },
-{"id":"657", "definition": "", "example": "", "label": "notebook", "staged": true   },
-{"id":"658", "definition": "", "example": "", "label": "calculator", "staged": true   },
-{"id":"659", "definition": "", "example": "", "label": "clock", "staged": true   },
-{"id":"660", "definition": "", "example": "", "label": "flag", "staged": true   },
-{"id":"661", "definition": "", "example": "", "label": "board", "staged": true   },
-{"id":"662", "definition": "", "example": "", "label": "map", "staged": true   },
-{"id":"663", "definition": "", "example": "", "label": "screen", "staged": true   },
-{"id":"664", "definition": "", "example": "", "label": "computer", "staged": true   },
-{"id":"665", "definition": "", "example": "", "label": "sharpener", "staged": true   },
-{"id":"666", "definition": "", "example": "", "label": "projector", "staged": true   },
-{"id":"667", "definition": "", "example": "", "label": "computer", "staged": true   },
-{"id":"668", "definition": "", "example": "", "label": "bookshelf", "staged": true   },
-{"id":"669", "definition": "", "example": "", "label": "stand up", "staged": true   },
-{"id":"670", "definition": "", "example": "", "label": "go to the board", "staged": true   },
-{"id":"671", "definition": "", "example": "", "label": "write your name", "staged": true   },
-{"id":"672", "definition": "", "example": "", "label": "sit down", "staged": true   },
-{"id":"673", "definition": "", "example": "", "label": "open your book", "staged": true   },
-{"id":"674", "definition": "", "example": "", "label": "close your book", "staged": true   },
-{"id":"675", "definition": "", "example": "", "label": "listen to the question", "staged": true   },
-{"id":"676", "definition": "", "example": "", "label": "read in groups", "staged": true   },
-{"id":"677", "definition": "", "example": "", "label": "work in groups", "staged": true   },
-{"id":"678", "definition": "", "example": "", "label": "help each other", "staged": true   },
-{"id":"679", "definition": "", "example": "", "label": "building", "staged": true   },
-{"id":"680", "definition": "", "example": "", "label": "house", "staged": true   },
-{"id":"681", "definition": "", "example": "", "label": "apartment", "staged": true   },
-{"id":"682", "definition": "", "example": "", "label": "farmhouse", "staged": true   },
-{"id":"683", "definition": "", "example": "", "label": "cabin", "staged": true   },
-{"id":"684", "definition": "", "example": "", "label": "nursing home", "staged": true   },
-{"id":"685", "definition": "", "example": "", "label": "shelter", "staged": true   },
-{"id":"686", "definition": "", "example": "", "label": "condominium", "staged": true   },
-{"id":"687", "definition": "", "example": "", "label": "dormitory", "staged": true   },
-{"id":"688", "definition": "", "example": "", "label": "trailer", "staged": true   },
-{"id":"689", "definition": "", "example": "", "label": "rug", "staged": true   },
-{"id":"690", "definition": "", "example": "", "label": "floor", "staged": true   },
-{"id":"691", "definition": "", "example": "", "label": "windows", "staged": true   },
-{"id":"692", "definition": "", "example": "", "label": "couch", "staged": true   },
-{"id":"693", "definition": "", "example": "", "label": "pillow", "staged": true   },
-{"id":"694", "definition": "", "example": "", "label": "ceiling", "staged": true   },
-{"id":"695", "definition": "", "example": "", "label": "wall", "staged": true   },
-{"id":"696", "definition": "", "example": "", "label": "speaker", "staged": true   },
-{"id":"697", "definition": "", "example": "", "label": "loveseat", "staged": true   },
-{"id":"698", "definition": "", "example": "", "label": "painting", "staged": true   },
-{"id":"699", "definition": "", "example": "", "label": "dining room", "staged": true   },
-{"id":"700", "definition": "", "example": "", "label": "chandelier", "staged": true   },
-{"id":"701", "definition": "", "example": "", "label": "salad shaker", "staged": true   },
-{"id":"702", "definition": "", "example": "", "label": "candle", "staged": true   },
-{"id":"703", "definition": "", "example": "", "label": "sugar bowl", "staged": true   },
-{"id":"704", "definition": "", "example": "", "label": "coffee pot", "staged": true   },
-{"id":"705", "definition": "", "example": "", "label": "pitcher", "staged": true   },
-{"id":"706", "definition": "", "example": "", "label": "butter dish", "staged": true   },
-{"id":"707", "definition": "", "example": "", "label": "water glass", "staged": true   },
-{"id":"708", "definition": "", "example": "", "label": "wine glass", "staged": true   },
-{"id":"709", "definition": "", "example": "", "label": "cup", "staged": true   },
-{"id":"710", "definition": "", "example": "", "label": "saucer", "staged": true   },
-{"id":"711", "definition": "", "example": "", "label": "napkin", "staged": true   },
-{"id":"712", "definition": "", "example": "", "label": "fork", "staged": true   },
-{"id":"713", "definition": "", "example": "", "label": "knife", "staged": true   },
-{"id":"714", "definition": "", "example": "", "label": "teaspoon", "staged": true   },
-{"id":"715", "definition": "", "example": "", "label": "bread", "staged": true   },
-{"id":"716", "definition": "", "example": "", "label": "silverware", "staged": true   },
-{"id":"717", "definition": "", "example": "", "label": "beads", "staged": true   },
-{"id":"718", "definition": "", "example": "", "label": "pillow", "staged": true   },
-{"id":"719", "definition": "", "example": "", "label": "blinds", "staged": true   },
-{"id":"720", "definition": "", "example": "", "label": "alarm clock", "staged": true   },
-{"id":"721", "definition": "", "example": "", "label": "mirror", "staged": true   },
-{"id":"722", "definition": "", "example": "", "label": "double bed", "staged": true   },
-{"id":"723", "definition": "", "example": "", "label": "queen-size bed", "staged": true   },
-{"id":"724", "definition": "", "example": "", "label": "king-size bed", "staged": true   },
-{"id":"725", "definition": "", "example": "", "label": "cot", "staged": true   },
-{"id":"726", "definition": "", "example": "", "label": "hospital bed", "staged": true   },
-{"id":"727", "definition": "", "example": "", "label": "crib", "staged": true   },
-{"id":"728", "definition": "", "example": "", "label": "night light", "staged": true   },
-{"id":"729", "definition": "", "example": "", "label": "doll", "staged": true   },
-{"id":"730", "definition": "", "example": "", "label": "playpen", "staged": true   },
-{"id":"731", "definition": "", "example": "", "label": "car seat", "staged": true   },
-{"id":"732", "definition": "", "example": "", "label": "stroller", "staged": true   },
-{"id":"733", "definition": "", "example": "", "label": "baby seat", "staged": true   },
-{"id":"734", "definition": "", "example": "", "label": "baby carrier", "staged": true   },
-{"id":"735", "definition": "", "example": "", "label": "portable crib", "staged": true   },
-{"id":"736", "definition": "", "example": "", "label": "dishwasher", "staged": true   },
-{"id":"737", "definition": "", "example": "", "label": "faucet", "staged": true   },
-{"id":"738", "definition": "", "example": "", "label": "sink", "staged": true   },
-{"id":"739", "definition": "", "example": "", "label": "garbage", "staged": true   },
-{"id":"740", "definition": "", "example": "", "label": "dish towel", "staged": true   },
-{"id":"741", "definition": "", "example": "", "label": "cabinet", "staged": true   },
-{"id":"742", "definition": "", "example": "", "label": "microwave", "staged": true   },
-{"id":"743", "definition": "", "example": "", "label": "freezer", "staged": true   },
-{"id":"744", "definition": "", "example": "", "label": "oven", "staged": true   },
-{"id":"745", "definition": "", "example": "", "label": "toaster", "staged": true   },
-{"id":"746", "definition": "", "example": "", "label": "baby powder", "staged": true   },
-{"id":"747", "definition": "", "example": "", "label": "baby lotion", "staged": true   },
-{"id":"748", "definition": "", "example": "", "label": "baby shampoo", "staged": true   },
-{"id":"749", "definition": "", "example": "", "label": "ointment", "staged": true   },
-{"id":"750", "definition": "", "example": "", "label": "baby food", "staged": true   },
-{"id":"751", "definition": "", "example": "", "label": "wipes", "staged": true   },
-{"id":"752", "definition": "", "example": "", "label": "cotton swabs", "staged": true   },
-{"id":"753", "definition": "", "example": "", "label": "vitamins", "staged": true   },
-{"id":"754", "definition": "", "example": "", "label": "pacifier", "staged": true   },
-{"id":"755", "definition": "", "example": "", "label": "bottle", "staged": true   },
-{"id":"756", "definition": "", "example": "", "label": "toilet", "staged": true   },
-{"id":"757", "definition": "", "example": "", "label": "toilet paper", "staged": true   },
-{"id":"758", "definition": "", "example": "", "label": "towel", "staged": true   },
-{"id":"759", "definition": "", "example": "", "label": "hamper", "staged": true   },
-{"id":"760", "definition": "", "example": "", "label": "air dryer", "staged": true   },
-{"id":"761", "definition": "", "example": "", "label": "fan", "staged": true   },
-{"id":"762", "definition": "", "example": "", "label": "mirror", "staged": true   },
-{"id":"763", "definition": "", "example": "", "label": "faucet", "staged": true   },
-{"id":"764", "definition": "", "example": "", "label": "soap", "staged": true   },
-{"id":"765", "definition": "", "example": "", "label": "shower", "staged": true   },
-{"id":"766", "definition": "", "example": "", "label": "toothbrush", "staged": true   },
-{"id":"767", "definition": "", "example": "", "label": "comb", "staged": true   },
-{"id":"768", "definition": "", "example": "", "label": "razor", "staged": true   },
-{"id":"769", "definition": "", "example": "", "label": "razor blades", "staged": true   },
-{"id":"770", "definition": "", "example": "", "label": "nail clipper", "staged": true   },
-{"id":"771", "definition": "", "example": "", "label": "scissors", "staged": true   },
-{"id":"772", "definition": "", "example": "", "label": "powder", "staged": true   },
-{"id":"773", "definition": "", "example": "", "label": "toothpaste", "staged": true   },
-{"id":"774", "definition": "", "example": "", "label": "lipstick", "staged": true   }
+001. bicycle
+002. boat
+003. cable car
+004. flight 
+005. helicopter
+006. plane
+007. railroad
+008. rocket
+009. ship
+010. spaceship
+011. speedboat
+012. taxi
+013. train
+014. transportation
+015. airport
+016. bus driver
+017. bus schedule
+018. bus station
+019. bus stop
+020. bus ticket
+021. car driver
+022. car engine
+023. car wash
+024. ferry
+025. high-speed-train
+026. paddle boat
+027. passenger 
+028. railroad crossing
+029. railroad engine
+030. railroad station
+031. railroad track
+032. snowmobile
+033. streetcar
+034. subway
+035. train driver
+036. train schedule
+037. train station
+038. train ticket
+039. wagon
+040. across from
+041. behind
+042. between
+043. in front of
+044. inside
+045. near
+046. next to
+047. outside
+048. over
+049. under
+050. along
+051. around
+052. down
+053. onto
+054. past
+055. through
+056. aquarium
+057. canyon
+058. circus
+059. falls
+060. museum
+061. sightseeing
+062. suspension bridge
+063. theme park
+064. waterfall
+065. fortress
+066. fountain
+067. monument
+068. palace
+069. ruins
+070. statue
+071. dress
+072. earring
+073. jeans
+074. jewelry
+075. sunglasses
+076. pants
+077. sweatshirt
+078. hoodie
+079. watch
+080. shirt
+081. camera
+082. clothes
+083. jacket
+084. pocket
+085. shoes
+086. shorts
+087. skirt
+088. sneakers
+089. T-shirt
+090. umbrella
+091. sweater
+092. underwear
+093. wallet
+094. swim trunks
+095. uniform
+096. waterproof
+097. wool
+098. suit
+099. raincoat
+100. polyester
+101. fleece jacket
+102. designer clothes
+103. cotton
+104. cloth
+105. bread
+106. beans
+107. cheese
+108. dairy products
+109. diet
+110. fried egg
+111. fruit
+112. garlic
+113. meat
+114. mushroom
+115. olive
+116. onion
+117. pepper
+118. pineapple
+119. rice
+120. spinach
+121. tomato
+122. potato
+123. vegetable
+124. burger
+125. champagne
+126. grape
+127. lentils
+128. noodles
+129. soup
+130. wine
+131. apple juice
+132. beer
+133. bread
+134. chocolate cake
+135. coffee
+136. fast food
+137. frozen food
+138. fruit juice
+139. fruit salad
+140. grain
+141. hamburger
+142. kebab
+143. meal
+144. orange
+145. porridge
+146. potato chips
+147. sandwich
+148. sausage
+149. stew
+150. toast
+151. tomato salad
+152. assistant
+153. photographer
+154. pilot
+155. playwright
+156. politician
+157. receptionist
+158. reporter
+159. rock singer
+160. street performer
+161. waiter
+162. archaeologist
+163. writer
+164. cleaner
+165. electrician
+166. tour guide
+167. hairdresser
+168. firefighter
+169. judge
+170. juggler
+171. musician
+172. novelist
+173. movie star
+174. train driver
+175. translator
+176. astronaut
+177. businessman
+178. police officer
+179. salesperson
+180. scientist
+181. journalist
+182. designer
+183. filmmaker
+184. teacher
+185. taxi driver
+186. doctor
+187. architect
+188. consultant
+189. manager
+190. mechanic
+191. producer
+192. referee
+193. surgeon
+194. translate
+195. salesperson
+196. student
+197. cutting board
+198. fork
+199. knife
+200. matches
+201. mirror
+202. cupboard
+203. paraffin
+204. plate
+205. dishwasher
+206. shampoo
+207. spoon
+208. toilet paper
+209. measuring cup
+210. saucepan
+211. microwave
+212. towels
+213. toothpaste
+214. scissors
+215. cookbook
+216. refrigerator
+217. stove
+218. washing machine
+219. cliff
+220. desert
+221. hill
+222. jungle
+223. mountain
+224. tundra
+225. volcano
+226. waterfall
+227. river
+228. cave
+229. forest
+230. island
+231. drizzle
+232. flurry
+233. hailstones
+234. slush
+235. blizzard
+236. thunderstorm
+237. blustery wind
+238. hurricane
+239. drought
+240. snowflake
+241. peak
+242. stream
+243. swamp
+244. valley
+245. woods
+246. lagoon
+247. hollow
+248. pond
+249. creak
+250. landscape
+251. continent
+252. coast
+253. path
+254. road
+255. peninsula
+256. plain
+257. fortress
+258. landmark
+259. board game
+260. chess
+261. dancing
+262. dice game
+263. drawing
+264. fishing
+265. football
+266. hobby
+267. horseback riding
+268. ice hockey
+269. inline skating
+270. knitting
+271. painting
+272. sailing
+273. skateboard
+274. skateboarding
+275. skydiving
+276. snowboarding
+277. surfing
+278. swimming
+279. camping
+280. hiking
+281. storm
+282. sunny
+283. temperature
+284. tropics
+285. warm
+286. weather
+287. windy
+288. autumn
+289. spring
+290. summer
+291. woodworking 
+292. scrapbooking
+292. pottery
+293. climate change
+294. cloudy
+295. foggy
+296. rainy
+297. season
+298. shine
+299. snowy
+301. winter
+302. degree
+303. frozen
+304. coffee shop
+305. movie theater
+306. store
+307. park
+308. shopping mall
+309. bank
+310. bookstore
+311. cathedral
+312. church
+313. drugstore
+314. fire department
+315. flower shop
+316. carnage
+317. music store
+318. newsstand
+319. parking lot
+320. police station
+321. post office
+322. stadium
+323. supermarket
+324. temple
+325. travel agency
+326. ambulance
+327. bite
+328. disease
+329. healthy 
+330. hospital
+331. hurt
+332. medical school
+333. medicine
+334. nurse
+335. sick
+336. well
+337. X-ray
+338. toothache 
+339. headache
+340. amphibian
+341. cheetah
+342. cobra
+343. dolphin
+344. elephant
+345. giraffe
+346. falcon
+347. hippo
+348. horse
+349. insect
+350. monkey
+351. mosquito
+352. octopus
+353. parrot
+354. penguin
+355. polar bear
+356. rabbit
+357. sailfish
+358. shark
+359. sheep
+360. snake
+361. whale
+362. tiger
+363. acting company
+364. backstage
+365. band 
+366. character
+367. concert
+368. costume
+369. drama
+370. director
+371. episode
+372. movie
+373. perform
+374. performance
+375. rehearsal
+376. rehearse
+377. scene
+378. show
+379. stage
+380. cinema
+381. studio
+382. theater
+383. bored
+384. angry
+385. embarrassed
+386. exhausted
+387. frightened
+388. sensitive
+389. shocked
+390. surprised
+391. unhappy
+392. upset
+393. worried
+394. confident
+395. afraid
+396. quiet
+397. nervous
+398. playful
+399. courageous
+400. peaceful
+401. reliable
+402. energetic
+403. lucky
+404. amazed
+405. optimistic
+406. pleased
+407. delighted
+408. sympathetic
+409. interested
+410. thankful
+411. satisfied
+412. shy
+413. cheerful
+414. positive
+415. fascinated
+416. anxious
+417. apologize
+418. knit
+419. laugh
+420. oversleep
+421. sneeze
+422. suggest
+423. sunbathe
+424. translate
+425. attract
+426. encourage
+427. experience
+428. inspire
+429. manage
+430. overtake
+431. push away
+432. refuse
+433. repel
+434. appear
+435. broadcast
+436. compare
+437. delete
+438. rehearse
+439. spread
+440. substitute
+441. succeed
+442. survive
+443. suitcase
+444. hand luggage
+445. boarding pass
+446. backpack
+447. bag
+448. daypack
+449. pack
+450. check-in
+451. magazine
+452. newspaper
+453. aisle
+454. lounge
+455. passport
+456. flight number
+457. abbreviation
+458. adjective
+459. adverb
+460. auxiliary verb
+461. countable
+462. plural
+463. singular
+464. somebody
+465. something
+466. uncountable
+467. gerund
+468. grammar
+469. infinitive
+470. preposition
+471. pronoun
+472. ball
+473. candle
+474. carnival
+475. celebrate
+476. celebration
+477. Christmas
+478. costume
+479. dancer
+480. gift
+481. greeting card
+482. Happy New Year
+483. parade
+484. party
+485. stage
+486. street hair
+487. Africa
+488. Asia
+489. Europe
+490. America
+491. North America
+492. South America
+493. Antarctica
+494. Australia
+495. Barbados
+496. Brazil
+497. China
+498. Denmark
+499. France
+400. India
+401. Italy
+402. Japan
+503. Russia
+504. Spain
+505. Mexico
+506. Jamaica
+507. Canada
+508. England
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+001. name
+002. first name
+003. last name
+004. address
+005. street
+006. apartment number
+007. city
+008. state
+009. zip code
+010. phone number
+011. wife
+012. husband
+013. mother
+014. father
+015. daughter
+016. son
+017. sister
+018. brother
+019. baby
+020. grandmother
+021. grandfather
+022. aunt
+023. uncle
+024. niece
+025. nephew
+026. cousin
+027. mother-in-law
+028. father-in-law
+029. son-in-law
+030. daughter-in-law
+031. brother-in-law
+032. get up
+033. take a shower
+034. shave
+035. get dressed
+036. make the bed
+037. get undressed
+038. go to bed
+039. make breakfast
+040. make lunch
+041. make dinner
+042. dust
+043. vacuum
+044. wash the dishes
+045. iron
+046. Feed the cat
+047. walk the dog
+048. watch T.V.
+049. listen to music
+050. play soccer
+051. teacher
+052. student
+053. pen
+054. pencil
+055. eraser
+056. desk
+057. notebook
+058. calculator
+059. clock
+060. flag
+061. board
+062. map
+063. screen
+064. computer
+065. sharpener
+066. projector
+067. computer
+068. bookshelf
+069. stand up
+070. go to the board
+071. write your name
+072. sit down
+073. open your book
+074. close your book
+075. listen to the question
+076. read in groups
+077. work in groups
+078. help each other
+079. building
+080. house
+081. apartment
+082. farmhouse
+083. cabin
+084. nursing home
+085. shelter
+086. condominium
+087. dormitory
+088. trailer
+089. rug
+090. floor
+091. windows
+092. couch
+093. pillow
+094. ceiling
+095. wall
+096. speaker
+097. loveseat
+098. painting
+099. dining room
+100. chandelier
+101. salad shaker
+102. candle
+103. sugar bowl
+104. coffee pot
+105. pitcher
+106. butter dish
+107. water glass
+108. wine glass
+109. cup
+110. saucer
+111. napkin
+112. fork
+113. knife
+114. teaspoon
+115. bread
+116. silverware
+117. beads
+118. pillow
+119. blinds
+120. alarm clock
+121. mirror
+122. double bed
+123. queen-size bed
+124. king-size bed
+125. cot
+126. hospital bed
+127. crib
+128. night light
+129. doll
+130. playpen
+131. car seat
+132. stroller
+133. baby seat
+134. baby carrier
+135. portable crib
+136. dishwasher
+137. faucet
+138. sink
+139. garbage
+140. dish towel
+141. cabinet
+142. microwave
+143. freezer
+144. oven
+145. toaster
+146. baby powder
+147. baby lotion
+148. baby shampoo
+149. ointment
+150. baby food
+151. wipes
+152. cotton swabs
+153. vitamins
+154. pacifier
+155. bottle
+156. toilet
+157. toilet paper
+158. towel
+159. hamper
+160. air dryer
+161. fan
+162. mirror
+163. faucet
+164. soap
+165. shower
+166. toothbrush
+167. comb
+168. razor
+169. razor blades
+170. nail clipper
+171. scissors
+172. powder
+173. toothpaste
+174. lipstick
