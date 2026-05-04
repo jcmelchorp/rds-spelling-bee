@@ -16,11 +16,10 @@
   @include mat.elevation-transition();
   @include mat.elevation(2);
   // transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-  
   &:hover {
-    @include mat.elevation(10);
-    transform: scale(1.2);    // Grow effect
-    z-index: 100;
+    @include mat.elevation(12);
+   // transform: scale(1.2);    // Grow effect
+   // z-index: 100;
    // border: #0060a0;
      //font-weight: bolder;
    // color: orange;

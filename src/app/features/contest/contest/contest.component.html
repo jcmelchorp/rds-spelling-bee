@@ -80,10 +80,10 @@
       <mat-chip-listbox aria-label="Word selection" selectable multiple>
         @for (word of filteredData; track $index) {
           <!-- [disabled]="this.word.staged" -->
-        @if (word.id_number!<=508) { <mat-chip-option [selected]="word.staged" class="elevation-chip" 
+        @if (word.id_number!<=508) { <mat-chip-option [selected]="this.word.staged" class="elevation-chip" 
           (click)="this.word.staged=!this.word.staged">{{word.id!}}</mat-chip-option>
           } @else if (isFinals && word.id_number!>508) {
-          <mat-chip-option [selected]="word.staged" class="elevation-chip" (click)="this.word.staged=!this.word.staged">{{(word.id!)}}</mat-chip-option>
+          <mat-chip-option [selected]="this.word.staged" class="elevation-chip" (click)="this.word.staged=!this.word.staged">{{(word.id!)}}</mat-chip-option>
           }
           }
       </mat-chip-listbox>
