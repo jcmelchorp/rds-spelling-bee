@@ -1,6 +1,6 @@
 <div class="my-container" fxLayout.lt-md="column" fxLayout.lg-md="row-wrap" fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="30px">
-  <div fxLayout="column" fxLayoutAlign="stretch center">
+  <div fxLayout="column" fxLayoutAlign="center center">
     <div fxLayout="row" fxLayoutAlign="space-around">
       <img src="/assets/images/rds-bee-logo-transparent.png" height="100px" [@enter5]
         (@enter5.done)="animationState = !animationState" />
@@ -42,26 +42,23 @@
         <mat-icon style="color:rgb(79, 189, 39)">check</mat-icon>
       </button>
       }
-
       <button mat-fab extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
         (@hueButton.done)="hueBtnState = !hueBtnState" color="primary"> <mat-icon>hearing</mat-icon>
         Play word </button>
-
-
-        @if (finalsOpenState==false) {
-          <button  [disabled]="isFinals" [matTooltip]="'Ronda Final'" mat-icon-button (click)="finalsOpenState = !finalsOpenState">
-            <mat-icon [ngClass]="isFinals ? 'gray-text' : 'yellow-text'">bolt</mat-icon>
-          </button>
-          } @else {
-          <button [matTooltip]="'Cancelar'" mat-icon-button (click)="finalsOpenState = !finalsOpenState">
-            <mat-icon>close</mat-icon>
-          </button>
-          <button mat-icon-button [matTooltip]="'Confirmar'" (click)="goFinals();finalsOpenState = !finalsOpenState;isFinals=isFinals!">
-            <mat-icon style="color:rgb(79, 189, 39)">check</mat-icon>
-          </button>
-          }
-
-        <!-- <button mat-icon-button color="warn" [disabled]="isFinals" (click)="finalsOpenState = !finalsOpenState">
+      @if (finalsOpenState==false) {
+      <button [disabled]="isFinals" [matTooltip]="'Ronda Final'" mat-icon-button
+        (click)="finalsOpenState = !finalsOpenState">
+        <mat-icon [ngClass]="isFinals ? 'gray-text' : 'yellow-text'">bolt</mat-icon>
+      </button>
+      } @else {
+      <button [matTooltip]="'Cancelar'" mat-icon-button (click)="finalsOpenState = !finalsOpenState">
+        <mat-icon>close</mat-icon>
+      </button>
+      <button mat-icon-button [matTooltip]="'Confirmar'"
+        (click)="goFinals();finalsOpenState = !finalsOpenState;isFinals=isFinals!">
+        <mat-icon style="color:rgb(79, 189, 39)">check</mat-icon>
+      </button>
+      } <!-- <button mat-icon-button color="warn" [disabled]="isFinals" (click)="finalsOpenState = !finalsOpenState">
         @if (finalsOpenState==false) {
         <mat-icon class="yellow-text" [matTooltip]="'Ronda Final'" aria-label="Ronda Final">bolt</mat-icon>
         } @else {
@@ -69,11 +66,7 @@
         <mat-icon mat-button-icon (click)="goFinals();isFinals=isFinals!"
           style="color:rgb(79, 189, 39)">check</mat-icon>
         }
-      </button> -->
-
-
-
-
+        </button> -->
       }
     </div>
   </div>
@@ -84,27 +77,20 @@
       <mat-spinner strokeWidth="8" [diameter]="128"> </mat-spinner>
     </ng-template>
     <div *ngIf="(wordlist$|async);else spinner">
-      <mat-chip-listbox aria-label="Word selection">
-        <div fxLayout="row wrap" fxLayoutAlign="stretch stretch">
-          @for (word of filteredData; track $index) {
-          @if (word.id_number!<=508) { <mat-chip class="elevation-chip" #chipRef="matChip"
-            (click)="word.staged=!word.staged" [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{
-            (word.id!)
-            }}</mat-chip>
-            } @else if (isFinals && word.id_number!>508) {
-            <mat-chip class="elevation-chip" #chipRef="matChip" (click)="word.staged=!word.staged"
-              [ngClass]="word.staged ? 'word-done' : 'word-pending'">{{
-              (word.id!)
-              }}</mat-chip>
-            }
-            }
-        </div>
+      <mat-chip-listbox aria-label="Word selection" selectable multiple>
+        @for (word of filteredData; track $index) {
+          <!-- [disabled]="this.word.staged" -->
+        @if (word.id_number!<=508) { <mat-chip-option [selected]="word.staged" class="elevation-chip" 
+          (click)="this.word.staged=!this.word.staged">{{word.id!}}</mat-chip-option>
+          } @else if (isFinals && word.id_number!>508) {
+          <mat-chip-option [selected]="word.staged" class="elevation-chip" (click)="this.word.staged=!this.word.staged">{{(word.id!)}}</mat-chip-option>
+          }
+          }
       </mat-chip-listbox>
       <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
         [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
-        showFirstLastButtons aria-label="Select channel"></mat-paginator>
+        showFirstLastButtons aria-label="Select word"></mat-paginator>
     </div>
-
     }
     @else if (wordsCount === 0) {
     <mat-card class="contest-card">

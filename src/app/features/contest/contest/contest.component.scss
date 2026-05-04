@@ -13,8 +13,8 @@
 
 
 .word-done {
-  background-color: rgb(140, 98, 0) !important;
-  --mdc-chip-label-text-color: #fff;
+ // background-color: rgb(140, 98, 0) !important;
+  //--mdc-chip-label-text-color: #fff;
   // --mdc-chip-label-text-size: 0.8em;
   //  --mdc-chip-label-text-weight:500;
 }
@@ -27,9 +27,8 @@
 }
 
 .word-pending {
-  background-color: rgb(255, 255, 255) !important;
-  border: #ebebeb 1px solid;
-  --mdc-chip-label-text-color: #445e25;
+ // background-color: rgb(245, 245, 245) !important;
+ // --mdc-chip-label-text-color: #396601;
   //  --mdc-chip-label-text-weight:500;
   // --mdc-chip-label-text-size: 0.8em;
 }

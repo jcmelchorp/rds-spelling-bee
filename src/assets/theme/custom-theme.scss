@@ -19,8 +19,10 @@
   
   &:hover {
     @include mat.elevation(10);
-     transform: scale(1.2);    // Grow effect
-    //font-weight: bolder;
+    transform: scale(1.2);    // Grow effect
+    z-index: 100;
+   // border: #0060a0;
+     //font-weight: bolder;
    // color: orange;
   }
 }
@@ -152,8 +154,8 @@ $enable-negative-padding: true;
   --mdc-chip-label-text-tracking:  -1.5px;
   --mdc-chip-label-text-weight: 400;
 
-  padding: -2px -2px -2px -2px !important; 
-  margin: 1px 1px 1px 1px !important; 
+ // padding: -2px -2px -2px -2px !important; 
+  margin: 2px 1px 2px 1px !important; 
 }
 .material-icons {
   // font-size: 30px;
