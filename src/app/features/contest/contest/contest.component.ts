@@ -69,6 +69,7 @@ import { AuthService } from '../../../core/auth/services/auth.service';
 import { ContestService } from '../services/contest.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterLink } from "@angular/router";
 
 
 @Component({
@@ -95,7 +96,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTooltipModule,
     FlexLayoutModule,
     NgxSpinnerModule,
-  ],
+    RouterLink
+],
   animations: [
     bounceInUpOnEnterAnimation({ anchor: 'enter1' }),
     bounceInLeftOnEnterAnimation({ anchor: 'enter2', delay: 200 }),

@@ -34,6 +34,14 @@
       (@hueButton.done)="hueBtnState = !hueBtnState" color="primary"> <mat-icon>hearing</mat-icon>
       Play word </button>
     <div fxLayout="row" fxLayoutAlign="space-between">
+      <button type="button" mat-icon-button 
+      [routerLink]="['/home']">
+        <mat-icon class="rds-icon" [matTooltip]="'Regresar'" aria-label="Regresar">cancel</mat-icon> 
+      </button>
+      <button type="button" mat-icon-button 
+      onclick="var el = document.querySelector('body'); el.requestFullscreen();">
+        <mat-icon class="rds-icon" [matTooltip]="'Pantalla completa'" aria-label="Pantalla completa">fullscreen</mat-icon> 
+      </button>
       <button [matTooltip]="'Celebrar'" (click)="animate()" color="primary"
         mat-icon-button><mat-icon>celebration</mat-icon></button>
       @if (clearOpenState==false) {
