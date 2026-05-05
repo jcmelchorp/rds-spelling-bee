@@ -11,7 +11,14 @@
   background-color: transparent !important;
 }
 
-
+.school-background {
+  width: fit-content;
+    height: 450px;
+   // max-height: 12000px;
+    background: url("/assets/images/rds-draw02.svg") no-repeat;
+    background-position: bottom;
+    //background-size: cover;
+  }
 // .word-done {
 //  // background-color: rgb(140, 98, 0) !important;
 //   //--mdc-chip-label-text-color: #fff;

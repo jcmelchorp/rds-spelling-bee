@@ -2,7 +2,14 @@
   padding-top: 5px;
 }
 
-
+.school-background {
+//width: fit-content;
+  height: 400px;
+ // max-height: 12000px;
+  background: url("/assets/images/rds-draw03.svg") no-repeat;
+  background-position: bottom;
+  //background-size: cover;
+}
 .dashboard-card {
   position: absolute;
   top: 0px;

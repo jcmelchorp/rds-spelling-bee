@@ -1,0 +1,136 @@
+<svg viewBox="315 330 645 180" xmlns="http://www.w3.org/2000/svg">
+  <polyline fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+    points=" 625.49,392.82 625.98,475.01" />
+  <polyline fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+    points=" 625.6,394.55 650.4,408.35" transform="translate(1.38,-1.74)" />
+  <polyline fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+    points=" 650.72,408.67 652.57,475.27" transform="translate(3.03,-1.04)" />
+  <polyline fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"
+    points=" 618.17,402.28 559.25,403.17" />
+  <polyline fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"
+    points=" 622.18,436.68 556.73,437.36" />
+  <polyline fill="none" stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"
+    points=" 934.77,471.01 557.9,471.65" />
+  <rect fill="none" stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" x="405" y="390"
+    width="76" height="70" transform="translate(6,6)" />
+  <polyline fill="none" stroke="#ffffff" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"
+    points=" 355,477.39 486.6,476.32" />
+  <rect fill="rgb(240,240,240)" stroke="rgb(240,240,240)" stroke-width="28" stroke-linecap="round"
+    stroke-linejoin="round" x="517.25" y="405" width="30" height="60" />
+  <polyline fill="none" stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"
+    points=" 551.76,402.57 618.63,402.33" transform="translate(3.91,-0.08)" />
+  <polyline fill="none" stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"
+    points=" 551.98,438 610.05,437.53" transform="translate(3.73,-1.13)" />
+  <polyline fill="none" stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"
+    points=" 541.41,472.99 583.39,471.97" transform="translate(13.81,-0.35)" />
+  <polyline fill="none" stroke="rgb(192,192,192)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+    points=" 505,400 505,475" />
+  <polyline fill="none" stroke="#9fd9f8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+    points=" 518,396 538,396" transform="translate(0,0)" />
+  <polyline fill="none" stroke="#0060a0" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"
+    points=" 385,385 500,385" transform="translate(0,0)" />
+  <polyline fill="none" stroke="#0060a0" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"
+    points=" 505,385 515,395" transform="translate(-2.63,-0.55)" />
+  <polyline fill="none" stroke="#0060a0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+    points=" 540,380 623,380" />
+  <polyline fill="none" stroke="#0060a0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"
+    points=" 622.59,378.02 667.68,400.46" transform="translate(0,0)" />
+  <rect fill="#ffffff" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" x="435" y="415"
+    width="45" height="45" />
+  <rect fill="#ffffff" stroke="rgb(240,240,240)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"
+    x="665" y="229.29" width="7" height="28" transform="translate(-30,185)" />
+  <polyline fill="none" stroke="#9fd9f8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+    points=" 540,430 512,430" transform="translate(0,0)" />
+  <polyline fill="none" stroke="#0060a0" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"
+    points=" 540,420 620,420" />
+  <polyline fill="none" stroke="#0060a0" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"
+    points=" 540,450 939.8,450" />
+  <polyline fill="none" stroke="#0060a0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"
+    points=" 350,460 460,460" transform="translate(0,0)" />
+  <polyline fill="none" stroke="#0060a0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"
+    points=" 440.73,447.19 493.88,446.95" />
+  <polyline fill="none" stroke="rgb(213, 180, 0)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"
+    points=" 550,398 610,398" transform="translate(0.08,3.37)" />
+  <polyline fill="none" stroke="rgb(213, 180, 0)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"
+    points=" 550,432 610,432" transform="translate(0.63,3.75)" />
+  <polyline fill="none" stroke="rgb(134,94,60)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+    stroke-dashoffset="0" points=" 508,480 482,480" transform="translate(20,2)" />
+  <polyline fill="none" stroke="rgb(230,97,0)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"
+    stroke-dasharray="16 48" stroke-dashoffset="0" points=" 505,472 495,486" />
+  <polyline fill="none" stroke="rgb(230,97,0)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"
+    stroke-dasharray="16 48" stroke-dashoffset="0" points=" 540,472 530,486" transform="translate(0,0)" />
+  <polyline fill="none" stroke="rgb(134,94,60)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"
+    points=" 765.99,456.03 762.63,487.64" />
+  <polyline fill="none" stroke="rgb(134,94,60)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"
+    points=" 758.75,462.44 748.01,452.13" />
+  <polyline fill="none" stroke="rgb(134,94,60)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"
+    points=" 764.21,457.54 763.35,436.16" />
+  <polyline fill="none" stroke="rgb(134,94,60)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"
+    points=" 766.92,456.58 781.87,437.97" />
+  <polyline fill="none" stroke="rgb(134,94,60)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"
+    points=" 762.95,463.14 791.45,454.81" />
+  <circle fill="rgb(10, 160, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="740.99" cy="440.6" r="11.95723212118926" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="751.73" cy="428.73" r="9.984613162261157" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="751" cy="449.38" r="6.681915892915739" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="759.43" cy="438.74" r="7.285773809280705" />
+  <circle fill="rgb(10, 160, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="766.52" cy="452.44" r="8.155176270320567" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="778.47" cy="442.63" r="9.37488133258233" />
+  <circle fill="rgb(10, 160, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="785.67" cy="441.09" r="11.180527715631333" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="758.25" cy="427.79" r="16.1038038984583" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="5" stroke-linecap="round"
+    stroke-linejoin="round" points=" 671.82,453.13 671.5,490.71" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="5" stroke-linecap="round"
+    stroke-linejoin="round" points=" 672.51,462.43 689.57,448.07" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="5" stroke-linecap="round"
+    stroke-linejoin="round" points=" 760.08,466.31 751.75,454.16" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="5" stroke-linecap="round"
+    stroke-linejoin="round" points=" 758.81,467.28 740.89,454.99" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="5" stroke-linecap="round"
+    stroke-linejoin="round" points=" 671.76,463.26 658.25,453.94" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="5" stroke-linecap="round"
+    stroke-linejoin="round" points=" 672.63,452.36 662.93,435.43" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="5" stroke-linecap="round"
+    stroke-linejoin="round" points=" 670.03,448.3 682.91,434.63" />
+  <circle fill="rgb(10, 160, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="656.62" cy="426.99" r="8.744426796537308" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="650.27" cy="442.87" r="12.149720161386405" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(10, 160, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="671.75" cy="433.86" r="12.554987056942766" />
+  <circle fill="rgb(10, 160, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="671.63" cy="441.03" r="8.07666391525608" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="679.09" cy="435.96" r="15.098996655407289" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="10" stroke-linecap="round"
+    stroke-linejoin="round" points=" 372.44,461.31 372.44,493.98" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" points=" 370.92,478.78 355.08,464.08" />
+  <polyline fill="rgb(134,94,60)" stroke="rgb(134,94,60)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" points=" 376.05,465.68 390.55,453.4" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="335.43" cy="454.73" r="13.304484206462112" />
+  <circle fill="rgb(10, 160, 0)" stroke="rgb(10, 160, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="344.29" cy="436.33" r="5.3415821626181135" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="355.85" cy="430.09" r="11.16541087466111" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(10, 160, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="354.3" cy="448.37" r="6.006213449420502" />
+  <circle fill="rgb(10, 160, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="368.91" cy="439.19" r="8.552075771413604" />
+  <circle fill="rgb(10, 160, 0)" stroke="rgb(10, 160, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="377.17" cy="445.38" r="7.610814673870319" />
+  <circle fill="rgb(10, 160, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="386.88" cy="440.41" r="8.386137370684985" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="358.5" cy="451.96" r="9.629460005628571" />
+  <circle fill="rgb(14, 137, 0)" stroke="rgb(14, 137, 0)" stroke-width="8" stroke-linecap="round"
+    stroke-linejoin="round" cx="374.13" cy="450.54" r="10.828079238720042" />
+</svg>
