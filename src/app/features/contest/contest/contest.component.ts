@@ -1,100 +1,63 @@
 import {
-  afterNextRender,
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
   inject,
-  Input,
-  input,
   model,
-  NgModule,
   OnDestroy,
   OnInit,
-  output,
   signal,
   ViewChild,
 } from '@angular/core';
 import {
   BehaviorSubject,
-  concat,
-  findIndex,
+  interval,
   map,
-  merge,
-  mergeAll,
-  mergeMap,
   Observable,
   Subscription,
-  switchAll,
   switchMap,
-  tap,
+  take,
 } from 'rxjs';
 import { Grades, Word, Wordlist } from '../wordlist/wordlist.model';
 import {
-  MatError,
-  MatFormField,
   MatFormFieldModule,
-  MatHint,
-  MatLabel,
 } from '@angular/material/form-field';
 import {
-  FormBuilder,
-  FormControl,
-  FormControlName,
-  FormGroup,
   FormsModule,
   ReactiveFormsModule,
-  Validators,
 } from '@angular/forms';
 import { WordlistsService } from '../wordlists/wordlists.service';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { MatCommonModule, MatOptionModule } from '@angular/material/core';
-import { WordlistComponent } from '../wordlist/wordlist.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatOptionModule } from '@angular/material/core';
 import {
   AsyncPipe,
-  JsonPipe,
   NgClass,
-  NgFor,
   NgIf,
-  NgIfContext,
 } from '@angular/common';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { FlexLayoutModule, FlexModule } from 'ngx-flexible-layout';
+import { FlexLayoutModule } from 'ngx-flexible-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog } from '@angular/material/dialog';
 import { WordDialogComponent } from '../word-dialog/word-dialog.component';
-import { WordchipsComponent } from '../wordchips/wordchips.component';
-import * as confetti from 'canvas-confetti';
+import confetti from 'canvas-confetti';
 import {
   bounceInDownOnEnterAnimation,
   bounceInLeftOnEnterAnimation,
   bounceInRightOnEnterAnimation,
   bounceInUpOnEnterAnimation,
-  fadeOutOnLeaveAnimation,
-  flipOnEnterAnimation,
-  hingeOnLeaveAnimation,
   hueRotateAnimation,
-  jackInTheBoxAnimation,
   jackInTheBoxOnEnterAnimation,
   jelloAnimation,
-  lightSpeedInOnEnterAnimation,
-  lightSpeedOutOnLeaveAnimation,
-  rotateInUpRightAnimation,
-  rotateOutUpRightAnimation,
   rubberBandAnimation,
-  zoomInUpAnimation,
-  zoomInUpOnEnterAnimation,
-  zoomOutUpAnimation,
+
 } from 'angular-animations';
 import { SpeechService } from '../../../core/services/speech.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
-import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { User } from '../../../core/auth/models/user.model';
 import { AppState } from '../../../store/states/app.state';
 import { Store } from '@ngrx/store';
@@ -106,7 +69,7 @@ import { AuthService } from '../../../core/auth/services/auth.service';
 import { ContestService } from '../services/contest.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatAccordion, MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
+
 
 @Component({
   templateUrl: './contest.component.html',
@@ -164,13 +127,7 @@ export class ContestComponent implements OnInit, OnDestroy {
   animationState = false;
   animationWithState = false;
   hueBtnState = false;
-  animate() {
-    this.animationState = false;
-    setTimeout(() => {
-      this.animationState = true;
-      this.animationWithState = !this.animationWithState;
-    }, 1);
-  }
+
   word!: Word;
   disableSelect: boolean = false;
   isFinals: boolean = false;
@@ -182,6 +139,7 @@ export class ContestComponent implements OnInit, OnDestroy {
   userId$!: Observable<string>;
   userId!: string;
   subs: Subscription = new Subscription();
+  private subscription: Subscription | undefined;
   wordsCount: number = 1;
   filteredWordlist: BehaviorSubject<Wordlist> = new BehaviorSubject(
     {} as Wordlist
@@ -196,12 +154,17 @@ export class ContestComponent implements OnInit, OnDestroy {
   page = 0;
   dataSource = new MatTableDataSource<Word>();
   filteredData: Word[] = [];
+  particlesOptions!: { preset: string; };
 
   constructor(public dialogo: MatDialog, private store: Store<AppState>) { }
   ngOnDestroy(): void {
     if (!this.subs.closed) {
       this.subs.unsubscribe();
     }
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+
   }
 
   ngOnInit(): void {
@@ -321,7 +284,7 @@ export class ContestComponent implements OnInit, OnDestroy {
     }
   }
   clearContest() {
-     this.isFinals=false;
+    this.isFinals = false;
     let cleanData = this.dataSource.data.map((d) => {
       if (d.id_number! > 508) {
         return { ...d, staged: true };
@@ -477,6 +440,29 @@ export class ContestComponent implements OnInit, OnDestroy {
       pageSizeOptions: this.pageArray,
     });
   }
+
+
+
+
+  animate() {
+    const duration = 4000; // 1 second
+    const end = Date.now() + duration;
+
+    // A simple random range helper
+    const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
+
+    this.subscription = interval(1000).pipe(take(25)).subscribe(() => {
+      // Fire random bursts
+      confetti({
+        angle: randomInRange(55, 125),
+        spread: randomInRange(50, 70),
+        particleCount: randomInRange(150, 200),
+        origin: { y: randomInRange(0.4, 0.9) }
+      });
+    });
+
+  }
+
   // ngOnDestroy(): void {
   //   //Called once, before the instance is destroyed.
   //   //Add 'implements OnDestroy' to the class.

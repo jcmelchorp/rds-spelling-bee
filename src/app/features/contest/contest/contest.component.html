@@ -28,8 +28,14 @@
         matSuffix>{{disableSelect?'lock':'lock_open'}}</mat-icon>
     </mat-form-field>
 
+
+    @if (disableSelect) {
+    <button mat-fab extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
+      (@hueButton.done)="hueBtnState = !hueBtnState" color="primary"> <mat-icon>hearing</mat-icon>
+      Play word </button>
     <div fxLayout="row" fxLayoutAlign="space-between">
-      @if (disableSelect) {
+      <button [matTooltip]="'Celebrar'" (click)="animate()" color="primary"
+        mat-icon-button><mat-icon>celebration</mat-icon></button>
       @if (clearOpenState==false) {
       <button [matTooltip]="'Reiniciar'" mat-icon-button color="warn" (click)="clearOpenState = !clearOpenState">
         <mat-icon>delete</mat-icon>
@@ -42,9 +48,6 @@
         <mat-icon style="color:rgb(79, 189, 39)">check</mat-icon>
       </button>
       }
-      <button mat-fab extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
-        (@hueButton.done)="hueBtnState = !hueBtnState" color="primary"> <mat-icon>hearing</mat-icon>
-        Play word </button>
       @if (finalsOpenState==false) {
       <button [disabled]="isFinals" [matTooltip]="'Ronda Final'" mat-icon-button
         (click)="finalsOpenState = !finalsOpenState">
@@ -58,7 +61,8 @@
         (click)="goFinals();finalsOpenState = !finalsOpenState;isFinals=isFinals!">
         <mat-icon style="color:rgb(79, 189, 39)">check</mat-icon>
       </button>
-      } <!-- <button mat-icon-button color="warn" [disabled]="isFinals" (click)="finalsOpenState = !finalsOpenState">
+      }
+      <!-- <button mat-icon-button color="warn" [disabled]="isFinals" (click)="finalsOpenState = !finalsOpenState">
         @if (finalsOpenState==false) {
         <mat-icon class="yellow-text" [matTooltip]="'Ronda Final'" aria-label="Ronda Final">bolt</mat-icon>
         } @else {
@@ -67,8 +71,8 @@
           style="color:rgb(79, 189, 39)">check</mat-icon>
         }
         </button> -->
-      }
     </div>
+    }
   </div>
 
   <div *ngIf="disableSelect && dataSource.data" fxLayout="column" fxLayoutAlign="center center">
@@ -79,11 +83,12 @@
     <div *ngIf="(wordlist$|async);else spinner">
       <mat-chip-listbox aria-label="Word selection" selectable multiple>
         @for (word of filteredData; track $index) {
-          <!-- [disabled]="this.word.staged" -->
-        @if (word.id_number!<=508) { <mat-chip-option [selected]="this.word.staged" class="elevation-chip" 
+        <!-- [disabled]="this.word.staged" -->
+        @if (word.id_number!<=508) { <mat-chip-option [selected]="this.word.staged" class="elevation-chip"
           (click)="this.word.staged=!this.word.staged">{{word.id!}}</mat-chip-option>
           } @else if (isFinals && word.id_number!>508) {
-          <mat-chip-option [selected]="this.word.staged" class="elevation-chip" (click)="this.word.staged=!this.word.staged">{{(word.id!)}}</mat-chip-option>
+          <mat-chip-option [selected]="this.word.staged" class="elevation-chip"
+            (click)="this.word.staged=!this.word.staged">{{(word.id!)}}</mat-chip-option>
           }
           }
       </mat-chip-listbox>
