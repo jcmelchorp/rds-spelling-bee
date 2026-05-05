@@ -156,7 +156,7 @@ $whiteL: #f0f0f0;
 $bluebee: #1570d1;
 
 .bee {
-  animation: hover 1s ease-in-out infinite;
+  animation: hover 2s ease-in-out infinite;
 }
 
 .bee-body {
@@ -367,7 +367,6 @@ $bluebee: #1570d1;
   display: flex;
   flex-direction: column;
   align-items: end;
-  justify-content:start;
 }
 
 .shadow {
