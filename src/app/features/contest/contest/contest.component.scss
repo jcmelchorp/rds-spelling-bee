@@ -13,9 +13,9 @@
 
 .school-background {
   //width:max-content;
-    height: 150px;
+    min-height: 120px;
     background: url("/assets/images/rds-draw02.svg") no-repeat;
-    background-position: bottom;
+    background-position:bottom;
   }
 // .word-done {
 //  // background-color: rgb(140, 98, 0) !important;
@@ -30,7 +30,7 @@
   align-items: center;
   width: 100%;
   background-color: rgb(255, 255, 255);
-  height: 100%;
+ // height: 100%;
 }
 
 // .word-pending {

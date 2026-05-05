@@ -4,7 +4,7 @@ import {
   inject,
   OnInit,
 } from '@angular/core';
-import { AsyncPipe, NgClass, NgIf } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -13,30 +13,22 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { Observable } from 'rxjs';
 import {
-  ChildrenOutletContexts,
   NavigationCancel,
   NavigationEnd,
   NavigationError,
   NavigationStart,
   Router,
   RouterEvent,
-  RouterLink,
-  RouterLinkActive,
-  RouterOutlet,
 } from '@angular/router';
 import { LayoutService } from '../../services/layout.service';
 import { HeaderComponent } from '../header/header.component';
 import { MatMenuModule } from '@angular/material/menu';
-import { Menu } from '../../models/menu.model';
 import { SidenavComponent } from '../sidenav/sidenav.component';
-import { Overlay } from '@angular/cdk/overlay';
 import { FlexLayoutModule } from 'ngx-flexible-layout';
-import { flyInOut } from '../../../shared/animations/router.animations';
 import * as configSelectors from '../../../store/selectors/config.selectors';
 import * as fromAuthSelectors from '../../../store/selectors/auth.selectors';
 import { AppState } from '../../../store/states/app.state';
 import { Store } from '@ngrx/store';
-import { NgxSpinnerModule } from 'ngx-spinner';
 import { User } from '../../auth/models/user.model';
 
 @Component({
@@ -54,10 +46,8 @@ import { User } from '../../auth/models/user.model';
     AsyncPipe,
     HeaderComponent,
     SidenavComponent,
-    NgClass,
     NgIf,
     FlexLayoutModule,
-    NgxSpinnerModule
   ],
   animations: [],
   changeDetection: ChangeDetectionStrategy.OnPush,

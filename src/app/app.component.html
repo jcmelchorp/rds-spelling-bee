@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<ngx-spinner #spinner bdColor="rgba(0,0,0,0.95)" size="large" color="#0060a0" type="ball-atom" [fullScreen]="true">
+    <p class="mat-h1" style="color: #dfdfdf;"> Your word is... </p>
+  </ngx-spinner>
+  <div [ngClass]="{'dark-theme': isDarkTheme|async}"  >
+  <router-outlet></router-outlet>
+</div>
