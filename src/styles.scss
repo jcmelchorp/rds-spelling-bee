@@ -5,10 +5,10 @@ body { margin: 0; }
 .view-title {
   color: $bg-main;
   font-weight: 400;
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: "fredoka one", cursive;
   text-shadow: 3px 2px 1px $text-shadow-color;
-  max-width: 1200px;
+  //max-width: 1200px;
 }
 .view-subtitle {
   font-weight: 600;
@@ -92,7 +92,7 @@ font-size: large;
 
 @media (max-width: 1200px) {
   .view-title {
-    font-size: calc(1.5em + 1vw);
+    font-size: calc(1rem + 1vw);
   }
   .view-subtitle {
     font-size: calc(0.5rem + 1vw);
