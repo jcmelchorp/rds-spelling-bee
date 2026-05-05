@@ -1,6 +1,6 @@
-<div class="my-container" fxLayout.lt-md="column" fxLayout.lg-md="row-wrap" fxLayoutAlign.gt-md="space-around center"
+<div class="my-container" fxLayout.lt-md="column" fxLayout.lg-md="row-wrap" fxLayoutAlign="start center"
   fxLayoutGap="30px">
-  <div  class="school-background" fxLayout="column" fxLayoutAlign="center center">
+  <div  fxLayout="column" fxLayoutAlign="center center">
     <div fxLayout="row" fxLayoutAlign="space-around">
       <img src="/assets/images/rds-bee-logo-transparent.png" height="100px" [@enter5]
         (@enter5.done)="animationState = !animationState" />
@@ -16,6 +16,7 @@
       <div class="year" [@enter4] (@enter4.done)="animationState = !animationState">2026
       </div>
     </div>
+
 
     <mat-form-field appearance="fill" [@enter3] (@enter3.done)="animationState = !animationState">
       <mat-label>Grado o nivel</mat-label>
@@ -33,7 +34,7 @@
     <button mat-fab extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
       (@hueButton.done)="hueBtnState = !hueBtnState" color="primary"> <mat-icon>hearing</mat-icon>
       Play word </button>
-    <div fxLayout="row" fxLayoutAlign="space-between">
+    <div class="school-background" fxLayout="row" fxLayoutAlign="space-between">
       <button type="button" mat-icon-button 
       [routerLink]="['/home']">
         <mat-icon class="rds-icon" [matTooltip]="'Regresar'" aria-label="Regresar">cancel</mat-icon> 
