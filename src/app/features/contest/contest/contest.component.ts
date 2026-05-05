@@ -447,17 +447,32 @@ export class ContestComponent implements OnInit, OnDestroy {
   animate() {
     const duration = 4000; // 1 second
     const end = Date.now() + duration;
+    var colors = ['#85C4E5', '#D2AE6D'];
 
     // A simple random range helper
     const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
 
     this.subscription = interval(1000).pipe(take(25)).subscribe(() => {
+      confetti({
+        particleCount:  randomInRange(50, 100),
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors
+      });
+      confetti({
+        particleCount: randomInRange(50, 100),
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors
+      });
       // Fire random bursts
       confetti({
         angle: randomInRange(55, 125),
         spread: randomInRange(50, 70),
         particleCount: randomInRange(150, 200),
-        origin: { y: randomInRange(0.4, 0.9) }
+        origin: { x: randomInRange(0.3, 0.7), y: 0.7 }
       });
     });
 
