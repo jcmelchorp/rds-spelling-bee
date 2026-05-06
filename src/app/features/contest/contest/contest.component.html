@@ -1,13 +1,13 @@
-<div class="my-container" fxLayout="column" fxLayoutAlign="start space-between" fxLayoutGap="10px">
+<div class="my-container" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
   <div fxLayout="row" fxLayoutAlign="space-between stretch">
     <div fxLayout="column">
       <div fxLayout="row">
         <div fxLayout="column">
-          <div class="school-background" fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="10px">
-          <div fxLayout="column">
-            <img src="/assets/images/rds-bee-logo-transparent.png" height="75px" [@enter5]
-            (@enter5.done)="animationState = !animationState" />
-          </div>
+          <div class="school-background" fxLayout="row" fxLayoutAlign="space-evenly start" fxLayoutGap="10px">
+            <div fxLayout="column">
+              <img src="/assets/images/rds-bee-logo-transparent.png" height="75px" [@enter5]
+                (@enter5.done)="animationState = !animationState" />
+            </div>
             <div fxLayout="column">
               <div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState"
                 [@rubberBand]="animationState">
@@ -39,10 +39,14 @@
                 </mat-form-field>
               </div>
             </div>
+
+            <div fxLayout="column">
+              <img src="/assets/images/zona14.png" height="75px" [@enter5] (@enter5.done)="animationState = !animationState" />
+            </div>
           </div>
         </div>
       </div>
-      <div  *ngIf="disableSelect" fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="10px">
+      <div *ngIf="disableSelect" fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="10px">
         <button type="button" mat-icon-button [routerLink]="['/home']">
           <mat-icon style="color:rgb(18, 99, 122)" [matTooltip]="'Regresar'"
             aria-label="Regresar">arrow_circle_left</mat-icon>
@@ -83,11 +87,8 @@
           <mat-icon style="color:rgb(79, 189, 39)">check</mat-icon>
         </button>
         }
-        
+
       </div>
-    </div>
-    <div  style="display: flex; justify-content: center; align-items: start;">
-      <img src="/assets/images/zona14.png" height="180px" [@enter5] (@enter5.done)="animationState = !animationState" />
     </div>
   </div>
 
@@ -98,10 +99,10 @@
     <ng-template #spinner>
       <mat-spinner strokeWidth="8" [diameter]="128"> </mat-spinner>
     </ng-template>
-      <div *ngIf="(wordlist$|async);else spinner">
-        <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
+    <div *ngIf="(wordlist$|async);else spinner">
+      <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
         [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
-        showFirstLastButtons aria-label="Select word">      </mat-paginator>
+        showFirstLastButtons aria-label="Select word"> </mat-paginator>
 
       <mat-chip-listbox aria-label="Word selection" selectable multiple>
         @for (word of filteredData; track $index) {
