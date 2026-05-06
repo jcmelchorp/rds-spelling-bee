@@ -4,7 +4,7 @@
 
 .school-background {
 //width: fit-content;
-  height: 350px;
+  height: 250px;
  // max-height: 12000px;
   background: url("/assets/images/rds-draw03.svg") no-repeat;
   background-position: bottom;
@@ -367,6 +367,7 @@ $bluebee: #1570d1;
   display: flex;
   flex-direction: column;
   align-items: end;
+  scale: 0.5;
 }
 
 .shadow {
