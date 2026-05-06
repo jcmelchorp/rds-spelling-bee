@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container" autosize>
-  <mat-sidenav #leftSidenav class="sidenav d-print-none" [fixedInViewport]="true"
+  <mat-sidenav #leftSidenav class="sidenav d-print-none" [fixedInViewport]="false"
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [@onSideNavChange]="sideNavState ? 'close' : 'open'"
     [mode]="isHandset ? 'over':'side'" [opened]="!isHandset">
     <div role="navigation" fxLayout="column" fxLayoutAlign="space-between stretch">

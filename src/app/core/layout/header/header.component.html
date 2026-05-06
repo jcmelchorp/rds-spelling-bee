@@ -1,12 +1,12 @@
 <mat-toolbar class="mat-toolbar">
-  <mat-toolbar-row class="elevation-card" fxLayoutAlign="space-between center">
+  <mat-toolbar-row class="" fxLayoutAlign="space-between center">
     <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
       <button type="button" aria-label="mostrar menu" mat-icon-button (click)="toggleSidenavLeft($event)">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <button type="button" aria-label="Inicio" mat-icon-button [routerLink]="[isAuthenticated()?'home':'/']">
+      <!-- <button type="button" aria-label="Inicio" mat-icon-button [routerLink]="[isAuthenticated()?'home':'/']">
         <img class="rounded-circle" src="/assets/images/rds-bee-logo-transparent.png" />
-      </button>
+      </button> -->
       <!-- @if (isOnline) {
           <a type="button" style="background-color: transparent;" aria-label="Concurso 2026" mat-flat-button
           [routerLink]="['/contest']">

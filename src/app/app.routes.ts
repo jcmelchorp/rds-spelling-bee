@@ -22,6 +22,15 @@ export const routes: Routes = [
          canActivate: [publicGuard],
       },
       {
+        path: 'contest',
+        canDeactivate: [preventUnsavedChanges],
+        canActivate: [authGuard],
+        loadComponent: () =>
+          import('./features/contest/contest/contest.component').then(
+            (m) => m.ContestComponent
+          ),
+      },
+      {
         path: 'home',
         canActivate: [authGuard],
         component: HomeComponent,
@@ -55,15 +64,6 @@ export const routes: Routes = [
         component: RegisterComponent,
       },
     ],
-  },
-  {
-    path: 'contest',
-    canDeactivate: [preventUnsavedChanges],
-    canActivate: [authGuard],
-    loadComponent: () =>
-      import('./features/contest/contest/contest.component').then(
-        (m) => m.ContestComponent
-      ),
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];

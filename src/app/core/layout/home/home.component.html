@@ -1,3 +1,4 @@
+<div class="my-container">
   <div class="school-background">
     <!-- <img src="/assets/images/rds-bee-logo-transparent.png" height="200px" /> -->
     <div class="wrapper">
@@ -14,7 +15,7 @@
     </div>
   </div>
   <div class="grid-container">
-    <mat-grid-list cols="3" rowHeight="150px">
+    <mat-grid-list cols="3" rowHeight="170px">
       @for (card of cards | async; track card) {
       <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
         <mat-card class="dashboard-card elevation-card">
@@ -71,3 +72,4 @@
       }
     </mat-grid-list>
   </div>
+</div>

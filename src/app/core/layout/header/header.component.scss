@@ -3,18 +3,51 @@
   scale: 1.6;
 }
 
+// .mat-toolbar {
+// position: sticky;
+// top:0;
+// z-index: 100;
+// overflow: hidden;
+//   min-height: 55px !important;
+//   .mat-toolbar-row {
+//     max-height: 55px !important;
+//   }
+// }
+
+
+// a:hover {
+//   color: white;
+// }
+
 .mat-toolbar {
-position: sticky;
-top:0;
-z-index: 100;
-overflow: hidden;
-  min-height: 55px !important;
+  min-height: 53px !important;
+  max-height: max-content;
+  // background-color: transparent !important;
   .mat-toolbar-row {
-    max-height: 55px !important;
+    max-height: 53px !important;
+    // background-color: transparent !important;
   }
 }
 
+.hideShowToolbar {
+  -webkit-transition: all 0.4s ease-in-out !important;
+  -moz-transition: all 0.4s ease-in-out !important;
+  -o-transition: all 0.4s ease-in-out !important;
+  transition: all 0.4s ease-in-out !important;
+  position: fixed;
+  top: 0px;
+}
 
-a:hover {
-  color: white;
+.hideToolbar {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.showToolbar {
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%);
 }
