@@ -18,9 +18,11 @@
  }
 }
 
+
+
 .school-background {
-  //width:max-content;
-    min-height: 120px;
+  //  max-width: 600px;
+    min-height: 180px;
     background: url("/assets/images/rds-draw02.svg") no-repeat;
     background-position:bottom;
   }
@@ -32,6 +34,7 @@
 // }
 
 .my-container {
+  padding-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
