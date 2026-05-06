@@ -1,12 +1,16 @@
-<div  fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+<div class="contest-container" >
   <!-- <div fxLayout="row" fxLayoutAlign="space-between"> -->
     <!-- <div fxLayout="column"> -->
       <!-- <div fxLayout="row">
         <div fxLayout="column"> -->
       <div class="school-background" fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="5px"> 
-        <div  fxFlex="0 0 calc(15% - 25px)" fxLayout="column" >
+        <div  fxFlex="0 0 calc(15% - 25px)" fxLayout="column" fxLayoutAlign="start">
           <img src="/assets/images/rds-bee-logo-transparent.png" style="max-width: 120px; height: auto;" [@enter5]
             (@enter5.done)="animationState = !animationState" />
+            <button type="button" mat-fab [routerLink]="['/home']" color="default" >
+              <mat-icon style="color:rgb(18, 99, 122)" [matTooltip]="'Regresar'"
+                aria-label="Regresar">arrow_back</mat-icon>
+            </button>
         </div>
         <div fxLayout="column">
           <div class="view-title" [@enter1] (@enter1.done)="animationState = !animationState"
@@ -27,7 +31,7 @@
         </div>
 
         <div fxLayout="column"  fxFlex.lt-lg="0 0 calc(50% - 25px)" fxFlex.gt-lg="0 0 calc(20% - 25px)">
-            <mat-form-field style="max-width: 350px;" appearance="fill" [@rubberBand]="animationState" [@enter1] (@enter1.done)="animationState = !animationState">
+            <mat-form-field style="max-width: 350px;" appearance="fill" [@rubberBand]="animationState" [@enter4] (@enter4.done)="animationState = !animationState">
               <mat-label>Concurso</mat-label>
               <mat-select (selectionChange)="onGradeChange($event);disableSelect=true" [disabled]="disableSelect">
                 @for (level of levels; track level) {
@@ -47,15 +51,15 @@
       <!-- </div>
       </div>-->
       <div *ngIf="disableSelect" fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="10px">
-        <button type="button" mat-icon-button [routerLink]="['/home']">
+        <!-- <button type="button" mat-fab [routerLink]="['/home']">
           <mat-icon style="color:rgb(18, 99, 122)" [matTooltip]="'Regresar'"
-            aria-label="Regresar">arrow_circle_left</mat-icon>
-        </button>
-        <button type="button" mat-icon-button
+            aria-label="Regresar">arrow_back</mat-icon>
+        </button> -->
+        <!-- <button type="button" mat-icon-button
           onclick="var el = document.querySelector('body'); el.requestFullscreen();">
           <mat-icon style="color:rgb(57, 70, 86)" [matTooltip]="'Pantalla completa'"
             aria-label="Pantalla completa">fullscreen</mat-icon>
-        </button>
+        </button> -->
         <button mat-fab extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
           (@hueButton.done)="hueBtnState = !hueBtnState" color="primary"> <mat-icon>hearing</mat-icon>
           Play word </button>
@@ -100,10 +104,6 @@
       <mat-spinner strokeWidth="8" [diameter]="128"> </mat-spinner>
     </ng-template>
     <div *ngIf="(wordlist$|async);else spinner">
-      <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
-        [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
-        showFirstLastButtons aria-label="Select word"> </mat-paginator>
-
       <mat-chip-listbox aria-label="Word selection" selectable multiple>
         @for (word of filteredData; track $index) {
         <!-- [disabled]="this.word.staged" -->
@@ -115,7 +115,9 @@
           }
           }
       </mat-chip-listbox>
-
+      <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
+      [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
+      showFirstLastButtons aria-label="Select word"> </mat-paginator>
     </div>
     }
     @else if (wordsCount === 0) {

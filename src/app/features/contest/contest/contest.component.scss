@@ -18,7 +18,15 @@
  }
 }
 
-
+.contest-container {
+  width: 100%;
+   max-width: 1300px; /* Maximum width of the container */
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
 
 .school-background {
   // width: fit-content;
@@ -35,18 +43,6 @@
 //   // --mdc-chip-label-text-size: 0.8em;
 //   //  --mdc-chip-label-text-weight:500;
 // }
-
-.my-container {
-  display: flex;
-  padding-top: 25px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  //width: 100%;
-  max-width: 1200px;
-  //background-color: rgb(255, 255, 255);
-  height: 100%;
-}
 
 // .word-pending {
 //  // background-color: rgb(245, 245, 245) !important;

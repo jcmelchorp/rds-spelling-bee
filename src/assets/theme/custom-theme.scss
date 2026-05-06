@@ -201,7 +201,7 @@ $enable-negative-padding: true;
 // }
 .my-container {
   width: 100%;
-  max-width: 1200px; /* Maximum width of the container */
+  //max-width: 1200px; /* Maximum width of the container */
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
@@ -209,8 +209,9 @@ $enable-negative-padding: true;
   box-sizing: border-box;
 }
 
+
 @media (min-width: 576px) {
-  .my-container {
+  .my-container  {
       max-width: 540px;
   }
 }
