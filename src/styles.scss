@@ -5,7 +5,7 @@ body { margin: 0; }
 .view-title {
   color: $bg-main;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 3em;
   font-family: "fredoka one", cursive;
   text-shadow: 3px 2px 1px $text-shadow-color;
   //max-width: 1200px;
@@ -92,10 +92,10 @@ font-size: large;
 
 @media (max-width: 1200px) {
   .view-title {
-    font-size: calc(0.8rem + 1vw);
+    font-size: calc(0.2rem + 3vw);
   }
   .view-subtitle {
-    font-size: calc(0.4rem + 1vw);
+    font-size: calc(0.2rem + 1.5vw);
   }
 }
 

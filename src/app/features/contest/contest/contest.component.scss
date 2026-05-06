@@ -23,10 +23,10 @@
 .school-background {
   // width: fit-content;
     // min-width: 50%;
-    min-height: 250px;
+    min-height: 220px;
     background: url("/assets/images/rds-draw02.svg") no-repeat;
-    background-position:bottom;
-    background-size: cover;
+    background-position:center;
+    background-size: contain;
   }
 // .word-done {
 //  // background-color: rgb(140, 98, 0) !important;
@@ -37,13 +37,15 @@
 // }
 
 .my-container {
-  padding-top: 25px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
- // height: 100%;
+  padding-top: 25px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  //width: 100%;
+  max-width: 1200px;
+  //background-color: rgb(255, 255, 255);
+  height: 100%;
 }
 
 // .word-pending {
