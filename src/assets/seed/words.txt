@@ -11,764 +11,654 @@
 011. speedboat
 012. taxi
 013. train
-014. transportation
-015. airport
-016. bus driver
-017. bus schedule
-018. bus station
-019. bus stop
-020. bus ticket
-021. car driver
-022. car engine
-023. car wash
-024. ferry
-025. high-speed-train
-026. paddle boat
-027. passenger 
-028. railroad crossing
-029. railroad engine
-030. railroad station
-031. railroad track
-032. snowmobile
-033. streetcar
-034. subway
-035. train driver
-036. train schedule
-037. train station
-038. train ticket
-039. wagon
-040. across from
-041. behind
-042. between
-043. in front of
-044. inside
-045. near
-046. next to
-047. outside
-048. over
-049. under
-050. along
-051. around
-052. down
-053. onto
-054. past
-055. through
-056. aquarium
-057. canyon
-058. circus
-059. falls
-060. museum
-061. sightseeing
-062. suspension bridge
-063. theme park
-064. waterfall
-065. fortress
-066. fountain
-067. monument
-068. palace
-069. ruins
-070. statue
-071. dress
-072. earring
-073. jeans
-074. jewelry
-075. sunglasses
-076. pants
-077. sweatshirt
-078. hoodie
-079. watch
-080. shirt
-081. camera
-082. clothes
-083. jacket
-084. pocket
-085. shoes
-086. shorts
-087. skirt
-088. sneakers
-089. T-shirt
-090. umbrella
-091. sweater
-092. underwear
-093. wallet
-094. swim trunks
-095. uniform
-096. waterproof
-097. wool
-098. suit
-099. raincoat
-100. polyester
-101. fleece jacket
-102. designer clothes
-103. cotton
-104. cloth
-105. bread
-106. beans
-107. cheese
-108. dairy products
-109. diet
-110. fried egg
-111. fruit
-112. garlic
-113. meat
-114. mushroom
-115. olive
-116. onion
-117. pepper
-118. pineapple
-119. rice
-120. spinach
-121. tomato
-122. potato
-123. vegetable
-124. burger
-125. champagne
-126. grape
-127. lentils
-128. noodles
-129. soup
-130. wine
-131. apple juice
-132. beer
-133. bread
-134. chocolate cake
-135. coffee
-136. fast food
-137. frozen food
-138. fruit juice
-139. fruit salad
-140. grain
-141. hamburger
-142. kebab
-143. meal
-144. orange
-145. porridge
-146. potato chips
-147. sandwich
-148. sausage
-149. stew
-150. toast
-151. tomato salad
-152. assistant
-153. photographer
-154. pilot
-155. playwright
-156. politician
-157. receptionist
-158. reporter
-159. rock singer
-160. street performer
-161. waiter
-162. archaeologist
-163. writer
-164. cleaner
-165. electrician
-166. tour guide
-167. hairdresser
-168. firefighter
-169. judge
-170. juggler
-171. musician
-172. novelist
-173. movie star
-174. train driver
-175. translator
-176. astronaut
-177. businessman
-178. police officer
-179. salesperson
-180. scientist
-181. journalist
-182. designer
-183. filmmaker
-184. teacher
-185. taxi driver
-186. doctor
-187. architect
-188. consultant
-189. manager
-190. mechanic
-191. producer
-192. referee
-193. surgeon
-194. translate
-195. salesperson
-196. student
-197. cutting board
-198. fork
-199. knife
-200. matches
-201. mirror
-202. cupboard
-203. paraffin
-204. plate
-205. dishwasher
-206. shampoo
-207. spoon
-208. toilet paper
-209. measuring cup
-210. saucepan
-211. microwave
-212. towels
-213. toothpaste
-214. scissors
-215. cookbook
-216. refrigerator
-217. stove
-218. washing machine
-219. cliff
-220. desert
-221. hill
-222. jungle
-223. mountain
-224. tundra
-225. volcano
-226. waterfall
-227. river
-228. cave
-229. forest
-230. island
-231. drizzle
-232. flurry
-233. hailstones
-234. slush
-235. blizzard
-236. thunderstorm
-237. blustery wind
-238. hurricane
-239. drought
-240. snowflake
-241. peak
-242. stream
-243. swamp
-244. valley
-245. woods
-246. lagoon
-247. hollow
-248. pond
-249. creak
-250. landscape
-251. continent
-252. coast
-253. path
-254. road
-255. peninsula
-256. plain
-257. fortress
-258. landmark
-259. board game
-260. chess
-261. dancing
-262. dice game
-263. drawing
-264. fishing
-265. football
-266. hobby
-267. horseback riding
-268. ice hockey
-269. inline skating
-270. knitting
-271. painting
-272. sailing
-273. skateboard
-274. skateboarding
-275. skydiving
-276. snowboarding
-277. surfing
-278. swimming
-279. camping
-280. hiking
-281. storm
-282. sunny
-283. temperature
-284. tropics
-285. warm
-286. weather
-287. windy
-288. autumn
-289. spring
-290. summer
-291. woodworking 
-292. scrapbooking
-292. pottery
-293. climate change
-294. cloudy
-295. foggy
-296. rainy
-297. season
-298. shine
-299. snowy
-301. winter
-302. degree
-303. frozen
-304. coffee shop
-305. movie theater
-306. store
-307. park
-308. shopping mall
-309. bank
-310. bookstore
-311. cathedral
-312. church
-313. drugstore
-314. fire department
-315. flower shop
-316. carnage
-317. music store
-318. newsstand
-319. parking lot
-320. police station
-321. post office
-322. stadium
-323. supermarket
-324. temple
-325. travel agency
-326. ambulance
-327. bite
-328. disease
-329. healthy 
-330. hospital
-331. hurt
-332. medical school
-333. medicine
-334. nurse
-335. sick
-336. well
-337. X-ray
-338. toothache 
-339. headache
-340. amphibian
-341. cheetah
-342. cobra
-343. dolphin
-344. elephant
-345. giraffe
-346. falcon
-347. hippo
-348. horse
-349. insect
-350. monkey
-351. mosquito
-352. octopus
-353. parrot
-354. penguin
-355. polar bear
-356. rabbit
-357. sailfish
-358. shark
-359. sheep
-360. snake
-361. whale
-362. tiger
-363. acting company
-364. backstage
-365. band 
-366. character
-367. concert
-368. costume
-369. drama
-370. director
-371. episode
-372. movie
-373. perform
-374. performance
-375. rehearsal
-376. rehearse
-377. scene
-378. show
-379. stage
-380. cinema
-381. studio
-382. theater
-383. bored
-384. angry
-385. embarrassed
-386. exhausted
-387. frightened
-388. sensitive
-389. shocked
-390. surprised
-391. unhappy
-392. upset
-393. worried
-394. confident
-395. afraid
-396. quiet
-397. nervous
-398. playful
-399. courageous
-400. peaceful
-401. reliable
-402. energetic
-403. lucky
-404. amazed
-405. optimistic
-406. pleased
-407. delighted
-408. sympathetic
-409. interested
-410. thankful
-411. satisfied
-412. shy
-413. cheerful
-414. positive
-415. fascinated
-416. anxious
-417. apologize
-418. knit
-419. laugh
-420. oversleep
-421. sneeze
-422. suggest
-423. sunbathe
-424. translate
-425. attract
-426. encourage
-427. experience
-428. inspire
-429. manage
-430. overtake
-431. push away
-432. refuse
-433. repel
-434. appear
-435. broadcast
-436. compare
-437. delete
-438. rehearse
-439. spread
-440. substitute
-441. succeed
-442. survive
-443. suitcase
-444. hand luggage
-445. boarding pass
-446. backpack
-447. bag
-448. daypack
-449. pack
-450. check-in
-451. magazine
-452. newspaper
-453. aisle
-454. lounge
-455. passport
-456. flight number
-457. abbreviation
-458. adjective
-459. adverb
-460. auxiliary verb
-461. countable
-462. plural
-463. singular
-464. somebody
-465. something
-466. uncountable
-467. gerund
-468. grammar
-469. infinitive
-470. preposition
-471. pronoun
-472. ball
-473. candle
-474. carnival
-475. celebrate
-476. celebration
-477. Christmas
-478. costume
-479. dancer
-480. gift
-481. greeting card
-482. Happy New Year
-483. parade
-484. party
-485. stage
-486. street hair
-487. Africa
-488. Asia
-489. Europe
-490. America
-491. North America
-492. South America
-493. Antarctica
-494. Australia
-495. Barbados
-496. Brazil
-497. China
-498. Denmark
-499. France
-400. India
-401. Italy
-402. Japan
-503. Russia
-504. Spain
-505. Mexico
-506. Jamaica
-507. Canada
-508. England
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-001. name
-002. first name
-003. last name
-004. address
-005. street
-006. apartment number
-007. city
-008. state
-009. zip code
-010. phone number
-011. wife
-012. husband
-013. mother
-014. father
-015. daughter
-016. son
-017. sister
-018. brother
-019. baby
-020. grandmother
-021. grandfather
-022. aunt
-023. uncle
-024. niece
-025. nephew
-026. cousin
-027. mother-in-law
-028. father-in-law
-029. son-in-law
-030. daughter-in-law
-031. brother-in-law
-032. get up
-033. take a shower
-034. shave
-035. get dressed
-036. make the bed
-037. get undressed
-038. go to bed
-039. make breakfast
-040. make lunch
-041. make dinner
-042. dust
-043. vacuum
-044. wash the dishes
-045. iron
-046. Feed the cat
-047. walk the dog
-048. watch T.V.
-049. listen to music
-050. play soccer
-051. teacher
-052. student
-053. pen
-054. pencil
-055. eraser
-056. desk
-057. notebook
-058. calculator
-059. clock
-060. flag
-061. board
-062. map
-063. screen
-064. computer
-065. sharpener
-066. projector
-067. computer
-068. bookshelf
-069. stand up
-070. go to the board
-071. write your name
-072. sit down
-073. open your book
-074. close your book
-075. listen to the question
-076. read in groups
-077. work in groups
-078. help each other
-079. building
-080. house
-081. apartment
-082. farmhouse
-083. cabin
-084. nursing home
-085. shelter
-086. condominium
-087. dormitory
-088. trailer
-089. rug
-090. floor
-091. windows
-092. couch
-093. pillow
-094. ceiling
-095. wall
-096. speaker
-097. loveseat
-098. painting
-099. dining room
-100. chandelier
-101. salad shaker
-102. candle
-103. sugar bowl
-104. coffee pot
-105. pitcher
-106. butter dish
-107. water glass
-108. wine glass
-109. cup
-110. saucer
-111. napkin
-112. fork
-113. knife
-114. teaspoon
-115. bread
-116. silverware
-117. beads
-118. pillow
-119. blinds
-120. alarm clock
-121. mirror
-122. double bed
-123. queen-size bed
-124. king-size bed
-125. cot
-126. hospital bed
-127. crib
-128. night light
-129. doll
-130. playpen
-131. car seat
-132. stroller
-133. baby seat
-134. baby carrier
-135. portable crib
-136. dishwasher
-137. faucet
-138. sink
-139. garbage
-140. dish towel
-141. cabinet
-142. microwave
-143. freezer
-144. oven
-145. toaster
-146. baby powder
-147. baby lotion
-148. baby shampoo
-149. ointment
-150. baby food
-151. wipes
-152. cotton swabs
-153. vitamins
-154. pacifier
-155. bottle
-156. toilet
-157. toilet paper
-158. towel
-159. hamper
-160. air dryer
-161. fan
-162. mirror
-163. faucet
-164. soap
-165. shower
-166. toothbrush
-167. comb
-168. razor
-169. razor blades
-170. nail clipper
-171. scissors
-172. powder
-173. toothpaste
-174. lipstick
+014. trailer
+015. transportation
+016. airport
+017. bus driver
+018. bus schedule
+019. bus station
+020. bus stop
+021. bus ticket
+022. car driver
+023. car engine
+024. car wash
+025. ferry
+026. high-speed-train
+027. paddle boat
+028. passenger 
+029. railroad crossing
+030. railroad engine
+031. railroad station
+032. railroad track
+033. snowmobile
+034. streetcar
+035. subway
+036. train driver
+037. train schedule
+038. train station
+039. train ticket
+040. wagon
+041. across from
+042. behind
+043. between
+044. in front of
+045. inside
+046. near
+047. next to
+048. outside
+049. over
+050. under
+051. along
+052. around
+053. down
+054. onto
+055. past
+056. through
+057. aquarium
+058. canyon
+059. circus
+060. falls
+061. museum
+062. sightseeing
+063. suspension bridge
+064. theme park
+065. fountain
+066. monument
+067. palace
+068. ruins
+069. statue
+070. dress
+071. earring
+072. jeans
+073. jewelry
+074. sunglasses
+075. pants
+076. sweatshirt
+077. hoodie
+078. watch
+079. shirt
+080. camera
+081. clothes
+082. jacket
+083. pocket
+084. shoes
+085. shorts
+086. skirt
+087. sneakers
+088. T-shirt
+089. umbrella
+090. sweater
+091. underwear
+092. wallet
+093. swim trunks
+094. uniform
+095. waterproof
+096. wool
+097. suit
+098. raincoat
+099. polyester
+100. fleece jacket
+101. designer clothes
+102. cotton
+103. cloth
+104. bread
+105. beans
+106. cheese
+107. dairy products
+108. diet
+109. fried egg
+110. fruit
+111. garlic
+112. meat
+113. mushroom
+114. olive
+115. onion
+116. pepper
+117. pineapple
+118. rice
+119. spinach
+120. tomato
+121. potato
+122. vegetable
+123. burger
+124. champagne
+125. grape
+126. lentils
+127. noodles
+128. soup
+129. wine
+130. apple juice
+131. beer
+132. chocolate cake
+133. coffee
+134. fast food
+135. frozen food
+136. fruit juice
+137. fruit salad
+138. grain
+139. hamburger
+140. kebab
+141. meal
+142. orange
+143. porridge
+144. potato chips
+145. sandwich
+146. sausage
+147. stew
+148. toast
+149. tomato salad
+150. assistant
+151. photographer
+152. pilot
+153. playwright
+154. politician
+155. receptionist
+156. reporter
+157. rock singer
+158. street performer
+159. waiter
+160. archaeologist
+161. writer
+162. cleaner
+163. electrician
+164. tour guide
+165. hairdresser
+166. firefighter
+167. judge
+168. juggler
+169. musician
+170. novelist
+171. movie star
+172. translator
+173. astronaut
+174. businessman
+175. police officer
+176. salesperson
+177. scientist
+178. journalist
+179. designer
+180. filmmaker
+181. teacher
+182. taxi driver
+183. doctor
+184. architect
+185. consultant
+186. manager
+187. mechanic
+188. producer
+189. referee
+190. surgeon
+191. translate
+192. student
+193. cutting board
+194. fork
+195. knife
+196. matches
+197. mirror
+198. cupboard
+199. paraffin
+200. plate
+201. dishwasher
+202. shampoo
+203. spoon
+204. toilet paper
+205. measuring cup
+206. saucepan
+207. microwave
+208. towels
+209. toothpaste
+210. scissors
+211. cookbook
+212. refrigerator
+213. stove
+214. washing machine
+215. cliff
+216. desert
+217. hill
+218. jungle
+219. mountain
+220. tundra
+221. volcano
+222. waterfall
+223. river
+224. cave
+225. forest
+226. island
+227. drizzle
+228. flurry
+229. hailstones
+230. slush
+231. blizzard
+232. thunderstorm
+233. blustery wind
+234. hurricane
+235. drought
+236. snowflake
+237. peak
+238. stream
+239. swamp
+240. valley
+241. woods
+242. lagoon
+243. hollow
+244. pond
+245. creak
+246. landscape
+247. continent
+248. coast
+249. path
+250. road
+251. peninsula
+252. plain
+253. fortress
+254. landmark
+255. board game
+256. chess
+257. dancing
+258. dice game
+259. drawing
+260. fishing
+261. football
+262. hobby
+263. horseback riding
+264. ice hockey
+265. inline skating
+266. knitting
+267. painting
+268. sailing
+269. skateboard
+270. skateboarding
+271. skydiving
+272. snowboarding
+273. surfing
+274. swimming
+275. camping
+276. hiking
+277. storm
+278. sunny
+279. temperature
+280. tropics
+281. warm
+282. weather
+283. windy
+284. autumn
+285. spring
+286. summer
+287. woodworking 
+288. scrapbooking
+289. pottery
+290. climate change
+291. cloudy
+292. foggy
+293. rainy
+294. season
+295. shine
+296. snowy
+297. winter
+298. degree
+299. frozen
+300. coffee shop
+301. movie theater
+302. store
+303. park
+304. shopping mall
+305. bank
+306. bookstore
+307. cathedral
+308. church
+309. drugstore
+310. fire department
+311. flower shop
+312. carnage
+313. music store
+314. newsstand
+315. parking lot
+316. police station
+317. post office
+318. stadium
+319. supermarket
+320. temple
+321. travel agency
+322. ambulance
+323. bite
+324. disease
+325. healthy 
+326. hospital
+327. hurt
+328. medical school
+329. medicine
+330. nurse
+331. sick
+332. well
+333. X-ray
+334. toothache 
+335. headache
+336. amphibian
+337. cheetah
+338. cobra
+339. dolphin
+340. elephant
+341. giraffe
+342. falcon
+343. hippo
+344. horse
+345. insect
+346. monkey
+347. mosquito
+348. octopus
+349. parrot
+350. penguin
+351. polar bear
+352. rabbit
+353. sailfish
+354. shark
+355. sheep
+356. snake
+357. whale
+358. tiger
+359. acting company
+360. backstage
+361. band 
+362. character
+363. concert
+364. drama
+365. director
+366. episode
+367. movie
+368. perform
+369. performance
+370. rehearsal
+371. rehearse
+372. scene
+373. show
+374. stage
+375. cinema
+376. studio
+377. theater
+378. bored
+379. angry
+380. embarrassed
+381. exhausted
+382. frightened
+383. sensitive
+384. shocked
+385. surprised
+386. unhappy
+387. upset
+388. worried
+389. confident
+390. afraid
+391. quiet
+392. nervous
+393. playful
+394. courageous
+395. peaceful
+396. reliable
+397. energetic
+398. lucky
+399. amazed
+400. optimistic
+401. pleased
+402. delighted
+403. sympathetic
+404. interested
+405. thankful
+406. satisfied
+407. shy
+408. cheerful
+409. positive
+410. fascinated
+411. anxious
+412. apologize
+413. knit
+414. laugh
+415. oversleep
+416. sneeze
+417. suggest
+418. sunbathe
+419. attract
+420. encourage
+421. experience
+422. inspire
+423. manage
+424. overtake
+425. push away
+426. refuse
+427. repel
+428. appear
+429. broadcast
+430. compare
+431. delete
+432. spread
+433. substitute
+434. succeed
+435. survive
+436. suitcase
+437. hand luggage
+438. boarding pass
+439. backpack
+440. bag
+441. daypack
+442. pack
+443. check-in
+444. magazine
+445. newspaper
+446. aisle
+447. lounge
+448. passport
+449. flight number
+450. abbreviation
+451. adjective
+452. adverb
+453. auxiliary verb
+454. countable
+455. plural
+456. singular
+457. somebody
+458. something
+459. uncountable
+460. gerund
+461. grammar
+462. infinitive
+463. preposition
+464. pronoun
+465. ball
+466. candle
+467. carnival
+468. celebrate
+469. celebration
+470. Christmas
+471. costume
+472. dancer
+473. gift
+474. greeting card
+475. Happy New Year
+476. parade
+477. party
+478. street hair
+479. Africa
+480. Asia
+481. Europe
+482. America
+483. North America
+484. South America
+485. Antarctica
+486. Australia
+487. Barbados
+488. Brazil
+489. China
+490. Denmark
+491. France
+492. India
+493. Italy
+494. Japan
+495. Russia
+496. Spain
+497. Mexico
+498. Jamaica
+499. Canada
+500. England
+501. name
+502. first name
+503. last name
+504. address
+505. street
+506. apartment number
+507. city
+508. state
+509. zip code
+510. phone number
+511. wife
+512. husband
+513. mother
+514. father
+515. daughter
+516. son
+517. sister
+518. brother
+519. baby
+520. grandmother
+521. grandfather
+522. aunt
+523. uncle
+524. niece
+525. nephew
+526. cousin
+527. mother-in-law
+528. father-in-law
+529. son-in-law
+530. daughter-in-law
+531. brother-in-law
+532. get up
+533. take a shower
+534. shave
+535. get dressed
+536. make the bed
+537. get undressed
+538. go to bed
+539. make breakfast
+540. make lunch
+541. make dinner
+542. dust
+543. vacuum
+544. wash the dishes
+545. iron
+546. Feed the cat
+547. walk the dog
+548. watch T.V.
+549. listen to music
+550. play soccer
+551. pen
+552. pencil
+553. eraser
+554. desk
+555. notebook
+556. calculator
+557. clock
+558. flag
+559. board
+560. map
+561. screen
+562. computer
+563. sharpener
+564. projector
+565. bookshelf
+566. stand up
+567. go to the board
+568. write your name
+569. sit down
+570. open your book
+571. close your book
+572. listen to the question
+573. read in groups
+574. work in groups
+575. help each other
+576. building
+577. house
+578. apartment
+579. farmhouse
+580. cabin
+581. nursing home
+582. shelter
+583. condominium
+584. dormitory
+585. rug
+586. floor
+587. windows
+588. couch
+589. pillow
+590. ceiling
+591. wall
+592. speaker
+593. loveseat
+594. painting
+595. dining room
+596. chandelier
+597. salad shaker
+598. candle
+599. sugar bowl
+600. coffee pot
+601. pitcher
+602. butter dish
+603. water glass
+604. wine glass
+605. cup
+606. saucer
+607. napkin
+608. fork
+609. knife
+610. teaspoon
+611. silverware
+612. beads
+613. blinds
+614. alarm clock
+615. double bed
+616. queen-size bed
+617. king-size bed
+618. cot
+619. hospital bed
+620. crib
+621. night light
+622. doll
+623. playpen
+624. car seat
+625. stroller
+626. baby seat
+627. baby carrier
+628. portable crib
+629. dishwasher
+630. sink
+631. garbage
+632. dish towel
+633. cabinet
+634. microwave
+635. freezer
+636. oven
+637. toaster
+638. baby powder
+639. baby lotion
+640. baby shampoo
+641. ointment
+642. baby food
+643. wipes
+644. cotton swabs
+645. vitamins
+646. pacifier
+647. bottle
+648. toilet
+649. toilet paper
+650. towel
+651. hamper
+652. air dryer
+653. fan
+654. faucet
+655. soap
+656. shower
+657. toothbrush
+658. comb
+659. razor
+660. razor blades
+661. nail clipper
+662. powder
+663. toothpaste
+664. lipstick

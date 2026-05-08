@@ -1,0 +1,705 @@
+🚗 Transportation & Travel
+001. bicycle: A fun ride with two wheels that you move by pushing the pedals.
+002. boat: A vehicle that floats and travels on water.
+003. cable car: A special car pulled by a thick wire that takes people up steep hills.
+004. flight: A trip through the air in an airplane or helicopter.
+005. helicopter: A flying machine with big spinning blades on top instead of wings.
+006. plane: A big flying vehicle with wings that takes people fast through the sky.
+007. railroad: The path of metal tracks that trains drive on.
+008. rocket: A super-fast flying machine that blasts astronauts into outer space.
+009. ship: A really big boat made for traveling across the ocean.
+010. spaceship: A vehicle built to fly people through the stars.
+011. speedboat: A small, fast boat that zooms across the water.
+012. taxi: A car you pay to drive you exactly where you need to go.
+013. train: A long line of connected cars that travels on a track.
+014. trailer: A cart pulled behind a car or truck to carry heavy things.
+015. transportation: All the different ways we move people or things from place to place.
+016. airport: The big place where airplanes take off and land.
+017. bus driver: The helpful person who steers the big bus.
+018. bus schedule: A list of times telling you exactly when the bus will arrive.
+019. bus station: A big building where lots of buses stop to pick up people.
+020. bus stop: A spot on the street where you wait to get on a bus.
+021. bus ticket: A little paper pass that proves you paid for your bus ride.
+022. car driver: The person sitting behind the steering wheel making the car go.
+023. car engine: The noisy, powerful machine hidden under the hood that makes the car move.
+024. car wash: A place with big soapy brushes where cars go to get squeaky clean.
+025. ferry: A big boat that carries people and cars across a river or lake.
+026. high-speed-train: A special train that zooms incredibly fast!
+027. paddle boat: A small boat you make move by pedaling with your feet.
+028. passenger: Anyone riding in a car, bus, or plane who isn't the driver.
+029. railroad crossing: A place where the road crosses the train tracks.
+030. railroad engine: The very first car of the train that pulls all the others.
+031. railroad station: A building where you go to wait for and get on a train.
+032. railroad track: The long metal rails that train wheels roll on.
+033. snowmobile: A cool vehicle like a motorcycle made for riding on top of snow.
+034. streetcar: A bus-like train that runs on tracks right down the middle of city streets.
+035. subway: A train that travels in dark tunnels completely underground!
+036. train driver: The person in charge of steering and stopping the train.
+037. train schedule: A paper or screen showing what time the trains come and go.
+038. train station: A place to buy tickets and board the train.
+039. train ticket: A paper that shows you paid to ride the train.
+040. wagon: A little cart with four wheels and a handle you can pull toys or friends in.
+
+🗺️ Directions & Positions
+041. across from: When something is on the exact opposite side of you.
+042. behind: Hiding in back of something else.
+043. between: Sitting right in the middle of two other things.
+044. in front of: Standing right before something so you can see it clearly.
+045. inside: Being contained within something, like being indoors.
+046. near: Very close by!
+047. next to: Sitting right beside something.
+048. outside: Being out in the fresh air, not in a building.
+049. over: Above or covering something.
+050. under: Hiding directly beneath something, like a monster under the bed!
+051. along: Moving closely by the edge of something, like walking along the beach.
+052. around: Moving in a circle or going all the way past the edges of something.
+053. down: Moving to a lower place.
+054. onto: Climbing up and placing yourself on top of something.
+055. past: Walking entirely by something until it is behind you.
+056. through: Going in one side of a tunnel or opening and coming out the other.
+
+🏛️ Places & Sights
+057. aquarium: A big indoor zoo just for fish and sea creatures.
+058. canyon: A super deep valley with tall, rocky walls.
+059. circus: A fun traveling show with acrobats, clowns, and animals.
+060. falls: A place where a river drops straight down a cliff like a water slide.
+061. museum: A building filled with old dinosaur bones, art, or cool history stuff to look at.
+062. sightseeing: Walking around a new city looking at all the famous and pretty places.
+063. suspension bridge: A bridge held up in the air by super strong, giant cables.
+064. theme park: A huge amusement park with roller coasters and fun games.
+065. fountain: A pretty statue or pool that shoots water up into the air.
+066. monument: A big statue or building made to help us remember an important person or time.
+067. palace: A giant, beautiful castle where a king, queen, or president lives.
+068. ruins: The broken-down, rocky pieces of very old buildings.
+069. statue: A piece of art carved to look like a person or animal.
+
+👕 Clothes & What They Are Made Of
+070. dress: A pretty piece of clothing for girls that covers the top and flows down like a skirt.
+071. earring: Pretty jewelry you wear pinned through your earlobes.
+072. jeans: Tough, blue pants made out of denim fabric.
+073. jewelry: Shiny things like rings, necklaces, and bracelets you wear to look fancy.
+074. sunglasses: Dark glasses you wear to protect your eyes from the bright sun.
+075. pants: Clothing that covers your legs down to your ankles.
+076. sweatshirt: A soft, thick, warm shirt with long sleeves.
+077. hoodie: A warm sweatshirt that has a hood to cover your head.
+078. watch: A little clock you strap to your wrist.
+079. shirt: Clothing you wear on the top half of your body.
+080. camera: A machine that takes photographs or videos. 
+081. clothes: All the things you wear, like shirts, pants, and socks.
+082. jacket: A light coat you zip up when it is chilly outside.
+083. pocket: A little pouch sewn into your pants or shirt to hold small things.
+084. shoes: What you put on your feet before you walk outside.
+085. shorts: Pants with short legs for hot summer days.
+086. skirt: A piece of clothing that hangs from the waist without leg holes.
+087. sneakers: Comfy, squishy shoes perfect for running and playing gym games.
+088. T-shirt: A simple, comfy shirt with short sleeves shaped like a letter T.
+089. umbrella: A portable roof on a stick that keeps the rain off your head!
+090. sweater: A warm, cozy, knitted top.
+091. underwear: The hidden clothes you wear right under your normal clothes.
+092. wallet: A small folding case you keep your money and cards in.
+093. swim trunks: Special shorts boys wear when they go swimming.
+094. uniform: Special matching clothes you wear for a team, school, or job.
+095. waterproof: Something made specially so water can't soak through it.
+096. wool: Soft, curly fur shaved off a sheep to make warm clothes.
+097. suit: A very fancy matching jacket and pants set for formal parties or work.
+098. raincoat: A slippery jacket that keeps you dry when it pours outside.
+099. polyester: A special smooth fabric made by scientists in a lab.
+100. fleece jacket: A super soft, fuzzy jacket that feels like a blanket.
+101. designer clothes: Very expensive clothes made by famous creators.
+102. cotton: A fluffy white plant used to make soft, breathable clothes.
+103. cloth: Any woven material used to make clothes or blankets.
+
+🍎 Food & Drink
+104. bread: A yummy baked food made from dough that makes great sandwiches.
+105. beans: Little seeds you cook and eat that give you lots of energy.
+106. cheese: A yummy, salty food made from milk.
+107. dairy products: Foods made out of cow's milk, like butter, yogurt, and cheese.
+108. diet: All the different foods you choose to eat every day.
+109. fried egg: An egg cooked in a hot pan so the yellow part looks like the sun!
+110. fruit: Sweet, healthy snacks that grow on trees or bushes, like apples.
+111. garlic: A little plant that makes food smell very strong and taste delicious.
+112. meat: Food that comes from animals, like chicken or steak.
+113. mushroom: A little squishy fungus shaped like an umbrella that you can eat.
+114. olive: A tiny, salty green or black fruit often put on pizza.
+115. onion: A round vegetable that tastes spicy when raw and might make you cry when you chop it!
+116. pepper: A crunchy vegetable, or a black spicy powder sprinkled on food.
+117. pineapple: A spiky, yellow tropical fruit that is super sweet inside.
+118. rice: Tiny white or brown grains you boil until they are soft.
+119. spinach: Green, leafy vegetables that make your muscles strong.
+120. tomato: A red, juicy fruit we use like a vegetable in salads or ketchup.
+121. potato: A brown root vegetable used to make french fries!
+122. vegetable: Healthy, crunchy plant foods like carrots and broccoli.
+123. burger: A yummy sandwich with a meat patty cooked between two buns.
+124. champagne: A fizzy, bubbly drink only for grown-ups celebrating something.
+125. grape: Small, round green or purple fruits that grow on a vine.
+126. lentils: Tiny, circle-shaped beans used to make warm soup.
+127. noodles: Long, squishy strings of pasta.
+128. soup: A hot, liquid meal you eat with a spoon.
+129. wine: A drink made from smushed grapes just for adults.
+130. apple juice: A sweet, cold drink squeezed out of apples.
+131. beer: A bubbly yellow drink only for grown-ups.
+132. chocolate cake: A sweet, dark, fluffy dessert with yummy frosting.
+133. coffee: A hot, dark drink grown-ups drink in the morning to wake up.
+134. fast food: Food from a drive-thru restaurant that you get very quickly.
+135. frozen food: Food kept super cold in the freezer until you are ready to heat it.
+136. fruit juice: The sweet liquid squeezed out of fresh fruit.
+137. fruit salad: A mix of chopped-up apples, grapes, bananas, and other fruits.
+138. grain: Tiny hard seeds like wheat, oats, and rice used to make bread or cereal.
+139. hamburger: A juicy meat patty in a bun, often with ketchup and cheese.
+140. kebab: Meat and veggies grilled together on a pointy stick.
+141. meal: All the food you sit down to eat at one time, like breakfast or dinner.
+142. orange: A round, juicy fruit that is the exact same color as its name!
+143. porridge: A hot, thick bowl of oatmeal perfect for a chilly morning.
+144. potato chips: Very thin, salty, crunchy slices of potato.
+145. sandwich: Meat or peanut butter stuffed between two slices of bread.
+146. sausage: Meat shaped into a long, hot-dog-like tube.
+147. stew: A thick, warm soup loaded with chunky meat and potatoes.
+148. toast: Slices of bread heated up until they are crunchy and warm.
+149. tomato salad: Chopped tomatoes mixed with dressing.
+
+👷 Jobs & People
+150. assistant: A helper who makes someone else's job easier.
+151. photographer: Someone whose job is to take really great pictures with a camera.
+152. pilot: The smart person who flies the airplane.
+153. playwright: A person who writes the stories that actors perform on a stage.
+154. politician: A leader chosen by the people to help make the laws for a city or country.
+155. receptionist: The friendly person at the front desk who answers the phone and says hello.
+156. reporter: A person on the news who tells you what is happening in the world.
+157. rock singer: Someone who sings really loud, fast music with guitars.
+158. street performer: Someone who does magic or plays music on the sidewalk for money.
+159. waiter: The person at a restaurant who brings your food to the table.
+160. archaeologist: A scientist who digs in the dirt to find dinosaur bones and ancient treasures.
+161. writer: A person who imagines and types out books or stories.
+162. cleaner: A person whose job is to make a building spotless and tidy.
+163. electrician: A safe worker who fixes the wires that make lights and TVs turn on.
+164. tour guide: A person who walks with you and tells you fun facts about a new place.
+165. hairdresser: A person with scissors who gives you a haircut.
+166. firefighter: A brave hero who puts out dangerous fires to save people.
+167. judge: The person in a black robe who makes sure the rules are followed in court.
+168. juggler: A talented person who throws lots of balls in the air and catches them without dropping any.
+169. musician: Someone who plays an instrument like the piano or guitar beautifully.
+170. novelist: A writer who writes really long storybooks.
+171. movie star: A very famous actor you see in big movies.
+172. translator: Someone who can change words from one language to another language.
+173. astronaut: An explorer who wears a spacesuit and travels into outer space!
+174. businessman: A person in a suit who works in an office making deals.
+175. police officer: A brave person who catches bad guys and keeps the town safe.
+176. salesperson: Someone who helps you find things to buy at a store.
+177. scientist: A smart person who does cool experiments to learn how the world works.
+178. journalist: A person who writes true news stories for the newspaper.
+179. designer: A creative person who draws plans for clothes, video games, or buildings.
+180. filmmaker: A person with a camera who directs and creates movies.
+181. teacher: The awesome person who helps you learn new things at school!
+182. taxi driver: The person you pay to drive you in their car.
+183. doctor: A person who helps your body heal when you are sick.
+184. architect: A person who draws the blueprints to build cool houses and tall buildings.
+185. consultant: An expert who gives advice to help a company do a better job.
+186. manager: The boss who is in charge of a store or team.
+187. mechanic: A person who gets their hands greasy fixing broken cars.
+188. producer: The person who organizes the money and people to get a movie made.
+189. referee: The person with the whistle in a sports game who makes sure everyone plays fair.
+190. surgeon: A special doctor who fixes people's bodies from the inside in an operating room.
+191. translate: Changing the words you say so someone who speaks a different language understands you.
+192. student: Someone who goes to school to learn—just like you!
+
+🏠 House & Kitchen Things
+193. cutting board: A thick piece of wood mom or dad uses to chop up vegetables safely.
+194. fork: A metal tool with pointy spikes to stab and eat your food.
+195. knife: A sharp metal tool used for slicing food into bite-sized pieces.
+196. matches: Tiny wooden sticks you strike to make a little fire.
+197. mirror: A shiny glass that shows you your own reflection.
+198. cupboard: A wooden cabinet on the kitchen wall where plates are kept.
+199. paraffin: A waxy stuff used to make candles.
+200. plate: A flat, round dish you put your dinner on.
+201. dishwasher: A loud machine that washes the dirty plates for you.
+202. shampoo: Sweet-smelling soap just for washing your hair.
+203. spoon: A rounded metal tool perfect for scooping up soup or ice cream.
+204. toilet paper: The soft paper roll used in the bathroom!
+205. measuring cup: A little cup with numbers on the side to show exactly how much milk or flour you have.
+206. saucepan: A deep metal pot with a long handle used for cooking on the stove.
+207. microwave: A box that uses invisible waves to heat up your food super fast.
+208. towels: Soft, fluffy cloths used to dry off after a bath.
+209. toothpaste: The minty paste you squeeze on your brush to clean your teeth.
+210. scissors: Two sharp blades you squeeze together to cut paper.
+211. cookbook: A book filled with instructions on how to bake and cook yummy things.
+212. refrigerator: The big cold closet in the kitchen that keeps milk and veggies fresh.
+213. stove: The hot top part of the oven where you boil water in a pan.
+214. washing machine: A loud machine that spins your dirty clothes in soapy water to clean them.
+
+🌲 Nature & Earth
+215. cliff: A steep, high wall of rock.
+216. desert: A very hot, dry place covered in sand with almost no water.
+217. hill: A gentle, grassy bump in the earth—not as tall as a mountain.
+218. jungle: A hot, wild forest packed with thick green vines and exotic animals.
+219. mountain: A giant, towering peak of rock that touches the clouds.
+220. tundra: A super cold, flat land where the ground is almost always frozen.
+221. volcano: A mountain with a hole on top that can shoot out hot, melted rock!
+222. waterfall: A beautiful stream of water falling over the edge of a cliff.
+223. river: A long, moving ribbon of water flowing across the land.
+224. cave: A dark, hollow hole inside a rock or mountain.
+225. forest: A large area of land covered in hundreds and hundreds of trees.
+226. island: A piece of land with ocean water surrounding it on all sides.
+227. drizzle: Very light, tiny drops of rain.
+228. flurry: A very light, quick sprinkle of snow.
+229. hailstones: Little balls of ice that fall from the sky instead of rain.
+230. slush: Messy, wet, melting snow on the ground.
+231. blizzard: A huge, dangerous snowstorm with freezing winds.
+232. thunderstorm: A loud storm with dark clouds, flashing lightning, and booming thunder.
+233. blustery wind: Very strong, gusty winds that can blow your hat off!
+234. hurricane: A giant, spinning ocean storm with dangerous winds and rain.
+235. drought: When it doesn't rain for a very long time and the ground gets dry and cracked.
+236. snowflake: A tiny, beautiful ice crystal that falls from the winter sky.
+237. peak: The very tippy-top point of a tall mountain.
+238. stream: A little, bubbling river.
+239. swamp: A muddy, watery area filled with trees and frogs.
+240. valley: The low area of land sitting right between two big mountains.
+241. woods: A smaller area of trees, like a tiny forest.
+242. lagoon: A shallow, calm pool of ocean water separated from the big sea by a sandy reef.
+243. hollow: An empty space or hole, like inside an old tree trunk.
+244. pond: A small, still pool of water where ducks like to swim.
+245. creek: A tiny stream of water
+246. landscape: The way a big stretch of land looks, with all its hills, trees, and grass.
+247. continent: One of the huge pieces of land on Earth, like Africa or North America.
+248. coast: The edge of the land where the sandy beach meets the ocean water.
+249. path: A dirt trail meant for walking through the woods.
+250. road: A smooth, paved strip where cars drive.
+251. peninsula: A piece of land that sticks out into the water but is still attached to the mainland.
+252. plain: A giant, flat area of grassy land with no hills.
+253. fortress: A strong, heavily protected castle or building to keep bad guys out.
+254. landmark: A famous building or mountain that is easy to spot and helps you know where you are.
+
+⚽ Fun, Hobbies & Weather
+255. board game: A fun game played with pieces on a cardboard square, like Checkers or Monopoly.
+256. chess: A very smart board game where you move knights and kings to capture the other side.
+257. dancing: Moving your body to the beat of the music!
+258. dice game: A game played by rolling little cubes with dots on them.
+259. drawing: Using pencils or crayons to make a picture on paper.
+260. fishing: Using a long pole with a string to try and catch a fish in the water.
+261. football: A rough sport where players throw and run with a brown, pointy ball.
+262. hobby: A fun activity you love to do in your free time just because it makes you happy.
+263. horseback riding: Sitting in a saddle and letting a horse walk or run you around.
+264. ice hockey: A fast game played on ice skates where you hit a black puck with a stick.
+265. inline skating: Gliding on shoes that have wheels in a straight line on the bottom.
+266. knitting: Using two long needles to loop yarn into a warm scarf or hat.
+267. painting: Using a brush and wet, colorful paint to create a picture.
+268. sailing: Moving a boat across the water by letting the wind catch the big white sails.
+269. skateboard: A wooden board with four little wheels you stand on to do tricks.
+270. skateboarding: The action of riding around on a skateboard.
+271. skydiving: Jumping out of an airplane way up high and floating down safely with a parachute!
+272. snowboarding: Sliding down a snowy mountain standing sideways on one wide board.
+273. surfing: Riding a surfboard on top of a big ocean wave.
+274. swimming: Moving yourself through the water by kicking and splashing your arms.
+275. camping: Sleeping outside in a tent and roasting marshmallows over a fire.
+276. hiking: Going for a long, beautiful walk up a mountain trail.
+277. storm: Bad weather with dark clouds, wind, and rain or snow.
+278. sunny: When the bright yellow sun is shining with no clouds in the way.
+279. temperature: A number that tells you exactly how hot or cold the air is outside.
+280. tropics: The super warm and sunny areas of the world near the equator.
+281. warm: Feeling nicely heated, like a fuzzy blanket straight from the dryer.
+282. weather: Whether it is rainy, sunny, or snowy outside today.
+283. windy: When the air outside is blowing really hard.
+284. autumn: The season when the air gets chilly and the leaves turn orange and fall down.
+285. spring: The season when the snow melts and pretty flowers start to bloom.
+286. summer: The hottest season of the year when there is no school!
+287. woodworking: The hobby of carving or building cool things out of wood.
+288. scrapbooking: Making a pretty memory book by gluing in photos and fun stickers.
+289. pottery: Using squishy clay to spin and mold a bowl or a vase.
+290. climate change: The way the whole Earth is slowly getting warmer over a long time.
+291. cloudy: When fluffy gray or white clouds cover up the blue sky.
+292. foggy: When a thick, low cloud touches the ground and makes it hard to see far away.
+293. rainy: When lots of water drops fall from the sky.
+294. season: One of the four parts of the year: Spring, Summer, Autumn, or Winter.
+295. shine: To give off bright light, like the sun or a flashlight.
+296. snowy: When white flakes are falling and covering the ground in white.
+297. winter: The coldest season of the year, perfect for making snowmen!
+298. degree: The little number unit we use to measure the temperature.
+299. frozen: When something gets so incredibly cold it turns solid, like water turning to ice.
+
+🏙️ City Places & Buildings
+300. coffee shop: A cozy store where grown-ups buy hot coffee and kids can get hot chocolate.
+301. movie theater: A dark room with a giant screen where you go to eat popcorn and watch new movies.
+302. store: A place you go inside to buy things you need.
+303. park: A green space with trees, grass, and a playground!
+304. shopping mall: A giant indoor building filled with lots and lots of different stores.
+305. bank: A safe building where people keep their money locked up.
+306. bookstore: A quiet shop filled with thousands of storybooks you can buy.
+307. cathedral: A very large, old, and beautiful church.
+308. church: A building where people go to pray and sing.
+309. drugstore: A store where you can buy medicine when you feel sick, plus snacks and shampoo.
+310. fire department: The building where fire trucks are parked and firefighters wait to help.
+311. flower shop: A sweet-smelling store that sells colorful roses and daisies.
+312. carnage: A very messy, destructive scene, usually just seen in superhero movies.
+313. music store: A shop that sells guitars, pianos, and sheet music.
+314. newsstand: A little booth on the sidewalk that sells newspapers and magazines.
+315. parking lot: A big flat area painted with white lines where people park their cars.
+316. police station: The building where police officers work to keep the city safe.
+317. post office: The place you take your letters and boxes so they can be mailed.
+318. stadium: A gigantic open arena where you go to watch big sports games.
+319. supermarket: A giant grocery store where you buy all your food for the week.
+320. temple: A special, holy building where people go to worship.
+321. travel agency: A place where people help you plan a fun vacation.
+
+🩺 Health & Body
+322. ambulance: The loud, flashing truck that rushes sick people to the hospital.
+323. bite: To chomp down with your teeth.
+324. disease: An illness or sickness that makes your body feel bad.
+325. healthy: Feeling super strong, with no sicknesses!
+326. hospital: The big building full of doctors and nurses where people go to get healed.
+327. hurt: Feeling pain from a scrape or a bump.
+328. medical school: A super hard college where smart people learn to become doctors.
+329. medicine: The syrup or pills the doctor gives you to make your sickness go away.
+330. nurse: The kind helper at the hospital who takes your temperature and gives you bandages.
+331. sick: Feeling yucky, like when you have a cough or a tummy ache.
+332. well: Feeling completely healthy and good!
+333. X-ray: A magical-looking picture that lets the doctor see the bones inside your body!
+334. toothache: When a tooth inside your mouth hurts.
+335. headache: When your brain and head feel tight and hurty.
+
+🦁 Awesome Animals
+336. amphibian: A slimy animal that can live perfectly in the water AND on the land, like a frog!
+337. cheetah: The absolute fastest running cat in the whole world, covered in spots.
+338. cobra: A dangerous, sliding snake whose neck flattens out like a hood.
+339. dolphin: A very smart, friendly gray ocean animal that loves to jump in the waves.
+340. elephant: A giant, gray animal with big floppy ears and a long trunk for a nose.
+341. giraffe: A yellow and brown animal with an incredibly long neck to eat leaves high in the trees.
+342. falcon: A very fast, sharp-eyed bird that hunts from the sky.
+343. hippo: A heavy, round animal that loves to soak in the muddy water all day.
+344. horse: A beautiful, strong animal you can ride on.
+345. insect: A tiny six-legged bug, like an ant or a butterfly.
+346. monkey: A silly, furry animal that loves to swing from tree branches by its tail.
+347. mosquito: A pesky little flying bug that tries to bite you in the summer.
+348. octopus: A smart ocean creature with eight squiggly legs called tentacles.
+349. parrot: A brightly colored tropical bird that can sometimes learn to talk!
+350. penguin: A black and white bird that waddles on the ice and swims, but cannot fly.
+351. polar bear: A massive, white bear that lives in the freezing cold snow.
+352. rabbit: A cute, fuzzy animal with long ears that hops.
+353. sailfish: An ocean fish with a giant fin on its back that swims extremely fast.
+354. shark: A big ocean fish with lots of sharp teeth.
+355. sheep: A fluffy, white farm animal that goes Baa!
+356. snake: A long, scaly reptile that slithers on the ground with no arms or legs.
+357. whale: The biggest animal in the world, living deep in the ocean.
+358. tiger: A large, fierce wildcat with beautiful orange and black stripes.
+
+🎭 Entertainment & Feelings
+359. acting company: A team of actors who put on plays together.
+360. backstage: The hidden area behind the stage where actors put on their costumes.
+361. band: A group of people playing different musical instruments together.
+362. character: A pretend person or animal in a story or movie.
+363. concert: A live show where you go to watch your favorite singers perform.
+364. drama: A serious play or movie full of big emotions.
+365. director: The boss of a movie who tells the actors where to stand and what to say.
+366. episode: One short part of a TV show series.
+367. movie: A moving picture story you watch on a screen.
+368. perform: To act, sing, or dance in front of an audience.
+369. performance: The show that actors or singers put on for you to watch.
+370. rehearsal: A practice session to get ready for a big show.
+371. rehearse: To practice your lines over and over so you don't forget them!
+372. scene: One small part of a movie or play.
+373. show: An entertaining performance you watch, like a TV show or a play.
+374. stage: The raised wooden floor where actors stand so the audience can see them.
+375. cinema: Another word for the movie theater!
+376. studio: A special room where movies are filmed or music is recorded.
+377. theater: The dark building with a stage where you go to watch plays.
+378. bored: Feeling like you have absolutely nothing fun to do.
+379. angry: Feeling really mad about something.
+380. embarrassed: Feeling silly and having hot cheeks because you made a little mistake.
+381. exhausted: Feeling incredibly tired, like you need to sleep right now.
+382. frightened: Feeling scared of something.
+383. sensitive: Having feelings that are very easily hurt.
+384. shocked: Feeling extremely surprised by something you didn't see coming!
+385. surprised: Feeling wide-eyed when something unexpected happens, like a surprise party!
+386. unhappy: Feeling sad.
+387. upset: Feeling worried, sad, and a little mad all at once.
+388. worried: Thinking hard about something that might go wrong.
+389. confident: Feeling brave and knowing you are going to do a great job.
+390. afraid: Feeling scared.
+391. quiet: Making almost no sound at all.
+392. nervous: Having a fluttery feeling in your tummy before trying something new.
+393. playful: Wanting to have fun and be silly!
+394. courageous: Being very brave, even when things are scary.
+395. peaceful: Feeling very calm and quiet inside.
+396. reliable: Being a good friend that people can always count on.
+397. energetic: Bouncing off the walls with lots of energy!
+398. lucky: Having good things happen to you by magic chance!
+399. amazed: Feeling 'wow!' about something incredibly cool.
+400. optimistic: Always looking on the bright side and expecting good things.
+401. pleased: Feeling happy and satisfied.
+402. delighted: Feeling super, duper happy about something!
+403. sympathetic: Feeling sorry for someone else who is sad.
+404. interested: Wanting to learn all about a new, cool topic.
+405. thankful: Feeling glad and wanting to say thank you for what you have.
+406. satisfied: Feeling like you have enough and you are totally content.
+407. shy: Feeling nervous or quiet around new people.
+408. cheerful: Smiling, happy, and full of joy!
+409. positive: Being happy and focusing on the good things.
+410. fascinated: Unable to look away because something is so incredibly interesting.
+411. anxious: Feeling a little scared and worried about what will happen next.
+
+🎬 Action Words & Travel
+412. apologize: To say I'm sorry when you do something wrong.
+413. knit: To use yarn and two needles to make a sweater.
+414. laugh: The happy sound you make when something is super funny!
+415. oversleep: To accidentally sleep way past your alarm clock.
+416. sneeze: When ticklish air blasts out of your nose with an Achoo!
+417. suggest: To share a good idea for what to do next.
+418. sunbathe: To lay perfectly still under the sun to get warm.
+419. attract: To pull things closer to you, like a magnet pulls metal.
+420. encourage: To cheer someone on and tell them You can do it!
+421. experience: To live through and feel something happening to you.
+422. inspire: To make someone feel like they want to do something amazing.
+423. manage: To carefully be the boss of a project and get it done.
+424. overtake: To run faster and pass the person who was in front of you.
+425. push away: To shove something far from you.
+426. refuse: To firmly say No! to doing something.
+427. repel: To push away, like when two matching magnets won't stick together.
+428. appear: To suddenly show up so people can see you!
+429. broadcast: To send a radio or TV show out into the airwaves for everyone to hear.
+430. compare: To look at two things and see how they are the same or different.
+431. delete: To totally erase something on a computer.
+432. spread: To stretch something out, like rubbing butter across toast.
+433. substitute: To swap one thing out to use in place of another.
+434. succeed: To do a great job and win at what you were trying to do.
+435. survive: To stay alive and safe even when things are dangerous.
+436. suitcase: A big, rolling box with a handle used to carry clothes on a trip.
+437. hand luggage: A small bag you are allowed to carry right onto the airplane with you.
+438. boarding pass: Your super important paper ticket that lets you get on the airplane.
+439. backpack: A bag with two straps you wear on your back.
+440. bag: A sack used to carry your things.
+441. daypack: A small, light backpack used for just one day of hiking.
+442. pack: To fold all your clothes and put them into your suitcase.
+443. check-in: Going to the front desk at a hotel to say I'm here!
+444. magazine: A floppy, shiny book full of pictures and short articles.
+445. newspaper: Big, foldy paper pages printed every day with the local news.
+446. aisle: The walking space right down the middle of the airplane seats.
+447. lounge: A comfy waiting room with couches.
+448. passport: A little official book with your picture that proves what country you are from so you can travel the world.
+449. flight number: The special code numbers that tell you exactly which airplane is yours.
+
+🔤 Grammar & Holidays
+450. abbreviation: A quick, short way to write a longer word.
+451. adjective: A describing word, like blue or fluffy.
+452. adverb: A word that describes how you do something, like running quickly.
+453. auxiliary verb: A helper verb in a sentence, like am or is.
+454. countable: Things you can point to and count, like one apple, two apples.
+455. plural: More than one of something!
+456. singular: Just one of something.
+457. somebody: Any person.
+458. something: Any single thing.
+459. uncountable: Things that are too tricky to count one by one, like water or sand.
+460. gerund: An action word ending in -ing that acts like a noun, like swimming is fun.
+461. grammar: The important rules of how to put words together correctly.
+462. infinitive: The basic form of a verb with to in front of it, like to play.
+463. preposition: A word that tells you where something is, like under or on.
+464. pronoun: A short word that takes the place of a name, like he or she.
+465. ball: A fancy, magical dance party with pretty dresses.
+466. candle: A stick of wax you light on fire for a birthday wish.
+467. carnival: A huge outdoor festival with rides, games, and cotton candy!
+468. celebrate: To have a super fun time because it's a special day!
+469. celebration: A big, happy party.
+470. Christmas: A winter holiday where people decorate trees and give presents.
+471. costume: A pretend outfit you wear to dress up like a superhero or a monster.
+472. dancer: A person who moves beautifully to the music.
+473. gift: A wrapped present you give to someone to make them happy.
+474. greeting card: A folded piece of thick paper with a nice message inside for a birthday.
+475. Happy New Year: What you yell at midnight when the new calendar year starts!
+476. parade: A long line of marching bands and floats walking down the street.
+477. party: A fun gathering with friends, food, and games.
+478. street fair: A fun block party outside with food and games
+
+🌍 Geography & Names
+479. Africa: A giant, beautiful continent with lions, deserts, and jungles.
+480. Asia: The largest continent on Earth, where countries like Japan and China are.
+481. Europe: A continent full of old castles and countries like France and Italy.
+482. America: The lands of the Western world!
+483. North America: The continent where Canada, the USA, and Mexico are.
+484. South America: A southern continent famous for the giant Amazon rainforest.
+485. Antarctica: The freezing cold continent at the very bottom of the Earth covered in ice.
+486. Australia: A continent and country famous for jumping kangaroos!
+487. Barbados: A beautiful, sunny island in the Caribbean sea.
+488. Brazil: A huge country in South America where the Amazon river flows.
+489. China: A massive country in Asia famous for the Great Wall.
+490. Denmark: A small, cool country in Europe where Legos were invented!
+491. France: A European country famous for the Eiffel Tower and yummy bread.
+492. India: A huge, colorful country in Asia famous for the Taj Mahal.
+493. Italy: A country in Europe shaped like a giant boot, famous for pizza!
+494. Japan: An island country in Asia famous for sushi and cherry blossoms.
+495. Russia: The biggest country in the entire world!
+496. Spain: A sunny country in Europe where people speak Spanish.
+497. Mexico: A vibrant country in North America famous for tacos and ancient pyramids.
+498. Jamaica: A gorgeous island country known for awesome reggae music.
+499. Canada: A huge, snowy country right above the USA.
+500. England: A country in Europe ruled by a King!
+
+(Here are the everyday life words from the first part of your list, keeping it short and sweet!)
+
+📝 Basics & Family
+501. name: The word people call you.
+502. first name: Your very own starting name.
+503. last name: Your family name.
+504. address: Where your house is located.
+505. street: The road outside your house.
+506. apartment number: The door number of your flat.
+507. city: A busy town with lots of buildings.
+508. state: A big piece of a country.
+509. zip code: The mail numbers for your town.
+510. phone number: The numbers to call your phone.
+511. wife: A married woman.
+512. husband: A married man.
+513. mother: Mom!
+514. father: Dad!
+515. daughter: A girl child.
+516. son: A boy child.
+517. sister: Your parents' other girl.
+518. brother: Your parents' other boy.
+519. baby: A tiny newborn.
+520. grandmother: Grandma!
+521. grandfather: Grandpa!
+522. aunt: Your mom or dad's sister.
+523. uncle: Your mom or dad's brother.
+524. niece: Your sister or brother's daughter.
+525. nephew: Your sister or brother's son.
+526. cousin: Your aunt and uncle's kid.
+527. mother-in-law: The mom of the person you marry.
+528. father-in-law: The dad of the person you marry.
+529. son-in-law: The man your daughter marries.
+530. daughter-in-law: The woman your son marries.
+531. brother-in-law: The brother of the person you marry.
+
+⏰ Daily Routine & School
+532. get up: Waking up!
+533. take a shower: Getting clean under the water.
+534. shave: Cutting off face hair.
+535. get dressed: Putting on clothes.
+536. make the bed: Fixing your blankets neatly.
+537. get undressed: Taking clothes off.
+538. go to bed: Sleeping time.
+539. make breakfast: Cooking morning food.
+540. make lunch: Fixing noon food.
+541. make dinner: Cooking evening food.
+542. dust: Wiping away dirt.
+543. vacuum: Sucking up carpet dirt.
+544. wash the dishes: Cleaning plates.
+545. iron: Flattening wrinkly clothes.
+546. feed the cat: Giving kitty food.
+547. walk the dog: Taking pup outside.
+548. watch T.V.: Looking at shows.
+549. listen to music: Hearing songs.
+550. play soccer: Kicking a ball into a net.
+551. pen: An ink writer.
+552. pencil: A lead writer you can erase.
+553. eraser: A rubber mistake-fixer.
+554. desk: Your school table.
+555. notebook: A book for writing in.
+556. calculator: A math machine.
+557. clock: A time-teller.
+558. flag: A country's colorful cloth.
+559. board: Where the teacher writes.
+560. map: A drawing of the world.
+561. screen: A TV or computer glass.
+562. computer: A smart machine.
+563. sharpener: Makes pencils pointy.
+564. projector: Shines big pictures on walls.
+565. bookshelf: A place for books.
+566. stand up: Get on your feet.
+567. go to the board: Walk to the front.
+568. write your name: Put your name on paper.
+569. sit down: Put your bottom in a chair.
+570. open your book: Turn the cover.
+571. close your book: Shut the pages.
+572. listen to the question: Use your ears.
+573. read in groups: Read together.
+574. work in groups: Do a project together.
+575. help each other: Be kind to a friend.
+
+🏡 House & Home Goods
+576. building: A structure with walls and a roof.
+577. house: A home for a family.
+578. apartment: A home inside a bigger building.
+579. farmhouse: A home on a farm.
+580. cabin: A wooden house in the woods.
+581. nursing home: A home with helpers for older folks.
+582. shelter: A safe place to stay.
+583. condominium: An apartment you own.
+584. dormitory: A college building to sleep in.
+585. rug: A soft carpet piece.
+586. floor: What you walk on inside.
+587. windows: Glass in the walls to see out.
+588. couch: A big soft seat.
+589. pillow: A soft headrest.
+590. ceiling: The inside roof above you.
+591. wall: The side of a room.
+592. speaker: A music box.
+593. loveseat: A small couch.
+594. painting: Wall art.
+595. dining room: The eating room.
+596. chandelier: A fancy hanging light.
+597. salad shaker: A bowl to mix lettuce.
+598. candle: A wax stick you light.
+599. sugar bowl: A sweet powder holder.
+600. coffee pot: A jug for hot coffee.
+601. pitcher: A big pouring jug.
+602. butter dish: A plate for yellow butter.
+603. water glass: A cup for water.
+604. wine glass: A fancy adult cup.
+605. cup: A drinking holder.
+606. saucer: A mini plate for a teacup.
+607. napkin: A mouth wiper.
+608. fork: A pointy food tool.
+609. knife: A sharp cutting tool.
+610. teaspoon: A tiny spoon.
+611. silverware: Forks, spoons, and knives.
+612. beads: Tiny jewelry pieces.
+613. blinds: Window shades.
+614. alarm clock: A waking-up clock.
+615. double bed: A bigger bed.
+616. queen-size bed: A very big bed.
+617. king-size bed: A giant bed!
+618. cot: A folding bed.
+619. hospital bed: A sick-person bed.
+620. crib: A baby bed.
+
+🍼 Baby & Bathroom
+621. night light: A small dark-scaring light.
+622. doll: A toy baby.
+623. playpen: A safe baby fence.
+624. car seat: A safe car chair.
+625. stroller: A pushing chair on wheels.
+626. baby seat: A little resting chair.
+627. baby carrier: A baby backpack.
+628. portable crib: A travel baby bed.
+629. dishwasher: The plate-washing machine.
+630. sink: The hand-washing bowl.
+631. garbage: Yucky trash!
+632. dish towel: A drying cloth.
+633. cabinet: A kitchen storage box.
+634. microwave: A fast food heater.
+635. freezer: The ice box!
+636. oven: The baking box.
+637. toaster: The bread crisper.
+638. baby powder: Soft baby dust.
+639. baby lotion: Soft skin cream.
+640. baby shampoo: Gentle hair soap.
+641. ointment: Healing cream.
+642. baby food: Mushy food!
+643. wipes: Wet cleaning towels.
+644. cotton swabs: Tiny ear cleaners.
+645. vitamins: Healthy growing pills.
+646. pacifier: A baby sucking toy.
+647. bottle: A baby milk cup.
+648. toilet: The potty!
+649. toilet paper: Potty wiping paper.
+650. towel: A big drying cloth.
+651. hamper: A dirty clothes basket.
+652. air dryer: A hand-blowing machine.
+653. fan: A windy spinner.
+654. faucet: The water spout.
+655. soap: Bubbly germ cleaner.
+656. shower: An indoor rain bath.
+657. toothbrush: A teeth scrubber.
+658. comb: A hair untangler.
+659. razor: A shaving tool.
+660. razor blades: The sharp shaving parts.
+661. nail clipper: A fingernail cutter.
+662. powder: Soft body dust.
+663. toothpaste: Minty teeth paste.
+664. lipstick: Colorful lip makeup.

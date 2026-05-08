@@ -1,0 +1,664 @@
+001. bicycle: I love to ride my bicycle at the park.
+002. boat: The wooden boat floats nicely on the water.
+003. cable car: We rode a cable car high up the mountain.
+004. flight: Our flight in the airplane took three hours.
+005. helicopter: The helicopter spun its top blades to fly up.
+006. plane: The plane flew high above the fluffy clouds.
+007. railroad: The train travels along the steel railroad.
+008. rocket: The astronaut blasted into space in a fast rocket.
+009. ship: A giant ship carried the cargo across the ocean.
+010. spaceship: An alien might fly a shiny spaceship.
+011. speedboat: The speedboat zoomed super fast across the lake.
+012. taxi: We paid the yellow taxi to drive us home.
+013. train: The long train went choo-choo on the tracks.
+014. trailer: The truck pulled a trailer full of heavy boxes.
+015. transportation: Cars, buses, and bikes are all types of transportation.
+016. airport: We went to the airport to catch our plane.
+017. bus driver: The friendly bus driver safely drove us to school.
+018. bus schedule: We checked the bus schedule to see what time to leave.
+019. bus station: Lots of buses wait for people at the bus station.
+020. bus stop: I wait on the corner at the bus stop.
+021. bus ticket: I showed my paper bus ticket to the driver.
+022. car driver: My mom is a very safe car driver.
+023. car engine: The loud car engine makes the vehicle move.
+024. car wash: We took our dirty van to the soapy car wash.
+025. ferry: We drove our car onto the big ferry boat.
+026. high-speed-train: The high-speed-train zipped past the trees in a blur.
+027. paddle boat: We used our feet to push the paddle boat.
+028. passenger: I sit in the back seat as a passenger.
+029. railroad crossing: Cars must stop at the railroad crossing for the train.
+030. railroad engine: The powerful railroad engine pulls all the train cars.
+031. railroad station: We bought snacks at the railroad station while waiting.
+032. railroad track: Never play on the metal railroad track.
+033. snowmobile: We rode a motorized snowmobile over the deep snow.
+034. streetcar: The electric streetcar drives right down the city road.
+035. subway: The subway is a train that goes underground!
+036. train driver: The train driver blew the loud horn.
+037. train schedule: The train schedule says the next ride is at noon.
+038. train station: We met our grandma inside the busy train station.
+039. train ticket: Don't lose your paper train ticket before you board.
+040. wagon: I pulled my little sister in a red wagon.
+041. across from: The park is right across from my house.
+042. behind: My dog is hiding behind the couch.
+043. between: I sat between my mom and dad.
+044. in front of: Please don't stand in front of the TV!
+045. inside: It is raining, so we must play inside.
+046. near: My best friend lives very near my house.
+047. next to: I like sitting next to you at lunch.
+048. outside: Let's go outside and play in the grass!
+049. over: The dog jumped right over the fence.
+050. under: I found my lost shoe under the bed.
+051. along: We walked along the edge of the beach.
+052. around: We ran in circles around the big tree.
+053. down: I walked down the stairs to get breakfast.
+054. onto: The cat jumped onto the kitchen counter.
+055. past: We drove past the grocery store on our way home.
+056. through: The train went right through the dark tunnel.
+057. aquarium: We saw sharks and fish at the giant aquarium.
+058. canyon: The river carved a deep canyon in the rocks.
+059. circus: The clowns were so funny at the circus.
+060. falls: The water crashes down the beautiful falls.
+061. museum: We looked at dinosaur bones inside the museum.
+062. sightseeing: We took a camera to go sightseeing in the city.
+063. suspension bridge: Cars drive safely across the long suspension bridge.
+064. theme park: I rode a roller coaster at the theme park.
+065. fountain: Water shoots high into the air from the fountain.
+066. monument: That tall monument was built to honor a great leader.
+067. palace: The king and queen live in a beautiful palace.
+068. ruins: We explored the stony ruins of an old castle.
+069. statue: The bronze statue looks just like a real horse.
+070. dress: She wore a twirly pink dress to the party.
+071. earring: My mom wears a sparkly earring on each ear.
+072. jeans: My blue jeans have a hole in the knee.
+073. jewelry: Necklaces and rings are pretty types of jewelry.
+074. sunglasses: I wear dark sunglasses when the sky is bright.
+075. pants: I put on long pants because it was cold.
+076. sweatshirt: This cozy sweatshirt keeps me warm in the fall.
+077. hoodie: I pulled my hoodie over my head to stay warm.
+078. watch: I check my wrist watch to see what time it is.
+079. shirt: I spilled juice on my favorite green shirt.
+080. camera: Smile and look right at the camera!
+081. clothes: We packed our clothes into a suitcase.
+082. jacket: Zip up your jacket before going out in the wind.
+083. pocket: I put the shiny coin safely in my pocket.
+084. shoes: Tie your shoes so you don't trip!
+085. shorts: I wear cool shorts when it is hot in summer.
+086. skirt: She wore a beautiful skirt that spun when she danced.
+087. sneakers: I run very fast when I wear my gym sneakers.
+088. T-shirt: I love my soft T-shirt with a dinosaur on it.
+089. umbrella: My yellow umbrella keeps me dry in the rain.
+090. sweater: Grandma knitted me a warm, itchy sweater.
+091. underwear: You wear underwear hidden under your normal clothes.
+092. wallet: Dad keeps his money folded in his wallet.
+093. swim trunks: He wore his blue swim trunks into the pool.
+094. uniform: Every police officer wears a neat, matching uniform.
+095. waterproof: My rain boots are waterproof so my feet stay dry.
+096. wool: Sheep give us soft wool to make warm blankets.
+097. suit: He wore a fancy tie and a suit to the wedding.
+098. raincoat: A yellow raincoat stops you from getting wet.
+099. polyester: This smooth shirt is made out of polyester.
+100. fleece jacket: A fuzzy fleece jacket feels just like a blanket.
+101. designer clothes: Famous creators make very expensive designer clothes.
+102. cotton: Soft t-shirts are usually made of a plant called cotton.
+103. cloth: We used a damp cloth to wipe the table.
+104. bread: I like butter on my warm slice of bread.
+105. beans: We ate healthy green beans with dinner.
+106. cheese: Mice love to eat yellow cheese.
+107. dairy products: Milk and yogurt are healthy dairy products.
+108. diet: Eating lots of fruits is part of a good diet.
+109. fried egg: I ate a hot fried egg for breakfast.
+110. fruit: An apple is my favorite sweet fruit.
+111. garlic: We added smelly, yummy garlic to the pizza sauce.
+112. meat: Steak and chicken are types of meat.
+113. mushroom: I found a little squishy mushroom growing in the dirt.
+114. olive: I like eating a salty green olive as a snack.
+115. onion: Chopping a white onion might make you cry!
+116. pepper: I sprinkled black pepper to make my food spicy.
+117. pineapple: A pineapple is spiky on the outside and sweet inside.
+118. rice: We ate sticky white rice with our chicken.
+119. spinach: Eating green spinach makes your muscles super strong!
+120. tomato: I put a red, juicy tomato in my salad.
+121. potato: French fries are made from a sliced potato.
+122. vegetable: A crunchy carrot is a very healthy vegetable.
+123. burger: I ate a huge, juicy burger with ketchup.
+124. champagne: Grown-ups drink bubbly champagne to celebrate.
+125. grape: A purple grape is a juicy, bite-sized fruit.
+126. lentils: We made warm soup out of tiny brown lentils.
+127. noodles: I love slurping long, squishy spaghetti noodles.
+128. soup: I ate a hot bowl of chicken noodle soup.
+129. wine: The red wine is a drink just for adults.
+130. apple juice: I drank a cold glass of sweet apple juice.
+131. beer: The yellow beer is a drink only for grown-ups.
+132. chocolate cake: I blew out candles on my birthday chocolate cake.
+133. coffee: Mom drinks hot coffee to wake up in the morning.
+134. fast food: We got quick burgers at a fast food restaurant.
+135. frozen food: Ice cream and pizza rolls are cold frozen food.
+136. fruit juice: Squeezing an orange gives you sweet fruit juice.
+137. fruit salad: A bowl of mixed berries and melons is a fruit salad.
+138. grain: Wheat is a tiny grain used to make bread.
+139. hamburger: I put cheese and pickles on my hamburger.
+140. kebab: Meat cooked on a pointy stick is a kebab.
+141. meal: Dinner is my favorite meal of the day.
+142. orange: I peeled the bright orange to eat the fruit inside.
+143. porridge: Goldilocks ate the baby bear's hot porridge.
+144. potato chips: I crunched loudly on salty potato chips.
+145. sandwich: I made a peanut butter and jelly sandwich.
+146. sausage: A hot dog is a very yummy type of sausage.
+147. stew: We ate a thick, warm meat stew in the winter.
+148. toast: I put strawberry jam on my crunchy toast.
+149. tomato salad: We mixed greens and red chunks for a tomato salad.
+150. assistant: The helpful assistant carried the teacher's books.
+151. photographer: The photographer took a picture with a big camera.
+152. pilot: The smart pilot flies the airplane safely in the sky.
+153. playwright: The playwright typed a story for actors to perform.
+154. politician: The politician helped make new rules for our city.
+155. receptionist: The friendly receptionist said hello at the front desk.
+156. reporter: The reporter told us the news on TV.
+157. rock singer: The loud rock singer yelled into the microphone.
+158. street performer: We gave a coin to the juggling street performer.
+159. waiter: The nice waiter brought our food to the table.
+160. archaeologist: The archaeologist dug up ancient dinosaur bones.
+161. writer: The creative writer made up a story about dragons.
+162. cleaner: The cleaner swept the floor to make it spotless.
+163. electrician: The safe electrician fixed the broken light wires.
+164. tour guide: Our tour guide showed us the best parts of the city.
+165. hairdresser: The hairdresser used scissors to give me a trim.
+166. firefighter: The brave firefighter sprayed water on the flames.
+167. judge: The wise judge wears a black robe in the courtroom.
+168. juggler: The talented juggler tossed three balls in the air.
+169. musician: The musician played a beautiful song on the piano.
+170. novelist: A novelist is someone who writes very long chapter books.
+171. movie star: The famous movie star waved to the fans.
+172. translator: The translator changed the words from English to Spanish.
+173. astronaut: The brave astronaut floated in outer space!
+174. businessman: The businessman carried a briefcase to his office.
+175. police officer: The police officer keeps our neighborhood safe.
+176. salesperson: The salesperson helped me find the perfect toy to buy.
+177. scientist: The clever scientist did an experiment in the lab.
+178. journalist: The journalist wrote a true story for the newspaper.
+179. designer: The creative designer drew a picture of a new dress.
+180. filmmaker: The filmmaker used a camera to shoot a cool movie.
+181. teacher: My amazing teacher helps me learn math and reading.
+182. taxi driver: The taxi driver knew exactly how to get to the hotel.
+183. doctor: The caring doctor gave me medicine when I was sick.
+184. architect: The architect drew the blueprints to build the tall house.
+185. consultant: The expert consultant gave the company good advice.
+186. manager: The manager is the boss who runs the grocery store.
+187. mechanic: The greasy mechanic fixed the engine in our car.
+188. producer: The producer helped pay for the movie to be made.
+189. referee: The sports referee blew a whistle to stop the game.
+190. surgeon: The surgeon is a special doctor who fixes bodies in an operating room.
+191. translate: I asked my mom to translate the Spanish word for me.
+192. student: I am a smart student who learns at school.
+193. cutting board: We chop onions safely on a wooden cutting board.
+194. fork: I use a pointy metal fork to eat my spaghetti.
+195. knife: Be careful because a knife is very sharp!
+196. matches: Adults use wooden matches to light a campfire.
+197. mirror: I look at my own face in the shiny mirror.
+198. cupboard: We keep our clean plates hidden in the cupboard.
+199. paraffin: Melted paraffin wax is used to make candles.
+200. plate: I put a big slice of pizza on my round plate.
+201. dishwasher: We load dirty cups into the washing dishwasher.
+202. shampoo: I wash my hair with bubbly, sweet-smelling shampoo.
+203. spoon: I eat my morning cereal with a metal spoon.
+204. toilet paper: We always keep soft toilet paper in the bathroom.
+205. measuring cup: We poured exactly one measuring cup of milk into the bowl.
+206. saucepan: We boiled hot water in a metal saucepan.
+207. microwave: We warmed up the cold pizza in the microwave.
+208. towels: We dried off with fluffy towels after swimming.
+209. toothpaste: I squeezed minty toothpaste onto my brush.
+210. scissors: I used sharp scissors to cut the construction paper.
+211. cookbook: We read the cookbook to learn how to bake cookies.
+212. refrigerator: The cold refrigerator keeps our milk and juice fresh.
+213. stove: Do not touch the hot top part of the stove.
+214. washing machine: Our dirty clothes get clean inside the washing machine.
+215. cliff: Be careful near the edge of the steep, rocky cliff.
+216. desert: Camels walk over the hot sand in the dry desert.
+217. hill: We rolled playfully all the way down the grassy hill.
+218. jungle: Monkeys swing from thick green vines in the wild jungle.
+219. mountain: The peak of the giant mountain touches the clouds.
+220. tundra: The freezing tundra is covered in ice and snow.
+221. volcano: Red, hot lava blasted out of the top of the volcano!
+222. waterfall: The pretty river crashes down as a giant waterfall.
+223. river: The fish swam happily down the moving river.
+224. cave: Bears sleep inside a dark, rocky cave in winter.
+225. forest: I saw deer hiding among the trees in the forest.
+226. island: An island is a piece of land surrounded entirely by ocean.
+227. drizzle: A light drizzle of rain barely got us wet.
+228. flurry: A quick flurry of snow didn't stick to the grass.
+229. hailstones: Little ice balls called hailstones fell from the stormy sky.
+230. slush: The melted, muddy snow turned into yucky slush.
+231. blizzard: We stayed inside during the dangerous, windy snow blizzard.
+232. thunderstorm: The loud thunderstorm flashed bright lightning in the sky.
+233. blustery wind: The blustery wind blew my hat right off my head!
+234. hurricane: A hurricane is a giant, spinning ocean storm.
+235. drought: The plants died because a long drought meant no rain.
+236. snowflake: I caught a tiny, beautiful ice snowflake on my tongue.
+237. peak: We climbed to the very top peak of the mountain.
+238. stream: We splashed our feet in the small, bubbling stream.
+239. swamp: Frogs and alligators live in the muddy, wet swamp.
+240. valley: A low, green valley sits between the two tall mountains.
+241. woods: We went for a walk under the trees in the woods.
+242. lagoon: The calm ocean water in the lagoon was perfectly blue.
+243. hollow: The squirrel hid its nuts in a hollow tree trunk.
+244. pond: The ducks quacked as they swam in the little pond.
+245. creak: The old wooden floor made a loud, squeaky creak.
+246. landscape: The painted landscape showed beautiful hills and trees.
+247. continent: Africa is a giant landmass called a continent.
+248. coast: We looked for seashells where the ocean meets the coast.
+249. path: Follow the dirt path so you don't get lost.
+250. road: The cars drive fast on the paved gray road.
+251. peninsula: Florida is a peninsula surrounded by water on three sides.
+252. plain: A giant, flat grassy field is called a plain.
+253. fortress: The strong stone walls of the fortress kept the knights safe.
+254. landmark: The giant clock tower is a famous city landmark.
+255. board game: We rolled dice to play a fun board game.
+256. chess: My dad taught me how to play the smart game of chess.
+257. dancing: Wiggling to the music is my favorite kind of dancing.
+258. dice game: We threw little dotted cubes in the dice game.
+259. drawing: I used crayons for drawing a picture of my dog.
+260. fishing: We used a long pole to go fishing in the lake.
+261. football: He threw the brown, pointy football to his teammate.
+262. hobby: Collecting shiny rocks is my favorite weekend hobby.
+263. horseback riding: I sat in a saddle to go horseback riding.
+264. ice hockey: They use sticks to hit a puck in fast ice hockey.
+265. inline skating: I wore wheels on my shoes to go inline skating.
+266. knitting: Grandma is knitting a warm scarf out of yarn.
+267. painting: I got messy while painting a colorful rainbow on paper.
+268. sailing: We let the wind push our boat while sailing.
+269. skateboard: I balance on a wooden skateboard with four small wheels.
+270. skateboarding: He wears a helmet while skateboarding at the park.
+271. skydiving: Jumping out of a plane with a parachute is called skydiving!
+272. snowboarding: I slid sideways down the snowy mountain while snowboarding.
+273. surfing: I balanced on a board while surfing a big ocean wave.
+274. swimming: Kicking in the pool is my favorite part of swimming.
+275. camping: We slept in a tent while camping in the woods.
+276. hiking: Walking up the dirt mountain trail is called hiking.
+277. storm: The dark clouds mean a rainy storm is coming.
+278. sunny: We go to the beach when the sky is bright and sunny.
+279. temperature: The thermometer shows the exact temperature outside.
+280. tropics: It is always warm and sunny in the tropics near the equator.
+281. warm: The sun made the sand feel nice and warm.
+282. weather: The rainy weather means we have to play inside today.
+283. windy: The windy air easily blew my kite high into the sky.
+284. autumn: The leaves turn orange and fall down in the autumn.
+285. spring: Beautiful flowers start to grow in the spring.
+286. summer: I love going to the pool during the hot summer.
+287. woodworking: Making birdhouses is a fun type of woodworking.
+288. scrapbooking: We glued photos into a big memory book for scrapbooking.
+289. pottery: I spun wet clay to make a bowl in pottery class.
+290. climate change: The Earth slowly getting warmer over time is called climate change.
+291. cloudy: I can't see the sun today because it is very cloudy.
+292. foggy: The air was so gray and foggy I couldn't see the trees.
+293. rainy: Bring an umbrella on a wet, rainy day.
+294. season: Winter is the coldest season of the year.
+295. shine: The stars in the dark sky shine very brightly.
+296. snowy: We build snowmen when the winter weather is snowy.
+297. winter: It is freezing cold outside during the winter.
+298. degree: The temperature went up by one warm degree.
+299. frozen: The water turned to solid, slippery ice because it was frozen.
+300. coffee shop: Adults buy hot drinks at the cozy coffee shop.
+301. movie theater: We ate popcorn in the dark movie theater.
+302. store: We went into the store to buy a new toy.
+303. park: I swung on the swings at the neighborhood park.
+304. shopping mall: There are twenty different stores inside the huge shopping mall.
+305. bank: People keep their money locked safely inside the bank.
+306. bookstore: We bought a new chapter book at the quiet bookstore.
+307. cathedral: A very large, beautiful, old church is called a cathedral.
+308. church: People go to sing and pray inside a church.
+309. drugstore: We bought medicine and band-aids at the drugstore.
+310. fire department: Red trucks are parked waiting at the fire department.
+311. flower shop: We bought pretty red roses at the sweet-smelling flower shop.
+312. carnage: The messy playroom was a scene of toy carnage!
+313. music store: I bought a new shiny guitar at the music store.
+314. newsstand: We bought a daily paper at the sidewalk newsstand.
+315. parking lot: We left our car in the big, flat parking lot.
+316. police station: Brave officers work inside the city police station.
+317. post office: We drop off our letters to mail at the post office.
+318. stadium: Thousands of fans cheered loudly inside the giant football stadium.
+319. supermarket: We bought all our groceries for the week at the supermarket.
+320. temple: A holy building where people worship is called a temple.
+321. travel agency: A helper at the travel agency planned our vacation.
+322. ambulance: The loud, flashing ambulance rushes sick people to doctors.
+323. bite: Do not let the angry dog bite your hand!
+324. disease: A bad sickness that spreads is called a disease.
+325. healthy: Eating apples keeps my body strong and healthy.
+326. hospital: Doctors work inside a giant hospital to heal people.
+327. hurt: Falling off my bike made my knee hurt.
+328. medical school: Smart students learn to be doctors at medical school.
+329. medicine: The pink syrup medicine made my cough go away.
+330. nurse: The kind nurse put a bandage on my arm.
+331. sick: A tummy ache makes me feel very sick.
+332. well: After resting in bed, I finally feel totally well.
+333. X-ray: The glowing X-ray picture showed the bones inside my hand!
+334. toothache: Eating too much candy gave me a painful toothache.
+335. headache: My brain feels tight when I have a bad headache.
+336. amphibian: A slimy frog is a water-loving amphibian.
+337. cheetah: The spotted cheetah is the fastest running cat on Earth!
+338. cobra: A cobra is a dangerous snake with a wide hood.
+339. dolphin: The friendly gray dolphin jumped playfully out of the ocean.
+340. elephant: A heavy gray elephant has a long trunk for a nose.
+341. giraffe: A tall, yellow giraffe can eat leaves from the highest branches.
+342. falcon: A fast bird called a falcon swooped down from the sky.
+343. hippo: A heavy, round hippo loves to soak in muddy water.
+344. horse: I rode on the back of a beautiful brown horse.
+345. insect: A tiny six-legged bug is called an insect.
+346. monkey: A silly furry monkey swung by its tail in the jungle.
+347. mosquito: A tiny flying mosquito gave me an itchy bug bite.
+348. octopus: An octopus is a smart sea creature with eight squiggly legs.
+349. parrot: The colorful pet parrot learned to say Hello!
+350. penguin: A black and white penguin swims but cannot fly.
+351. polar bear: A huge white polar bear lives in the freezing snow.
+352. rabbit: A soft, fluffy rabbit hopped across the grass.
+353. sailfish: A fast sailfish has a giant fin on its back.
+354. shark: A big ocean shark has lots of sharp teeth.
+355. sheep: A fluffy farm sheep says Baa!
+356. snake: A long, scaly snake slithers on the ground without legs.
+357. whale: A giant blue whale is the biggest animal in the sea.
+358. tiger: A fierce wild tiger has beautiful orange and black stripes.
+359. acting company: The talented acting company put on a great play.
+360. backstage: The actors put on their costumes hiding backstage.
+361. band: The loud rock band played guitars and drums together.
+362. character: Mickey Mouse is my favorite cartoon character.
+363. concert: We went to a live concert to hear my favorite singer.
+364. drama: A serious movie that makes you cry is a drama.
+365. director: The bossy director tells the movie actors where to stand.
+366. episode: I watched one short episode of my favorite TV show.
+367. movie: We watched a funny animated movie on the big screen.
+368. perform: I like to sing and perform on a stage for people.
+369. performance: The dancers did a great job during their performance.
+370. rehearsal: We practiced our lines during the play rehearsal.
+371. rehearse: We must rehearse the song so we don't forget the words.
+372. scene: I loved the funny action scene in the superhero movie.
+373. show: We bought tickets to watch the magic show.
+374. stage: The actor stood on the raised wooden stage to sing.
+375. cinema: A dark building where movies play is called a cinema.
+376. studio: They film news broadcasts inside a bright TV studio.
+377. theater: We sat quietly to watch the play in the theater.
+378. bored: I feel bored when I have nothing fun to do.
+379. angry: I felt very angry when my toy broke!
+380. embarrassed: My face turned red because I was so embarrassed.
+381. exhausted: Running a long race makes me feel incredibly tired and exhausted.
+382. frightened: The loud thunder made the dog feel very frightened.
+383. sensitive: A sensitive person gets their feelings hurt very easily.
+384. shocked: I was completely shocked when the magician made the rabbit vanish!
+385. surprised: I was so surprised by my secret birthday party!
+386. unhappy: Dropping my ice cream made me very unhappy.
+387. upset: Crying means you are feeling sad and upset.
+388. worried: I felt worried that I might fail my hard math test.
+389. confident: I felt brave and confident that I could win the game.
+390. afraid: Are you afraid of the dark monsters under the bed?
+391. quiet: The library is a silent, quiet place to read.
+392. nervous: I felt fluttery and nervous before my big spelling bee.
+393. playful: The silly puppy was feeling very energetic and playful.
+394. courageous: A brave knight is very courageous in battle.
+395. peaceful: The quiet, empty beach felt very calm and peaceful.
+396. reliable: A good friend is always reliable and keeps their promises.
+397. energetic: The bouncy child felt very energetic after eating sugar!
+398. lucky: Finding a four-leaf clover means you are very lucky.
+399. amazed: I was completely amazed by the beautiful magic trick.
+400. optimistic: An optimistic person always thinks good things will happen.
+401. pleased: I was very pleased and happy with my good grades.
+402. delighted: I felt so delighted when I got a new puppy!
+403. sympathetic: I felt sympathetic and sad for my sick friend.
+404. interested: I am very interested in learning about dinosaurs.
+405. thankful: I felt so thankful for the nice gifts I received.
+406. satisfied: Eating a big dinner makes my tummy feel full and satisfied.
+407. shy: The quiet boy felt shy around new people.
+408. cheerful: The smiling girl was always happy and cheerful.
+409. positive: Try to stay happy and think positive thoughts!
+410. fascinated: I was totally fascinated staring at the cool bugs.
+411. anxious: Waiting for my turn to sing made me feel anxious.
+412. apologize: You must apologize and say sorry if you hurt someone.
+413. knit: Grandma can knit a warm hat out of yarn.
+414. laugh: The funny clown made me giggle and laugh.
+415. oversleep: If you forget your alarm, you might oversleep and be late!
+416. sneeze: The dusty air made me achoo and sneeice.
+417. suggest: I suggest we go out for pizza tonight!
+418. sunbathe: Lizards lay on rocks to sunbathe and get warm.
+419. attract: A strong magnet will attract loose metal clips.
+420. encourage: Good friends cheer and encourage you to do your best.
+421. experience: Going on a roller coaster is a fun experience.
+422. inspire: A great teacher can inspire you to love reading.
+423. manage: A boss has to manage all the workers in a store.
+424. overtake: Run faster if you want to overtake the person in front of you!
+425. push away: If the food is gross, you might push away your plate.
+426. refuse: I refuse to eat those yucky green vegetables!
+427. repel: Bug spray will repel mosquitoes so they don't bite you.
+428. appear: A ghost might suddenly appear in a spooky movie!
+429. broadcast: They use huge towers to broadcast the radio music far away.
+430. compare: Let's compare these two apples to see which is bigger.
+431. delete: I hit a button to delete the mistake I typed.
+432. spread: Use a knife to spread peanut butter on your bread.
+433. substitute: You can use honey as a sweet substitute for sugar.
+434. succeed: If you practice hard, you will win and succeed!
+435. survive: A cactus can survive a long time without water.
+436. suitcase: I packed my clothes into a rolling suitcase.
+437. hand luggage: I carried my small hand luggage right onto the plane.
+438. boarding pass: You must scan your paper boarding pass to fly.
+439. backpack: I carry my school books inside my heavy backpack.
+440. bag: We put the groceries in a brown paper bag.
+441. daypack: I wore a small daypack for our short hike.
+442. pack: Don't forget to pack your toothbrush for the trip!
+443. check-in: We went to the hotel desk to check-in for our room.
+444. magazine: I looked at the shiny pictures in the magazine.
+445. newspaper: Grandpa reads the daily news in the folding newspaper.
+446. aisle: I walked down the middle aisle of the airplane.
+447. lounge: We sat on comfy chairs in the waiting lounge.
+448. passport: A small photo book called a passport lets you travel the world.
+449. flight number: Look at your ticket to find your airplane's flight number.
+450. abbreviation: Dr. is a short abbreviation for the word Doctor.
+451. adjective: Blue is a describing word called an adjective.
+452. adverb: Quickly is an action-describing word called an adverb.
+453. auxiliary verb: Is and am are helper words called an auxiliary verb.
+454. countable: Apples are countable because you can say one, two, three apples.
+455. plural: Saying dogs instead of dog makes the word plural.
+456. singular: Just one single cat is a singular word.
+457. somebody: Is somebody knocking at the front door?
+458. something: I have a secret something hiding in my hand.
+459. uncountable: Sand is uncountable because there are too many tiny grains!
+460. gerund: An action word ending in -ing is sometimes called a gerund.
+461. grammar: Knowing the correct rules for talking is called good grammar.
+462. infinitive: The word to run is a verb form called an infinitive.
+463. preposition: Words like under and on are called a preposition.
+464. pronoun: He and she are short replacement words called a pronoun.
+465. ball: Cinderella wore a pretty dress to dance at the magical ball.
+466. candle: We blew out a flaming wax candle on the cake.
+467. carnival: We ate cotton candy and rode rides at the outdoor carnival.
+468. celebrate: Let's have a party and celebrate your birthday!
+469. celebration: A big happy party is a fun celebration.
+470. Christmas: We get presents under a decorated tree on Christmas.
+471. costume: I wore a scary monster costume on Halloween.
+472. dancer: The spinning dancer leaped high into the air.
+473. gift: I wrapped a special toy gift in shiny paper.
+474. greeting card: I read the nice message inside the folded greeting card.
+475. Happy New Year: We yell Happy New Year! when the clock strikes midnight.
+476. parade: We watched the marching bands walk by in the parade.
+477. party: We ate cake and played games at the birthday party.
+478. street fair: We played fun games outside at the neighborhood street fair.
+479. Africa: Lions and elephants live on the giant continent of Africa.
+480. Asia: China and Japan are countries on the giant continent of Asia.
+481. Europe: Castles and the Eiffel Tower are found in Europe.
+482. America: The lands in the West are called America.
+483. North America: Canada and the USA are in North America.
+484. South America: The huge Amazon rainforest is in South America.
+485. Antarctica: Penguins live on the freezing icy continent of Antarctica.
+486. Australia: Kangaroos hop around the continent of Australia.
+487. Barbados: The sunny island of Barbados has beautiful ocean beaches.
+488. Brazil: A huge South American country with rainforests is Brazil.
+489. China: The Great Wall is a famous landmark in China.
+490. Denmark: The small country where Legos were invented is Denmark.
+491. France: People eat yummy bread near the Eiffel Tower in France.
+492. India: The beautiful Taj Mahal is a famous building in India.
+493. Italy: We love eating pizza from the boot-shaped country of Italy.
+494. Japan: An island country famous for cool bullet trains is Japan.
+495. Russia: The biggest country in the entire world is Russia.
+496. Spain: People speak Spanish in the sunny country of Spain.
+497. Mexico: Tacos and ancient pyramids are found in Mexico.
+498. Jamaica: A gorgeous island famous for Reggae music is Jamaica.
+499. Canada: The cold, snowy country right above the USA is Canada.
+500. England: A European country ruled by a real King is England.
+501. name: Please write your name at the top of your paper.
+502. first name: My starting word is my first name.
+503. last name: My family name is my last name.
+504. address: The numbers that tell where I live make up my address.
+505. street: Look both ways before you cross the busy street.
+506. apartment number: We knocked on door 4B, which is our friend's apartment number.
+507. city: A big busy place with lots of tall buildings is a city.
+508. state: Texas is a very big state in America.
+509. zip code: The post office uses a five-number zip code to mail letters.
+510. phone number: Dial my phone number to call me!
+511. wife: A married woman is called a wife.
+512. husband: A married man is called a husband.
+513. mother: My mother gives the best hugs!
+514. father: My father helps me ride my bike.
+515. daughter: A girl child is a daughter.
+516. son: A boy child is a son.
+517. sister: I share my toys with my little sister.
+518. brother: My older brother plays video games with me.
+519. baby: A tiny newborn crying infant is a baby.
+520. grandmother: My sweet grandmother bakes the best cookies!
+521. grandfather: My grandfather tells me stories about when he was young.
+522. aunt: My mom's sister is my aunt.
+523. uncle: My dad's brother is my fun uncle.
+524. niece: Your sister's girl child is your niece.
+525. nephew: Your brother's boy child is your nephew.
+526. cousin: My aunt's kid is my favorite cousin to play with.
+527. mother-in-law: When people marry, their new mom is their mother-in-law.
+528. father-in-law: When people marry, their new dad is their father-in-law.
+529. son-in-law: Your daughter's husband is your son-in-law.
+530. daughter-in-law: Your son's wife is your daughter-in-law.
+531. brother-in-law: The man your sister marries is your brother-in-law.
+532. get up: It is time to get up out of bed!
+533. take a shower: I stand in the water to take a shower.
+534. shave: Grown-up men use a razor to shave their beards.
+535. get dressed: I put on my clothes to get dressed.
+536. make the bed: Smooth out your blankets to make the bed.
+537. get undressed: Take your clothes off to get undressed before a bath.
+538. go to bed: It is dark outside, so it is time to go to bed.
+539. make breakfast: We cook eggs to make breakfast in the morning.
+540. make lunch: We pack a sandwich to make lunch for noon.
+541. make dinner: We cook pasta to make dinner in the evening.
+542. dust: Use a cloth to wipe the dirty gray dust away.
+543. vacuum: I use a loud machine to vacuum the rug.
+544. wash the dishes: Use soap to wash the dishes so the plates are clean.
+545. iron: Mom uses a hot metal tool to iron out wrinkly shirts.
+546. feed the cat: Don't forget to feed the cat her crunchy food!
+547. walk the dog: Use a leash to walk the dog outside.
+548. watch T.V.: We sit on the couch to watch T.V. shows.
+549. listen to music: I wear headphones to listen to music.
+550. play soccer: We kick the black and white ball to play soccer.
+551. pen: Use blue ink from a pen to write.
+552. pencil: I can erase mistakes when I write with a gray pencil.
+553. eraser: The pink rubber eraser removes my wrong answers.
+554. desk: I sit at my wooden school desk to work.
+555. notebook: I write my spelling words inside a paper notebook.
+556. calculator: A little math machine with numbers is a calculator.
+557. clock: The ticking clock on the wall tells us the time.
+558. flag: The colorful cloth flag waved in the wind.
+559. board: The teacher writes our lesson on the big white board.
+560. map: The paper map shows a drawing of all the countries.
+561. screen: Look at the glowing glass TV screen.
+562. computer: I typed on the keyboard of my smart computer.
+563. sharpener: I put my broken pencil into the noisy sharpener.
+564. projector: The projector shined a giant movie onto the wall.
+565. bookshelf: Please put the storybook away on the wooden bookshelf.
+566. stand up: Rise to your feet and stand up!
+567. go to the board: Walk to the front of the room and go to the board.
+568. write your name: Use a pencil to write your name on your test.
+569. sit down: Put your bottom in the chair and sit down.
+570. open your book: Turn to the first page and open your book.
+571. close your book: Shut the pages so you can close your book.
+572. listen to the question: Use your ears to hear and listen to the question.
+573. read in groups: Sit with your friends so you can read in groups.
+574. work in groups: Do a project together and work in groups.
+575. help each other: Good friends always share and help each other.
+576. building: A tall structure with walls and a roof is a building.
+577. house: My family lives together inside a brick house.
+578. apartment: We live on the third floor of an apartment building.
+579. farmhouse: The farmer lives in a quiet wooden farmhouse.
+580. cabin: We slept in a cozy log cabin in the woods.
+581. nursing home: Older people get helpful care inside a nursing home.
+582. shelter: A safe place that protects you from rain is a shelter.
+583. condominium: A special apartment that someone actually owns is a condominium.
+584. dormitory: College kids sleep in a big building called a dormitory.
+585. rug: The soft, fuzzy rug covered the cold floor.
+586. floor: Don't drop your food on the dirty ground floor.
+587. windows: Look through the glass windows to see outside!
+588. couch: We sat together on the soft living room couch.
+589. pillow: I rest my tired head on a squishy bed pillow.
+590. ceiling: Look way up high at the roof inside called the ceiling.
+591. wall: We hung a pretty painting on the flat side wall.
+592. speaker: Loud music blasted out of the black music speaker.
+593. loveseat: A tiny couch made for just two people is a loveseat.
+594. painting: A colorful art picture on canvas is a painting.
+595. dining room: We sit at the big table in the dining room to eat.
+596. chandelier: A fancy crystal light hanging from above is a chandelier.
+597. salad shaker: We tossed lettuce inside a plastic salad shaker.
+598. candle: A wax stick that you light on fire is a candle.
+599. sugar bowl: A little container of sweet powder is a sugar bowl.
+600. coffee pot: Adults pour their hot morning drinks from a coffee pot.
+601. pitcher: Mom poured cold lemonade from a giant glass pitcher.
+602. butter dish: We keep our yellow spread in a small butter dish.
+603. water glass: Drink from a clear water glass when you are thirsty.
+604. wine glass: An adult drinks from a fancy, delicate wine glass.
+605. cup: I drank hot chocolate out of a blue cup.
+606. saucer: A tiny resting plate for a hot teacup is a saucer.
+607. napkin: Wipe your messy mouth with a paper napkin.
+608. fork: Stab your peas with a four-pronged metal fork.
+609. knife: Adults use a sharp metal knife to chop meat.
+610. teaspoon: I used a tiny metal teaspoon to eat ice cream.
+611. silverware: Spoons, forks, and knives are all types of silverware.
+612. beads: I strung colorful plastic beads to make a necklace.
+613. blinds: We shut the window blinds to block the bright sun.
+614. alarm clock: The noisy, beeping alarm clock wakes me up!
+615. double bed: A medium-sized mattress is called a double bed.
+616. queen-size bed: A very large, comfy bed is a queen-size bed.
+617. king-size bed: The most gigantic mattress is a huge king-size bed.
+618. cot: We slept on a small, folding canvas cot.
+619. hospital bed: A sick person rests in a rolling hospital bed.
+620. crib: The tiny baby sleeps safely behind the bars of a crib.
+621. night light: A small, glowing night light keeps the dark away.
+622. doll: I played pretend with a plastic toy baby doll.
+623. playpen: A safe, fenced area for a baby is a playpen.
+624. car seat: A baby buckles safely into a special car seat.
+625. stroller: Mom pushes the baby in a wheeled stroller.
+626. baby seat: The infant sat strapped inside a bouncy baby seat.
+627. baby carrier: Dad wore the infant in a backpack baby carrier.
+628. portable crib: A folding, travel-sized baby bed is a portable crib.
+629. dishwasher: A noisy kitchen machine that cleans plates is a dishwasher.
+630. sink: We wash our dirty hands in the bathroom sink.
+631. garbage: Throw your yucky trash away into the garbage.
+632. dish towel: I dried the wet plate with a soft cloth dish towel.
+633. cabinet: The cereal boxes hide inside the wooden kitchen cabinet.
+634. microwave: A machine that heats up soup super fast is a microwave.
+635. freezer: The icy, freezing box where ice cream lives is the freezer.
+636. oven: We baked a hot cake inside the hot oven.
+637. toaster: The machine that makes bread hot and crunchy is a toaster.
+638. baby powder: Soft, white dust that keeps infants dry is baby powder.
+639. baby lotion: Smooth cream that makes skin soft is baby lotion.
+640. baby shampoo: Sweet, gentle soap for infant hair is baby shampoo.
+641. ointment: Greasy medicine that heals cuts is called ointment.
+642. baby food: Mushy, blended peas in a jar is soft baby food.
+643. wipes: Wet paper towels used for cleaning messes are called wipes.
+644. cotton swabs: Tiny sticks with soft fluff on the ends are cotton swabs.
+645. vitamins: Healthy little pills that help you grow are vitamins.
+646. pacifier: A rubber toy a baby sucks on to stay quiet is a pacifier.
+647. bottle: A plastic cup with a nipple for babies is a bottle.
+648. toilet: We go potty sitting on the bathroom toilet.
+649. toilet paper: Use a soft roll of toilet paper to wipe!
+650. towel: Wrap up in a fluffy towel after your wet bath.
+651. hamper: Throw your dirty clothes into the laundry hamper.
+652. air dryer: The loud blowing machine that dries your hands is an air dryer.
+653. fan: The spinning blades of the fan cooled me down.
+654. faucet: Turn the metal handle on the faucet to start the water.
+655. soap: Bubbly, slippery bars that clean dirt are called soap.
+656. shower: Stand under the indoor rain spray of the shower.
+657. toothbrush: Scrub your teeth with the bristles of your toothbrush.
+658. comb: Use the plastic teeth of a comb to untangle your hair.
+659. razor: Adults use a sharp razor to shave off hair.
+660. razor blades: The very sharp, dangerous cutting parts are razor blades.
+661. nail clipper: Use a metal nail clipper to trim your fingernails.
+662. powder: Soft, dry, smelly dust is called body powder.
+663. toothpaste: Squeeze minty toothpaste on your brush to fight cavities.
+664. lipstick: Colorful, waxy makeup for your mouth is lipstick.
