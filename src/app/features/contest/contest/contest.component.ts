@@ -1,10 +1,12 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
   model,
   OnDestroy,
   OnInit,
+  Signal,
   signal,
   ViewChild,
 } from '@angular/core';
@@ -70,6 +72,7 @@ import { ContestService } from '../services/contest.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from "@angular/router";
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
@@ -444,9 +447,6 @@ export class ContestComponent implements OnInit, OnDestroy {
       pageSizeOptions: this.pageArray,
     });
   }
-
-
-
 
   animate() {
     const duration = 4000; // 1 second

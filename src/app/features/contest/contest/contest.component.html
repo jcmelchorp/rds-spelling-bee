@@ -110,13 +110,13 @@
         <!-- [disabled]="this.word.staged" -->
         @if (word.id_number!<=500) { <mat-chip-option [selected]="this.word.staged" class="elevation-chip"
           (click)="this.word.staged=!this.word.staged">{{word.id!}}</mat-chip-option>
-          } @else if (isFinals && word.id_number!>508) {
-          <mat-chip-option [selected]="this.word.staged" class="elevation-chip"
+          } @else if (isFinals && word.id_number!>500) {
+          <mat-chip-option [selected]="this.word.staged" class="elevation-chip" 
             (click)="this.word.staged=!this.word.staged">{{(word.id!)}}</mat-chip-option>
           }
           }
       </mat-chip-listbox>
-      <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length"
+      <mat-paginator class="paginator" #paginator [length]="dataSource.filteredData.length" 
       [pageSize]="dataSource.data.length" (page)="linkListToPaginator($event)" [pageSizeOptions]="pageArray"
       showFirstLastButtons aria-label="Select word"> </mat-paginator>
     </div>
