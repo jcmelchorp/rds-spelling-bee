@@ -97,14 +97,14 @@ import { RouterLink } from "@angular/router";
     FlexLayoutModule,
     NgxSpinnerModule,
     RouterLink
-],
+  ],
   animations: [
     bounceInUpOnEnterAnimation({ anchor: 'enter1' }),
     bounceInLeftOnEnterAnimation({ anchor: 'enter2', delay: 200 }),
     bounceInDownOnEnterAnimation({ anchor: 'enter3', delay: 200 }),
     bounceInRightOnEnterAnimation({ anchor: 'enter4', delay: 200 }),
     jackInTheBoxOnEnterAnimation({ anchor: 'enter5', delay: 200 }),
-    rubberBandAnimation({ anchor: 'rubberBand', delay: 500 }),
+    rubberBandAnimation({ anchor: 'rubberBand', delay: 600 }),
     jelloAnimation(),
     hueRotateAnimation({ anchor: 'hueButton', duration: 20000 }),
   ],
@@ -288,7 +288,7 @@ export class ContestComponent implements OnInit, OnDestroy {
   clearContest() {
     this.isFinals = false;
     let cleanData = this.dataSource.data.map((d) => {
-      if (d.id_number! > 508) {
+      if (d.id_number! > 500) {
         return { ...d, staged: true };
       } else {
         return { ...d, staged: false };
@@ -310,6 +310,8 @@ export class ContestComponent implements OnInit, OnDestroy {
     });
 
   }
+
+ 
 
   wordFlow() {
     // console.log('Word Flow');
@@ -456,7 +458,7 @@ export class ContestComponent implements OnInit, OnDestroy {
 
     this.subscription = interval(1000).pipe(take(25)).subscribe(() => {
       confetti({
-        particleCount:  randomInRange(50, 100),
+        particleCount: randomInRange(50, 100),
         angle: 60,
         spread: 55,
         origin: { x: 0 },

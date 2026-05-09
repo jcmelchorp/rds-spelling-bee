@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container" autosize>
   <mat-sidenav #leftSidenav class="sidenav d-print-none" [fixedInViewport]="false"
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [@onSideNavChange]="sideNavState ? 'close' : 'open'"
-    [mode]="isHandset ? 'over':'side'" [opened]="!isHandset">
+    [mode]="isHandset ? 'over':'side'" [opened]="false">
     <div role="navigation" fxLayout="column" fxLayoutAlign="space-between stretch">
       <mat-nav-list dense>
         <mat-list-item [routerLink]="[isOnline?'home':'/']" routerLinkActive="router-link-active" (click)="isHandset?leftSidenav.close():''">

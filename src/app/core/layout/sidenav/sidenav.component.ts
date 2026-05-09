@@ -1,20 +1,17 @@
 import { Component, inject, Input, ViewChild } from "@angular/core";
 import { MatSidenav, MatSidenavModule } from "@angular/material/sidenav";
-import { Router, RouterModule, RouterOutlet } from "@angular/router";
+import { RouterModule } from "@angular/router";
 import { LayoutService } from "../../services/layout.service";
-import { animateText, onMainContentChange, onSideNavChange } from "../../../shared/animations/animations";
 import { MatMenuModule } from "@angular/material/menu";
-import { HeaderComponent } from "../header/header.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatListModule, MatNavList } from "@angular/material/list";
-import { AsyncPipe } from "@angular/common";
 import { MatIconModule } from "@angular/material/icon";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MainComponent } from "../main/main.component";
 import { FooterComponent } from "../footer/footer.component";
 import { MatLineModule } from "@angular/material/core";
 import { FlexLayoutModule } from "ngx-flexible-layout";
-import { User } from "../../auth/models/user.model";
+import { onMainContentChange, onSideNavChange } from "../../../shared/animations/animations";
 
 
 @Component({
@@ -36,7 +33,7 @@ import { User } from "../../auth/models/user.model";
     MatLineModule,
     FlexLayoutModule
   ],
-  animations: [],
+  animations: [onSideNavChange,onMainContentChange],
 })
 export class SidenavComponent {
   private layoutService = inject(LayoutService);

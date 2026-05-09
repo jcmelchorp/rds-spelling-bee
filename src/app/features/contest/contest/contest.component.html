@@ -63,6 +63,7 @@
         <button mat-fab extended type="button" (click)="wordFlow()" cdkFocusInitial [@hueButton]="hueBtnState"
           (@hueButton.done)="hueBtnState = !hueBtnState" color="primary"> <mat-icon>hearing</mat-icon>
           Play word </button>
+       
         <button [matTooltip]="'Celebrar'" mat-mini-fab (click)="animate()" color="default"><mat-icon
             style="color:rgb(66, 98, 27)">celebration</mat-icon></button>
         @if (clearOpenState==false) {
