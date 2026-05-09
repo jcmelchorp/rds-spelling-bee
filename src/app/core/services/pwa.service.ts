@@ -52,7 +52,7 @@ import { SnackService } from "./snack.service";
                   'Ok',
                 )
                 ?.afterDismissed()
-                .subscribe(() => console.log('refresh')
+                .subscribe(() => window.location.reload()
               )
             }
           }),

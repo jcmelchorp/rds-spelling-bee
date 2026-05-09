@@ -33,7 +33,4 @@ export class AppComponent {
       image: 'screenshot01.png',
     });
   }
-  reload() {
-    window.location.reload();
-  }  
 }
