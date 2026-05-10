@@ -1,31 +1,28 @@
-<!-- <app-wordlist></app-wordlist> -->
-<!-- <div>
-  <h2>Nueva lista</h2>
-   <mat-form-field> 
-  <mat-label>Escribe el grado escolar</mat-label>
-  <br>
-  <input matInput type="text" [(ngModel)]="wordlist.level" />
-  </mat-form-field
-  <button mat-raised-button [disabled]="!wordlist.level" (click)="submit()">Add +</button>
-</div> -->
-<div style="padding-top: 50px;" fxLayout="row" fxLayoutAlign="space-evenly stretch">
-  <!-- @for (wordlist of wordlists$ | async; track $index) { -->
-  <ng-container *ngFor="let wordlist of wordlists$ | async">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title><span [innerText]="wordlist.level"></span></mat-card-title>
-        <mat-card-subtitle> <span [innerText]="wordlist.timestamp | date: 'fullDate'"></span></mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content style="text-align:end">
-        @if (wordlist.words!.length>=1) {
-        {{wordlist.words!.length}} {{(wordlist.words!.length===0)?'':'palabra'}}{{(wordlist.words!.length<=1)?'':'s'}}.
-          } </mat-card-content>
-          <mat-card-actions>
-            <button mat-raised-button [routerLink]="['/editor', wordlist.id]">Editar</button>
-            <button mat-raised-button [routerLink]="['/contest', wordlist.id]"
-              routerLinkActive="router-link-active">Concurso</button>
-          </mat-card-actions>
-    </mat-card>
-  </ng-container>
-  <!-- } -->
+<div class="background">
+<div class="my-container">
+  <mat-accordion *ngFor="let wordlist of wordlists$ | async">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title> <span [innerText]="wordlist.level"></span></mat-panel-title>
+        <mat-panel-description> @if (wordlist.words!.length>=1) {
+          {{wordlist.words!.length}} {{(wordlist.words!.length===0)?'':'palabra'}}{{(wordlist.words!.length
+          <=1)?'':'s'}}. } </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-chip-listbox #chipGrid aria-label="Wordlist words">
+        @for (word of wordlist.words; track $index) {
+        <mat-chip-row (removed)="remove(word)" [editable]="true" (edited)="edit(word, $event)"
+          [aria-description]="'press enter to edit ' + word.label">
+          <!-- <button matChipEdit [attr.aria-label]="'edit ' + word.label">
+            <mat-icon>edit</mat-icon>
+          </button> -->
+          {{word.id}} {{word.label}}
+          <!-- <button matChipRemove [attr.aria-label]="'remove ' + word.label">
+            <mat-icon>cancel</mat-icon>
+          </button> -->
+        </mat-chip-row>
+        }
+      </mat-chip-listbox>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
 </div>
