@@ -19,7 +19,9 @@
     <mat-grid-list cols="3" rowHeight="170px">
       @for (card of cards | async; track card) {
       <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
-        <mat-card class="dashboard-card elevation-card">
+        <mat-card class="dashboard-card elevation-card" [ngStyle]="{
+          filter: (themeService.isThemeDark  | async) ? 'invert(100%)' : 'invert(0%)'
+          }">
           <mat-card-header>
             <mat-card-title class="dashboard-card-center" [@rubberBand]="animationState">
               <span class="view-title">{{card.title}}</span>

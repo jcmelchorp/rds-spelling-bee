@@ -1,7 +1,7 @@
 import { Component, inject, signal } from "@angular/core";
 import { WordlistsService } from "./wordlists.service";
 import {  Word, Wordlist } from "../wordlist/wordlist.model";
-import { NgForOf, AsyncPipe, DatePipe, NgIf } from "@angular/common";
+import { NgForOf, AsyncPipe, DatePipe, NgIf, NgStyle } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
@@ -13,6 +13,7 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatChipOption, MatChipListbox, MatChipRow, MatChipEditedEvent, MatChipInputEvent } from "@angular/material/chips";
 import { LiveAnnouncer } from "@angular/cdk/a11y";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { ThemeService } from "../../../core/services/theme.service";
 
 @Component({
     selector: 'app-wordlists',
@@ -34,7 +35,7 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
   
   //   `,  
   styleUrls: ['./wordlists.component.scss'],
-    imports: [AsyncPipe, NgForOf, ReactiveFormsModule, FormsModule, MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatExpansionModule, MatChipListbox, MatChipOption, MatChipRow, NgIf, MatProgressSpinner],
+    imports: [NgStyle,AsyncPipe, NgForOf, ReactiveFormsModule, FormsModule, MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatExpansionModule, MatChipListbox, MatChipOption, MatChipRow, NgIf, MatProgressSpinner],
     templateUrl: './wordlists.component.html',
   })
   export class WordlistsComponent {
@@ -46,7 +47,7 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
     readonly separatorKeysCodes = [ENTER, COMMA] as const;
     readonly words = signal<Word[]>([]);
     readonly announcer = inject(LiveAnnouncer);
-
+    readonly themeService = inject(ThemeService);
   
     async submit() {
       this.wordlistService

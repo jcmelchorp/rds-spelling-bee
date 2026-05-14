@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgStyle } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,6 +14,7 @@ import {
   rubberBandAnimation,
 } from 'angular-animations';
 import { RouterLink } from '@angular/router';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.scss',
   standalone: true,
   imports: [
+    NgStyle,
     AsyncPipe,
     RouterLink,
     MatGridListModule,
@@ -45,6 +47,7 @@ export class HomeComponent {
   animationState = false;
   animationWithState = false;
   hueBtnState = false;
+  themeService = inject(ThemeService);
   animate() {
     this.animationState = false;
     setTimeout(() => {

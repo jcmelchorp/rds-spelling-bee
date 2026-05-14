@@ -1,4 +1,6 @@
-<div class="background">
+<div class="background" [ngStyle]="{
+  filter: (themeService.isThemeDark  | async) ? 'invert(100%)' : 'invert(0%)'
+  }">
   <!-- <div class="my-container">
   <mat-card>
   <mat-accordion *ngIf="wordlists$ | async as wordlists; else loading">
