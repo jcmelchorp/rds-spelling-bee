@@ -2,21 +2,117 @@
   padding-top: 5px;
 }
 
+// .background {
+//   background:
+// radial-gradient(circle farthest-side at 0% 50%,#fb1 23.5%,rgba(240,166,17,0) 0)21px 30px,
+// radial-gradient(circle farthest-side at 0% 50%,#B71 24%,rgba(240,166,17,0) 0)19px 30px,
+// linear-gradient(#fb1 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#fb1 0)0 0,
+// linear-gradient(150deg,#fb1 24%,#B71 0,#B71 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#B71 0,#B71 76%,#fb1 0)0 0,
+// linear-gradient(30deg,#fb1 24%,#B71 0,#B71 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#B71 0,#B71 76%,#fb1 0)0 0,
+// linear-gradient(90deg,#B71 2%,#fb1 0,#fb1 98%,#B71 0%)0 0 #fb1;
+// background-size: 40px 60px;
+// }
+
+@property --a {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+@property --p {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+@property --c1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+@property --c2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
 .background {
-  background:
-radial-gradient(circle farthest-side at 0% 50%,#fb1 23.5%,rgba(240,166,17,0) 0)21px 30px,
-radial-gradient(circle farthest-side at 0% 50%,#B71 24%,rgba(240,166,17,0) 0)19px 30px,
-linear-gradient(#fb1 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#fb1 0)0 0,
-linear-gradient(150deg,#fb1 24%,#B71 0,#B71 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#B71 0,#B71 76%,#fb1 0)0 0,
-linear-gradient(30deg,#fb1 24%,#B71 0,#B71 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#B71 0,#B71 76%,#fb1 0)0 0,
-linear-gradient(90deg,#B71 2%,#fb1 0,#fb1 98%,#B71 0%)0 0 #fb1;
-background-size: 40px 60px;
+  --s: 80px;
+  --_g: #0000, var(--c1) 2deg calc(var(--a) - 2deg), #0000 var(--a);
+  background: conic-gradient(
+      from calc(-45deg - var(--a) / 2) at top var(--p) left var(--p),
+      var(--_g)
+    ),
+    conic-gradient(
+      from calc(-45deg - var(--a) / 2) at top var(--p) left var(--p),
+      var(--_g)
+    ),
+    conic-gradient(
+      from calc(45deg - var(--a) / 2) at top var(--p) right var(--p),
+      var(--_g)
+    ),
+    conic-gradient(
+      from calc(45deg - var(--a) / 2) at top var(--p) right var(--p),
+      var(--_g)
+    ),
+    conic-gradient(
+      from calc(-135deg - var(--a) / 2) at bottom var(--p) left var(--p),
+      var(--_g)
+    ),
+    conic-gradient(
+      from calc(-135deg - var(--a) / 2) at bottom var(--p) left var(--p),
+      var(--_g)
+    ),
+    conic-gradient(
+      from calc(135deg - var(--a) / 2) at bottom var(--p) right var(--p),
+      var(--_g)
+    ),
+    conic-gradient(
+        from calc(135deg - var(--a) / 2) at bottom var(--p) right var(--p),
+        var(--_g)
+      )
+      var(--c2);
+  background-size: calc(2 * var(--s)) calc(2 * var(--s));
+  animation: m 2s infinite alternate linear;
+}
+
+@keyframes m {
+  0%,
+  15% {
+    --a: 135deg;
+    --p: 20%;
+    --c1: #0060a0;
+    --c2: #ffe76c;
+    background-position: 0 0, var(--s) var(--s);
+  }
+  45%,
+  50% {
+    --a: 90deg;
+    --p: 25%;
+    --c1: #0060a0;
+    --c2: #ffe76c;
+    background-position: 0 0, var(--s) var(--s);
+  }
+  50.01%,
+  55% {
+    --a: 90deg;
+    --p: 25%;
+    --c2: #0060a0;
+    --c1: #ffe76c;
+    background-position: var(--s) 0, 0 var(--s);
+  }
+  85%,
+  100% {
+    --a: 135deg;
+    --p: 20%;
+    --c2: #0060a0;
+    --c1: #ffe76c;
+    background-position: var(--s) 0, 0 var(--s);
+  }
 }
 
 .school-background {
-//width: fit-content;
+  //width: fit-content;
   height: 250px;
- // max-height: 12000px;
+  // max-height: 12000px;
   background: url("/assets/images/rds-draw03.svg") no-repeat;
   background-position: bottom;
   // background-size: cover
@@ -24,14 +120,33 @@ background-size: 40px 60px;
 }
 .dashboard-card {
   position: absolute;
-  top: 0px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
   max-width: 1200px;
   min-width: fit-content;
 }
 
+// .dashboard-card {
+//     --s: 165px; /* control the size*/
+//     --c1: rgb(239, 255, 231);
+//     --c2: rgb(208, 222, 255);
+//     // --c1: var(--primary-color);
+//     // --c2: var(--warn);
+    
+//     --_g: 
+//        var(--c1) 0%  5% ,var(--c2) 6%  15%,var(--c1) 16% 25%,var(--c2) 26% 35%,var(--c1) 36% 45%,
+//        var(--c2) 46% 55%,var(--c1) 56% 65%,var(--c2) 66% 75%,var(--c1) 76% 85%,var(--c2) 86% 95%,
+//        transparent 96%;
+//     background:
+//       radial-gradient(50% 50% at 100% 0,var(--_g)),
+//       radial-gradient(50% 50% at 0 100%,var(--_g)),
+//       radial-gradient(50% 50%,var(--_g)),
+//       radial-gradient(50% 50%,var(--_g)) calc(var(--s)/2) calc(var(--s)/2)
+//       var(--c1);
+//     background-size: var(--s) var(--s);
+// }
 .more-button {
   position: absolute;
   top: 5px;
@@ -43,89 +158,90 @@ background-size: 40px 60px;
 }
 
 .voltage-button {
-   position:relative;
-   button {
-  //   color:white;
-  //   background: #0D1127;
-  //   padding:1.6rem 5rem 1.8rem 5rem;
-  //   border-radius:5rem;
-  //   border:5px solid #5978F3;
-  //   font-size:1.8rem;
-  //   line-height:1em;
-  //   letter-spacing:0.075em;
-  //   transition:background 0.3s;
-     &:hover {
-       cursor:pointer;
+  position: relative;
+  button {
+    //   color:white;
+    //   background: #0D1127;
+    //   padding:1.6rem 5rem 1.8rem 5rem;
+    //   border-radius:5rem;
+    //   border:5px solid #5978F3;
+    //   font-size:1.8rem;
+    //   line-height:1em;
+    //   letter-spacing:0.075em;
+    //   transition:background 0.3s;
+    &:hover {
+      cursor: pointer;
       //  background: #0F1C53;
-       + svg, +svg + .dots {
-         opacity:1;
-       }
-     }
-   }
+      + svg,
+      + svg + .dots {
+        opacity: 1;
+      }
+    }
+  }
   svg {
-    display:block;
-    position:absolute;
-    top:-0.75em;
-    left:-0.25em;
-    width:calc(100% + 0.5em);
-    height:calc(100% + 1.5em);
-    pointer-events:none;
-    opacity:0;
-    transition:opacity 0.3s;
-    transition-delay:0.0s;
+    display: block;
+    position: absolute;
+    top: -0.75em;
+    left: -0.25em;
+    width: calc(100% + 0.5em);
+    height: calc(100% + 1.5em);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition-delay: 0s;
     path {
       stroke-dasharray: 150;
-      filter: url('#glow');
+      filter: url("#glow");
       &.line-1 {
-        stroke:#008ba3;
+        stroke: #008ba3;
         stroke-dashoffset: 0;
         animation: spark-1 3s linear infinite;
       }
       &.line-2 {
-        stroke:#d2ac00;
+        stroke: #d2ac00;
         stroke-dashoffset: 500;
         animation: spark-2 3s linear infinite;
       }
     }
   }
   .dots {
-    opacity:0;
-    transition:opacity 0.3s;
-    transition-delay:0.4s;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition-delay: 0.4s;
     .dot {
-      width:1rem;
-      height:1rem;
-      background:white;
-      border-radius:100%;
-      position:absolute;
-      opacity:0;
+      width: 1rem;
+      height: 1rem;
+      background: white;
+      border-radius: 100%;
+      position: absolute;
+      opacity: 0;
     }
     .dot-1 {
-      top:0;
-      left:20%;
+      top: 0;
+      left: 20%;
       animation: fly-up 3s linear infinite;
     }
     .dot-2 {
-      top:0;
-      left:55%;
+      top: 0;
+      left: 55%;
       animation: fly-up 3s linear infinite;
       animation-delay: 0.5s;
     }
     .dot-3 {
-      top:0;
-      left:80%;
+      top: 0;
+      left: 80%;
       animation: fly-up 3s linear infinite;
       animation-delay: 1s;
     }
     .dot-4 {
-      bottom:0;
-      left:30%;
+      bottom: 0;
+      left: 30%;
       animation: fly-down 3s linear infinite;
       animation-delay: 2.5s;
     }
     .dot-5 {
-      bottom:0;
-      left:65%;
+      bottom: 0;
+      left: 65%;
       animation: fly-down 3s linear infinite;
       animation-delay: 1.5s;
     }
@@ -142,26 +258,44 @@ background-size: 40px 60px;
     stroke-dashoffset: -500;
   }
 }
-@keyframes fly-up{
-  0% { opacity:0; transform:translateY(0) scale(0.2); }
-  5% { opacity:1; transform:translateY(-1.5rem) scale(0.4);}
-  10%,100%{ opacity:0;  transform:translateY(-3rem) scale(0.2);}
+@keyframes fly-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.2);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(-1.5rem) scale(0.4);
+  }
+  10%,
+  100% {
+    opacity: 0;
+    transform: translateY(-3rem) scale(0.2);
+  }
 }
 @keyframes fly-down {
-  0% { opacity:0; transform:translateY(0) scale(0.2); }
-  5% { opacity:1; transform:translateY(1.5rem) scale(0.4);}
-  10%,100%{ opacity:0;  transform:translateY(3rem) scale(0.2);}
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.2);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(1.5rem) scale(0.4);
+  }
+  10%,
+  100% {
+    opacity: 0;
+    transform: translateY(3rem) scale(0.2);
+  }
 }
 
-
-
-$orangeL: #FF8303;
-$orangeD: #FF7300;
-$yellowL: #FFD764;
-$yellowD: #FFA70B;
-$greyL: #F0F0F0;
+$orangeL: #ff8303;
+$orangeD: #ff7300;
+$yellowL: #ffd764;
+$yellowD: #ffa70b;
+$greyL: #f0f0f0;
 $black: #363636;
-$greyD: #F0F0F0;
+$greyD: #f0f0f0;
 $whiteD: #eeeef5;
 $whiteL: #f0f0f0;
 $bluebee: #1570d1;
@@ -179,35 +313,38 @@ $bluebee: #1570d1;
   width: 130px;
   border-radius: 50%;
   background-size: 130px 65px, cover, cover, cover;
-  background-image:
-                    linear-gradient(to bottom, transparent 50%, darken($black, 5%) 50%),
-                    radial-gradient(circle at 51% 36%, $yellowL 47%, transparent 47%),
-                    radial-gradient(circle at 51% 53%, $yellowL 55%, transparent 55%),
-                    radial-gradient(circle at 60% 53%, lighten($yellowL, 15%) 60%, transparent 60%)
-    ; /*stripes on body*/
-  box-shadow: 
-              35px -105px 0 -44px $yellowL, /*eyeballs*/
-              -35px -105px 0 -44px $yellowL, /*eyeballs*/
-              38px -107px 0 -41px lighten($yellowL, 15%), /*eyeballs*/
-              -32px -107px 0 -41px lighten($yellowL, 15%), /*eyeballs*/
-               35px -105px 0 -38px darken($yellowL, 10%), /*eyeballs*/
-              -35px -105px 0 -38px darken($yellowL, 10%), /*eyeballs*/
-    
-              3px -95px 0 -18px $yellowL, /*head*/
-              5px -100px 0 -15px lighten($yellowL, 15%), /*head*/
-              0px -95px 0 -10px darken($yellowL, 10%), /*head*/
-    
-              -35px -183px 0 -57px $black, /*antenae nubs*/ 
-              35px -183px 0 -57px $black, /*antenae nubs*/
-              -33px -185px 0 -56px lighten($black, 10%), /*antenae nubs*/ 
-              37px -185px 0 -56px lighten($black, 10%), /*antenae nubs*/
-              -35px -184px 0 -54px darken($black, 5%), /*antenae nubs*/ 
-              35px -184px 0 -54px darken($black, 5%); /*antenae nubs*/
-  
+  background-image: linear-gradient(
+      to bottom,
+      transparent 50%,
+      darken($black, 5%) 50%
+    ),
+    radial-gradient(circle at 51% 36%, $yellowL 47%, transparent 47%),
+    radial-gradient(circle at 51% 53%, $yellowL 55%, transparent 55%),
+    radial-gradient(
+      circle at 60% 53%,
+      lighten($yellowL, 15%) 60%,
+      transparent 60%
+    ); /*stripes on body*/
+  box-shadow: 35px -105px 0 -44px $yellowL,
+    /*eyeballs*/ -35px -105px 0 -44px $yellowL,
+    /*eyeballs*/ 38px -107px 0 -41px lighten($yellowL, 15%),
+    /*eyeballs*/ -32px -107px 0 -41px lighten($yellowL, 15%),
+    /*eyeballs*/ 35px -105px 0 -38px darken($yellowL, 10%),
+    /*eyeballs*/ -35px -105px 0 -38px darken($yellowL, 10%),
+    /*eyeballs*/ 3px -95px 0 -18px $yellowL,
+    /*head*/ 5px -100px 0 -15px lighten($yellowL, 15%),
+    /*head*/ 0px -95px 0 -10px darken($yellowL, 10%),
+    /*head*/ -35px -183px 0 -57px $black,
+    /*antenae nubs*/ 35px -183px 0 -57px $black,
+    /*antenae nubs*/ -33px -185px 0 -56px lighten($black, 10%),
+    /*antenae nubs*/ 37px -185px 0 -56px lighten($black, 10%),
+    /*antenae nubs*/ -35px -184px 0 -54px darken($black, 5%),
+    /*antenae nubs*/ 35px -184px 0 -54px darken($black, 5%); /*antenae nubs*/
+
   &:after {
     position: absolute;
-    content: '';
-    background: linear-gradient(to bottom, transparent 50%, $black 50%); 
+    content: "";
+    background: linear-gradient(to bottom, transparent 50%, $black 50%);
     height: 130px;
     width: 130px;
     right: 0px;
@@ -218,8 +355,12 @@ $bluebee: #1570d1;
   }
   &:before {
     position: absolute;
-    content: '';
-    background: linear-gradient(to bottom, transparent 50%, lighten($black, 5%) 50%); 
+    content: "";
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      lighten($black, 5%) 50%
+    );
     height: 130px;
     width: 130px;
     right: 0px;
@@ -228,42 +369,42 @@ $bluebee: #1570d1;
     border-radius: 50%;
     clip-path: ellipse(41% at 61% 48%);
   }
-}  
+}
 
 .mouth {
-    /*mouth*/
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 55px;
-    bottom: 128px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border-bottom: 5px solid $black; 	
-  }
+  /*mouth*/
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 55px;
+  bottom: 128px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border-bottom: 5px solid $black;
+}
 
 .antenae {
   position: relative;
-  z-index: -2;  
+  z-index: -2;
   width: 60px;
-  height: 60px;   
+  height: 60px;
   border-radius: 50%;
   right: -75px;
   bottom: 130px;
   border: 8px solid $black; /*right antenae stem*/
   box-sizing: border-box;
   border-style: hidden hidden hidden solid;
-  transform: skewY(-20deg);  
+  transform: skewY(-20deg);
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 60px;
-    height: 60px;   
+    height: 60px;
     border-radius: 50%;
     left: -87px;
     bottom: 30px;
-    border: 8px solid $black;  /*left antenae stem*/
+    border: 8px solid $black; /*left antenae stem*/
     box-sizing: border-box;
     border-style: hidden solid hidden hidden;
     transform: skewY(40deg);
@@ -272,7 +413,7 @@ $bluebee: #1570d1;
     /*stinger*/
     transform: skewY(20deg);
     position: absolute;
-    content: '';
+    content: "";
     bottom: -213px;
     left: -33px;
     width: 30px;
@@ -283,8 +424,8 @@ $bluebee: #1570d1;
 }
 
 .bee-left {
-  animation: flight-left .5s ease-out infinite;
-  content: '';
+  animation: flight-left 0.5s ease-out infinite;
+  content: "";
   position: absolute;
   background-color: $whiteD; /*large wing left*/
   height: 100px;
@@ -296,8 +437,8 @@ $bluebee: #1570d1;
   z-index: -1;
   box-shadow: inset 30px 105px 0 -70px $whiteL;
   &:after {
-    animation: flight-little .5s ease-in-out infinite;
-    content: '';
+    animation: flight-little 0.5s ease-in-out infinite;
+    content: "";
     position: absolute;
     width: 100px;
     height: 110px;
@@ -305,14 +446,13 @@ $bluebee: #1570d1;
     left: 48px;
     background-color: $greyL; /*little wing left*/
     border-radius: 50% / 50% 0 100% 50%;
-    box-shadow: inset 10px 1px 0px 0px $whiteL, 
-                inset 30px 7px 0px 0px #f6f6f6;
+    box-shadow: inset 10px 1px 0px 0px $whiteL, inset 30px 7px 0px 0px #f6f6f6;
   }
- }
+}
 
 .bee-right {
-  animation: flight-right .5s ease-in-out infinite;
-  content: '';
+  animation: flight-right 0.5s ease-in-out infinite;
+  content: "";
   position: absolute;
   background-color: $whiteD; /*large wing right*/
   height: 100px;
@@ -325,8 +465,8 @@ $bluebee: #1570d1;
   z-index: -1;
   box-shadow: inset 30px 105px 0 -70px $whiteL;
   &:after {
-    animation: flight-little .5s ease-in-out infinite;
-    content: '';
+    animation: flight-little 0.5s ease-in-out infinite;
+    content: "";
     position: absolute;
     width: 100px;
     height: 110px;
@@ -334,42 +474,66 @@ $bluebee: #1570d1;
     right: 48px;
     background-color: $greyL; /*little wing right*/
     border-radius: 50% / 0 50% 50% 100%;
-    box-shadow: inset -10px 1px 0px 0px $whiteL, 
-                inset -30px 7px 0px 0px #f6f6f6;
+    box-shadow: inset -10px 1px 0px 0px $whiteL, inset -30px 7px 0px 0px #f6f6f6;
   }
- }
- 
+}
+
 .blink {
   position: relative;
-  &:before { 
+  &:before {
     /*left pupil and eyeball shadows*/
-    background-image: radial-gradient(circle at 71% 38%, #fff 8%, transparent 8%),
-                      radial-gradient(circle at 65% 50%, $black 16%, transparent 16%),
-                      radial-gradient(circle at 69% 47%, lighten($black, 5%) 19%, transparent 19%),
-                      radial-gradient(circle at 65% 50%, darken($black, 5%) 25%, transparent 25%),
-                      radial-gradient(ellipse at 50% 55%, $whiteD 50%, transparent 50%),
-                      radial-gradient(circle at 70% 50%, $whiteL 65%, transparent 65%);
-    left: 2px; 
+    background-image: radial-gradient(
+        circle at 71% 38%,
+        #fff 8%,
+        transparent 8%
+      ),
+      radial-gradient(circle at 65% 50%, $black 16%, transparent 16%),
+      radial-gradient(
+        circle at 69% 47%,
+        lighten($black, 5%) 19%,
+        transparent 19%
+      ),
+      radial-gradient(
+        circle at 65% 50%,
+        darken($black, 5%) 25%,
+        transparent 25%
+      ),
+      radial-gradient(ellipse at 50% 55%, $whiteD 50%, transparent 50%),
+      radial-gradient(circle at 70% 50%, $whiteL 65%, transparent 65%);
+    left: 2px;
   }
-  &:before, &:after {
+  &:before,
+  &:after {
     clip-path: ellipse(50% 20% at 50% 50%);
-    content: '';
+    content: "";
     position: absolute;
     height: 55px;
     width: 55px;
     border-radius: 50%;
-    background-color: $greyL;   
-    top: -67px;     
+    background-color: $greyL;
+    top: -67px;
     animation: blink 10s linear infinite;
   }
-  &:after {   
+  &:after {
     /*right pupil and eyeball shadows*/
-    background-image: radial-gradient(circle at 41% 38%, #fff 8%, transparent 8%),
-                      radial-gradient(circle at 35% 50%, $black 16%, transparent 16%),
-                      radial-gradient(circle at 39% 47%, lighten($black, 5%) 19%, transparent 19%),
-                      radial-gradient(circle at 35% 50%, darken($black, 5%) 25%, transparent 25%),
-                      radial-gradient(ellipse at 50% 55%, $whiteD 50%, transparent 50%),
-                      radial-gradient(circle at 70% 50%, $whiteL 65%, transparent 65%);
+    background-image: radial-gradient(
+        circle at 41% 38%,
+        #fff 8%,
+        transparent 8%
+      ),
+      radial-gradient(circle at 35% 50%, $black 16%, transparent 16%),
+      radial-gradient(
+        circle at 39% 47%,
+        lighten($black, 5%) 19%,
+        transparent 19%
+      ),
+      radial-gradient(
+        circle at 35% 50%,
+        darken($black, 5%) 25%,
+        transparent 25%
+      ),
+      radial-gradient(ellipse at 50% 55%, $whiteD 50%, transparent 50%),
+      radial-gradient(circle at 70% 50%, $whiteL 65%, transparent 65%);
     left: 73px;
   }
 }
@@ -382,11 +546,11 @@ $bluebee: #1570d1;
 }
 
 .shadow {
-    height: 45px;
-    width: 170px;
-    border-radius: 50%;
-    background-color: desaturate(darken($bluebee, 10%), 20%);
-    animation: shadow 2s ease-in-out infinite;
+  height: 45px;
+  width: 170px;
+  border-radius: 50%;
+  background-color: desaturate(darken($bluebee, 10%), 20%);
+  animation: shadow 2s ease-in-out infinite;
 }
 
 @-webkit-keyframes blink {
@@ -422,7 +586,7 @@ $bluebee: #1570d1;
   }
   50% {
     clip-path: ellipse(50% 50% at 50% 50%);
-  }  
+  }
   60% {
     clip-path: ellipse(50% 20% at 50% 50%);
   }
@@ -450,27 +614,27 @@ $bluebee: #1570d1;
 }
 
 @keyframes hover {
-	0% {
-		transform: translateY(0px);
-	}
-	50% {
-		transform: translateY(-15px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes shadow {
-	0% {
+  0% {
     width: 170px;
   }
-	50% {
+  50% {
     width: 180px;
   }
-	100% {
+  100% {
     width: 170px;
-	}
+  }
 }
 
 @keyframes flight-left {

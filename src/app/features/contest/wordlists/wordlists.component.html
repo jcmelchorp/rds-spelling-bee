@@ -1,7 +1,8 @@
 <div class="background">
-<div class="my-container">
-  <mat-accordion *ngFor="let wordlist of wordlists$ | async">
-    <mat-expansion-panel hideToggle>
+  <!-- <div class="my-container">
+  <mat-card>
+  <mat-accordion *ngIf="wordlists$ | async as wordlists; else loading">
+    <mat-expansion-panel *ngFor="let wordlist of wordlists">
       <mat-expansion-panel-header>
         <mat-panel-title> <span [innerText]="wordlist.level"></span></mat-panel-title>
         <mat-panel-description> @if (wordlist.words!.length>=1) {
@@ -12,17 +13,98 @@
         @for (word of wordlist.words; track $index) {
         <mat-chip-row (removed)="remove(word)" [editable]="true" (edited)="edit(word, $event)"
           [aria-description]="'press enter to edit ' + word.label">
-          <!-- <button matChipEdit [attr.aria-label]="'edit ' + word.label">
+          <button matChipEdit [attr.aria-label]="'edit ' + word.label">
             <mat-icon>edit</mat-icon>
-          </button> -->
-          {{word.id}} {{word.label}}
-          <!-- <button matChipRemove [attr.aria-label]="'remove ' + word.label">
+          </button>
+          {{word.label}}
+          <button matChipRemove [attr.aria-label]="'remove ' + word.label">
             <mat-icon>cancel</mat-icon>
-          </button> -->
+          </button>
         </mat-chip-row>
         }
       </mat-chip-listbox>
     </mat-expansion-panel>
   </mat-accordion>
-</div>
+  <ng-template #loading>
+    <div class="loading-container" fxFlexFill>
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</mat-card>
+
+</div> -->
+
+  <div class="my-container">
+    <!--   <select class="border shadow shadow-large shadow-hover">
+      <option value="list">List</option>
+      <option value="grid">Grid</option>
+    </select> -->
+    <div class="">
+      <div class="switcher">
+        <input type="radio" name="switcher" id="list" value="list" checked />
+        <label for="list" class="border shadow shadow-large shadow-hover">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-list">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+        </label>
+
+        <input type="radio" name="switcher" id="grid" value="grid" />
+        <label for="grid" class="border shadow shadow-large shadow-hover">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-grid">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </label>
+      </div>
+
+      <section class="list-container border shadow shadow-large">
+        <h1>Listas de palabras</h1>
+        <mat-accordion *ngIf="wordlists$ | async as wordlists; else loading" class="card-list">
+          <mat-expansion-panel *ngFor="let wordlist of wordlists">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 [innerText]="wordlist.level"></h2>
+              </mat-panel-title>
+              <mat-panel-description>
+                <h2>@if (wordlist.words!.length>=1) {
+                  {{wordlist.words!.length}} {{(wordlist.words!.length===0)?'':'palabra'}}{{(wordlist.words!.length
+                  <=1)?'':'s'}}. } </h2>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-chip-listbox #chipGrid aria-label="Wordlist words"
+              class="paper border shadow shadow-large shadow-hover">
+              @for (word of wordlist.words; track $index) {
+              <mat-chip-row (removed)="remove(word)" [editable]="true" (edited)="edit(word, $event)"
+                [aria-description]="'press enter to edit ' + word.label">
+                <!-- <button matChipEdit [attr.aria-label]="'edit ' + word.label">
+                      <mat-icon>edit</mat-icon>
+                    </button> -->
+                {{word.label}}
+                <!-- <button matChipRemove [attr.aria-label]="'remove ' + word.label">
+                      <mat-icon>cancel</mat-icon>
+                    </button> -->
+              </mat-chip-row>
+              }
+            </mat-chip-listbox>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <ng-template #loading>
+          <div class="loading-container">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-template>
+      </section>
+    </div>
+  </div>
 </div>

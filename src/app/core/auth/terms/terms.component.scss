@@ -1,0 +1,26 @@
+.background,
+.background:before {
+  --s: 50px; /* control the size */
+  --c1: #5E412F;
+  --c2: #FCEBB6;
+  
+  background:
+    radial-gradient(25% 50%,var(--c1) 98%,#0000)
+     var(--s) 0/calc(2*var(--s)) var(--s),
+    radial-gradient(25% 50%,var(--c2) 98%,#0000)
+     0 0/calc(2*var(--s)) var(--s),
+    repeating-conic-gradient(var(--c1) 0 25%,var(--c2) 0 50%) 
+     0 0/calc(2*var(--s)) calc(2*var(--s));
+  animation: g1 2s linear infinite;
+}
+.background:before {
+  content:"";
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  -webkit-mask: linear-gradient(#0000 50%,#000 0) 0 0/100% calc(2*var(--s));
+  animation-direction: reverse;
+}
+@keyframes g1{
+  to {background-position: calc(3*var(--s)) 0,calc(2*var(--s)) 0,calc(2*var(--s)) 0}
+}

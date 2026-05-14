@@ -58,8 +58,8 @@
       <!-- </mat-nav-list>  -->
     </div>
   </mat-sidenav>
-  <mat-sidenav-content [@onMainContentChange]="(onSideNavChange && !isHandset) ? 'open': 'close'"  fxLayout="column" fxLayoutAlign="stretch stretch">
+  <mat-sidenav-content [@onMainContentChange]="(onSideNavChange && !isHandset) ? 'open': 'close'" >
   <app-main class="main-content" ></app-main>
-  <app-footer></app-footer>
+  <!-- <app-footer></app-footer> -->
   </mat-sidenav-content>
 </mat-sidenav-container>

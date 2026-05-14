@@ -6,3 +6,90 @@
   background-position: bottom right;
   background-size: cover;
 }
+
+.background:before,
+.background:after{
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  animation: 4s infinite;
+  animation-name: g7-1,g7-2;
+}
+.background:after {
+  animation-name: g7-1,g7-3,g7-4;
+}
+
+@keyframes g7-2 {
+  0%,50% {
+    background-image:
+      radial-gradient(20px at 20px 20px,#000 98%, #0000),
+      radial-gradient(20px at 20px 20px,#000 98%, #0000);
+    background-color: #fff;
+  }
+  50.1%,100% {
+    background-image:
+      radial-gradient(20px at 20px 20px,#fff 98%, #0000),
+      radial-gradient(20px at 20px 20px,#fff 98%, #0000);
+    background-color: #000;
+  }
+}
+@keyframes g7-3 {
+  0%,50% {
+    background-image:
+      conic-gradient(at 40px 40px,#0000 270deg,#000 0),
+      conic-gradient(at 40px 40px,#0000 270deg,#000 0);
+  }
+  50.1%,100% {
+    background-image:
+      conic-gradient(at 40px 40px,#0000 270deg,#fff 0),
+      conic-gradient(at 40px 40px,#0000 270deg,#fff 0);
+  }
+}
+
+@keyframes g7-1 {
+  0%,10% {
+    background-position: 50% 50%, calc(50% - 40px) calc(50% - 40px);
+    background-size: 80px 80px;
+  }
+  16.67% {
+    background-position: 50% 50%, calc(50% - 60px) calc(50% - 60px);
+    background-size: 120px 120px;
+  }
+  33.33% {
+    background-position: 50% calc(50% - 120px), calc(50% - 60px) calc(50% + 60px);
+    background-size: 120px 120px;
+  }
+  33.34% {
+    background-position: 50% 50%, calc(50% - 60px) calc(50% - 60px);
+    background-size: 120px 120px;
+  }
+  45%,50% {
+    background-position: 50% 50%, calc(50% - 40px) calc(50% - 40px);
+    background-size: 80px 80px;
+  }
+  50.01%,55% {
+    background-position: calc(50% + 40px) 50%, 50% calc(50% - 40px);
+    background-size: 80px 80px;
+  }
+  66.66% {
+    background-position: calc(50% + 60px) 50%, 50% calc(50% - 60px);
+    background-size: 120px 120px;
+  }
+  83.33% {
+    background-position: calc(50% - 60px) 50%, calc(50% + 120px) calc(50% - 60px);
+    background-size: 120px 120px;
+  }
+  83.34% {
+    background-position: calc(50% + 60px) 50%, 50% calc(50% - 60px);
+    background-size: 120px 120px;
+  }
+  90%,100% {
+    background-position: calc(50% + 40px) 50%, 50% calc(50% - 40px);
+    background-size: 80px 80px;
+  }
+}
+@keyframes g7-4 {
+  10%,45%,55%,90% {opacity:1}
+  16.67%,33.34%,66.66%,83.34% {opacity:0}
+}
